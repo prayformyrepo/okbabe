@@ -1,0 +1,287 @@
+<?php
+
+namespace App\Http\Controllers\API;
+
+use App\Conversation_Message;
+use App\Http\Controllers\Controller;
+use App\Message;
+use App\Notification;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use App\Conversation;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use PhpParser\Builder;
+use Validator;
+
+class ConversationController extends Controller
+{
+    public $successStatus = 200;
+
+    /**
+     * request conversation api
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function request_conversation(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'user_id' => 'required'
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);
+        }
+
+
+        $adviser=User::find($request->user_id);
+        if ($adviser==null){
+            $error['reason'] =  'user not found';
+            return response()->json(['error'=>$error],401);
+        }
+        $user=Auth::user();
+        if ($adviser->is_adviser==$user->is_adviser){
+            $error['reason'] =  'both users are advisers or users!';
+            return response()->json(['error'=>$error],401);
+        }
+
+        if ($adviser->is_adviser==1){
+            $conversation=Conversation::where('user_id',$user->id)->where('adviser_id',$request->user_id);
+            if ($conversation->count()==0 ){
+                $conversation=new Conversation();
+                $conversation->adviser_id=$request->user_id;
+                $conversation->user_id=$user->id;
+                $conversation->status=0;
+                $conversation->has_unread=1;
+                $conversation->save();
+            }else{
+                $conversation_id=$conversation->value('id');
+                if ($conversation->value('status')==2){
+                    $conversation=Conversation::find($conversation_id);
+                    $conversation->status=0;
+                    $conversation->has_unread=1;
+                    $conversation->save();
+                }else{
+                    $success['message'] = 'message already requested';
+                    $conversation=Conversation::find($conversation_id);
+                    $success['conversation'] = $conversation;
+                    return response()->json(['success' => $success], $this->successStatus);
+                }
+            }
+
+
+            $notification=new Notification();
+            $notification->user_id=$request->user_id;
+            $notification->is_adviser=1;
+            $notification->data='پیام جدید از طرف ' . $user->name;
+            $notification->sender_user_id=$user->id;
+            $notification->type=1;
+            $notification->save();
+
+            $success['message'] = 'message requested';
+            $success['conversation'] = $conversation;
+
+        }
+
+        else{
+            $conversation=Conversation::where('adviser_id',$user->id)->where('user_id',$request->user_id);
+            if ($conversation->count()==0 ){
+                $conversation=new Conversation();
+                $conversation->adviser_id=$user->id;
+                $conversation->user_id=$request->user_id;
+                $conversation->status=0;
+                $conversation->has_unread=1;
+                $conversation->save();
+            }else{
+                $conversation_id=$conversation->value('id');
+                if ($conversation->value('status')==2){
+                    $conversation=Conversation::find($conversation_id);
+                    $conversation->status=0;
+                    $conversation->has_unread=1;
+                    $conversation->save();
+                }else{
+                    $success['message'] = 'message already requested';
+                    $conversation=Conversation::find($conversation_id);
+                    $success['conversation'] = $conversation;
+
+                    return response()->json(['success' => $success], $this->successStatus);
+                }
+            }
+
+
+            $notification=new Notification();
+            $notification->user_id=$request->user_id;
+            $notification->is_adviser=0;
+            $notification->data='پیام جدید از طرف ' . $user->name;
+            $notification->sender_user_id=$user->id;
+            $notification->type=1;
+            $notification->save();
+
+            $success['message'] = 'message requested';
+            $success['conversation'] = $conversation;
+        }
+
+
+        return response()->json(['success' => $success], $this->successStatus);
+
+    }
+
+    public function fetch_conversations()
+    {
+        $user = Auth::user();
+        if ($user->is_adviser==0)
+        $conversations=Conversation::where('user_id',$user->id)->orderBy('id','DESC')->get();
+        else
+            $conversations=Conversation::where('adviser_id',$user->id)->orderBy('id','DESC')->get();
+
+        return response()->json(['success' => $conversations], $this->successStatus);
+    }
+
+    public function fetch_messages(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'conversation_id' => 'required',
+//            'last_message_id' => 'required'
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);
+        }
+
+        $user = Auth::user();
+        $conversation=Conversation::find($request->conversation_id);
+
+        if ($conversation->user_id==$user->id){
+            $sender_user_id=$conversation->adviser_id;
+        }else if ($conversation->adviser_id==$user->id){
+            $sender_user_id=$conversation->user_id;
+        }else{
+            $error['reason'] =  'Unauthorized';
+            return response()->json(['error'=>$error],401);
+        }
+        if ($conversation==null){
+            $error['reason'] =  'conversation not found';
+            return response()->json(['error'=>$error],404);
+        }
+        if ($conversation->user_id!=$user->id && $conversation->adviser_id!=$user->id){
+            $error['reason'] =  'Unauthorized';
+            return response()->json(['error'=>$error],401);
+        }
+
+        !isset($request->last_message_id)? $last_message_id=1 : $last_message_id=$request->last_message_id;
+
+        $messages=$conversation->messages()->get();
+        foreach ($messages as $message){
+            $read=Message::find($message->id);
+            if ($read->status==0) {
+                $read->status = 1;
+                $read->save();
+            }
+        }
+
+        $notifications=Notification::where('type',1)->where('read_at',null)->where('user_id',$user->id)->where('sender_user_id',$sender_user_id)->get();
+        foreach ($notifications as $notification) {
+            $a=Notification::find($notification->id);
+            $a->read_at=Carbon::now();
+            $a->save();
+        }
+
+        $conversation->has_unread=0;
+        $conversation->save();
+
+
+
+        $messages=$conversation->messages()->paginate(10)->where('id','>=',$request->last_message_id);
+
+
+        return response()->json(['success' => $messages], $this->successStatus);
+    }
+
+    public function send_message(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'text' => 'required',
+            'conversation_id'=>'required'
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);
+        }
+
+        $user_id=Auth::user()->id;
+        $user=User::find($user_id);
+
+        $message=new Message();
+        $message->text=$request->text;
+        if($request->parent_message_id!=null){
+            $message->parent_message_id=$request->parent_message_id;
+        }
+        $message->user_id=$user_id;
+        $message->save();
+
+        $message_id=$message->id;
+        $conversation_message=new Conversation_Message();
+        $conversation_message->message_id=$message_id;
+        $conversation_message->conversation_id=$request->conversation_id;
+        $conversation_message->save();
+
+
+
+        $conversation=Conversation::find($request->conversation_id);
+        $conversation->has_unread=1;
+        $conversation->save();
+
+
+        if ($user->is_adviser==0) {
+            $notifications=Notification::where('type',1)->where('read_at',null)->where('user_id',$conversation->adviser_id)->where('sender_user_id',$user->id)->get();
+            if ($notifications->count()==0) {
+                $notification = new Notification();
+                $notification->user_id = $conversation->adviser_id;
+                $notification->is_adviser = 1;
+                $notification->data = 'پیام جدید از طرف ' . $user->name;
+                $notification->type = 1;
+                $notification->sender_user_id = $user->id;
+                $notification->save();
+            }
+        }else{
+            $notifications=Notification::where('type',1)->where('read_at',null)->where('user_id',$conversation->adviser_id)->where('sender_user_id',$user->id)->get();
+            if ($notifications->count()==0) {
+                $notification = new Notification();
+                $notification->user_id = $conversation->adviser_id;
+                $notification->is_adviser = 0;
+                $notification->data = 'پیام جدید از طرف ' . $user->name;
+                $notification->type = 1;
+                $notification->sender_user_id = $user->id;
+                $notification->save();
+            }
+        }
+
+
+        $message=$conversation->messages()->get()->where('id',$message_id);
+        return response()->json(['success' => $message], $this->successStatus);
+    }
+
+    public function fetch_message_by_id(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'message_id' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);
+        }
+
+        try {
+            $message = Message::find($request->message_id);
+
+        }catch (\Exception $e){
+            return response()->json(['error'=>$e], 401);
+
+        }
+
+        return response()->json(['success' => $message], $this->successStatus);
+
+
+    }
+
+
+
+
+}
