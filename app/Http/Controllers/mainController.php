@@ -15,7 +15,7 @@ class mainController extends Controller
 
         $client = new Client(['base_uri' => 'https://shaverno.com']);
 // Send a request to https://foo.com/api/test
-        $response = $client->request('GET', '/site/api/v1/blog/posts?page='.$request->page.'&size=100&archive=&author=&relation=&filter=&q=&sorting=');
+        $response = $client->request('GET', '/site/api/v1/blog/posts?page='.$request->page.'&size='.$request->size.'&archive=&author=&relation=&filter=&q=&sorting=');
 
         $body = $response->getBody();
         $items = json_decode($body);

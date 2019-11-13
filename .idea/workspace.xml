@@ -102,8 +102,8 @@
       <file leaf-file-name="mainController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/mainController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="160">
+              <caret line="17" column="114" lean-forward="false" selection-start-line="17" selection-start-column="114" selection-end-line="17" selection-end-column="114" />
               <folding />
             </state>
           </provider>
@@ -417,7 +417,7 @@
       <workItem from="1572587316108" duration="15213000" />
       <workItem from="1572621446506" duration="10605000" />
       <workItem from="1572789331040" duration="66514000" />
-      <workItem from="1573627082429" duration="3854000" />
+      <workItem from="1573627082429" duration="4036000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1573630617878</created>
@@ -475,11 +475,18 @@
       <option name="project" value="LOCAL" />
       <updated>1573632359847</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="active blog">
+      <created>1573632649097</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1573632649097</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96186000" />
+    <option name="totallyTimeSpent" value="96368000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -517,7 +524,8 @@
     <MESSAGE value="second commit" />
     <MESSAGE value="active sms" />
     <MESSAGE value="auth corr" />
-    <option name="LAST_COMMIT_MESSAGE" value="auth corr" />
+    <MESSAGE value="active blog" />
+    <option name="LAST_COMMIT_MESSAGE" value="active blog" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -921,8 +929,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/mainController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="160">
+          <caret line="17" column="114" lean-forward="false" selection-start-line="17" selection-start-column="114" selection-end-line="17" selection-end-column="114" />
           <folding />
         </state>
       </provider>
