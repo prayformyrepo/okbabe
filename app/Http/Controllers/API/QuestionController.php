@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Adviser;
 use App\Adviser_to_category;
+use App\Event;
 use App\Http\Controllers\Controller;
 use App\Like_question;
 use App\Notification;
@@ -212,6 +213,10 @@ class QuestionController extends Controller
         $answer->question_id=$request->question_id;
         $answer->text=$request->answer;
         $answer->save();
+
+        $event=new Event();
+
+
 
         $answer=Question_answer::find($answer->id);
         return response()->json(['success' => $answer], $this-> successStatus);

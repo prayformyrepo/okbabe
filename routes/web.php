@@ -26,3 +26,7 @@ Route::post('/testopen','mainController@test_inp');
 Route::get('token',function(){
     Artisan::call('passport:client --personal');
 });
+
+Route::get('call',function (){
+   return view('call');
+});
