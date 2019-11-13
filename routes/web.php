@@ -20,3 +20,9 @@ Route::get('/open',function (){
     return view('test');
 });
 Route::post('/testopen','mainController@test_inp');
+
+
+
+Route::get('token',function(){
+    Artisan::call('passport:client');
+});
