@@ -9,13 +9,13 @@ use Illuminate\Http\Request;
 
 class mainController extends Controller
 {
-    public function gpost()
+    public function gpost(Request $request)
     {
 
 
         $client = new Client(['base_uri' => 'https://shaverno.com']);
 // Send a request to https://foo.com/api/test
-        $response = $client->request('GET', '/site/api/v1/blog/posts?page=1&size=100&archive=&author=&relation=&filter=&q=&sorting=');
+        $response = $client->request('GET', '/site/api/v1/blog/posts?page='.$request->page.'&size=100&archive=&author=&relation=&filter=&q=&sorting=');
 
         $body = $response->getBody();
         $items = json_decode($body);
@@ -46,19 +46,19 @@ class mainController extends Controller
            }
            if ($ok==1){
 
-//                $addpost=new Post();
-//                $addpost->title=$values->title;
-//               $addpost->description=$values->description;
-//               $addpost->content=$items2->post->content;
-//               $addpost->image=$values->image;
-//               $addpost->rate=$values->rate;
-//               $addpost->rate_count=$values->rate_count;
-//               $addpost->comments=$values->comments;
-//               $addpost->url=$values->url;
-//               $addpost->commenting_enabled=$items2->post->commenting_enabled;
-//               $addpost->meta_title=$items2->post->meta_title;
-//               $addpost->meta_description=$items2->post->meta_description;
-//                $addpost->save();
+                $addpost=new Post();
+                $addpost->title=$values->title;
+               $addpost->description=$values->description;
+               $addpost->content=$items2->post->content;
+               $addpost->image=$values->image;
+               $addpost->rate=$values->rate;
+               $addpost->rate_count=$values->rate_count;
+               $addpost->comments=$values->comments;
+               $addpost->url=$values->url;
+               $addpost->commenting_enabled=$items2->post->commenting_enabled;
+               $addpost->meta_title=$items2->post->meta_title;
+               $addpost->meta_description=$items2->post->meta_description;
+                $addpost->save();
                echo $values->title.' added<br>';
            }else{
                echo 'no<br>';
