@@ -8,8 +8,18 @@
     <title>Document</title>
 </head>
 <body>
-<form action="http://45.156.186.248/my/api159.php?email=aliaharian@yahoo.com&pass=Ali@77570328&drivers=09307473703&customer=09059871707&maxcalltime=3">
-
+<form action="http://45.156.186.248/my/api159.php">
+   email
+    <input type="email" value="aliaharian@yahoo.com" name="email" id="">
+    pass
+    <input type="password" value="Ali@77570328" name="pass" id="">
+    driver
+    <input type="text" value="09307473703" name="drivers" id="">
+    customer
+    <input type="text" value="09059871707" name="customer" id="">
+    max
+    <input type="text" value="3" name="maxcalltime" id="">
+    sub
     <input type="submit" name="" id="">
 </form>
 </body>
