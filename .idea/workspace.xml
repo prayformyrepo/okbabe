@@ -102,8 +102,8 @@
       <file leaf-file-name="mainController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/mainController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="17" column="114" lean-forward="false" selection-start-line="17" selection-start-column="114" selection-end-line="17" selection-end-column="114" />
+            <state relative-caret-position="310">
+              <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="2" selection-end-line="60" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -417,7 +417,7 @@
       <workItem from="1572587316108" duration="15213000" />
       <workItem from="1572621446506" duration="10605000" />
       <workItem from="1572789331040" duration="66514000" />
-      <workItem from="1573627082429" duration="4036000" />
+      <workItem from="1573627082429" duration="4311000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1573630617878</created>
@@ -482,11 +482,18 @@
       <option name="project" value="LOCAL" />
       <updated>1573632649097</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="active blog">
+      <created>1573632907638</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1573632907638</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96368000" />
+    <option name="totallyTimeSpent" value="96643000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -929,8 +936,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/mainController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="17" column="114" lean-forward="false" selection-start-line="17" selection-start-column="114" selection-end-line="17" selection-end-column="114" />
+        <state relative-caret-position="310">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="2" selection-end-line="60" selection-end-column="35" />
           <folding />
         </state>
       </provider>
