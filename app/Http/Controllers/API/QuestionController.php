@@ -215,7 +215,10 @@ class QuestionController extends Controller
         $answer->save();
 
         $event=new Event();
-
+        $event->type=1;
+        $event->adviser_id=$adviser_id;
+        $event->user_id=$question->user_id;
+        $event->save();
 
 
         $answer=Question_answer::find($answer->id);
