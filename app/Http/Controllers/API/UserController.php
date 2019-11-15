@@ -204,16 +204,22 @@ class UserController extends Controller
      */
     public function user_info(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'user_id' => 'required',
+//        $validator = Validator::make($request->all(), [
+//            'user_id' => 'required',
+//
+//        ]);
+//
+//        if ($validator->fails()) {
+//            return response()->json(['error'=>$validator->errors()], 401);
+//        }
+        if(isset($request->user_id)){
+            $user = User::find($request->user_id);
 
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json(['error'=>$validator->errors()], 401);
+        }
+        else{
+            $user=Auth::user();
         }
 
-        $user = User::find($request->user_id);
         return response()->json(['success' => $user], $this-> successStatus);
 
     }
