@@ -244,10 +244,12 @@ class QuestionController extends Controller
         $answer->text=$request->answer;
         $answer->save();
 
+        $question_category=Question::find($request->question_id)->question_category_id;
         $event=new Event();
         $event->type=1;
         $event->adviser_id=$adviser_id;
         $event->user_id=$question->user_id;
+        $event->category_id=$question_category;
         $event->save();
 
 
