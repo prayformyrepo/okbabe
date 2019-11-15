@@ -274,7 +274,7 @@ class UserController extends Controller
                 //check date time
                 if ($adviser_time->date == $weekday) {
                     if ($adviser_time->from < $hour && $adviser_time->to > $hour) {
-                        $flag = true;
+                        $flag = false;
                     }
                 }
             }

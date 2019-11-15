@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="correct toggle online">
+    <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" />
     </list>
@@ -62,8 +62,8 @@
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7">
-              <caret line="267" column="35" lean-forward="true" selection-start-line="267" selection-start-column="35" selection-end-line="267" selection-end-column="35" />
+            <state relative-caret-position="358">
+              <caret line="274" column="41" lean-forward="true" selection-start-line="274" selection-start-column="41" selection-end-line="274" selection-end-column="41" />
               <folding>
                 <element signature="e#42#58#0#PHP" expanded="true" />
               </folding>
@@ -398,7 +398,7 @@
       <workItem from="1572587316108" duration="15213000" />
       <workItem from="1572621446506" duration="10605000" />
       <workItem from="1572789331040" duration="66514000" />
-      <workItem from="1573627082429" duration="23704000" />
+      <workItem from="1573627082429" duration="23758000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1573630617878</created>
@@ -561,11 +561,18 @@
       <option name="project" value="LOCAL" />
       <updated>1573811438950</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="correct toggle online">
+      <created>1573811613940</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1573811613940</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116036000" />
+    <option name="totallyTimeSpent" value="116090000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1016,8 +1023,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7">
-          <caret line="267" column="35" lean-forward="true" selection-start-line="267" selection-start-column="35" selection-end-line="267" selection-end-column="35" />
+        <state relative-caret-position="358">
+          <caret line="274" column="41" lean-forward="true" selection-start-line="274" selection-start-column="41" selection-end-line="274" selection-end-column="41" />
           <folding>
             <element signature="e#42#58#0#PHP" expanded="true" />
           </folding>
