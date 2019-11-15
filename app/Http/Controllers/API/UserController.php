@@ -312,7 +312,7 @@ class UserController extends Controller
         $success['is_online'] = $user->is_online;
         $success['is_adviser'] = $user->is_adviser;
 
-        return response()->json(['success' => $success], $this-> successStatus);
+        return response()->json(['success' => $flag], $this-> successStatus);
     }
 
 }
