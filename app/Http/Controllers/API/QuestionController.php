@@ -124,7 +124,7 @@ class QuestionController extends Controller
                 array_push($questions_array,$save);
             }
         }
-        $questions_array['now']=Carbon::now();
+        $questions_array['now']=Carbon::now()->format('Y-m-d H:i:s');
         return response()->json(['success' => $questions_array], $this-> successStatus);
 
     }
