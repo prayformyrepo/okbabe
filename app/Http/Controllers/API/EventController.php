@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Adviser;
+use App\Adviser_category;
 use App\Event;
 use App\Http\Controllers\Controller;
 use App\User;
@@ -20,6 +21,9 @@ class EventController extends Controller
             $ev=$event;
             $user=Adviser::find($event->adviser_id);
             $ev['user_info']=User::select('id','name','avatar')->find($user->user_id);
+            if($event->type==1){
+                $ev['category_name']=Adviser_category::find($event->category_id)->name;
+            }
             array_push($eventArray,$ev);
         }
 
