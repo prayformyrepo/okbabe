@@ -77,6 +77,10 @@ Route::group(['middleware' => 'auth:api'], function(){
         //wallet
         Route::post('pay', 'API\WalletController@pay');
 
+
+        //search
+        Route::post('universal-search', 'API\SearchController@universal_search');
+
     });
 
 

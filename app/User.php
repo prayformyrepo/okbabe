@@ -39,8 +39,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function adviser()
+    public function adviser($user)
     {
-        $this->hasOne(Adviser::class);
+        $adviser_id=Adviser::where('user_id',$user->id)->value('id');
+        return Adviser::find($adviser_id);
     }
+
+
 }
