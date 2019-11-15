@@ -95,7 +95,7 @@ class QuestionController extends Controller
                 $adviser_categories=Adviser_to_category::where('adviser_id',$adviser_id)->get();
                 $questions=array();
                 foreach ($adviser_categories as $adviser_category){
-                  $questionsArray = Question::where('adviser_category_id', $adviser_category->adviser_category_id)->orderBy('id', 'DESC')->simplePaginate();
+                  $questionsArray = Question::where('question_category_id', $adviser_category->adviser_category_id)->orderBy('id', 'DESC')->simplePaginate();
                     array_push($questions,$questionsArray);
                 }
 //                $questions_array=array();
