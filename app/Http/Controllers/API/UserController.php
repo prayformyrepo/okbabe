@@ -202,9 +202,18 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function user_info()
+    public function user_info(Request $request)
     {
-        $user = Auth::user();
+        $validator = Validator::make($request->all(), [
+            'user_id' => 'required',
+
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);
+        }
+
+        $user = User::find($request->user_id);
         return response()->json(['success' => $user], $this-> successStatus);
 
     }
