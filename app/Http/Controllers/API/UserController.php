@@ -122,7 +122,6 @@ class UserController extends Controller
         }
 
 
-
         oauth_access_token::where('user_id',$user->id)->delete();
         $token =  $user->createToken('Register')-> accessToken;
         $user->api_token=$token;
@@ -209,9 +208,18 @@ class UserController extends Controller
 
     }
 
-    public function reset_password()
+    public function reset_password(Request $request)
     {
-        $user_id=Auth::user()->id;
+        $validator = Validator::make($request->all(), [
+            'user_id' => 'required',
+
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);
+        }
+
+        $user_id=$request->user_id;
         $user=User::find($user_id);
         $user->password=null;
         $user->save();

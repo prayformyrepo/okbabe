@@ -13,12 +13,15 @@ use Illuminate\Http\Request;
 |
 */
 
-
+//login with pass
 Route::post('login', 'API\UserController@login');
 //Route::post('mobile-login', 'API\UserController@mobile_login');
 
+//login or reg
 Route::post('auth', 'API\UserController@auth');
 
+//remove pass
+Route::post('reset-password', 'API\UserController@reset_password');
 
 
 Route::group(['middleware' => 'auth:api'], function(){
@@ -28,7 +31,6 @@ Route::group(['middleware' => 'auth:api'], function(){
 
     Route::group(['middleware' => 'mobile_verify'], function() {
 
-        Route::post('reset-password', 'API\UserController@reset_password');
         Route::post('user-info', 'API\UserController@user_info');
         Route::post('set-data', 'API\UserController@set_data');
 
