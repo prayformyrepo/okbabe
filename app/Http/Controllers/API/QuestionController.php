@@ -39,7 +39,7 @@ class QuestionController extends Controller
 
         $question=new Question();
         $question->user_id=$user->id;
-        $question->adviser_category_id=$request->adviser_category_id;
+        $question->question_category_id=$request->adviser_category_id;
         $question->subject=$request->subject;
         $question->text=$request->text;
         $question->is_private=$request->is_private;

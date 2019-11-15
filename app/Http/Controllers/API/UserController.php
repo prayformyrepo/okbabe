@@ -240,11 +240,27 @@ class UserController extends Controller
             return response()->json(['error'=>$validator->errors()], 401);
         }
 
+
         $user=Auth::user();
-        $user=User::find($user->id);
-        $user->is_online=$request->is_online;
-        $user->save();
+        $user = User::find($user->id);
+        if($user->is_adviser==0) {
+            $user->is_online = $request->is_online;
+            $user->save();
+        }
+
         if ($user->is_adviser==1){
+            $weekMap = [
+                0 => 'SA',
+                1 => 'SU',
+                2 => 'MO',
+                3 => 'TU',
+                4 => 'WE',
+                5 => 'TH',
+                6 => 'FR',
+            ];
+            $dayOfTheWeek = Carbon::now()->dayOfWeek;
+            $weekday = $weekMap[$dayOfTheWeek];
+
             $adviser_id=Adviser::where('user_id',$user->id)->value('id');
             $adviser=Adviser::find($adviser_id);
             $adviser->is_online=$request->is_online;
