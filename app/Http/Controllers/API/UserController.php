@@ -266,9 +266,9 @@ class UserController extends Controller
         //get all advisers
         $users=User::where('is_adviser',1)->get();
         foreach ($users as $user) {
+            $flag = false;
             $adviser_id = Adviser::where('user_id', $user->id)->value('id');
 
-            $flag = false;
             $adviser_times = Adviser_time::where('adviser_id', $adviser_id)->get();
             foreach ($adviser_times as $adviser_time) {
                 //check date time
@@ -280,7 +280,7 @@ class UserController extends Controller
             }
 
             //set advisers offline-online
-            if ($flag==1){
+            if ($flag==true){
                 $u=User::find($user->id);
                 $u->is_online=1;
                 $u->save();
@@ -290,7 +290,7 @@ class UserController extends Controller
                 $a->save();
 
             }
-            if ($flag==0){
+            if ($flag==false){
                 $u=User::find($user->id);
                 $u->is_online=0;
                 $u->save();
