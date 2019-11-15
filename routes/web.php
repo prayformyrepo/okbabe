@@ -50,6 +50,6 @@ Route::get('/test',function(){
     ];
     $dayOfTheWeek = \Carbon\Carbon::now()->dayOfWeek;
     $weekday = $weekMap[$dayOfTheWeek];
-    echo $weekday;
-
+    $hour = \Carbon\Carbon::now()->format('G');
+    echo $hour;
 });

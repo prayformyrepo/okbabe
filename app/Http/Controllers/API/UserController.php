@@ -276,7 +276,7 @@ class UserController extends Controller
         ];
         $dayOfTheWeek = Carbon::now()->dayOfWeek;
         $weekday = $weekMap[$dayOfTheWeek];
-        $hour = Carbon::now()->format('%h');
+        $hour = Carbon::now()->format('G');
 
         //get all advisers
         $users=User::where('is_adviser',1)->get();
