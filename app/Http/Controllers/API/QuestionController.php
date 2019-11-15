@@ -93,12 +93,12 @@ class QuestionController extends Controller
             if ($user->is_adviser==1){
                 $adviser_id=Adviser::where('user_id',$user->id)->value('id');
                 $adviser_categories=Adviser_to_category::where('adviser_id',$adviser_id)->get();
-                $questions=array();
+                $questions_array=array();
                 foreach ($adviser_categories as $adviser_category){
                   $questionsArray = Question::where('question_category_id', $adviser_category->adviser_category_id)->orderBy('id', 'DESC')->get();
                   foreach ($questionsArray as $questionArray){
-                      $q['data']=$questionArray;
-                      array_push($questions,$q);
+                      $q=$questionArray;
+                      array_push($questions_array,$q);
                   }
                 }
 //                $questions_array=array();
@@ -107,7 +107,6 @@ class QuestionController extends Controller
 //                    $save['question']['user_info']=User::select('id','name','avatar')->find($question->user_id);
 //                    array_push($questions_array,$save);
 //                }
-                $questions_array=$questions;
             }else {
                 $questions = Question::where('user_id', $user->id)->orderBy('id', 'DESC')->simplePaginate(10);
                 $questions_array=array();
