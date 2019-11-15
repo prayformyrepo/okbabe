@@ -85,7 +85,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/EventController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="24" column="87" lean-forward="false" selection-start-line="24" selection-start-column="87" selection-end-line="24" selection-end-column="87" />
+              <caret line="24" column="46" lean-forward="false" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
               <folding>
                 <element signature="e#44#60#0#PHP" expanded="true" />
               </folding>
@@ -431,7 +431,7 @@
       <workItem from="1572587316108" duration="15213000" />
       <workItem from="1572621446506" duration="10605000" />
       <workItem from="1572789331040" duration="66514000" />
-      <workItem from="1573627082429" duration="30570000" />
+      <workItem from="1573627082429" duration="30636000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1573630617878</created>
@@ -727,11 +727,18 @@
       <option name="project" value="LOCAL" />
       <updated>1573837165903</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="edit events">
+      <created>1573837349042</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1573837349042</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122902000" />
+    <option name="totallyTimeSpent" value="122968000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -784,9 +791,9 @@
     <MESSAGE value="edit time" />
     <MESSAGE value="edit show questions" />
     <MESSAGE value="add now time" />
-    <MESSAGE value="edit events" />
     <MESSAGE value="edit question show" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit question show" />
+    <MESSAGE value="edit events" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit events" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1191,7 +1198,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/EventController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="24" column="87" lean-forward="false" selection-start-line="24" selection-start-column="87" selection-end-line="24" selection-end-column="87" />
+          <caret line="24" column="46" lean-forward="false" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
           <folding>
             <element signature="e#44#60#0#PHP" expanded="true" />
           </folding>
