@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\API;
 use App\Adviser;
+use App\Adviser_time;
 use App\Conversation;
 use App\oauth_access_token;
 use Carbon\Carbon;
@@ -240,7 +241,7 @@ class UserController extends Controller
             return response()->json(['error'=>$validator->errors()], 401);
         }
 
-
+        //set online offline for non adviser users
         $user=Auth::user();
         $user = User::find($user->id);
         if($user->is_adviser==0) {
@@ -248,25 +249,66 @@ class UserController extends Controller
             $user->save();
         }
 
-        if ($user->is_adviser==1){
-            $weekMap = [
-                0 => 'SA',
-                1 => 'SU',
-                2 => 'MO',
-                3 => 'TU',
-                4 => 'WE',
-                5 => 'TH',
-                6 => 'FR',
-            ];
-            $dayOfTheWeek = Carbon::now()->dayOfWeek;
-            $weekday = $weekMap[$dayOfTheWeek];
+    //now date time
+        $weekMap = [
+            0 => 1,
+            1 => 2,
+            2 => 3,
+            3 => 4,
+            4 => 5,
+            5 => 6,
+            6 => 0,
+        ];
+        $dayOfTheWeek = Carbon::now()->dayOfWeek;
+        $weekday = $weekMap[$dayOfTheWeek];
+        $hour = Carbon::now()->format('%h');
 
-            $adviser_id=Adviser::where('user_id',$user->id)->value('id');
-            $adviser=Adviser::find($adviser_id);
-            $adviser->is_online=$request->is_online;
+        //get all advisers
+        $users=User::where('is_adviser',1)->get();
+        foreach ($users as $user) {
+            $adviser_id = Adviser::where('user_id', $user->id)->value('id');
+
+            $flag = false;
+            $adviser_times = Adviser_time::where('adviser_id', $adviser_id)->get();
+            foreach ($adviser_times as $adviser_time) {
+                //check date time
+                if ($adviser_time->date == $weekday) {
+                    if ($adviser_time->from < $hour && $adviser_time->to > $hour) {
+                        $flag = true;
+                    }
+                }
+            }
+
+            //set advisers offline-online
+            if ($flag==1){
+                $u=User::find($user->id);
+                $u->is_online=1;
+                $u->save();
+
+                $a=Adviser::find($adviser_id);
+                $a->is_online=1;
+                $a->save();
+
+            }
+            if ($flag==0){
+                $u=User::find($user->id);
+                $u->is_online=0;
+                $u->save();
+
+                $a=Adviser::find($adviser_id);
+                $a->is_online=0;
+                $a->save();
+
+            }
+
+
+
+                $adviser_id = Adviser::where('user_id', $user->id)->value('id');
+            $adviser = Adviser::find($adviser_id);
+            $adviser->is_online = $request->is_online;
             $adviser->save();
-
         }
+//        }
         $success['is_online'] = $user->is_online;
         $success['is_adviser'] = $user->is_adviser;
 
