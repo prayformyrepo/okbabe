@@ -20,11 +20,12 @@ class EventController extends Controller
         foreach ($events as $event){
             $ev=$event;
             $user=Adviser::find($event->adviser_id);
-            $ev['user_info']=User::select('id','name','avatar')->find($user->user_id);
             if($event->type==1){
                 if ($event->category_id!=null)
-                $ev['category_name']=Adviser_category::find($event->category_id)->name;
+                    $ev['category_name']=Adviser_category::find($event->category_id)->name;
             }
+            $ev['user_info']=User::select('id','name','avatar')->find($user->user_id);
+
             array_push($eventArray,$ev);
         }
 
