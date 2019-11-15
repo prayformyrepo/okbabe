@@ -95,8 +95,11 @@ class QuestionController extends Controller
                 $adviser_categories=Adviser_to_category::where('adviser_id',$adviser_id)->get();
                 $questions=array();
                 foreach ($adviser_categories as $adviser_category){
-                  $questionsArray[] = Question::where('question_category_id', $adviser_category->adviser_category_id)->orderBy('id', 'DESC')->get();
-                    array_push($questions,$questionsArray);
+                  $questionsArray = Question::where('question_category_id', $adviser_category->adviser_category_id)->orderBy('id', 'DESC')->get();
+                  foreach ($questionsArray as $questionArray){
+                      $q=$questionArray;
+                      array_push($questions,$q);
+                  }
                 }
 //                $questions_array=array();
 //                foreach ($questions as $question){
