@@ -16,4 +16,10 @@ class Question extends Model
         $adviser_category_id=$question->adviser_category_id;
         return Adviser_category::find($adviser_category_id);
     }
+
+    public function user($question)
+    {
+        return User::find($question->user_id)->select('name','avatar')->get();
+
+    }
 }

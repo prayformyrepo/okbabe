@@ -79,25 +79,51 @@ class QuestionController extends Controller
         $user=Auth::user();
         if (isset($request->show_all)&& $request->show_all==1 && !isset($request->self)){
             $questions=Question::orderBy('id','DESC')->simplePaginate(10);
+            $questions_array=array();
+            foreach ($questions as $question){
+                $save['question']=$question;
+                $save['question']['user_info']=User::select('id','name','avatar')->find($question->user_id);
+                array_push($questions_array,$save);
+            }
+
         }
         else if(isset($request->self)&& $request->self==1){
             if ($user->is_adviser==1){
                 $adviser_id=Adviser::where('user_id',$user->id)->value('id');
                 $adviser_categories=Adviser_to_category::where('adviser_id',$adviser_id)->get();
-                $questions=[];
+                $questions=array();
                 foreach ($adviser_categories as $adviser_category){
-                  $questionsArray = Question::where('adviser_category_id', $adviser_category->adviser_category_id)->orderBy('id', 'DESC')->simplePaginate(10);
+                  $questionsArray = Question::where('adviser_category_id', $adviser_category->adviser_category_id)->orderBy('id', 'DESC')->simplePaginate();
                     array_push($questions,$questionsArray);
                 }
+//                $questions_array=array();
+//                foreach ($questions as $question){
+//                    $save['question']=$question;
+//                    $save['question']['user_info']=User::select('id','name','avatar')->find($question->user_id);
+//                    array_push($questions_array,$save);
+//                }
+                $questions_array=$questions;
             }else {
                 $questions = Question::where('user_id', $user->id)->orderBy('id', 'DESC')->simplePaginate(10);
+                $questions_array=array();
+                foreach ($questions as $question){
+                    $save['question']=$question;
+                    $save['question']['user_info']=User::select('id','name','avatar')->find($question->user_id);
+                    array_push($questions_array,$save);
+                }
             }
 
         }else{
             $questions=Question::where('status',1)->orderBy('id','DESC')->simplePaginate(10);
+            $questions_array=array();
+            foreach ($questions as $question){
+                $save['question']=$question;
+                $save['question']['user_info']=User::select('id','name','avatar')->find($question->user_id);
+                array_push($questions_array,$save);
+            }
         }
 
-        return response()->json(['success' => $questions], $this-> successStatus);
+        return response()->json(['success' => $questions_array], $this-> successStatus);
 
     }
 
