@@ -27,6 +27,10 @@ Route::get('token',function(){
     Artisan::call('passport:client --personal');
 });
 
+Route::get('migrate',function(){
+    Artisan::call('migrate');
+});
+
 Route::get('call',function (){
    return view('call');
 });
