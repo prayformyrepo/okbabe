@@ -13,6 +13,7 @@ use Kavenegar\Exceptions\ApiException;
 use Kavenegar\Exceptions\HttpException;
 use Kavenegar\KavenegarApi;
 use Validator;
+use Kavenegar;
 class UserController extends Controller
 {
 
@@ -101,21 +102,22 @@ class UserController extends Controller
         if($user_count==0||$user_count!=0&&$user->password==null) {
 
             //sms
-            try {
-                $sender = "100065995";
-//            09147845149
-                $receptor = [$request->mobile];
-                $message = $code . "\n" . "شاورنو";
-                $api = new KavenegarApi("614B7A514F4D3067754C4668474E626358616C50356C47467343782B516C6A56");
-                $api->Send($sender, $receptor, $message);
-
-            } catch (ApiException $e) {
-                // در صورتی که خروجی وب سرویس 200 نباشد این خطا رخ می دهد
-                echo $e->errorMessage();
-            } catch (HttpException $e) {
-                // در زمانی که مشکلی در برقرای ارتباط با وب سرویس وجود داشته باشد این خطا رخ می دهد
+            try{
+                $receptor =  $request->mobile;
+                $template =  "shaverno";
+                $type =  "sms";
+                $token =  $code;
+                $token2 =  "";
+                $token3 =  "";
+                $result = Kavenegar::VerifyLookup($receptor,$token,$token2,$token3,$template,$type);
+            }
+            catch(ApiException $e){
                 echo $e->errorMessage();
             }
+            catch(HttpException $e){
+                echo $e->errorMessage();
+            }
+
 
         }
 

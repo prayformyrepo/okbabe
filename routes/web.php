@@ -30,3 +30,5 @@ Route::get('token',function(){
 Route::get('call',function (){
    return view('call');
 });
+
+Route::get('/pay/callback', 'WalletController@verify');

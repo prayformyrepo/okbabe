@@ -71,7 +71,12 @@ Route::group(['middleware' => 'auth:api'], function(){
         Route::post('answer-question', 'API\QuestionController@answer_question');
         Route::post('show-question', 'API\QuestionController@show_question');
 
+
+        //wallet
+        Route::post('pay', 'API\WalletController@pay');
+
     });
 
 
 });
+

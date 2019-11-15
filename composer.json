@@ -17,7 +17,8 @@
         "kavenegar/laravel": "^1.1",
         "laravel/framework": "^6.2",
         "laravel/passport": "^8.0",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "saeedvaziry/payir": "dev-master"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
