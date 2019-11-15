@@ -12,6 +12,8 @@ use App\Question;
 use App\Question_answer;
 use App\User;
 use App\View_question;
+use Carbon\Carbon;
+use Hekmatinasser\Verta\Verta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Validator;
@@ -36,13 +38,13 @@ class QuestionController extends Controller
             return response()->json(['error'=>'Unauthorized'], 401);
 
         }
-
         $question=new Question();
         $question->user_id=$user->id;
         $question->question_category_id=$request->adviser_category_id;
         $question->subject=$request->subject;
         $question->text=$request->text;
         $question->is_private=$request->is_private;
+        $question->add_date=Verta();
         $question->save();
 
 
@@ -122,7 +124,7 @@ class QuestionController extends Controller
                 array_push($questions_array,$save);
             }
         }
-
+        $questions_array['now']=Carbon::now();
         return response()->json(['success' => $questions_array], $this-> successStatus);
 
     }
