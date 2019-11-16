@@ -13,9 +13,10 @@ class EventController extends Controller
 {
     public $successStatus = 200;
 
-    public function show_events()
+    public function show_events(Request $request)
     {
-        $events=Event::orderBy('id','DESC')->paginate(10);
+        if (isset($request->type)) $events=Event::where('type',$request->type)->orderBy('id','DESC')->paginate(10);
+        else $events=Event::orderBy('id','DESC')->paginate(10);
         $eventArray=array();
         foreach ($events as $event){
             $ev=$event;
