@@ -55,6 +55,10 @@ Route::group(['middleware' => 'auth:api'], function(){
             Route::post('add-adviser-category', 'API\AdviserController@add_adviser_category');
             Route::post('assign-adviser-to-category', 'API\AdviserController@assign_adviser_to_category');
             Route::post('add-adviser-time', 'API\AdviserController@add_adviser_time');
+
+            //category
+            Route::post('add-category-description', 'API\CategoryController@add_category_description');
+
         });
 
         //events
