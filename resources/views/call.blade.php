@@ -24,5 +24,21 @@
     sub
     <input type="submit" name="" id="">
 </form>
+
+
+@php
+          $test='                {"callfile":"159_F54QOYe7Yq.call"}';
+          $test='                {"callfile":"159_sASyr4lonh.call"}';
+          $test='                {"callfile":"159_vF12isOODF.call"}';
+          $test='                {"callfile":"159_BCZhLTjNWy.call"}';
+          $test='                {"callfile":"159_brHUtR4wUb.call"}';
+          $test='                {"callfile":"159_1zjh9uc0Se.call"}';
+
+        echo strpos($test,'159').'<br>';
+
+    echo substr($test,29,19)."<br>";
+
+
+@endphp
 </body>
 </html>
