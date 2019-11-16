@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddRateToCalls extends Migration
+class AddNullableToAdviserRates extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddRateToCalls extends Migration
      */
     public function up()
     {
-        Schema::table('calls', function (Blueprint $table) {
-            //
+        Schema::table('adviser_rates', function (Blueprint $table) {
+            $table->longText('comment')->nullable()->change();
         });
     }
 
@@ -25,7 +25,7 @@ class AddRateToCalls extends Migration
      */
     public function down()
     {
-        Schema::table('calls', function (Blueprint $table) {
+        Schema::table('adviser_rates', function (Blueprint $table) {
             //
         });
     }

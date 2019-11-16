@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Adviser;
 use App\Adviser_category;
+use App\Adviser_rate;
 use App\Adviser_time;
 use App\Adviser_to_category;
 use App\Event;
@@ -209,6 +210,32 @@ class AdviserController extends Controller
     {
         $adviser_category=Adviser_category::orderBy('id','DESC')->simplePaginate(10);
         return response()->json(['success'=>$adviser_category], $this-> successStatus);
+    }
+
+
+    public function rate_adviser(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'adviser_id' => 'required',
+            'rate'=>'required'
+//
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);
+        }
+        $adviser_r=@Adviser_rate::where('user_id',Auth::user()->id)->where('adviser_id',$request->adviser_id)->get();
+        $adviser_r=$adviser_r->count();
+        if ($adviser_r==0) {
+            $rate = new Adviser_rate();
+            $rate->adviser_id = $request->adviser_id;
+            $rate->user_id = Auth::user()->id;
+            $rate->rate = $request->rate;
+            if (isset($request->comment)) $rate->comment = $request->comment;
+            $rate->save();
+            return response()->json(['success'=>$rate], $this-> successStatus);
+
+        }
+        return response()->json(['success'=>'ok'], $this-> successStatus);
 
     }
 
