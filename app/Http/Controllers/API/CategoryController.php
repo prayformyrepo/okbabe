@@ -5,7 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Adviser_category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Validator;
 class CategoryController extends Controller
 {
     public $successStatus = 200;
