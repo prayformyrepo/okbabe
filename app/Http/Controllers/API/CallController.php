@@ -49,9 +49,7 @@ class CallController extends Controller
 //        $test='                {"callfile":"159_brHUtR4wUb.call"}';
 //        $test='                {"callfile":"159_1zjh9uc0Se.call"}';
         if (strpos($body,'callfile')!=null)  {
-            $callinfo=json_decode($body,true);
-
-            $callfile= $callinfo['callfile'];
+            $callfile=substr($body,32,19);
 
         $call=new Call();
         $call->user_id=Auth::user()->id;
@@ -124,18 +122,6 @@ return response()->json(['success'=>$calli], $this-> successStatus);
 
         }
         return response()->json(['success'=>'ok'], $this-> successStatus);
-
-
-
-
-
-
-//echo $body;
-
-
-      //  return response($body);
-      //  return response()->json(['success'=>$b],200);
-
 
     }
 }

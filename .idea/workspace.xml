@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/EventController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/EventController.php" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/CallController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/CallController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,6 +23,18 @@
             <state relative-caret-position="518">
               <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CallController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/CallController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+              <folding>
+                <element signature="e#44#60#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,7 +75,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EventController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/EventController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
@@ -146,8 +158,8 @@
         <option value="$PROJECT_DIR$/resources/views/call.blade.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_11_16_122418_add_nominal_call_price_to_advisers.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/CallController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/EventController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/CallController.php" />
       </list>
     </option>
   </component>
@@ -407,7 +419,7 @@
       <workItem from="1572587316108" duration="15213000" />
       <workItem from="1572621446506" duration="10605000" />
       <workItem from="1572789331040" duration="66514000" />
-      <workItem from="1573627082429" duration="42402000" />
+      <workItem from="1573627082429" duration="43060000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1573630617878</created>
@@ -731,11 +743,18 @@
       <option name="project" value="LOCAL" />
       <updated>1573900176220</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="edit events api">
+      <created>1573900825903</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1573900825903</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134734000" />
+    <option name="totallyTimeSpent" value="135392000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -791,7 +810,8 @@
     <MESSAGE value="edit question show" />
     <MESSAGE value="edit events" />
     <MESSAGE value="add call api" />
-    <option name="LAST_COMMIT_MESSAGE" value="add call api" />
+    <MESSAGE value="edit events api" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit events api" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1151,28 +1171,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/mainController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/call.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="38" column="9" lean-forward="false" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="28" />
-          <folding>
-            <marker date="1573888554415" expanded="true" signature="891:1300" ph="..." />
-            <marker date="1573888554415" expanded="true" signature="891:1314" ph="..." />
-            <marker date="1573888554415" expanded="true" signature="891:1342" ph="..." />
-            <marker date="1573888554415" expanded="true" signature="891:1344" ph="..." />
-            <marker date="1573888554415" expanded="true" signature="891:1380" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_16_122418_add_nominal_call_price_to_advisers.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1197,13 +1195,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/CallController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/EventController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="127" column="0" lean-forward="true" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
-          <folding>
-            <element signature="e#44#60#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="180">
+          <caret line="17" column="115" lean-forward="false" selection-start-line="17" selection-start-column="115" selection-end-line="17" selection-end-column="115" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1215,11 +1211,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/EventController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/mainController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="17" column="115" lean-forward="false" selection-start-line="17" selection-start-column="115" selection-end-line="17" selection-end-column="115" />
+        <state relative-caret-position="270">
+          <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/call.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="38" column="9" lean-forward="false" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="28" />
+          <folding>
+            <marker date="1573888554415" expanded="true" signature="891:1300" ph="..." />
+            <marker date="1573888554415" expanded="true" signature="891:1314" ph="..." />
+            <marker date="1573888554415" expanded="true" signature="891:1342" ph="..." />
+            <marker date="1573888554415" expanded="true" signature="891:1344" ph="..." />
+            <marker date="1573888554415" expanded="true" signature="891:1380" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/CallController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <element signature="e#44#60#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
