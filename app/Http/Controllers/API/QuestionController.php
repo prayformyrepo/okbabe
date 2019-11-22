@@ -84,7 +84,7 @@ class QuestionController extends Controller
             $questions_array=array();
             foreach ($questions as $question){
                 $save['question']=$question;
-                $save['question']['user_info']=User::select('id','name','avatar')->find($question->user_id);
+                $save['question']['user_info']=User::select('id','username','avatar')->find($question->user_id);
                 array_push($questions_array,$save);
             }
 
@@ -112,7 +112,7 @@ class QuestionController extends Controller
                 $questions_array=array();
                 foreach ($questions as $question){
                     $save['question']=$question;
-                    $save['question']['user_info']=User::select('id','name','avatar')->find($question->user_id);
+                    $save['question']['user_info']=User::select('id','username','avatar')->find($question->user_id);
                     array_push($questions_array,$save);
                 }
             }
@@ -122,7 +122,7 @@ class QuestionController extends Controller
             $questions_array=array();
             foreach ($questions as $question){
                 $save['question']=$question;
-                $save['question']['user_info']=User::select('id','name','avatar')->find($question->user_id);
+                $save['question']['user_info']=User::select('id','username','avatar')->find($question->user_id);
                 array_push($questions_array,$save);
             }
         }
