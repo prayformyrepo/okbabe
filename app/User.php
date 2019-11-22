@@ -45,5 +45,10 @@ class User extends Authenticatable
         return Adviser::find($adviser_id);
     }
 
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class);
+    }
+
 
 }

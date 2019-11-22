@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/gpost','mainController@gpost');
+Route::get('/gcategory','mainController@gcategory');
 Route::get('/open',function (){
     return view('test');
 });

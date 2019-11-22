@@ -217,7 +217,8 @@ class AdviserController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'adviser_id' => 'required',
-            'rate'=>'required'
+            'rate'=>'required',
+            'is_private'=>'required'
 //
         ]);
         if ($validator->fails()) {
@@ -230,12 +231,33 @@ class AdviserController extends Controller
             $rate->adviser_id = $request->adviser_id;
             $rate->user_id = Auth::user()->id;
             $rate->rate = $request->rate;
+            $rate->is_private=$request->is_private;
             if (isset($request->comment)) $rate->comment = $request->comment;
             $rate->save();
             return response()->json(['success'=>$rate], $this-> successStatus);
 
         }
         return response()->json(['success'=>'ok'], $this-> successStatus);
+
+    }
+
+    public function accept_rate(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'accept' => 'required',
+            'rate_id'=>'required'
+
+//
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);
+        }
+        $rate=Adviser_rate::find($request->rate_id);
+        $rate->status=$request->accept;
+        $rate->save();
+        return response()->json(['success'=>$rate], $this-> successStatus);
+
+
 
     }
 

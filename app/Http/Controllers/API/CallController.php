@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Adviser;
 use App\Call;
 use App\Call_secure;
+use App\Event;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Wallet;
@@ -12,6 +13,10 @@ use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Validator;
+use Kavenegar\Exceptions\ApiException;
+use Kavenegar\Exceptions\HttpException;
+use Kavenegar\KavenegarApi;
+use Kavenegar;
 
 class CallController extends Controller
 {
@@ -34,13 +39,14 @@ class CallController extends Controller
         $maxcalltime=floor(Auth::user()->wallet / Adviser::find($request->adviser_id)->nominal_call_price);
         if($maxcalltime<1)  return response()->json(['error'=>'اعتبار کافی نیست'], 401);
 
-        $client = new Client(['base_uri' => 'http://45.156.186.248']);
+        if (Adviser::find($request->adviser_id)->is_busy==0 && Adviser::find($request->adviser_id)->is_online==1) {
+            $client = new Client(['base_uri' => 'http://45.156.186.248']);
 // Send a request to https://foo.com/api/test
-        $call_secure=Call_secure::all()->first();
-        $response = $client->request('GET', 'http://45.156.186.248/my/api'.$call_secure->clid.'.php?email='.$call_secure->username.'&pass='.$call_secure->password.'&siteurl='.$call_secure->siteurl.'&ivrfile='.$call_secure->ivrfile.'&drivers='.$adviser_number.'&customer='.$user_number.'&maxcalltime='.$maxcalltime);
-        $body = $response->getBody();
+            $call_secure = Call_secure::all()->first();
+            $response = $client->request('GET', 'http://45.156.186.248/my/api' . $call_secure->clid . '.php?email=' . $call_secure->username . '&pass=' . $call_secure->password . '&siteurl=' . $call_secure->siteurl . '&ivrfile=' . $call_secure->ivrfile . '&drivers=' . $adviser_number . '&customer=' . $user_number . '&maxcalltime=' . $maxcalltime);
+            $body = $response->getBody();
 
-        if (strpos($body,'errot')!=null)  return response()->json(['error'=>'متاسفانه تماس برقرار نشد'], 401);
+            if (strpos($body, 'errot') != null) return response()->json(['error' => 'متاسفانه تماس برقرار نشد'], 401);
 
 //        $test='                {"callfile":"159_F54QOYe7Yq.call"}';
 //        $test='                {"callfile":"159_sASyr4lonh.call"}';
@@ -48,19 +54,61 @@ class CallController extends Controller
 //        $test='                {"callfile":"159_BCZhLTjNWy.call"}';
 //        $test='                {"callfile":"159_brHUtR4wUb.call"}';
 //        $test='                {"callfile":"159_1zjh9uc0Se.call"}';
-        if (strpos($body,'callfile')!=null)  {
-            $callfile=substr($body,32,19);
+            if (strpos($body, 'callfile') != null) {
+                $callfile = substr($body, 32, 19);
 
-        $call=new Call();
-        $call->user_id=Auth::user()->id;
-        $call->adviser_id=$request->adviser_id;
-        $call->call_file=$callfile;
-        $call->save();
+                $call = new Call();
+                $call->user_id = Auth::user()->id;
+                $call->adviser_id = $request->adviser_id;
+                $call->call_file = $callfile;
+                $call->status = 1;
+                $call->save();
 
-        $calli['info']=Call::find($call->id);
-        $calli['info']['message']='تماس برقرار شد. لطفا منتظر بمانید';
+                $event = new Event();
+                $event->user_id = Auth::user()->id;
+                $event->adviser_id = $request->adviser_id;
+                $event->type = 2;
+                $event->save();
+
+                $adviser=Adviser::find($request->adviser_id);
+                $adviser->is_busy=1;
+                $adviser->save();
+
+                $adviser_user_id=Adviser::find($request->adviser_id)->user_id;
+                $mobile=User::find($adviser_user_id)->mobile;
+                //sms
+                try{
+                    $receptor =$mobile;
+                    $template =  "callAlarm";
+                    $type =  "sms";
+                    $token =  " 71333977 ";
+                    $token2 =  "";
+                    $token3 =  "";
+                    $result = Kavenegar::VerifyLookup($receptor,$token,$token2,$token3,$template,$type);
+                }
+                catch(ApiException $e){
+                    echo $e->errorMessage();
+                }
+                catch(HttpException $e){
+                    echo $e->errorMessage();
+                }
+
+
+                $calli['info'] = Call::find($call->id);
+                $calli['info']['message'] = 'تماس برقرار شد. لطفا منتظر بمانید';
+            }
+            return response()->json(['success'=>$calli], $this-> successStatus);
+
+        }else {
+
+            $call = new Call();
+            $call->user_id = Auth::user()->id;
+            $call->adviser_id = $request->adviser_id;
+            $call->status = 0;
+            $call->save();
+
+            return response()->json(['error' => 'مشاور در حال مکالمه است یا در دسترس نیست'], '401');
         }
-return response()->json(['success'=>$calli], $this-> successStatus);
     }
 
 

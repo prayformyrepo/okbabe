@@ -49,6 +49,7 @@ Route::group(['middleware' => 'auth:api'], function(){
         Route::post('save-adviser', 'API\AdviserController@save_adviser');
         Route::post('show-adviser-categories', 'API\AdviserController@show_adviser_categories');
         Route::post('rate-adviser', 'API\AdviserController@rate_adviser');
+        Route::post('accept-rate', 'API\AdviserController@accept_rate');
 
         Route::group(['middleware' => 'administrator'], function() {
             Route::post('add-adviser', 'API\AdviserController@add_adviser');
@@ -89,6 +90,11 @@ Route::group(['middleware' => 'auth:api'], function(){
         //call
         Route::post('make-call', 'API\CallController@make_call');
         Route::post('end-call', 'API\CallController@end_call');
+
+        //tickets
+        Route::post('create-ticket','API\TicketController@create_ticket');
+        Route::post('answer-ticket','API\TicketController@answer_ticket');
+        Route::post('end-ticket','API\TicketController@end_ticket');
 
     });
 
