@@ -40,7 +40,23 @@ Route::get('cache',function(){
 });
 
 Route::get('call',function (){
-   return view('call');
+    return view('call');
+});
+
+Route::get('seg',function (){
+
+    $client = new \GuzzleHttp\Client(['base_uri' => 'https://app.najva.com/api/v1']);
+// Send a request to https://foo.com/api/test
+//    $response = $client->request('GET', 'https://app.najva.com/api/v1/websites/e85cbfc1-44d7-4ed6-bc7d-e514ec12c240/segments/');
+
+    $response=$client->request('GET', 'https://app.najva.com/api/v1/websites/e85cbfc1-44d7-4ed6-bc7d-e514ec12c240/segments/', [
+        'headers' => [
+            'Authorization' => 'Token d7b914743b31e690f294099c6c45c55be7949483',
+            'Content-Type'     => 'application/json'
+        ]
+    ]);
+    $body = $response->getBody();
+    echo $body;
 });
 
 Route::get('/pay/callback', 'WalletController@verify');
