@@ -50,6 +50,7 @@ Route::group(['middleware' => 'auth:api'], function(){
         Route::post('show-adviser-categories', 'API\AdviserController@show_adviser_categories');
         Route::post('rate-adviser', 'API\AdviserController@rate_adviser');
         Route::post('accept-rate', 'API\AdviserController@accept_rate');
+        Route::post('reach-adviser', 'API\AdviserController@reach_adviser');
 
         Route::group(['middleware' => 'administrator'], function() {
             Route::post('add-adviser', 'API\AdviserController@add_adviser');

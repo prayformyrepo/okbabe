@@ -42,6 +42,18 @@ class CallController extends Controller
 
             return response()->json(['error' => 'مشاور آفلاین است'], 401);
         }
+
+        if ($adviser->status == 0) {
+            $call = new Call();
+            $call->user_id = Auth::user()->id;
+            $call->adviser_id = $request->adviser_id;
+            $call->status = 4; //offline status
+            $call->save();
+
+            return response()->json(['error' => 'مشاور در دسترس نیست'], 401);
+        }
+
+
         if ($adviser->is_busy == 1) {
             $call = new Call();
             $call->user_id = Auth::user()->id;
@@ -222,8 +234,17 @@ class CallController extends Controller
             $call->save();
             return response()->json(['success' => $call], $this->successStatus);
         }
+        $adviser=Adviser::find($call->adviser_id);
+        $adviser->status=0;
+        $adviser->save();
         return response()->json(['success' => 'ok'], $this->successStatus);
+    }
 
+    public function fetch_calls()
+    {
+        $user=Auth::user();
+        if ($user->as_adviser==1){
 
+        }
     }
 }

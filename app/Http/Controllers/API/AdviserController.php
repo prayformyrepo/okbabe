@@ -256,9 +256,23 @@ class AdviserController extends Controller
         $rate->status=$request->accept;
         $rate->save();
         return response()->json(['success'=>$rate], $this-> successStatus);
+    }
 
+    public function reach_adviser(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'adviser_id' => 'required'
 
+//
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);
+        }
 
+        $adviser=Adviser::find($request->adviser_id);
+        $adviser->status=1;
+        $adviser->save();
+        return response()->json(['success'=>$adviser], $this-> successStatus);
     }
 
 }

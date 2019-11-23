@@ -188,6 +188,7 @@ class UserController extends Controller
             return response()->json(['error'=>$error],401);
         }
         $user_set=User::find($user->id);
+        isset($request->name)?$user_set->name=$request->name:$user_set->name=null;
         $user_set->username=$request->username;
         $user_set->password=bcrypt($request->password);
         $user_set->password_set_at=Carbon::now();
@@ -320,6 +321,8 @@ class UserController extends Controller
 //        }
         $success['is_online'] = $user->is_online;
         $success['is_adviser'] = $user->is_adviser;
+        $success['now'] = $hour;
+
 
         return response()->json(['success' => $success], $this-> successStatus);
     }
