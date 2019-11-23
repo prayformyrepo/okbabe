@@ -321,6 +321,8 @@ class UserController extends Controller
 //        }
         $success['is_online'] = $user->is_online;
         $success['is_adviser'] = $user->is_adviser;
+        $success['id'] = $user->id;
+
         $success['now'] = $hour;
 
 
