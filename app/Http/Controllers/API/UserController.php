@@ -289,7 +289,7 @@ class UserController extends Controller
             foreach ($adviser_times as $adviser_time) {
                 //check date time
                 if ($adviser_time->date == $weekday) {
-                    echo $userr->id .'date is ok<br>time from:'.$adviser_time->time_from.'<br>time to: '. $adviser_time->time_to .'<br><br>' ;
+                    //echo $userr->id .'date is ok<br>time from:'.$adviser_time->time_from.'<br>time to: '. $adviser_time->time_to .'<br><br>' ;
                     if ($adviser_time->time_from < $hour && $adviser_time->time_to > $hour) {
                         echo $userr->id .'time is ok<br>';
                         $flag = true;
@@ -299,7 +299,7 @@ class UserController extends Controller
 
             //set advisers offline-online
             if ($flag==true){
-                echo 'user_id:'.$userr->id.'<br> flag: true <br>';
+               // echo 'user_id:'.$userr->id.'<br> flag: true <br>';
                 $u=User::find($userr->id);
                 $u->is_online=1;
                 $u->save();
@@ -310,7 +310,7 @@ class UserController extends Controller
 
             }
             if ($flag==false){
-                echo 'user_id:'.$userr->id.'<br> flag:false<br>';
+              //  echo 'user_id:'.$userr->id.'<br> flag:false<br>';
                 $u=User::find($userr->id);
                 $u->is_online=0;
                 $u->save();
