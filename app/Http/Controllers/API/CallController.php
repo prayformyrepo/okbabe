@@ -21,6 +21,7 @@ use Kavenegar;
 class CallController extends Controller
 {
     public $successStatus = 200;
+
     public function make_call(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -28,18 +29,36 @@ class CallController extends Controller
 //
         ]);
         if ($validator->fails()) {
-            return response()->json(['error'=>$validator->errors()], 401);
+            return response()->json(['error' => $validator->errors()], 401);
         }
 
-        $adviser=Adviser::find($request->adviser_id);
-        if ($adviser->is_online==0) return response()->json(['error'=>'adviser is offline'], 401);
+        $adviser = Adviser::find($request->adviser_id);
+        if ($adviser->is_online == 0) {
+            $call = new Call();
+            $call->user_id = Auth::user()->id;
+            $call->adviser_id = $request->adviser_id;
+            $call->status = 1; //offline status
+            $call->save();
 
-        $adviser_number='0'.User::find($adviser->user_id)->mobile;
-        $user_number='0'.Auth::user()->mobile;
-        $maxcalltime=floor(Auth::user()->wallet / Adviser::find($request->adviser_id)->nominal_call_price);
-        if($maxcalltime<1)  return response()->json(['error'=>'اعتبار کافی نیست'], 401);
+            return response()->json(['error' => 'مشاور آفلاین است'], 401);
+        }
+        if ($adviser->is_busy == 1) {
+            $call = new Call();
+            $call->user_id = Auth::user()->id;
+            $call->adviser_id = $request->adviser_id;
+            $call->status = 0; //busy status
+            $call->save();
 
-        if (Adviser::find($request->adviser_id)->is_busy==0 && Adviser::find($request->adviser_id)->is_online==1) {
+            return response()->json(['error' => 'مشاور در حال مکالمه است'], 401);
+        }
+
+        $adviser_number = '0' . User::find($adviser->user_id)->mobile;
+        $user_number = '0' . Auth::user()->mobile;
+        $maxcalltime = floor(Auth::user()->wallet / Adviser::find($request->adviser_id)->nominal_call_price);
+        if ($maxcalltime < 1) return response()->json(['error' => 'اعتبار کافی نیست'], 401);
+
+
+        if (Adviser::find($request->adviser_id)->is_busy == 0 && Adviser::find($request->adviser_id)->is_online == 1) {
             $client = new Client(['base_uri' => 'http://45.156.186.248']);
 // Send a request to https://foo.com/api/test
             $call_secure = Call_secure::all()->first();
@@ -48,12 +67,6 @@ class CallController extends Controller
 
             if (strpos($body, 'errot') != null) return response()->json(['error' => 'متاسفانه تماس برقرار نشد'], 401);
 
-//        $test='                {"callfile":"159_F54QOYe7Yq.call"}';
-//        $test='                {"callfile":"159_sASyr4lonh.call"}';
-//        $test='                {"callfile":"159_vF12isOODF.call"}';
-//        $test='                {"callfile":"159_BCZhLTjNWy.call"}';
-//        $test='                {"callfile":"159_brHUtR4wUb.call"}';
-//        $test='                {"callfile":"159_1zjh9uc0Se.call"}';
             if (strpos($body, 'callfile') != null) {
                 $callfile = substr($body, 32, 19);
 
@@ -61,7 +74,7 @@ class CallController extends Controller
                 $call->user_id = Auth::user()->id;
                 $call->adviser_id = $request->adviser_id;
                 $call->call_file = $callfile;
-                $call->status = 1;
+                $call->status = 2; //speacking status
                 $call->save();
 
                 $event = new Event();
@@ -70,44 +83,34 @@ class CallController extends Controller
                 $event->type = 2;
                 $event->save();
 
-                $adviser=Adviser::find($request->adviser_id);
-                $adviser->is_busy=1;
+                $adviser = Adviser::find($request->adviser_id);
+                $adviser->is_busy = 1;
                 $adviser->save();
 
-                $adviser_user_id=Adviser::find($request->adviser_id)->user_id;
-                $mobile=User::find($adviser_user_id)->mobile;
+                $adviser_user_id = Adviser::find($request->adviser_id)->user_id;
+                $mobile = User::find($adviser_user_id)->mobile;
+
                 //sms
-                try{
-                    $receptor =$mobile;
-                    $template =  "callAlarm";
-                    $type =  "sms";
-                    $token =  " 71333977 ";
-                    $token2 =  "";
-                    $token3 =  "";
-                    $result = Kavenegar::VerifyLookup($receptor,$token,$token2,$token3,$template,$type);
-                }
-                catch(ApiException $e){
-                    echo $e->errorMessage();
-                }
-                catch(HttpException $e){
-                    echo $e->errorMessage();
-                }
+//                try {
+//                    $receptor = $mobile;
+//                    $template = "callAlarm";
+//                    $type = "sms";
+//                    $token = Auth::user()->username;
+//                    $token2 = "";
+//                    $token3 = "";
+//                    $result = Kavenegar::VerifyLookup($receptor, $token, $token2, $token3, $template, $type);
+//                } catch (ApiException $e) {
+//                    echo $e->errorMessage();
+//                } catch (HttpException $e) {
+//                    echo $e->errorMessage();
+//                }
 
 
                 $calli['info'] = Call::find($call->id);
                 $calli['info']['message'] = 'تماس برقرار شد. لطفا منتظر بمانید';
             }
-            return response()->json(['success'=>$calli], $this-> successStatus);
+            return response()->json(['success' => $calli], $this->successStatus);
 
-        }else {
-
-            $call = new Call();
-            $call->user_id = Auth::user()->id;
-            $call->adviser_id = $request->adviser_id;
-            $call->status = 0;
-            $call->save();
-
-            return response()->json(['error' => 'مشاور در حال مکالمه است یا در دسترس نیست'], '401');
         }
     }
 
@@ -116,31 +119,26 @@ class CallController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'call_file' => 'required'
-//
         ]);
         if ($validator->fails()) {
-            return response()->json(['error'=>$validator->errors()], 401);
+            return response()->json(['error' => $validator->errors()], 401);
         }
         $client = new Client(['base_uri' => 'http://45.156.186.248']);
 // Send a request to https://foo.com/api/test
-        $call_secure=Call_secure::all()->first();
+        $call_secure = Call_secure::all()->first();
 
-        $response = $client->request('GET', 'http://45.156.186.248/my/getCDR.php?email='.$call_secure->username.'&pass='.$call_secure->password.'&callfile='.$request->call_file);
+        $response = $client->request('GET', 'http://45.156.186.248/my/getCDR.php?email=' . $call_secure->username . '&pass=' . $call_secure->password . '&callfile=' . $request->call_file);
         $body = $response->getBody();
-        $callinfo=json_decode($body,true);
-        $call=Call::where('call_file',$request->call_file)->value('id');
-        $call=Call::find($call);
-        if ($call->duration==null) {
+        $callinfo = json_decode($body, true);
+        $call = Call::where('call_file', $request->call_file)->value('id');
+        $call = Call::find($call);
+        if ($call->duration == null) {
             $nominal_call_price = Adviser::find($call->adviser_id)->nominal_call_price;
             $nominal_call_price = $nominal_call_price * $callinfo['duration'];
 
             $call_price = Adviser::find($call->adviser_id)->call_price;
             $call_price = $call_price * $callinfo['duration'];
 
-            $call->duration = $callinfo['duration'];
-            $call->billing = $nominal_call_price;
-            $call->recording_file = $callinfo['recordingfile'];
-            $call->save();
 
             $user = User::find(Auth::user()->id);
             $user->wallet = $user->wallet - $nominal_call_price;
@@ -150,6 +148,11 @@ class CallController extends Controller
             $user = User::find(Adviser::find($call->adviser_id)->user_id);
             $user->wallet = $user->wallet + $call_price;
             $user->save();
+
+            $adviser = Adviser::find($call->adviser_id);
+            $adviser->is_busy = 0;
+            $adviser->save();
+
 
             $wallet = new Wallet();
             $wallet->user_id = Auth::user()->id;
@@ -163,13 +166,64 @@ class CallController extends Controller
             $wallet->call_id = $call->id;
             $wallet->save();
 
+            $call->duration = $callinfo['duration'];
+            $call->billing = $nominal_call_price;
+            $call->recording_file = $callinfo['recordingfile'];
+            $call->status = 3; //ended status
+            $call->save();
+
+            $call_center_price = 250 * $callinfo['duration'];
+            $sms_price = 160;
+            //sms
+            try {
+                $receptor = User::find(Adviser::find($call->adviser_id)->user_id)->mobile;
+                $template = "callStatus";
+                $type = "sms";
+                $token = $nominal_call_price;
+                $token2 = $nominal_call_price - $call_price - $call_center_price - $sms_price;
+                $token3 = $call_price;
+                $result = Kavenegar::VerifyLookup($receptor, $token, $token2, $token3, $template, $type);
+            } catch (ApiException $e) {
+                echo $e->errorMessage();
+            } catch (HttpException $e) {
+                echo $e->errorMessage();
+            }
 
 
-            return response()->json(['success'=>$call], $this-> successStatus);
-
-
+            return response()->json(['success' => $call], $this->successStatus);
         }
-        return response()->json(['success'=>'ok'], $this-> successStatus);
+        return response()->json(['success' => 'ok'], $this->successStatus);
+
+    }
+
+    public function reject_call(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'call_file' => 'required'
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 401);
+        }
+
+        $client = new Client(['base_uri' => 'http://45.156.186.248']);
+// Send a request to https://foo.com/api/test
+        $call_secure = Call_secure::all()->first();
+
+        $response = $client->request('GET', 'http://45.156.186.248/my/getCDR.php?email=' . $call_secure->username . '&pass=' . $call_secure->password . '&callfile=' . $request->call_file);
+        $body = $response->getBody();
+        $callinfo = json_decode($body, true);
+        $call = Call::where('call_file', $request->call_file)->value('id');
+        $call = Call::find($call);
+        if ($call->duration == null) {
+            $call->duration = $callinfo['duration'];
+            $call->billing = 0;
+            $call->recording_file = $callinfo['recordingfile'];
+            isset($request->unreachable)&&$request->unreachable==1?$call->status = 4:$call->status = 5; //4:unreachable & 5:reject status
+            $call->save();
+            return response()->json(['success' => $call], $this->successStatus);
+        }
+        return response()->json(['success' => 'ok'], $this->successStatus);
+
 
     }
 }
