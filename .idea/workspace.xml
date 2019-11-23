@@ -52,8 +52,8 @@
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="324" column="8" lean-forward="true" selection-start-line="324" selection-start-column="8" selection-end-line="324" selection-end-column="8" />
+            <state relative-caret-position="327">
+              <caret line="310" column="32" lean-forward="false" selection-start-line="310" selection-start-column="32" selection-end-line="310" selection-end-column="32" />
               <folding>
                 <element signature="e#42#58#0#PHP" expanded="true" />
               </folding>
@@ -413,14 +413,7 @@
       <workItem from="1574248781919" duration="298000" />
       <workItem from="1574405788322" duration="1511000" />
       <workItem from="1574488919896" duration="883000" />
-      <workItem from="1574494702295" duration="6920000" />
-    </task>
-    <task id="LOCAL-00020" summary="migrate">
-      <created>1573806236855</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1573806236855</updated>
+      <workItem from="1574494702295" duration="7525000" />
     </task>
     <task id="LOCAL-00021" summary="change advisers table">
       <created>1573806757493</created>
@@ -758,7 +751,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574520325868</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="online test">
+      <created>1574520486026</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1574520486026</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -770,7 +770,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165006000" />
+    <option name="totallyTimeSpent" value="165611000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1214,8 +1214,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="324" column="8" lean-forward="true" selection-start-line="324" selection-start-column="8" selection-end-line="324" selection-end-column="8" />
+        <state relative-caret-position="327">
+          <caret line="310" column="32" lean-forward="false" selection-start-line="310" selection-start-column="32" selection-end-line="310" selection-end-column="32" />
           <folding>
             <element signature="e#42#58#0#PHP" expanded="true" />
           </folding>
