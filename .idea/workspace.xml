@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/pushe-sw.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/CallController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/CallController.php" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" afterPath="$PROJECT_DIR$/routes/api.php" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,7 +29,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pushe-sw.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pushe-sw.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/pushe-sw.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
@@ -89,6 +87,23 @@
             <state relative-caret-position="540">
               <caret line="45" column="13" lean-forward="false" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="welcome.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="8" lean-forward="false" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+              <folding>
+                <marker date="1574507397617" expanded="true" signature="30:73" ph="..." />
+                <marker date="1574507397617" expanded="true" signature="1891:1910" ph="..." />
+                <marker date="1574507397617" expanded="true" signature="2019:2033" ph="..." />
+                <marker date="1574507397617" expanded="true" signature="2107:2123" ph="..." />
+                <marker date="1574507397617" expanded="true" signature="2167:2189" ph="..." />
+                <marker date="1574507397617" expanded="true" signature="2230:2249" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -172,10 +187,10 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/CallController.php" />
         <option value="$PROJECT_DIR$/public/pushe-sw.js" />
+        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
       </list>
     </option>
   </component>
@@ -339,6 +354,17 @@
               <item name="shaverno" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="shaverno" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shaverno" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="shaverno" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shaverno" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -403,14 +429,7 @@
       <workItem from="1574248781919" duration="298000" />
       <workItem from="1574405788322" duration="1511000" />
       <workItem from="1574488919896" duration="883000" />
-      <workItem from="1574494702295" duration="4008000" />
-    </task>
-    <task id="LOCAL-00013" summary="call">
-      <created>1573635531614</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1573635531614</updated>
+      <workItem from="1574494702295" duration="4101000" />
     </task>
     <task id="LOCAL-00014" summary="call">
       <created>1573636130880</created>
@@ -748,7 +767,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574490332637</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="add pushe">
+      <created>1574507283949</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1574507283950</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -760,7 +786,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162094000" />
+    <option name="totallyTimeSpent" value="162187000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -794,7 +820,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="edit lookup sms" />
     <MESSAGE value="edit reset pass" />
     <MESSAGE value="add search edit administrator" />
     <MESSAGE value="migrate" />
@@ -819,7 +844,8 @@
     <MESSAGE value="persian validate" />
     <MESSAGE value="clear cache route" />
     <MESSAGE value="notif test" />
-    <option name="LAST_COMMIT_MESSAGE" value="notif test" />
+    <MESSAGE value="add pushe" />
+    <option name="LAST_COMMIT_MESSAGE" value="add pushe" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1087,21 +1113,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-          <folding>
-            <marker date="1574490295082" expanded="true" signature="30:73" ph="..." />
-            <marker date="1574490295082" expanded="true" signature="2402:2421" ph="..." />
-            <marker date="1574490295082" expanded="true" signature="2530:2544" ph="..." />
-            <marker date="1574490295082" expanded="true" signature="2618:2634" ph="..." />
-            <marker date="1574490295082" expanded="true" signature="2678:2700" ph="..." />
-            <marker date="1574490295082" expanded="true" signature="2741:2760" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="548">
@@ -1205,6 +1216,21 @@
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="8" lean-forward="false" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+          <folding>
+            <marker date="1574507397617" expanded="true" signature="30:73" ph="..." />
+            <marker date="1574507397617" expanded="true" signature="1891:1910" ph="..." />
+            <marker date="1574507397617" expanded="true" signature="2019:2033" ph="..." />
+            <marker date="1574507397617" expanded="true" signature="2107:2123" ph="..." />
+            <marker date="1574507397617" expanded="true" signature="2167:2189" ph="..." />
+            <marker date="1574507397617" expanded="true" signature="2230:2249" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
