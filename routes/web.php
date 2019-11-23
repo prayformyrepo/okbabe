@@ -56,7 +56,7 @@ Route::get('seg',function (){
         ]
     ]);
     $body = $response->getBody();
-    echo $body;
+    echo $response;
 });
 
 Route::get('/pay/callback', 'WalletController@verify');
