@@ -265,7 +265,7 @@ class UserController extends Controller
             $user->save();
         }
 
-    //now date time
+//    now date time
         $weekMap = [
             0 => 1,
             1 => 2,
@@ -289,7 +289,9 @@ class UserController extends Controller
             foreach ($adviser_times as $adviser_time) {
                 //check date time
                 if ($adviser_time->date == $weekday) {
+                    echo $userr->id .'date is ok<br>time from:'.$adviser_time->from.'<br>time to: '. $adviser_time->to ;
                     if ($adviser_time->from < $hour && $adviser_time->to > $hour) {
+                        echo $userr->id .'time is ok<br>';
                         $flag = true;
                     }
                 }
@@ -324,9 +326,7 @@ class UserController extends Controller
         $success['is_online'] = $user->is_online;
         $success['is_adviser'] = $user->is_adviser;
         $success['id'] = $user->id;
-
         $success['now'] = $hour;
-
 
         return response()->json(['success' => $success], $this-> successStatus);
     }
