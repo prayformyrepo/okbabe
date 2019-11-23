@@ -173,7 +173,7 @@ class UserController extends Controller
     public function set_data(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'username' => 'required',
+            'username' => 'required|unique:users',
             'password' => 'required',
             'c_password' => 'required|same:password',
         ]);
