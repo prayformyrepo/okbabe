@@ -297,7 +297,7 @@ class UserController extends Controller
 
             //set advisers offline-online
             if ($flag==true){
-                echo $userr->id;
+                echo 'user_id:'.$userr->id.'<br> flag:'.$flag.'<br>';
                 $u=User::find($userr->id);
                 $u->is_online=1;
                 $u->save();
@@ -308,7 +308,7 @@ class UserController extends Controller
 
             }
             if ($flag==false){
-                echo $userr->id;
+                echo 'user_id:'.$userr->id.'<br> flag:'.$flag.'<br>';
                 $u=User::find($userr->id);
                 $u->is_online=0;
                 $u->save();
