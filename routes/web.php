@@ -32,6 +32,10 @@ Route::get('migrate',function(){
     Artisan::call('migrate');
 });
 
+Route::get('cache',function(){
+    Artisan::call('cache:clear');
+});
+
 Route::get('call',function (){
    return view('call');
 });
