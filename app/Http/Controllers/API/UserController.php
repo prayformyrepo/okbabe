@@ -289,8 +289,8 @@ class UserController extends Controller
             foreach ($adviser_times as $adviser_time) {
                 //check date time
                 if ($adviser_time->date == $weekday) {
-                    echo $userr->id .'date is ok<br>time from:'.$adviser_time->from.'<br>time to: '. $adviser_time->to .'<br><br>' ;
-                    if ($adviser_time->from < $hour && $adviser_time->to > $hour) {
+                    echo $userr->id .'date is ok<br>time from:'.$adviser_time->time_from.'<br>time to: '. $adviser_time->time_to .'<br><br>' ;
+                    if ($adviser_time->time_from < $hour && $adviser_time->time_to > $hour) {
                         echo $userr->id .'time is ok<br>';
                         $flag = true;
                     }
