@@ -51,7 +51,8 @@ class AdviserController extends Controller
             'gender' => 'required|integer',
             'field' => 'required',
             'about' => 'required',
-            'call_price' => 'required|integer'
+            'call_price' => 'required|integer',
+            'nominal_call_price' => 'required|integer'
         ]);
 
         if ($validator->fails()) {
@@ -73,6 +74,7 @@ class AdviserController extends Controller
         $adviser->field=$request->field;
         $adviser->about=$request->about;
         $adviser->call_price=$request->call_price;
+        $adviser->nominal_call_price=$request->nominal_call_price;
         $adviser->save();
 
 

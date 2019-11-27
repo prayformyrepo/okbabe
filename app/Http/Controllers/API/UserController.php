@@ -18,8 +18,6 @@ use Kavenegar;
 class UserController extends Controller
 {
 
-
-
     public $successStatus = 200;
     /**
      * login api
@@ -291,7 +289,7 @@ class UserController extends Controller
                 if ($adviser_time->date == $weekday) {
                     //echo $userr->id .'date is ok<br>time from:'.$adviser_time->time_from.'<br>time to: '. $adviser_time->time_to .'<br><br>' ;
                     if ($adviser_time->time_from < $hour && $adviser_time->time_to > $hour) {
-                       // echo $userr->id .'time is ok<br>';
+                        echo $userr->id .'time is ok<br>';
                         $flag = true;
                     }
                 }
