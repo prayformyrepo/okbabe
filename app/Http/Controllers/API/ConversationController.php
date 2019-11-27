@@ -131,10 +131,11 @@ class ConversationController extends Controller
         $user = Auth::user();
         if ($user->is_adviser==0) {
             $conversations = Conversation::where('user_id', $user->id)->orderBy('id', 'DESC')->get();
-            $conversations['last_message_text'] = Message::select('text')->find($conversations->last_message_id)->get();
         }
         else
             $conversations=Conversation::where('adviser_id',$user->id)->orderBy('id','DESC')->get();
+
+
 
         return response()->json(['success' => $conversations], $this->successStatus);
     }

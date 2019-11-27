@@ -60,6 +60,7 @@ Route::group(['middleware' => 'auth:api'], function(){
 
             //category
             Route::post('add-category-description', 'API\CategoryController@add_category_description');
+            Route::post('show-categories', 'API\CategoryController@show_categories');
 
         });
 
