@@ -64,7 +64,7 @@ class ConversationController extends Controller
                 }else{
                     $success['message'] = 'message already requested';
                     $conversation=Conversation::find($conversation_id);
-                    $success['conversation'] = $conversation;
+//                    $success['conversation'] = $conversation;
                     return response()->json(['success' => $success], $this->successStatus);
                 }
             }
@@ -79,7 +79,7 @@ class ConversationController extends Controller
             $notification->save();
 
             $success['message'] = 'message requested';
-            $success['conversation'] = $conversation;
+//            $success['conversation'] = $conversation;
 
         }
 
@@ -102,7 +102,7 @@ class ConversationController extends Controller
                 }else{
                     $success['message'] = 'message already requested';
                     $conversation=Conversation::find($conversation_id);
-                    $success['conversation'] = $conversation;
+//                    $success['conversation'] = $conversation;
 
                     return response()->json(['success' => $success], $this->successStatus);
                 }
@@ -118,7 +118,7 @@ class ConversationController extends Controller
             $notification->save();
 
             $success['message'] = 'message requested';
-            $success['conversation'] = $conversation;
+//            $success['conversation'] = $conversation;
         }
 
 
@@ -129,8 +129,10 @@ class ConversationController extends Controller
     public function fetch_conversations()
     {
         $user = Auth::user();
-        if ($user->is_adviser==0)
-        $conversations=Conversation::where('user_id',$user->id)->orderBy('id','DESC')->get();
+        if ($user->is_adviser==0) {
+            $conversations = Conversation::where('user_id', $user->id)->orderBy('id', 'DESC')->get();
+            $conversations['last_message_text'] = Message::select('text')->find($conversations->last_message_id)->get();
+        }
         else
             $conversations=Conversation::where('adviser_id',$user->id)->orderBy('id','DESC')->get();
 
@@ -189,11 +191,20 @@ class ConversationController extends Controller
         $conversation->save();
 
 
+//        $conversation=Conversation::select('id','text','status','updated_at')->find($request->conversation_id);
 
         $messages=$conversation->messages()->paginate(10)->where('id','>=',$request->last_message_id);
+        $mess=array();
+        foreach ($messages as $m){
+            $me['id']=$m->id;
+            $me['text']=$m->text;
+            $me['status']=$m->status;
+            $me['updated_at']=$m->updated_at->format('Y-m-d H:i:s');
+            array_push($mess,$me);
+        }
 
 
-        return response()->json(['success' => $messages], $this->successStatus);
+        return response()->json(['success' => $mess], $this->successStatus);
     }
 
     public function send_message(Request $request)
@@ -255,8 +266,8 @@ class ConversationController extends Controller
         }
 
 
-        $message=$conversation->messages()->get()->where('id',$message_id);
-        return response()->json(['success' => $message], $this->successStatus);
+       // $message=$conversation->messages()->get()->where('id',$message_id);
+        return response()->json(['success' => 'success'], $this->successStatus);
     }
 
     public function fetch_message_by_id(Request $request)

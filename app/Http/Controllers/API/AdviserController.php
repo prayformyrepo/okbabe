@@ -184,7 +184,7 @@ class AdviserController extends Controller
             $save->user_id = $user->id;
             $save->adviser_id = $request->adviser_id;
             $save->save();
-            $adviser['message']='created';
+            $success['message']='created';
 
 
             //add to events
@@ -200,11 +200,11 @@ class AdviserController extends Controller
         }else{
             $saved_adviser_id=$saved_adviser->value('id');
             Saved_adviser::find($saved_adviser_id)->delete();
-            $adviser['message']='deleted';
+            $success['message']='deleted';
 
         }
 
-        return response()->json(['success'=>$adviser], $this-> successStatus);
+        return response()->json(['success'=>$success], $this-> successStatus);
 
     }
 

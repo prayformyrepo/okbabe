@@ -125,7 +125,10 @@ class UserController extends Controller
         $token =  $user->createToken('Register')-> accessToken;
         $user->api_token=$token;
         $user->save();
+
+        $user=User::select('id','api_token','code')->find($user->id);
         $success['user']=$user;
+
 
 
 
@@ -171,7 +174,7 @@ class UserController extends Controller
     public function set_data(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'username' => 'required|unique:users',
+            'name' => 'required|unique:users',
             'password' => 'required',
             'c_password' => 'required|same:password',
         ]);
@@ -187,7 +190,7 @@ class UserController extends Controller
         }
         $user_set=User::find($user->id);
         isset($request->name)?$user_set->name=$request->name:$user_set->name=null;
-        $user_set->username=$request->username;
+        $user_set->username=$request->name;
         $user_set->password=bcrypt($request->password);
         $user_set->password_set_at=Carbon::now();
         $user_set->save();
@@ -212,12 +215,15 @@ class UserController extends Controller
 //            return response()->json(['error'=>$validator->errors()], 401);
 //        }
         if(isset($request->user_id)){
-            $user = User::find($request->user_id);
+            $user = User::select('id','name','username','email','mobile','gender','wallet','is_adviser','avatar')->find($request->user_id);
 
         }
         else{
             $user=Auth::user();
-        }
+            $user = User::select('id','name','username','email','mobile','gender','wallet','is_adviser','avatar')->find($user->id);
+            }
+
+
 
         return response()->json(['success' => $user], $this-> successStatus);
 
