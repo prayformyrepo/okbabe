@@ -174,7 +174,7 @@ class UserController extends Controller
     public function set_data(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|unique:users',
+            'username' => 'required|unique:users',
             'password' => 'required',
             'c_password' => 'required|same:password',
         ]);
@@ -190,7 +190,7 @@ class UserController extends Controller
         }
         $user_set=User::find($user->id);
         isset($request->name)?$user_set->name=$request->name:$user_set->name=null;
-        $user_set->username=$request->name;
+        $user_set->username=$request->username;
         $user_set->password=bcrypt($request->password);
         $user_set->password_set_at=Carbon::now();
         $user_set->save();

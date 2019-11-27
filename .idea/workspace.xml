@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Conversation.php" afterPath="$PROJECT_DIR$/app/Conversation.php" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/CategoryController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/CategoryController.php" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/ConversationController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/ConversationController.php" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" afterPath="$PROJECT_DIR$/routes/api.php" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,6 +49,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/UserController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="180" column="0" lean-forward="true" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+              <folding>
+                <element signature="e#42#58#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="EventController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/EventController.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -72,7 +81,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CategoryController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CategoryController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/CategoryController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="402">
@@ -164,11 +173,11 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/SearchController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/EventController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/AdviserController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/ConversationController.php" />
         <option value="$PROJECT_DIR$/app/Conversation.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/CategoryController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" />
       </list>
     </option>
   </component>
@@ -418,14 +427,7 @@
       <workItem from="1574405788322" duration="1511000" />
       <workItem from="1574488919896" duration="883000" />
       <workItem from="1574494702295" duration="10138000" />
-      <workItem from="1574836102733" duration="10988000" />
-    </task>
-    <task id="LOCAL-00034" summary="add now time">
-      <created>1573818128088</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1573818128088</updated>
+      <workItem from="1574836102733" duration="11276000" />
     </task>
     <task id="LOCAL-00035" summary="edit events">
       <created>1573827420948</created>
@@ -763,7 +765,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574857291966</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="edit api responses">
+      <created>1574885153965</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1574885153965</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -775,7 +784,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179212000" />
+    <option name="totallyTimeSpent" value="179500000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -809,7 +818,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="edit user id" />
     <MESSAGE value="edit time" />
     <MESSAGE value="edit show questions" />
     <MESSAGE value="add now time" />
@@ -834,7 +842,8 @@
     <MESSAGE value="add is liked to questions" />
     <MESSAGE value="edit universal search" />
     <MESSAGE value="add about field to events" />
-    <option name="LAST_COMMIT_MESSAGE" value="add about field to events" />
+    <MESSAGE value="edit api responses" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit api responses" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1170,16 +1179,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="189" column="9" lean-forward="true" selection-start-line="189" selection-start-column="9" selection-end-line="189" selection-end-column="9" />
-          <folding>
-            <element signature="e#42#58#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -1201,6 +1200,16 @@
         <state relative-caret-position="402">
           <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="180" column="0" lean-forward="true" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+          <folding>
+            <element signature="e#42#58#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
