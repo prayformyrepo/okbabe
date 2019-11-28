@@ -136,7 +136,7 @@ class ConversationController extends Controller
             foreach ($conversations as $conversation){
                 $con['id']=$conversation->id;
                 $con['adviser_id']=$conversation->adviser_id;
-                $user_id=Adviser::find($conversation->adviser_id)->user_id;
+                $user_id=Adviser::find($con['adviser_id'])->user_id;
                 $con['adviser_name']=User::find($user_id)->name;
                 $con['adviser_avatar']=User::find($user_id)->avatar;
                 $con['user_id']=$conversation->user_id;
