@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Adviser;
 use App\Post;
 use App\Post_category;
+use App\Post_to_category;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 
@@ -46,7 +47,11 @@ class mainController extends Controller
             }
             if ($ok == 1) {
 //
+                @$check=Post::find($values->id);
+                if ($check==null){
+                    echo  'nist<br>';
                 $addpost = new Post();
+                $addpost->id=$values->id;
                 $addpost->title = $values->title;
                 $addpost->description = $values->description;
                 $addpost->content = $items2->post->content;
@@ -59,7 +64,11 @@ class mainController extends Controller
                 $addpost->meta_title = $items2->post->meta_title;
                 $addpost->meta_description = $items2->post->meta_description;
                 $addpost->save();
-                echo $values->title . ' added<br>';
+                echo $values->title . 'with id'.$values->id.' added<br>';
+                }else{
+                    echo 'hast<br>'.$check->title.'<br>';
+                    }
+
             } else {
                 echo 'no<br>';
             }
@@ -93,22 +102,88 @@ class mainController extends Controller
             if ($title == 'چیستانو') {
                 $subsets = $values->subset;
                 foreach (array_reverse($subsets) as $name2 => $values2) {
-                    if ($values2->type == 'blog' && $values2->subset != null) {
-                        if ($values2->title == 'کسب و کار') {
-                            $subsets2 = $values2->subset;
-                            foreach (array_reverse($subsets2) as $name3 => $values3) {
-                                if ($values3->type == 'blog' && $values3->subset != null) {
-                                    if ($values3->title == 'آشنایی با مشاغل') {
-                                        $subsets3 = $values3->subset;
-                                        foreach (array_reverse($subsets3) as $name4 => $values4) {
+                    $category = new Post_category();
+                    $category->id=$values2->id;
+                    $category->title = $values2->title;
+                    $category->description = $values2->description;
+                    $category->image = $values2->image;
+                    $category->url = $values2->url;
+                    $category->parent_category_id = 0;
+                    $category->save();
+                    echo $values2->title . '<br>';
+                    $current_id = $category->id;
+                    if ($values2->subset !== null) {
+                        foreach (array_reverse($values2->subset) as $name3 => $values3) {
+                            $category = new Post_category();
+                            $category->id=$values3->id;
+                            $category->title = $values3->title;
+                            $category->description = $values3->description;
+                            $category->image = $values3->image;
+                            $category->url = $values3->url;
+                            $category->parent_category_id = $current_id;
+                            $category->save();
+                            echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $values3->title . '<br>';
+
+                            $current_id = $category->id;
+                            if ($values3->subset !== null) {
+                                foreach (array_reverse($values3->subset) as $name4 => $values4) {
+                                    $category = new Post_category();
+                                    $category->id=$values4->id;
+                                    $category->title = $values4->title;
+                                    $category->description = $values4->description;
+                                    $category->image = $values4->image;
+                                    $category->url = $values4->url;
+                                    $category->parent_category_id = $current_id;
+                                    $category->save();
+                                    echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $values4->title . '<br>';
+
+                                    $current_id = $category->id;
+
+                                    if ($values4->subset !== null) {
+                                        foreach (array_reverse($values4->subset) as $name5 => $values5) {
                                             $category = new Post_category();
-                                            $category->title = $values4->title;
-                                            $category->url = $values4->url;
-                                            $category->description = $values4->description;
-                                            $category->image = $values4->image;
-                                            $category->parent_category_id = 57;
+                                            $category->id=$values5->id;
+                                            $category->title = $values5->title;
+                                            $category->description = $values5->description;
+                                            $category->image = $values5->image;
+                                            $category->url = $values5->url;
+                                            $category->parent_category_id = $current_id;
                                             $category->save();
-                                            echo $values4->title . '<br>';
+                                            echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $values5->title . '<br>';
+
+                                            $current_id = $category->id;
+
+                                            if ($values5->subset !== null) {
+                                                foreach (array_reverse($values5->subset) as $name6 => $values6) {
+                                                    $category = new Post_category();
+                                                    $category->id=$values6->id;
+                                                    $category->title = $values6->title;
+                                                    $category->description = $values6->description;
+                                                    $category->image = $values6->image;
+                                                    $category->url = $values6->url;
+                                                    $category->parent_category_id = $current_id;
+                                                    $category->save();
+                                                    echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $values6->title . '<br>';
+
+                                                    $current_id = $category->id;
+
+                                                    if ($values6->subset !== null) {
+                                                        foreach (array_reverse($values6->subset) as $name7 => $values7) {
+                                                            $category = new Post_category();
+                                                            $category->id=$values7->id;
+                                                            $category->title = $values7->title;
+                                                            $category->description = $values7->description;
+                                                            $category->image = $values7->image;
+                                                            $category->url = $values7->url;
+                                                            $category->parent_category_id = $current_id;
+                                                            $category->save();
+                                                            echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $values7->title . '<br>';
+
+                                                            $current_id = $category->id;
+                                                        }
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -119,4 +194,36 @@ class mainController extends Controller
             }
         }
     }
+
+    public function add_category()
+    {
+        $client = new Client(['base_uri' => 'https://shaverno.com']);
+
+        $posts=Post::all();
+        foreach ($posts as $post){
+// Send a request to https://foo.com/api/test
+            $response = $client->request('GET', '/site/api/v1/blog/posts/'.$post->id);
+
+            $body = $response->getBody();
+            $items = json_decode($body);
+
+            $title = $items->post->title;
+            $post_id = $items->post->id;
+            $categories=$items->post->categories;
+            echo $title.'<br>'.$post_id.'<br>';
+
+            foreach (array_reverse($categories) as $name => $values) {
+                @$check=Post_category::find($values->id);
+                if ($check!=null) {
+                    $add = new Post_to_category();
+                    $add->post_id = $post_id;
+                    $add->category_id = $values->id;
+                    $add->save();
+                    echo '<h1>'.$values->id.'saved</h1>';
+                }
+
+            }
+            }
+    }
+
 }

@@ -17,8 +17,9 @@ class Conversation extends Model
 
     public function getLastMessageTextAttribute()
     {
-        if ($this->last_message_id!=null)
-               $text= Message::find($this->last_message_id);
-                return $text->text;
+        if ($this->last_message_id!=null) {
+            $text = Message::find($this->last_message_id);
+            return $text->text;
+        }
     }
 }
