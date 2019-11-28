@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Adviser;
 use App\Conversation_Message;
 use App\Http\Controllers\Controller;
 use App\Message;
@@ -131,13 +132,42 @@ class ConversationController extends Controller
         $user = Auth::user();
         if ($user->is_adviser==0) {
             $conversations = Conversation::where('user_id', $user->id)->orderBy('id', 'DESC')->get();
+            $conver=array();
+            foreach ($conversations as $conversation){
+                $con['id']=$conversation->id;
+                $con['adviser_id']=$conversation->adviser_id;
+                $user_id=Adviser::find($conversation->adviser_id)->user_id;
+                $con['adviser_name']=User::find($user_id)->name;
+                $con['adviser_avatar']=User::find($user_id)->avatar;
+                $con['user_id']=$conversation->user_id;
+                $con['status']=$conversation->status;
+                $con['last_message_id']=$conversation->last_message_id;
+                $con['last_message_text']=$conversation->last_message_text;
+                $con['has_unread']=$conversation->has_unread;
+                $con['created_at']=$conversation->created_at;
+                $con['updated_at']=$conversation->updated_at;
+                array_push($conver,$con);
+            }
         }
-        else
-            $conversations=Conversation::where('adviser_id',$user->id)->orderBy('id','DESC')->get();
-
-
-
-        return response()->json(['success' => $conversations], $this->successStatus);
+        else {
+            $conversations = Conversation::where('adviser_id', $user->id)->orderBy('id', 'DESC')->get();
+            $conver=array();
+            foreach ($conversations as $conversation){
+                $con['id']=$conversation->id;
+                $con['adviser_id']=$conversation->adviser_id;
+                $con['user_id']=$conversation->user_id;
+                $con['user_name']=User::find($conversation->user_id)->name;
+                $con['user_avatar']=User::find($conversation->user_id)->avatar;
+                $con['status']=$conversation->status;
+                $con['last_message_id']=$conversation->last_message_id;
+                $con['last_message_text']=$conversation->last_message_text;
+                $con['has_unread']=$conversation->has_unread;
+                $con['created_at']=$conversation->created_at;
+                $con['updated_at']=$conversation->updated_at;
+                array_push($conver,$con);
+            }
+        }
+        return response()->json(['success' => $conver], $this->successStatus);
     }
 
     public function fetch_messages(Request $request)
