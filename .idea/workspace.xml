@@ -30,8 +30,8 @@
       <file leaf-file-name="AdviserController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/AdviserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+            <state relative-caret-position="330">
+              <caret line="35" column="92" lean-forward="false" selection-start-line="35" selection-start-column="92" selection-end-line="35" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -431,14 +431,7 @@
       <workItem from="1574405788322" duration="1511000" />
       <workItem from="1574488919896" duration="883000" />
       <workItem from="1574494702295" duration="10138000" />
-      <workItem from="1574836102733" duration="21779000" />
-    </task>
-    <task id="LOCAL-00048" summary="edit call api">
-      <created>1573901623392</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1573901623392</updated>
+      <workItem from="1574836102733" duration="22092000" />
     </task>
     <task id="LOCAL-00049" summary="edd rate migration">
       <created>1573901642302</created>
@@ -776,7 +769,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575017210156</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="add user id to show advisers">
+      <created>1575017976225</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1575017976225</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -788,7 +788,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190003000" />
+    <option name="totallyTimeSpent" value="190316000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -822,7 +822,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="edit call api" />
     <MESSAGE value="edd rate migration" />
     <MESSAGE value="add adviser rate" />
     <MESSAGE value="category description add api" />
@@ -847,7 +846,8 @@
     <MESSAGE value="edit fetch messages" />
     <MESSAGE value="edit user avatar" />
     <MESSAGE value="add now to events" />
-    <option name="LAST_COMMIT_MESSAGE" value="add now to events" />
+    <MESSAGE value="add user id to show advisers" />
+    <option name="LAST_COMMIT_MESSAGE" value="add user id to show advisers" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1219,8 +1219,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/AdviserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+        <state relative-caret-position="330">
+          <caret line="35" column="92" lean-forward="false" selection-start-line="35" selection-start-column="92" selection-end-line="35" selection-end-column="92" />
           <folding />
         </state>
       </provider>
