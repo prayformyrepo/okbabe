@@ -271,7 +271,10 @@ class ConversationController extends Controller
 
         $conversation=Conversation::find($request->conversation_id);
         $conversation->has_unread=1;
+        $conversation->last_message_id=$message_id;
         $conversation->save();
+
+
 
 
         if ($user->is_adviser==0) {
