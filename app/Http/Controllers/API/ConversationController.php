@@ -239,7 +239,7 @@ class ConversationController extends Controller
             else
                 $me['user_name']=User::find($m->user_id)->name;
 
-            $me['user_avatar']=$m->user_id;
+            $me['user_avatar']=User::find($m->user_id)->avatar;
             $me['parent_message_id']=$m->parent_message_id;
             $me['updated_at']=$m->updated_at->format('Y-m-d H:i:s');
             array_push($mess,$me);
