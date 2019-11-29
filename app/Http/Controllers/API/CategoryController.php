@@ -36,6 +36,7 @@ class CategoryController extends Controller
     {
         $categories_show=Adviser_category::all();
 
+        $cc=array();
         foreach ($categories_show as $category) {
             if ($category->parent_category_id == null) {
                 $cat['id']=$category->id;
@@ -44,9 +45,10 @@ class CategoryController extends Controller
                 $cat['sub_category']=$subcategories;
 //                $category = Adviser_category::select('id', 'name')->get();
             }
+            array_push($cc,$cat);
         }
 
-        return response()->json(['success' => $cat], $this-> successStatus);
+        return response()->json(['success' => $cc], $this-> successStatus);
 
     }
 }
