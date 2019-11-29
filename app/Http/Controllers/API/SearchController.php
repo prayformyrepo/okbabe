@@ -46,7 +46,7 @@ class SearchController extends Controller
 
         //questions
         $questions_show=array();
-        $questions=Question::where('status',1)->where('subject', 'like', '%'.$request->q.'%')->limit(4)->get();
+        $questions=Question::where('status',1)->where('subject', 'like', '%'.$request->q.'%')->get();
         $c=0;
         foreach ($questions as $question){
             if ($c<4) {
