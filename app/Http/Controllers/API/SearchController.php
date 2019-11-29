@@ -51,10 +51,6 @@ class SearchController extends Controller
         foreach ($questions as $question){
             if ($c<4) {
                 $save['info'] = $question;
-                $save['info']['category'] = 'category';
-                $save['info']['category']['id'] = $question->categories($question)->id;
-                $save['info']['category']['name'] =$question->categories($question)->name ;
-                $save['info']['category']['parent_category_id'] = $question->categories($question)->parent_category_id;
                 array_push($questions_show, $save);
             }
         }
