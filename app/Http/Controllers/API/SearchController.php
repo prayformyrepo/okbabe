@@ -30,7 +30,7 @@ class SearchController extends Controller
         $advisers=User::where('is_adviser',1)->where('name', 'like', '%'.$request->q.'%')->get();
         $c=0;
         foreach ($advisers as $adviser){
-            if ($c<4) {
+            if ($c<8) {
                 $save['user_id'] = $adviser->id;
                 $save['name'] = $adviser->name;
                 $save['avatar'] = $adviser->avatar;
