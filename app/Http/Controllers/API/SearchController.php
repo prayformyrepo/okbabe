@@ -27,7 +27,7 @@ class SearchController extends Controller
 
         //advisers
         $adviser_show=array();
-        $advisers=User::where('is_adviser',1)->where('name', 'like', '%'.$request->q.'%')->get();
+        $advisers=User::where('is_adviser',1)->where('name', 'like', '%'.$request->q.'%')->limit(4)->get();
         foreach ($advisers as $adviser){
             $save['info']=$adviser;
             $save['info']['additional']=$adviser->adviser($adviser);
@@ -36,13 +36,13 @@ class SearchController extends Controller
         $all['advisers']=$adviser_show;
 
         //categories
-        $categories_show=Adviser_category::where('name', 'like', '%'.$request->q.'%')->select('id', 'name','parent_category_id')->get();
+        $categories_show=Adviser_category::where('name', 'like', '%'.$request->q.'%')->select('id', 'name','parent_category_id')->limit(4)->get();
         $all['categories']=$categories_show;
 
 
         //questions
         $questions_show=array();
-        $questions=Question::where('status',1)->where('subject', 'like', '%'.$request->q.'%')->get();
+        $questions=Question::where('status',1)->where('subject', 'like', '%'.$request->q.'%')->limit(4)->get();
         foreach ($questions as $question){
             $save['info']=$question;
             $save['info']['category']=$question->categories($question);

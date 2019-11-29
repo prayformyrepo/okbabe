@@ -30,8 +30,8 @@
       <file leaf-file-name="SearchController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/SearchController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="38" column="136" lean-forward="false" selection-start-line="38" selection-start-column="136" selection-end-line="38" selection-end-column="136" />
+            <state relative-caret-position="218">
+              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -431,14 +431,7 @@
       <workItem from="1574405788322" duration="1511000" />
       <workItem from="1574488919896" duration="883000" />
       <workItem from="1574494702295" duration="10138000" />
-      <workItem from="1574836102733" duration="23402000" />
-    </task>
-    <task id="LOCAL-00055" summary="update after a while">
-      <created>1574413104114</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1574413104114</updated>
+      <workItem from="1574836102733" duration="23498000" />
     </task>
     <task id="LOCAL-00056" summary="add username">
       <created>1574427771932</created>
@@ -776,7 +769,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575025322858</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="edit search">
+      <created>1575025538433</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1575025538433</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -788,7 +788,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191626000" />
+    <option name="totallyTimeSpent" value="191722000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -822,7 +822,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add adviser rate" />
     <MESSAGE value="category description add api" />
     <MESSAGE value="gpost on" />
     <MESSAGE value="update after a while" />
@@ -847,7 +846,8 @@
     <MESSAGE value="add now to events" />
     <MESSAGE value="add user id to show advisers" />
     <MESSAGE value="edit show adviser" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit show adviser" />
+    <MESSAGE value="edit search" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit search" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1220,8 +1220,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/SearchController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="38" column="136" lean-forward="false" selection-start-line="38" selection-start-column="136" selection-end-line="38" selection-end-column="136" />
+        <state relative-caret-position="218">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding />
         </state>
       </provider>
