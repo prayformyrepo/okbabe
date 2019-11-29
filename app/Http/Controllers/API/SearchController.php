@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Adviser;
 use App\Adviser_category;
 use App\Http\Controllers\Controller;
+use App\Post_category;
 use App\Question;
 use App\User;
 use Illuminate\Http\Request;
@@ -59,6 +60,10 @@ class SearchController extends Controller
         }
         $all['questions']=$questions_show;
 
+
+        //blog categories
+        $blog_categories=Post_category::where('title', 'like', '%'.$request->q.'%')->select('id', 'title','parent_category_id')->limit(4)->get();
+        $all['blog_categories']=$blog_categories;
 
 
         return response()->json(['success' => $all], $this-> successStatus);
