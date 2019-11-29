@@ -44,8 +44,8 @@ class CategoryController extends Controller
                 $subcategories=Adviser_category::where('parent_category_id',$category->id)->select('id', 'name')->get();
                 $cat['sub_category']=$subcategories;
 //                $category = Adviser_category::select('id', 'name')->get();
+                array_push($cc,$cat);
             }
-            array_push($cc,$cat);
         }
 
         return response()->json(['success' => $cc], $this-> successStatus);
