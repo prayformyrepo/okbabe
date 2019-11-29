@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/SearchController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/SearchController.php" />
+      <change beforePath="$PROJECT_DIR$/app/Question.php" afterPath="$PROJECT_DIR$/app/Question.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,24 +27,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SearchController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/SearchController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
+            <state relative-caret-position="303">
               <caret line="48" column="93" lean-forward="true" selection-start-line="48" selection-start-column="93" selection-end-line="48" selection-end-column="93" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConversationController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/ConversationController.php">
+      <file leaf-file-name="Question.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Question.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="167" column="65" lean-forward="true" selection-start-line="167" selection-start-column="65" selection-end-line="167" selection-end-column="65" />
-              <folding>
-                <element signature="e#44#60#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="285">
+              <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -122,7 +120,6 @@
         <option value="$PROJECT_DIR$/config/kavenegar.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/administrator.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_11_15_083138_change_field_advisers.php" />
-        <option value="$PROJECT_DIR$/app/Question.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_11_15_145410_add_datetime_to_questions.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_11_15_181418_add_category_id_to_events.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_11_15_211713_add_wallet_to_users.php" />
@@ -166,6 +163,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/EventController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/AdviserController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/SearchController.php" />
+        <option value="$PROJECT_DIR$/app/Question.php" />
       </list>
     </option>
   </component>
@@ -431,14 +429,7 @@
       <workItem from="1574405788322" duration="1511000" />
       <workItem from="1574488919896" duration="883000" />
       <workItem from="1574494702295" duration="10138000" />
-      <workItem from="1574836102733" duration="23906000" />
-    </task>
-    <task id="LOCAL-00058" summary="persian validate">
-      <created>1574489845775</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1574489845776</updated>
+      <workItem from="1574836102733" duration="24206000" />
     </task>
     <task id="LOCAL-00059" summary="clear cache route">
       <created>1574489882638</created>
@@ -776,7 +767,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575026084244</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="edit search">
+      <created>1575026146094</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1575026146094</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -788,7 +786,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192130000" />
+    <option name="totallyTimeSpent" value="192430000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -856,13 +854,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_14_151953_nullable_for_transactions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="19" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_15_211713_add_wallet_to_users.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1091,14 +1082,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/QuestionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="273" column="12" lean-forward="false" selection-start-line="273" selection-start-column="12" selection-end-line="273" selection-end-column="188" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -1183,16 +1166,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/ConversationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="167" column="65" lean-forward="true" selection-start-line="167" selection-start-column="65" selection-end-line="167" selection-end-column="65" />
-          <folding>
-            <element signature="e#44#60#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/EventController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1210,6 +1183,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/QuestionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3758">
+          <caret line="273" column="12" lean-forward="false" selection-start-line="273" selection-start-column="12" selection-end-line="273" selection-end-column="188" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/ConversationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="167" column="65" lean-forward="true" selection-start-line="167" selection-start-column="65" selection-end-line="167" selection-end-column="65" />
+          <folding>
+            <element signature="e#44#60#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/SearchController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="48" column="93" lean-forward="true" selection-start-line="48" selection-start-column="93" selection-end-line="48" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/mainController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="463">
@@ -1218,10 +1217,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/SearchController.php">
+    <entry file="file://$PROJECT_DIR$/app/Question.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="48" column="93" lean-forward="true" selection-start-line="48" selection-start-column="93" selection-end-line="48" selection-end-column="93" />
+        <state relative-caret-position="285">
+          <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
           <folding />
         </state>
       </provider>

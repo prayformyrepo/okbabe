@@ -13,7 +13,7 @@ class Question extends Model
 
     public function categories($question)
     {
-        $adviser_category_id=$question->adviser_category_id;
+        $adviser_category_id=$question->question_category_id;
         return Adviser_category::find($adviser_category_id);
     }
 
