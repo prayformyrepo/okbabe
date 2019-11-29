@@ -18,7 +18,7 @@ class BlogController extends Controller
 
         if (isset($request->post_id)){
             $posts=Post::find($request->post_id);
-            $posts['categories']=$posts->categories();
+            $posts['categories']=$posts->categories()->get();
         }else{
             $show_posts=Post::paginate(10);
             $posts=array();
