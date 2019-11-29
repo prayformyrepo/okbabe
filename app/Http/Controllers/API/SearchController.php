@@ -37,15 +37,7 @@ class SearchController extends Controller
 
         //categories
         $categories_show=Adviser_category::where('name', 'like', '%'.$request->q.'%')->select('id', 'name','parent_category_id')->get();
-        foreach ($categories_show as $category) {
-            if ($category->parent_category_id == null) {
-                $cat=$category;
-                $subcategories=Adviser_category::where('parent_category_id',$category->id)->select('id', 'name')->get();
-                $cat['sub_category']=$subcategories;
-//                $category = Adviser_category::select('id', 'name')->get();
-            }
-        }
-        $all['categories']=$cat;
+        $all['categories']=$categories_show;
 
 
         //questions
