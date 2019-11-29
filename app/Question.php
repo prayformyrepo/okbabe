@@ -14,7 +14,7 @@ class Question extends Model
     public function categories($question)
     {
         $adviser_category_id=$question->question_category_id;
-        return Adviser_category::find($adviser_category_id)->select('id','name','parent_category_id')->get();
+        return Adviser_category::find($adviser_category_id);
     }
 
     public function user($question)

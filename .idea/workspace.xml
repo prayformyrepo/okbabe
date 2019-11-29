@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/SearchController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/SearchController.php" />
       <change beforePath="$PROJECT_DIR$/app/Question.php" afterPath="$PROJECT_DIR$/app/Question.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,21 +28,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SearchController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/SearchController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="48" column="93" lean-forward="true" selection-start-line="48" selection-start-column="93" selection-end-line="48" selection-end-column="93" />
+            <state relative-caret-position="423">
+              <caret line="56" column="118" lean-forward="false" selection-start-line="56" selection-start-column="118" selection-end-line="56" selection-end-column="118" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Question.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Question.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Question.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="16" column="99" lean-forward="false" selection-start-line="16" selection-start-column="99" selection-end-line="16" selection-end-column="99" />
+              <caret line="16" column="59" lean-forward="false" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -162,8 +163,8 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/ConversationController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/EventController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/AdviserController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/SearchController.php" />
         <option value="$PROJECT_DIR$/app/Question.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/SearchController.php" />
       </list>
     </option>
   </component>
@@ -429,14 +430,7 @@
       <workItem from="1574405788322" duration="1511000" />
       <workItem from="1574488919896" duration="883000" />
       <workItem from="1574494702295" duration="10138000" />
-      <workItem from="1574836102733" duration="24267000" />
-    </task>
-    <task id="LOCAL-00060" summary="clear cache route">
-      <created>1574489972041</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1574489972041</updated>
+      <workItem from="1574836102733" duration="24444000" />
     </task>
     <task id="LOCAL-00061" summary="notif test">
       <created>1574490332637</created>
@@ -774,7 +768,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575026458039</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="edit question model">
+      <created>1575026525517</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1575026525517</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -786,7 +787,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192491000" />
+    <option name="totallyTimeSpent" value="192668000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -820,7 +821,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="category description add api" />
     <MESSAGE value="gpost on" />
     <MESSAGE value="update after a while" />
     <MESSAGE value="add username" />
@@ -845,7 +845,8 @@
     <MESSAGE value="add user id to show advisers" />
     <MESSAGE value="edit show adviser" />
     <MESSAGE value="edit search" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit search" />
+    <MESSAGE value="edit question model" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit question model" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1201,14 +1202,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/SearchController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="48" column="93" lean-forward="true" selection-start-line="48" selection-start-column="93" selection-end-line="48" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/mainController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="463">
@@ -1220,7 +1213,15 @@
     <entry file="file://$PROJECT_DIR$/app/Question.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="16" column="99" lean-forward="false" selection-start-line="16" selection-start-column="99" selection-end-line="16" selection-end-column="99" />
+          <caret line="16" column="59" lean-forward="false" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/SearchController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="56" column="118" lean-forward="false" selection-start-line="56" selection-start-column="118" selection-end-line="56" selection-end-column="118" />
           <folding />
         </state>
       </provider>
