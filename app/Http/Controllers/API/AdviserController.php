@@ -26,9 +26,20 @@ class AdviserController extends Controller
     {
         if (isset($request->show_online) && $request->show_online=true) {
             $advisers = Adviser::where('is_online',1)->orderBy('id','DESC')->paginate(10);
-        }else{
+        }
+        else if (isset($request->user_id)){
+            $a=array();
+            $advisers = Adviser::where('user_id',$request->user_id)->value('id');
+            $advisers=Adviser::find($advisers);
+            $adviser['adviser']=$advisers;
+            $adviser['adviser']['user_info']=User::find($request->user_id);
+            $adviser['adviser']['categories']=$advisers->categories()->get();
+            $adviser['adviser']['times']=$advisers->times()->get();
+            array_push($a,$adviser);
+            return response()->json(['success' => $a], $this->successStatus);
+        }
+        else{
             $advisers = Adviser::orderBy('id','DESC')->paginate(10);
-
         }
         $a=array();
         foreach ($advisers as $advise){
