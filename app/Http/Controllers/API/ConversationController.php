@@ -143,8 +143,8 @@ class ConversationController extends Controller
                 $con['last_message_id']=$conversation->last_message_id;
                 $con['last_message_text']=$conversation->last_message_text;
                 $con['has_unread']=$conversation->has_unread;
-                $con['created_at']=$conversation->created_at;
-                $con['updated_at']=$conversation->updated_at;
+                $con['created_at']=$conversation->created_at->format('Y-m-d H:i:s');
+                $con['updated_at']=$conversation->updated_at->format('Y-m-d H:i:s');
                 array_push($conver,$con);
             }
         }
