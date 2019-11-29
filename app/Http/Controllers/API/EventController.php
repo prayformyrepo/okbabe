@@ -7,6 +7,7 @@ use App\Adviser_category;
 use App\Event;
 use App\Http\Controllers\Controller;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -25,6 +26,8 @@ class EventController extends Controller
                 if ($event->category_id!=null)
                     $ev['category_name']=Adviser_category::find($event->category_id)->name;
             }
+            $ev['now']=Carbon::now()->format('Y-m-d H:i:s');
+
             $ev['user_info']=User::select('id','name','avatar')->find($user->user_id);
             $ev['user_info']['about']=Adviser::find($event->adviser_id)->about;
             $ev['user_info']['field']=Adviser::find($event->adviser_id)->field;
