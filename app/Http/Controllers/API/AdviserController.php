@@ -45,7 +45,8 @@ class AdviserController extends Controller
         $a=array();
         foreach ($advisers as $advise){
            $adviser['adviser']=$advise;
-           $adviser['adviser']['user_info']=User::find($advise->user_id);
+            $adviser['adviser']['name']=User::find($request->user_id)->name;
+            $adviser['adviser']['avatar']=User::find($request->user_id)->avatar;
             $adviser['adviser']['categories']=$advise->categories()->get();
             $adviser['adviser']['times']=$advise->times()->get();
             array_push($a,$adviser);
