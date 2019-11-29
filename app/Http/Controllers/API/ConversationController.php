@@ -145,6 +145,8 @@ class ConversationController extends Controller
                 $con['has_unread']=$conversation->has_unread;
                 $con['created_at']=$conversation->created_at->format('Y-m-d H:i:s');
                 $con['updated_at']=$conversation->updated_at->format('Y-m-d H:i:s');
+                $con['now']=Carbon::now()->format('Y-m-d H:i:s');
+
                 array_push($conver,$con);
             }
         }
