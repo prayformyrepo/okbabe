@@ -7,9 +7,11 @@ use App\Adviser_category;
 use App\Adviser_rate;
 use App\Adviser_time;
 use App\Adviser_to_category;
+use App\Call;
 use App\Event;
 use App\Http\Controllers\Controller;
 use App\oauth_access_token;
+use App\Question_answer;
 use App\Saved_adviser;
 use App\User;
 use Illuminate\Http\Request;
@@ -34,8 +36,12 @@ class AdviserController extends Controller
             $adviser['adviser']=$advisers;
             $adviser['adviser']['name']=User::find($request->user_id)->name;
             $adviser['adviser']['avatar']=User::find($request->user_id)->avatar;
-            $adviser['adviser']['categories']=$advisers->categories()->get();
+//            $adviser['adviser']['categories']=$advisers->categories()->get();
             $adviser['adviser']['times']=$advisers->times()->get();
+            $adviser['adviser']['qa_count']=Question_answer::where('adviser_id',$advisers->id)->count();
+            $adviser['adviser']['comment']=Adviser_rate::where('adviser_id',$advisers->id)->where('comment','!=',null)->count();
+            $adviser['adviser']['call']=Call::where('adviser_id',$advisers->id)->where('duration','!=',null)->count();
+
             array_push($a,$adviser);
             return response()->json(['success' => $a], $this->successStatus);
         }
