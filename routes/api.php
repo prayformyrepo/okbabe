@@ -99,6 +99,9 @@ Route::group(['middleware' => 'auth:api'], function(){
         Route::post('answer-ticket','API\TicketController@answer_ticket');
         Route::post('end-ticket','API\TicketController@end_ticket');
 
+        //posts
+        Route::post('show-posts','API\BlogController@show_posts');
+
     });
 
 
