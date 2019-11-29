@@ -31,8 +31,11 @@ class SearchController extends Controller
         $c=0;
         foreach ($advisers as $adviser){
             if ($c<4) {
-                $save['info'] = $adviser;
-                $save['info']['additional'] = $adviser->adviser($adviser);
+                $save['user_id'] = $adviser->id;
+                $save['name'] = $adviser->name;
+                $save['avatar'] = $adviser->avatar;
+                $save['field'] = $adviser->adviser($adviser)->field;
+                $save['about'] = $adviser->adviser($adviser)->about;
                 array_push($adviser_show, $save);
                 $c++;
             }
