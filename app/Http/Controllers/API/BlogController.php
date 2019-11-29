@@ -24,7 +24,7 @@ class BlogController extends Controller
             $posts=array();
             foreach ($show_posts as $post){
                 $p=$post;
-                $p['categories']=$post->select('id','title','image','parent_category_id')->categories()->get();
+                $p['categories']=$post->categories()->select('id','title','image','parent_category_id')->get();
                 array_push($posts,$p);
             }
         }
