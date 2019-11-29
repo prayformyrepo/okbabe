@@ -39,8 +39,8 @@ class AdviserController extends Controller
 //            $adviser['adviser']['categories']=$advisers->categories()->get();
             $adviser['adviser']['times']=$advisers->times()->get();
             $adviser['adviser']['qa_count']=Question_answer::where('adviser_id',$advisers->id)->count();
-            $adviser['adviser']['comment']=Adviser_rate::where('adviser_id',$advisers->id)->where('comment','!=',null)->count();
-            $adviser['adviser']['call']=Call::where('adviser_id',$advisers->id)->where('duration','!=',null)->count();
+            $adviser['adviser']['comment_count']=Adviser_rate::where('adviser_id',$advisers->id)->where('comment','!=',null)->count();
+            $adviser['adviser']['call_count']=Call::where('adviser_id',$advisers->id)->where('duration','!=',null)->count();
 
             array_push($a,$adviser);
             return response()->json(['success' => $a], $this->successStatus);
