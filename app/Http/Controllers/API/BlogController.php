@@ -36,30 +36,22 @@ class BlogController extends Controller
     {
 
         $categories_show=Post_category::all();
-
         $cc=array();
-        foreach ($categories_show as $category) {
-            if ($category->parent_category_id == null) {
-                $cat['id']=$category->id;
-                $cat['title']=$category->title;
-                $cat['image']=$category->image;
-                $subcategories=Post_category::where('parent_category_id',$category->id)->select('id', 'title','image')->get();
-                $cat['sub_category']=$subcategories;
-//                $category = Adviser_category::select('id', 'name')->get();
-                foreach ($subcategories as $category2) {
-                    if ($category2->parent_category_id == null) {
-                        $cat['sub_category']['id']=$category2->id;
-                        $cat['sub_category']['title']=$category2->title;
-                        $cat['sub_category']['image']=$category2->image;
-                        $subcategories=Post_category::where('parent_category_id',$category2->id)->select('id', 'title','image')->get();
-                        $cat['sub_category']['sub_category']=$subcategories;
-//                $category = Adviser_category::select('id', 'name')->get();
-                        array_push($cc,$cat);
-                    }
+        foreach ($categories_show as $category){
+            if ($category->parent_category_id==null){
+                $c['id']=$category->id;
+                $c['title']=$category->title;
+                $c['image']=$category->image;
+                $subs=Post_category::where('parent_category_id',$category->id)->count();
+                if ($subs!=null){
+                    $c['subs']=$category->sub_categories($category->id);
+                    array_push($cc,$c);
                 }
-                array_push($cc,$cat);
+                array_push($cc,$c);
+
             }
         }
+
 
         return response()->json(['success' => $cc], $this-> successStatus);
 
