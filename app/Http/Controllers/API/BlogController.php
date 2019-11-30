@@ -34,7 +34,22 @@ class BlogController extends Controller
 
     public function show_blog_categories()
     {
-        $blog_categories=Post_category::paginate(10);
-        return response()->json(['success' => $blog_categories], $this-> successStatus);
+
+        $categories_show=Post_category::all();
+
+        $cc=array();
+        foreach ($categories_show as $category) {
+            if ($category->parent_category_id == null) {
+                $cat['id']=$category->id;
+                $cat['name']=$category->name;
+                $subcategories=Post_category::where('parent_category_id',$category->id)->select('id', 'name')->get();
+                $cat['sub_category']=$subcategories;
+//                $category = Adviser_category::select('id', 'name')->get();
+                array_push($cc,$cat);
+            }
+        }
+
+        return response()->json(['success' => $cc], $this-> successStatus);
+
     }
 }
