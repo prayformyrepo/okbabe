@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/ConversationController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/ConversationController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -467,14 +466,7 @@
       <workItem from="1574405788322" duration="1511000" />
       <workItem from="1574488919896" duration="883000" />
       <workItem from="1574494702295" duration="10138000" />
-      <workItem from="1574836102733" duration="34930000" />
-    </task>
-    <task id="LOCAL-00085" summary="edit api responses">
-      <created>1574941368249</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1574941368249</updated>
+      <workItem from="1574836102733" duration="35023000" />
     </task>
     <task id="LOCAL-00086" summary="edit api responses">
       <created>1574950123634</created>
@@ -812,7 +804,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575109592308</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="edit conversations">
+      <created>1575128679605</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1575128679608</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -824,7 +823,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203154000" />
+    <option name="totallyTimeSpent" value="203247000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -860,7 +859,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="persian validate" />
     <MESSAGE value="clear cache route" />
     <MESSAGE value="notif test" />
     <MESSAGE value="add pushe" />
@@ -885,7 +883,8 @@
     <MESSAGE value="add blog" />
     <MESSAGE value="add show blog categories api" />
     <MESSAGE value="edit toggle online" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit toggle online" />
+    <MESSAGE value="edit conversations" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit conversations" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
