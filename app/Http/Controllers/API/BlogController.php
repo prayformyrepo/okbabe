@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Post;
+use App\Post_category;
 use Illuminate\Http\Request;
 use Validator;
 class BlogController extends Controller
@@ -29,5 +30,11 @@ class BlogController extends Controller
             }
         }
         return response()->json(['success' => $posts], $this-> successStatus);
+    }
+
+    public function show_blog_categories()
+    {
+        $blog_categories=Post_category::paginate(10);
+        return response()->json(['success' => $blog_categories], $this-> successStatus);
     }
 }

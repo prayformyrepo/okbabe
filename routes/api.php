@@ -101,6 +101,7 @@ Route::group(['middleware' => 'auth:api'], function(){
 
         //posts
         Route::post('show-posts','API\BlogController@show_posts');
+        Route::post('show-blog-categories','API\BlogController@show_blog_categories');
 
     });
 

@@ -63,7 +63,7 @@ class SearchController extends Controller
 
 
         //blog categories
-        $blog_categories=Post_category::where('title', 'like', '%'.$request->q.'%')->select('id', 'title','parent_category_id')->limit(4)->get();
+        $blog_categories=Post_category::where('title', 'like', '%'.$request->q.'%')->select('id', 'title','image','parent_category_id')->limit(4)->get();
         $all['blog_categories']=$blog_categories;
 
         //posts
