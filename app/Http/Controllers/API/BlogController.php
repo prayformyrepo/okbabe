@@ -41,8 +41,9 @@ class BlogController extends Controller
         foreach ($categories_show as $category) {
             if ($category->parent_category_id == null) {
                 $cat['id']=$category->id;
-                $cat['name']=$category->name;
-                $subcategories=Post_category::where('parent_category_id',$category->id)->select('id', 'name')->get();
+                $cat['title']=$category->title;
+                $cat['image']=$category->image;
+                $subcategories=Post_category::where('parent_category_id',$category->id)->select('id', 'title','image')->get();
                 $cat['sub_category']=$subcategories;
 //                $category = Adviser_category::select('id', 'name')->get();
                 array_push($cc,$cat);
