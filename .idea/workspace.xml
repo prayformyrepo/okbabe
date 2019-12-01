@@ -52,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/QuestionController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="372">
-              <caret line="278" column="68" lean-forward="false" selection-start-line="278" selection-start-column="68" selection-end-line="278" selection-end-column="68" />
+              <caret line="278" column="29" lean-forward="false" selection-start-line="278" selection-start-column="29" selection-end-line="278" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -467,14 +467,7 @@
       <workItem from="1574405788322" duration="1511000" />
       <workItem from="1574488919896" duration="883000" />
       <workItem from="1574494702295" duration="10138000" />
-      <workItem from="1574836102733" duration="36121000" />
-    </task>
-    <task id="LOCAL-00088" summary="edit fetch conversation">
-      <created>1574950479191</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1574950479191</updated>
+      <workItem from="1574836102733" duration="36162000" />
     </task>
     <task id="LOCAL-00089" summary="edit time fetch conver">
       <created>1575011946264</created>
@@ -812,7 +805,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575199393677</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <task id="LOCAL-00137" summary="edit show question">
+      <created>1575199535498</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1575199535498</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -824,7 +824,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204345000" />
+    <option name="totallyTimeSpent" value="204386000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -860,7 +860,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="clear cache route" />
     <MESSAGE value="notif test" />
     <MESSAGE value="add pushe" />
     <MESSAGE value="test" />
@@ -885,7 +884,8 @@
     <MESSAGE value="add show blog categories api" />
     <MESSAGE value="edit toggle online" />
     <MESSAGE value="edit conversations" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit conversations" />
+    <MESSAGE value="edit show question" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit show question" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1275,7 +1275,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/QuestionController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
-          <caret line="278" column="68" lean-forward="false" selection-start-line="278" selection-start-column="68" selection-end-line="278" selection-end-column="68" />
+          <caret line="278" column="29" lean-forward="false" selection-start-line="278" selection-start-column="29" selection-end-line="278" selection-end-column="29" />
           <folding />
         </state>
       </provider>

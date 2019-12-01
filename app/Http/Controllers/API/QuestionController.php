@@ -276,7 +276,7 @@ class QuestionController extends Controller
         } else {
             $question = Question::find($request->question_id);
             $question['name']=User::find($question->user_id)->name==null?User::find($question->user_id)->username:User::find($question->user_id)->name;
-            $question['name']=User::find($question->user_id)->avatar;
+            $question['avatar']=User::find($question->user_id)->avatar;
             $question['answers'] = Question::find($request->question_id)->answers()->get();
 
         }
