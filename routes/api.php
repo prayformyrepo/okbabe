@@ -83,7 +83,7 @@ Route::group(['middleware' => 'auth:api'], function(){
 
 
         //wallet
-        Route::post('pay', 'API\WalletController@pay');
+        Route::get('pay', 'API\WalletController@pay');
 
 
         //search
