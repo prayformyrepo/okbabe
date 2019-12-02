@@ -48,8 +48,10 @@ class WalletController extends Controller
         ]);
 
         $body = $response->getBody();
+        $items = json_decode($body);
+        $token=$items->token;
 // Implicitly cast the body to a string and echo it
-        echo $body;
+        return $token;
 
 
     }
