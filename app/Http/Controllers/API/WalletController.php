@@ -21,24 +21,34 @@ class WalletController extends Controller
         if ($validator->fails()) {
             return response()->json(['error'=>$validator->errors()], 401);
         }
-        $payir = new PayirPG();
-        $payir->amount = $request->value; // Required, Amount
+        $amount = $request->value; // Required, Amount
 //        $payir->factorNumber = 'Factor-Number'; // Optional
-        $payir->description = 'شارژ کیف پول به مبلغ '.
+        $api='f1749f4ad693f87cd8c0d95a2b2d6184';
+        $redirect='shavernoapp.ir';
+        $description = 'شارژ کیف پول به مبلغ '.
             $request->value.
             ' تومان '; // Optional
-        $payir->mobile = '0'.$user->mobile; // Optional, If you want to show user's saved card numbers in gateway
+        $mobile = '0'.$user->mobile; // Optional, If you want to show user's saved card numbers in gateway
+        $client = new Client([
+            // Base URI is used with relative requests
+            'base_uri' => 'https://pay.ir',
+            // You can set any number of default request options.
+            'timeout'  => 2.0,
+        ]);
+        $response = $client->request('POST', '/pg/send', [
+            'form_params' => [
+                'api' => $api,
+                'amount' => $amount,
+                'description' => $description,
+                'mobile' => $mobile,
+                'redirect' => $redirect,
 
-        try {
-            $payir->send();
-            $transaction=new Transaction();
-            $transaction->user_id=$user->id;
-            $transaction->amount=$request->value;
-            $transaction->save();
-            return redirect($payir->paymentUrl);
-        } catch (SendException $e) {
-            throw $e;
-        }
+            ]
+        ]);
+
+        $body = $response->getBody();
+// Implicitly cast the body to a string and echo it
+        echo $body;
 
 
     }
