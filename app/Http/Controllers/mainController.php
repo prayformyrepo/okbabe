@@ -47,27 +47,27 @@ class mainController extends Controller
             }
             if ($ok == 1) {
 //
-                @$check=Post::find($values->id);
-                if ($check==null){
-                    echo  'nist<br>';
-                $addpost = new Post();
-                $addpost->id=$values->id;
-                $addpost->title = $values->title;
-                $addpost->description = $values->description;
-                $addpost->content = $items2->post->content;
-                $addpost->image = $values->image;
-                $addpost->rate = $values->rate;
-                $addpost->rate_count = $values->rate_count;
-                $addpost->comments = $values->comments;
-                $addpost->url = $values->url;
-                $addpost->commenting_enabled = $items2->post->commenting_enabled;
-                $addpost->meta_title = $items2->post->meta_title;
-                $addpost->meta_description = $items2->post->meta_description;
-                $addpost->save();
-                echo $values->title . 'with id'.$values->id.' added<br>';
-                }else{
-                    echo 'hast<br>'.$check->title.'<br>';
-                    }
+                @$check = Post::find($values->id);
+                if ($check == null) {
+                    echo 'nist<br>';
+                    $addpost = new Post();
+                    $addpost->id = $values->id;
+                    $addpost->title = $values->title;
+                    $addpost->description = $values->description;
+                    $addpost->content = $items2->post->content;
+                    $addpost->image = $values->image;
+                    $addpost->rate = $values->rate;
+                    $addpost->rate_count = $values->rate_count;
+                    $addpost->comments = $values->comments;
+                    $addpost->url = $values->url;
+                    $addpost->commenting_enabled = $items2->post->commenting_enabled;
+                    $addpost->meta_title = $items2->post->meta_title;
+                    $addpost->meta_description = $items2->post->meta_description;
+                    $addpost->save();
+                    echo $values->title . 'with id' . $values->id . ' added<br>';
+                } else {
+                    echo 'hast<br>' . $check->title . '<br>';
+                }
 
             } else {
                 echo 'no<br>';
@@ -103,7 +103,7 @@ class mainController extends Controller
                 $subsets = $values->subset;
                 foreach (array_reverse($subsets) as $name2 => $values2) {
                     $category = new Post_category();
-                    $category->id=$values2->id;
+                    $category->id = $values2->id;
                     $category->title = $values2->title;
                     $category->description = $values2->description;
                     $category->image = $values2->image;
@@ -115,7 +115,7 @@ class mainController extends Controller
                     if ($values2->subset !== null) {
                         foreach (array_reverse($values2->subset) as $name3 => $values3) {
                             $category = new Post_category();
-                            $category->id=$values3->id;
+                            $category->id = $values3->id;
                             $category->title = $values3->title;
                             $category->description = $values3->description;
                             $category->image = $values3->image;
@@ -128,7 +128,7 @@ class mainController extends Controller
                             if ($values3->subset !== null) {
                                 foreach (array_reverse($values3->subset) as $name4 => $values4) {
                                     $category = new Post_category();
-                                    $category->id=$values4->id;
+                                    $category->id = $values4->id;
                                     $category->title = $values4->title;
                                     $category->description = $values4->description;
                                     $category->image = $values4->image;
@@ -142,7 +142,7 @@ class mainController extends Controller
                                     if ($values4->subset !== null) {
                                         foreach (array_reverse($values4->subset) as $name5 => $values5) {
                                             $category = new Post_category();
-                                            $category->id=$values5->id;
+                                            $category->id = $values5->id;
                                             $category->title = $values5->title;
                                             $category->description = $values5->description;
                                             $category->image = $values5->image;
@@ -156,7 +156,7 @@ class mainController extends Controller
                                             if ($values5->subset !== null) {
                                                 foreach (array_reverse($values5->subset) as $name6 => $values6) {
                                                     $category = new Post_category();
-                                                    $category->id=$values6->id;
+                                                    $category->id = $values6->id;
                                                     $category->title = $values6->title;
                                                     $category->description = $values6->description;
                                                     $category->image = $values6->image;
@@ -170,7 +170,7 @@ class mainController extends Controller
                                                     if ($values6->subset !== null) {
                                                         foreach (array_reverse($values6->subset) as $name7 => $values7) {
                                                             $category = new Post_category();
-                                                            $category->id=$values7->id;
+                                                            $category->id = $values7->id;
                                                             $category->title = $values7->title;
                                                             $category->description = $values7->description;
                                                             $category->image = $values7->image;
@@ -197,33 +197,34 @@ class mainController extends Controller
 
     public function add_category()
     {
-        $client = new Client(['base_uri' => 'https://shaverno.com']);
-
-        $posts=Post::paginate(50);
-        foreach ($posts as $post){
-// Send a request to https://foo.com/api/test
-            $response = $client->request('GET', '/site/api/v1/blog/posts/'.$post->id);
-
-            $body = $response->getBody();
-            $items = json_decode($body);
-
-            $title = $items->post->title;
-            $post_id = $items->post->id;
-            $categories=$items->post->categories;
-            echo $title.'<br>'.$post_id.'<br>';
-
-            foreach (array_reverse($categories) as $name => $values) {
-                @$check=Post_category::find($values->id);
-                if ($check!=null) {
-                    $add = new Post_to_category();
-                    $add->post_id = $post_id;
-                    $add->category_id = $values->id;
-                    $add->save();
-                    echo '<h1>'.$values->id.'saved</h1>';
-                }
-
-            }
-            }
+//        $client = new Client(['base_uri' => 'https://shaverno.com']);
+//
+//        $posts = Post::paginate(50);
+//        foreach ($posts as $post) {
+//// Send a request to https://foo.com/api/test
+//            $response = $client->request('GET', '/site/api/v1/blog/posts/' . $post->id);
+//
+//            $body = $response->getBody();
+//            $items = json_decode($body);
+//
+//            $title = $items->post->title;
+//            $post_id = $items->post->id;
+//            $categories = $items->post->categories;
+//            echo $title . '<br>' . $post_id . '<br>';
+//
+//            foreach (array_reverse($categories) as $name => $values) {
+//                @$check = Post_category::find($values->id);
+//                if ($check != null) {
+//                    $add = new Post_to_category();
+//                    $add->post_id = $post_id;
+//                    $add->category_id = $values->id;
+//                    $add->save();
+//                    echo '<h1>' . $values->id . 'saved</h1>';
+//                }
+//
+//            }
+//        }
     }
+
 
 }

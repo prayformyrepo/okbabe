@@ -13,7 +13,7 @@ use Validator;
 
 class WalletController extends Controller
 {
-    public function pay(Request $request)
+    public function get_pay_token(Request $request)
     {
         $user=Auth::user();
         $validator = Validator::make($request->all(), [
@@ -54,6 +54,18 @@ class WalletController extends Controller
         return $token;
 
 
+    }
+
+    public function do_pay(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'token' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);
+        }
+
+        $success['url']='https://pay.ir/pg/'.$request->token;
     }
 
     public function verify(Request $request)
