@@ -13,6 +13,8 @@ use Validator;
 
 class WalletController extends Controller
 {
+    public $successStatus = 200;
+
     public function get_pay_token(Request $request)
     {
         $user=Auth::user();
@@ -51,7 +53,8 @@ class WalletController extends Controller
         $items = json_decode($body);
         $token=$items->token;
 // Implicitly cast the body to a string and echo it
-        return $token;
+        return response()->json(['success' => $token], $this-> successStatus);
+
 
 
     }
@@ -66,6 +69,9 @@ class WalletController extends Controller
         }
 
         $success['url']='https://pay.ir/pg/'.$request->token;
+        return response()->json(['success' => $success], $this-> successStatus);
+
+
     }
 
     public function verify(Request $request)
