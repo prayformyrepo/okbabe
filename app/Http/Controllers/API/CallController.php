@@ -240,11 +240,17 @@ class CallController extends Controller
         return response()->json(['success' => 'ok'], $this->successStatus);
     }
 
-    public function fetch_calls()
+    public function call_history()
     {
         $user=Auth::user();
         if ($user->as_adviser==1){
-
+            $adviser_id=Adviser::where('user_id',$user->id)->value('id');
+            $calls=Call::where('adviser_id',$adviser_id)->get();
+            $calls['adviser_user_id']=$user->id;
+            return response()->json(['success' => $calls], $this->successStatus);
+        }else{
+            $calls=Call::where('user_id',$user->id)->get();
+            return response()->json(['success' => $calls], $this->successStatus);
         }
     }
 }
