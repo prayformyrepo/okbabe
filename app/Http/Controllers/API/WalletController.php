@@ -27,7 +27,7 @@ class WalletController extends Controller
         $amount = $request->value; // Required, Amount
 //        $payir->factorNumber = 'Factor-Number'; // Optional
         $api='f1749f4ad693f87cd8c0d95a2b2d6184';
-        $redirect='shavernoapp.ir';
+        $redirect='shavernoapp.ir/pay/callback';
         $description = 'شارژ کیف پول به مبلغ '.
             $request->value.
             ' تومان '; // Optional
@@ -76,16 +76,12 @@ class WalletController extends Controller
 
     public function verify(Request $request)
     {
-        $payir = new PayirPG();
-        $payir->token = $request->token; // Pay.ir returns this token to your redirect url
-
-        try {
-            $verify = $payir->verify(); // returns verify result from pay.ir like (transId, cardNumber, ...)
-
-            dd($verify);
-        } catch (VerifyException $e) {
-            throw $e;
-        }
+       if ($request->status==1){
+           return view('callback',compact($request->token));
+       }
+       else{
+           return('<h3 style="text-align: center">دسترسی غیر مجاز</h3>');
+       }
     }
 
 

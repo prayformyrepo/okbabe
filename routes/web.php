@@ -44,7 +44,7 @@ Route::get('call',function (){
     return view('call');
 });
 
-Route::get('/pay/callback', 'WalletController@verify');
+Route::get('/pay/callback', 'API\WalletController@verify');
 
 //Route::get('/test',function(){
 //    $weekMap = [

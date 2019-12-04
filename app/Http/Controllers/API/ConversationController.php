@@ -229,7 +229,7 @@ class ConversationController extends Controller
         foreach ($messages as $m) {
             $me['id'] = $m->id;
             $me['text'] = $m->text;
-            $m->user_id==Auth::user()->id?$me['status'] = 1:$me['status'] = $m->status;
+            $me['status'] = $m->status;
             $me['user_id'] = $m->user_id;
 
             if (User::find($m->user_id)->name == null)
