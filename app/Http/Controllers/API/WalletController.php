@@ -15,7 +15,7 @@ class WalletController extends Controller
 {
     public $successStatus = 200;
 
-    public function get_pay_token(Request $request)
+    public function do_pay(Request $request)
     {
         $user=Auth::user();
         $validator = Validator::make($request->all(), [
@@ -52,27 +52,15 @@ class WalletController extends Controller
         $body = $response->getBody();
         $items = json_decode($body);
         $token=$items->token;
+        $success['url']='https://pay.ir/pg/'.$token;
+
 // Implicitly cast the body to a string and echo it
-        return response()->json(['success' => $token], $this-> successStatus);
-
-
-
-    }
-
-    public function do_pay(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            'token' => 'required',
-        ]);
-        if ($validator->fails()) {
-            return response()->json(['error'=>$validator->errors()], 401);
-        }
-
-        $success['url']='https://pay.ir/pg/'.$request->token;
         return response()->json(['success' => $success], $this-> successStatus);
 
 
+
     }
+
 
     public function verify(Request $request)
     {
