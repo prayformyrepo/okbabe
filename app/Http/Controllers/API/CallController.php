@@ -253,4 +253,5 @@ class CallController extends Controller
             return response()->json(['success' => $calls], $this->successStatus);
         }
     }
+
 }
