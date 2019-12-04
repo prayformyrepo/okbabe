@@ -1,44 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/eot/IRANSansWeb(FaNum).eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/eot/IRANSansWeb(FaNum)_Medium.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/eot/IRANSansWeb.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/eot/IRANSansWeb_Black.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/eot/IRANSansWeb_Bold.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/eot/IRANSansWeb_Light.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/eot/IRANSansWeb_Medium.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/eot/IRANSansWeb_UltraLight.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/ttf/IRANSansWeb(FaNum).ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/ttf/IRANSansWeb(FaNum)_Medium.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/ttf/IRANSansWeb.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/ttf/IRANSansWeb_Black.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/ttf/IRANSansWeb_Bold.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/ttf/IRANSansWeb_Light.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/ttf/IRANSansWeb_Medium.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/ttf/IRANSansWeb_UltraLight.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/woff/IRANSansWeb(FaNum).woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/woff/IRANSansWeb(FaNum)_Medium.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/woff/IRANSansWeb.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/woff/IRANSansWeb_Black.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/woff/IRANSansWeb_Bold.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/woff/IRANSansWeb_Light.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/woff/IRANSansWeb_Medium.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/woff/IRANSansWeb_UltraLight.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/woff2/IRANSansWeb(FaNum).woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/woff2/IRANSansWeb(FaNum)_Medium.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/woff2/IRANSansWeb.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/woff2/IRANSansWeb_Black.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/woff2/IRANSansWeb_Bold.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/woff2/IRANSansWeb_Light.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/woff2/IRANSansWeb_Medium.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/iranSans/woff2/IRANSansWeb_UltraLight.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/views/callback.blade.php" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/WalletController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/WalletController.php" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
-    </list>
+    <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,8 +47,8 @@
       <file leaf-file-name="ConversationController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/ConversationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="207" column="29" lean-forward="false" selection-start-line="207" selection-start-column="23" selection-end-line="207" selection-end-column="29" />
+            <state relative-caret-position="3110">
+              <caret line="231" column="12" lean-forward="false" selection-start-line="231" selection-start-column="12" selection-end-line="231" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -203,7 +166,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/BlogController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_11_30_185550_add_unread_message_user_id_to_conversations.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/ConversationController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/QuestionController.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/resources/js/components/Example.vue" />
@@ -215,6 +177,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/WalletController.php" />
         <option value="$PROJECT_DIR$/resources/views/callback.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/ConversationController.php" />
       </list>
     </option>
   </component>
@@ -498,7 +461,7 @@
       <workItem from="1574405788322" duration="1511000" />
       <workItem from="1574488919896" duration="883000" />
       <workItem from="1574494702295" duration="10138000" />
-      <workItem from="1574836102733" duration="44296000" />
+      <workItem from="1574836102733" duration="44668000" />
     </task>
     <task id="LOCAL-00094" summary="edit fetch messages">
       <created>1575015968174</created>
@@ -855,11 +818,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212520000" />
+    <option name="totallyTimeSpent" value="212892000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2647059" sideWeight="0.50555557" order="7" side_tool="true" content_ui="tabs" />
@@ -867,7 +829,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2647059" sideWeight="0.49444443" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2647059" sideWeight="0.49444443" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20902778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1330,8 +1292,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/ConversationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="207" column="29" lean-forward="false" selection-start-line="207" selection-start-column="23" selection-end-line="207" selection-end-column="29" />
+        <state relative-caret-position="3110">
+          <caret line="231" column="12" lean-forward="false" selection-start-line="231" selection-start-column="12" selection-end-line="231" selection-end-column="12" />
           <folding />
         </state>
       </provider>

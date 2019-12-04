@@ -54,6 +54,7 @@ class ConversationController extends Controller
                 $conversation->user_id = $user->id;
                 $conversation->status = 0;
                 $conversation->has_unread = 1;
+                $conversation->unread_user_id = $request->user_id;
                 $conversation->save();
             } else {
                 $conversation_id = $conversation->value('id');
