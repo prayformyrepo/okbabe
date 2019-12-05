@@ -6,29 +6,61 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>نتیجه شارژ کیف پول</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
     <style>
         @font-face {
             font-family: 'iranSans';
-            src:url('/iranSans/eot/IRANSansWeb.eot');
-            src:url('/iranSans/eot/IRANSansWeb.eot?#iefix') format('embedded-opentype'),
-            url('/iranSans/woff/IRANSansWeb.woff') format('woff'),
-            url('/iranSans/ttf/IRANSansWeb.ttf') format('truetype');
+            src:url('/iranSans/eot/IRANSansWeb(FaNum)_Medium.eot');
+            src:url('/iranSans/eot/IRANSansWeb(FaNum)_Medium.eot?#iefix') format('embedded-opentype'),
+            url('/iranSans/woff/IRANSansWeb(FaNum)_Medium.woff') format('woff'),
+            url('/iranSans/ttf/IRANSansWeb(FaNum)_Medium.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
-
-        .title{
+        body{
+            background-color: #f2f2f2;
+            direction: rtl;
+            text-align: center;
             font-family: 'iranSans';
-            color: cornflowerblue;
-            font-weight: bolder;
 
         }
 
         .title{
-            font-family: 'iranSans';
+            direction: rtl;
+            color: cornflowerblue;
+            font-size: 30px;
+            font-weight: bolder;
+            margin: 20px auto;
+
+        }
+
+        .title{
             color: #4340ed;
             font-weight: bold;
 
+        }
+        .row{
+            margin: 15px 0;
+        }
+
+        img{
+            border-radius: 20px;
+        }
+        .box{
+            background-color: white;
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(108, 108, 108, 0.8);
+        }
+        .green{
+            font-size: 30px;
+            font-weight: bolder;
+            color: #1e7e34;
+        }
+        .subtitle{
+            font-size: 12px;
         }
     </style>
 </head>
@@ -36,26 +68,41 @@
 
 <div class="row">
     <div class="col-sm-3"></div>
-    <div class="col-sm-6"><img src="https://shavernoapp.ir/logo.one.jpg" style="width: 100%" alt=""></div>
+    <div class="col-sm-6"><img src="https://shavernoapp.ir/logo/one.jpg" style="width: 200px" alt=""></div>
     <div class="col-sm-3"></div>
 </div>
 
 <div class="row">
     <div class="col-sm-3"></div>
-    <div class="col-sm-6 title">پرداخت با موفقیت انجام شد</div>
+    <div class="col-sm-6 title">
+        {{$user->username}}
+         عزیز
+        <br>
+        پرداخت با موفقیت انجام شد
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+
+<div class="box">
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6 subtitle">
+        رسید پرداخت آنلاین:
+        <br>
+        <span class="green">{{$amount}} تومان</span>
+        <br>
+        برای شارژ کیف پول و بازگشت به برنامه روی دکمه زیر کلیک کنید.
+        <br>
+        دقت داشته باشید در صورت عدم کلیک بر روی دکمه زیر، شارژ کیف پول شما انجام نخواهد
+        شد.</div>
     <div class="col-sm-3"></div>
 </div>
 
 <div class="row">
     <div class="col-sm-3"></div>
-    <div class="col-sm-6 subtitle">برای شارژ کیف پول و بازگشب به برنامه روی دکمه زیر کلیک کنید<br> دقت داشته باشید در صورت عدم کلیک بر روی دکمه زیر، شارژ کیف پول شما انجام نخواهد شد</div>
+    <div class="col-sm-6 subtitle"><a class="btn btn-success btn-lg" href="/pay/verify">تکمیل خرید</a></div>
     <div class="col-sm-3"></div>
 </div>
-
-<div class="row">
-    <div class="col-sm-3"></div>
-    <div class="col-sm-6 subtitle">برای شارژ کیف پول و بازگشب به برنامه روی دکمه زیر کلیک کنید<br> دقت داشته باشید در صورت عدم کلیک بر روی دکمه زیر، شارژ کیف پول شما انجام نخواهد شد</div>
-    <div class="col-sm-3"></div>
 </div>
 
 </body>

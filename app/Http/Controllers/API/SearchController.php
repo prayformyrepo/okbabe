@@ -45,7 +45,7 @@ class SearchController extends Controller
         $all['advisers']=$adviser_show;
 
         //categories
-        $categories_show=Adviser_category::where('name', 'like', '%'.$request->q.'%')->select('id', 'name','parent_category_id')->limit(4)->get();
+        $categories_show=Adviser_category::where('name', 'like', '%'.$request->q.'%')->select('id', 'name','parent_category_id')->limit(12)->get();
         $all['categories']=$categories_show;
 
 

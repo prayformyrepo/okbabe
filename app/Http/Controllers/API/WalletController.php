@@ -4,6 +4,8 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Transaction;
+use App\User;
+use App\Wallet;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -52,6 +54,12 @@ class WalletController extends Controller
         $body = $response->getBody();
         $items = json_decode($body);
         $token=$items->token;
+
+        $wallet=new Wallet();
+        $wallet->user_id=Auth::user()->id;
+        $wallet->finance=$amount;
+        $wallet->payment_method_id=$token;
+        $wallet->save();
         $success['url']='https://pay.ir/pg/'.$token;
 
 // Implicitly cast the body to a string and echo it
@@ -65,11 +73,20 @@ class WalletController extends Controller
     public function verify(Request $request)
     {
        if ($request->status==1){
-           return view('callback',compact($request->token));
+           $token=$request->token;
+           $user_id=Wallet::where('payment_method_id',$token)->value('user_id');
+           $user=User::find($user_id);
+           $amount=Wallet::where('payment_method_id',$token)->value('finance');
+           return view('callback',compact('user','amount'));
        }
        else{
            return('<h3 style="text-align: center">دسترسی غیر مجاز</h3>');
        }
+    }
+
+    public function accept()
+    {
+        
     }
 
 
