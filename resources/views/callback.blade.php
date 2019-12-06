@@ -104,7 +104,7 @@
 
 <div class="row">
     <div class="col-sm-3"></div>
-    <div class="col-sm-6 subtitle"><a class="btn btn-success btn-lg" href="shavernoapp://open">بازگشت به شاورنو</a></div>
+    <div class="col-sm-6 subtitle"><a class="btn btn-success btn-lg" href="rentalandroid://shavernoapp.ir">بازگشت به شاورنو</a></div>
     <div class="col-sm-3"></div>
 </div>
 </div>
