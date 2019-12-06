@@ -173,7 +173,7 @@ class ConversationController extends Controller
     public function fetch_messages(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'conversation_id' => 'required',
+//            'conversation_id' => 'required',
 //            'last_message_id' => 'required'
         ]);
         if ($validator->fails()) {
@@ -181,8 +181,18 @@ class ConversationController extends Controller
         }
 
         $user = Auth::user();
-        $conversation = Conversation::find($request->conversation_id);
+        if (isset($request->conversation_id)) {
+            $conversation = Conversation::find($request->conversation_id);
+        }
+        elseif (isset($request->user_id)){
+            if (User::find(Auth::user()->id)->is_adviser==1){
+                $conversation=Conversation::where('adviser_id',Auth::user()->id)->where('user_id',$request->user_id)->get();
 
+            }else{
+                $conversation=Conversation::where('user_id',Auth::user()->id)->where('adviser_id',$request->user_id)->get();
+
+            }
+        }
         if ($conversation->user_id == $user->id) {
             $sender_user_id = $conversation->adviser_id;
         } else if ($conversation->adviser_id == $user->id) {
