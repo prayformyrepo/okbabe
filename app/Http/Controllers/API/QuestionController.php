@@ -269,7 +269,7 @@ class QuestionController extends Controller
 
         @$question = Question::find($request->question_id);
         if (!isset($question)) return response()->json(['error' => 'not found'], 404);
-        if ($question->status == 0) return response()->json(['error' => 'unauthorized'], 401);
+        if ($question->status == 0 && $user->is_adviser==0) return response()->json(['error' => 'unauthorized'], 401);
         if ($question->is_private == 1) {
             $question = Question::select('id', 'question_category_id', 'subject', 'text', 'is_private', 'status', 'views', 'likes', 'created_at', 'updated_at')->find($request->question_id);
             $question['answers'] = Question::find($request->question_id)->answers()->get();

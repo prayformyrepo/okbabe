@@ -75,15 +75,20 @@
 <div class="row">
     <div class="col-sm-3"></div>
     <div class="col-sm-6 title">
+        @if($status==1)
         {{$user->username}}
          عزیز
         <br>
         پرداخت با موفقیت انجام شد
+            @else
+            متاسفانه پرداخت با موفقیت انجام نشد
+@endif
     </div>
     <div class="col-sm-3"></div>
 </div>
 
 <div class="box">
+    @if($status==1)
 <div class="row">
     <div class="col-sm-3"></div>
     <div class="col-sm-6 subtitle">
@@ -91,16 +96,15 @@
         <br>
         <span class="green">{{$amount}} تومان</span>
         <br>
-        برای شارژ کیف پول و بازگشت به برنامه روی دکمه زیر کلیک کنید.
-        <br>
-        دقت داشته باشید در صورت عدم کلیک بر روی دکمه زیر، شارژ کیف پول شما انجام نخواهد
-        شد.</div>
+        برای بازگشت به برنامه روی دکمه زیر کلیک کنید.
+         </div>
     <div class="col-sm-3"></div>
 </div>
+    @endif
 
 <div class="row">
     <div class="col-sm-3"></div>
-    <div class="col-sm-6 subtitle"><a class="btn btn-success btn-lg" href="/pay/verify">تکمیل خرید</a></div>
+    <div class="col-sm-6 subtitle"><a class="btn btn-success btn-lg" href="/pay/verify">بازگشت به شاورنو</a></div>
     <div class="col-sm-3"></div>
 </div>
 </div>

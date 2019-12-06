@@ -72,22 +72,19 @@ class WalletController extends Controller
 
     public function verify(Request $request)
     {
-       if ($request->status==1){
            $token=$request->token;
+           $status=$request->status;
            $user_id=Wallet::where('payment_method_id',$token)->value('user_id');
            $user=User::find($user_id);
            $amount=Wallet::where('payment_method_id',$token)->value('finance');
-           return view('callback',compact('user','amount'));
-       }
-       else{
-           return('<h3 style="text-align: center">دسترسی غیر مجاز</h3>');
-       }
+
+           if ($status==1){
+
+           }
+           return view('callback',compact('user','amount','status'));
+
     }
 
-    public function accept()
-    {
-        
-    }
 
 
 }
