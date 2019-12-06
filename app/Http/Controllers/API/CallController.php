@@ -25,18 +25,20 @@ class CallController extends Controller
     public function make_call(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'adviser_id' => 'required'
+            'user_id' => 'required'
 //
         ]);
         if ($validator->fails()) {
             return response()->json(['error' => $validator->errors()], 401);
         }
+        $adviser_id=Adviser::where('user_id',$request->user_id)->value('id');
 
-        $adviser = Adviser::find($request->adviser_id);
+
+        $adviser = Adviser::find($adviser_id);
         if ($adviser->is_online == 0) {
             $call = new Call();
             $call->user_id = Auth::user()->id;
-            $call->adviser_id = $request->adviser_id;
+            $call->adviser_id = $adviser_id;
             $call->status = 1; //offline status
             $call->save();
 
@@ -46,7 +48,7 @@ class CallController extends Controller
         if ($adviser->status == 0) {
             $call = new Call();
             $call->user_id = Auth::user()->id;
-            $call->adviser_id = $request->adviser_id;
+            $call->adviser_id = $adviser_id;
             $call->status = 4; //offline status
             $call->save();
 
@@ -57,7 +59,7 @@ class CallController extends Controller
         if ($adviser->is_busy == 1) {
             $call = new Call();
             $call->user_id = Auth::user()->id;
-            $call->adviser_id = $request->adviser_id;
+            $call->adviser_id = $adviser_id;
             $call->status = 0; //busy status
             $call->save();
 
@@ -66,11 +68,11 @@ class CallController extends Controller
 
         $adviser_number = '0' . User::find($adviser->user_id)->mobile;
         $user_number = '0' . Auth::user()->mobile;
-        $maxcalltime = floor(Auth::user()->wallet / Adviser::find($request->adviser_id)->nominal_call_price);
+        $maxcalltime = floor(Auth::user()->wallet / Adviser::find($adviser_id)->nominal_call_price);
         if ($maxcalltime < 1) return response()->json(['error' => 'اعتبار کافی نیست'], 401);
 
 
-        if (Adviser::find($request->adviser_id)->is_busy == 0 && Adviser::find($request->adviser_id)->is_online == 1) {
+        if (Adviser::find($adviser_id)->is_busy == 0 && Adviser::find($adviser_id)->is_online == 1) {
             $client = new Client(['base_uri' => 'http://45.156.186.248']);
 // Send a request to https://foo.com/api/test
             $call_secure = Call_secure::all()->first();
@@ -84,22 +86,22 @@ class CallController extends Controller
 
                 $call = new Call();
                 $call->user_id = Auth::user()->id;
-                $call->adviser_id = $request->adviser_id;
+                $call->adviser_id = $adviser_id;
                 $call->call_file = $callfile;
                 $call->status = 2; //speacking status
                 $call->save();
 
                 $event = new Event();
                 $event->user_id = Auth::user()->id;
-                $event->adviser_id = $request->adviser_id;
+                $event->adviser_id = $adviser_id;
                 $event->type = 2;
                 $event->save();
 
-                $adviser = Adviser::find($request->adviser_id);
+                $adviser = Adviser::find($adviser_id);
                 $adviser->is_busy = 1;
                 $adviser->save();
 
-                $adviser_user_id = Adviser::find($request->adviser_id)->user_id;
+                $adviser_user_id = Adviser::find($adviser_id)->user_id;
                 $mobile = User::find($adviser_user_id)->mobile;
 
                 //sms
