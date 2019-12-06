@@ -99,6 +99,11 @@ class WalletController extends Controller
             $wallet->trans_id=$body->transId;
             $wallet->save();
 
+            $amount=$amount/10;
+            $user=User::find($user_id);
+            $user->wallet=$user->wallet+$amount;
+            $user->save();
+
         }
         return view('callback', compact('user', 'amount', 'status'));
 
