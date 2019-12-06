@@ -155,7 +155,7 @@ class ConversationController extends Controller
                 $con['id'] = $conversation->id;
                 $con['adviser_id'] = $conversation->adviser_id;
                 $con['user_id'] = $conversation->user_id;
-                $con['user_name'] = User::find($conversation->user_id)->name;
+                User::find($conversation->user_id)->name==null?$con['user_name'] = User::find($conversation->user_id)->username:$con['user_name'] = User::find($conversation->user_id)->name;
                 $con['user_avatar'] = User::find($conversation->user_id)->avatar;
                 $con['status'] = $conversation->status;
                 $con['last_message_id'] = $conversation->last_message_id;
