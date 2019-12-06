@@ -186,10 +186,12 @@ class ConversationController extends Controller
         }
         elseif (isset($request->user_id)){
             if (User::find(Auth::user()->id)->is_adviser==1){
-                $conversation=Conversation::where('adviser_id',Auth::user()->id)->where('user_id',$request->user_id)->get();
+                $conversation=Conversation::where('adviser_id',Auth::user()->id)->where('user_id',$request->user_id)->value('id');
+                $conversation=Conversation::find($conversation);
 
             }else{
-                $conversation=Conversation::where('user_id',Auth::user()->id)->where('adviser_id',$request->user_id)->get();
+                $conversation=Conversation::where('user_id',Auth::user()->id)->where('adviser_id',$request->user_id)->value('id');
+                $conversation=Conversation::find($conversation);
 
             }
         }
