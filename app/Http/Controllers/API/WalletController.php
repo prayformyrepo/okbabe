@@ -100,9 +100,11 @@ class WalletController extends Controller
             $wallet->save();
 
             $amount=$amount/10;
-            $user=User::find($user_id);
-            $user->wallet=$user->wallet+$amount;
-            $user->save();
+            if ($wallet->trans_id==null) {
+                $user = User::find($user_id);
+                $user->wallet = $user->wallet + $amount;
+                $user->save();
+            }
 
         }
         return view('callback', compact('user', 'amount', 'status'));
