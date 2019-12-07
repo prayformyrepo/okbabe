@@ -34,6 +34,8 @@ class AdviserController extends Controller
             $advisers = Adviser::where('user_id',$request->user_id)->value('id');
             $advisers=Adviser::find($advisers);
             $adviser['adviser']=$advisers;
+            $adviser['adviser']['RN_field']=str_replace('<br>','',$advisers->field);
+            $adviser['adviser']['RN_about']=str_replace('<br>','',$advisers->about);
             $adviser['adviser']['name']=User::find($request->user_id)->name;
             $adviser['adviser']['avatar']=User::find($request->user_id)->avatar;
 //            $adviser['adviser']['categories']=$advisers->categories()->get();
@@ -51,6 +53,8 @@ class AdviserController extends Controller
         $a=array();
         foreach ($advisers as $advise){
            $adviser['adviser']=$advise;
+            $adviser['adviser']['RN_field']=str_replace('<br>','',$advise->field);
+            $adviser['adviser']['RN_about']=str_replace('<br>','',$advise->about);
             $adviser['adviser']['name']=User::find($advise->user_id)->name;
             $adviser['adviser']['avatar']=User::find($advise->user_id)->avatar;
             $adviser['adviser']['categories']=$advise->categories()->get();
