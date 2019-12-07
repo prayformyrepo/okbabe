@@ -55,6 +55,9 @@ class AdviserController extends Controller
             $adviser['adviser']['avatar']=User::find($advise->user_id)->avatar;
             $adviser['adviser']['categories']=$advise->categories()->get();
             $adviser['adviser']['times']=$advise->times()->get();
+            $adviser['adviser']['qa_count']=Question_answer::where('adviser_id',$advise->id)->count();
+            $adviser['adviser']['comment_count']=Adviser_rate::where('adviser_id',$advise->id)->where('comment','!=',null)->count();
+            $adviser['adviser']['call_count']=Call::where('adviser_id',$advise->id)->where('duration','!=',null)->count();
             array_push($a,$adviser);
         }
         return response()->json(['success' => $a], $this->successStatus);
