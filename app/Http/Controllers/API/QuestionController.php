@@ -98,7 +98,7 @@ class QuestionController extends Controller
                     $questionsArray = Question::where('question_category_id', $adviser_category->adviser_category_id)->orderBy('id', 'DESC')->get();
                     foreach ($questionsArray as $questionArray) {
                         $q = $questionArray;
-                        $questions_array['now'] = Carbon::now()->format('Y-m-d H:i:s');
+                        $q['now'] = Carbon::now()->format('Y-m-d H:i:s');
                         array_push($questions_array, $q);
                     }
                 }
