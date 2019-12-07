@@ -81,7 +81,7 @@ class ConversationController extends Controller
             $notification->save();
 
             $success['message'] = 'message requested';
-//            $success['conversation'] = $conversation;
+            $success['conversation_id'] = $conversation->id;
 
         } else {
             $conversation = Conversation::where('adviser_id', $user->id)->where('user_id', $request->user_id);
@@ -102,7 +102,7 @@ class ConversationController extends Controller
                 } else {
                     $success['message'] = 'message already requested';
                     $conversation = Conversation::find($conversation_id);
-//                    $success['conversation'] = $conversation;
+                    $success['conversation_id'] = $conversation_id;
 
                     return response()->json(['success' => $success], $this->successStatus);
                 }
