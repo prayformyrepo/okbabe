@@ -42,7 +42,9 @@ class CallController extends Controller
             $call->status = 1; //offline status
             $call->save();
 
-            return response()->json(['error' => 'مشاور آفلاین است'], 401);
+            $error['message']='مشاور آفلاین است';
+            $error['status']='offline';
+            return response()->json(['error' => $error], 401);
         }
 
         if ($adviser->status == 0) {
@@ -52,7 +54,9 @@ class CallController extends Controller
             $call->status = 4; //offline status
             $call->save();
 
-            return response()->json(['error' => 'مشاور در دسترس نیست'], 401);
+            $error['message']='مشاور در دسترس نیست';
+            $error['status']='unreachable';
+            return response()->json(['error' => $error], 401);
         }
 
 
@@ -63,14 +67,20 @@ class CallController extends Controller
             $call->status = 0; //busy status
             $call->save();
 
-            return response()->json(['error' => 'مشاور در حال مکالمه است'], 401);
+            $error['message']='مشاور در حال مکالمه است';
+            $error['status']='busy';
+            return response()->json(['error' => $error], 401);
         }
 
         $adviser_number = '0' . User::find($adviser->user_id)->mobile;
         $user_number = '0' . Auth::user()->mobile;
         $maxcalltime = floor(Auth::user()->wallet / Adviser::find($adviser_id)->nominal_call_price);
-        if ($maxcalltime < 1) return response()->json(['error' => 'اعتبار کافی نیست'], 401);
+        if ($maxcalltime < 1) {
 
+            $error['message'] = 'اعتبار کافی نیست';
+            $error['status'] = 'credit';
+            return response()->json(['error' => $error], 401);
+        }
 
         if (Adviser::find($adviser_id)->is_busy == 0 && Adviser::find($adviser_id)->is_online == 1) {
             $client = new Client(['base_uri' => 'http://45.156.186.248']);
@@ -79,7 +89,12 @@ class CallController extends Controller
             $response = $client->request('GET', 'http://45.156.186.248/my/api' . $call_secure->clid . '.php?email=' . $call_secure->username . '&pass=' . $call_secure->password . '&siteurl=' . $call_secure->siteurl . '&ivrfile=' . $call_secure->ivrfile . '&drivers=' . $adviser_number . '&customer=' . $user_number . '&maxcalltime=' . $maxcalltime);
             $body = $response->getBody();
 
-            if (strpos($body, 'errot') != null) return response()->json(['error' => 'متاسفانه تماس برقرار نشد'], 401);
+            if (strpos($body, 'errot') != null) {
+
+                $error['message'] = 'متاسفانه تماس برقرار نشد';
+                $error['status'] = 'unknown';
+                return response()->json(['error' => $error], 401);
+            }
 
             if (strpos($body, 'callfile') != null) {
                 $callfile = substr($body, 32, 19);
