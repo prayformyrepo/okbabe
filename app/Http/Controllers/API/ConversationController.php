@@ -239,7 +239,7 @@ class ConversationController extends Controller
 
 //        $conversation=Conversation::select('id','text','status','updated_at')->find($request->conversation_id);
 
-        $messages = $conversation->messages($last_message_id)->paginate(10);
+        $messages = $conversation->messagesByLastId($last_message_id)->paginate(10);
         $mess = array();
         foreach ($messages as $m) {
             $me['id'] = $m->id;
@@ -258,16 +258,16 @@ class ConversationController extends Controller
             array_push($mess, $me);
         }
 
-//        $paginate['total']=$messages->total();
-//        $paginate['per_page']=$messages->perPage();
-//        $paginate['current_page']=$messages->currentPage();
-//        $paginate['last_page']=$messages->lastPage();
-//        $paginate['has_more_pages']=$messages->hasMorePages();
-//        $paginate['next_page_url']=$messages->nextPageUrl();
-//        $paginate['previous_page_url']=$messages->previousPageUrl();
+        $paginate['total']=$messages->total();
+        $paginate['per_page']=$messages->perPage();
+        $paginate['current_page']=$messages->currentPage();
+        $paginate['last_page']=$messages->lastPage();
+        $paginate['has_more_pages']=$messages->hasMorePages();
+        $paginate['next_page_url']=$messages->nextPageUrl();
+        $paginate['previous_page_url']=$messages->previousPageUrl();
 
 
-        return response()->json(['success' => $mess], $this->successStatus);
+        return response()->json(['success' => $mess,'pagination'=>$paginate], $this->successStatus);
     }
 
     public function send_message(Request $request)

@@ -14,10 +14,10 @@ class Conversation extends Model
         return $this->belongsToMany(Message::class,'conversation__messages')->orderBy('id','DESC');
     }
 
-//    public function messagesByLastId($last)
-//    {
-//        return $this->belongsToMany(Message::class,'conversation__messages')->where('id', '>=', $last)->orderBy('id','DESC');
-//    }
+    public function messagesByLastId($last)
+    {
+        return $this->belongsToMany(Message::class,'conversation__messages')->orderBy('id','DESC')->where('message_id', '>=', $last);
+    }
 
 
     public function getLastMessageTextAttribute()
