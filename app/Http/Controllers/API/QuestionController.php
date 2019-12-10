@@ -81,7 +81,7 @@ class QuestionController extends Controller
         }
         $user = Auth::user();
         if (isset($request->show_all) && $request->show_all == 1 && !isset($request->self)) {
-            $questions = Question::orderBy('id', 'DESC')->simplePaginate(10);
+            $questions = Question::orderBy('id', 'DESC')->paginate(10);
             $questions_array = array();
             foreach ($questions as $question) {
                 $save['question'] = $question;
@@ -110,7 +110,7 @@ class QuestionController extends Controller
 //                    array_push($questions_array,$save);
 //                }
             } else {
-                $questions = Question::where('user_id', $user->id)->orderBy('id', 'DESC')->simplePaginate(10);
+                $questions = Question::where('user_id', $user->id)->orderBy('id', 'DESC')->paginate(10);
                 $questions_array = array();
                 foreach ($questions as $question) {
                     $save['question'] = $question;
@@ -121,7 +121,7 @@ class QuestionController extends Controller
             }
 
         } else {
-            $questions = Question::where('status', 1)->orderBy('id', 'DESC')->simplePaginate(10);
+            $questions = Question::where('status', 1)->orderBy('id', 'DESC')->paginate(10);
             $questions_array = array();
             foreach ($questions as $question) {
                 $save['question'] = $question;
@@ -132,7 +132,16 @@ class QuestionController extends Controller
             }
         }
 //        $questions_array['now'] = Carbon::now()->format('Y-m-d H:i:s');
-        return response()->json(['success' => $questions_array], $this->successStatus);
+
+
+        $paginate['total']=$questions->total();
+        $paginate['per_page']=$questions->perPage();
+        $paginate['current_page']=$questions->currentPage();
+        $paginate['last_page']=$questions->lastPage();
+        $paginate['has_more_pages']=$questions->hasMorePages();
+        $paginate['next_page_url']=$questions->nextPageUrl();
+        $paginate['previous_page_url']=$questions->previousPageUrl();
+        return response()->json(['success' => $questions_array,'pagination'=>$paginate], $this->successStatus);
 
     }
 
