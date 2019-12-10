@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="" />
+    <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/ConversationController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/ConversationController.php" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,8 +69,8 @@
       <file leaf-file-name="ConversationController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/ConversationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="269" column="75" lean-forward="false" selection-start-line="269" selection-start-column="75" selection-end-line="269" selection-end-column="75" />
+            <state relative-caret-position="395">
+              <caret line="260" column="29" lean-forward="true" selection-start-line="260" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -483,7 +485,7 @@
       <workItem from="1574836102733" duration="62936000" />
       <workItem from="1575723288460" duration="30000" />
       <workItem from="1575724079888" duration="2445000" />
-      <workItem from="1575928746818" duration="1865000" />
+      <workItem from="1575928746818" duration="1941000" />
     </task>
     <task id="LOCAL-00094" summary="edit fetch messages">
       <created>1575015968174</created>
@@ -840,7 +842,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="235500000" />
+    <option name="totallyTimeSpent" value="235576000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1259,8 +1261,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/ConversationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="269" column="75" lean-forward="false" selection-start-line="269" selection-start-column="75" selection-end-line="269" selection-end-column="75" />
+        <state relative-caret-position="395">
+          <caret line="260" column="29" lean-forward="true" selection-start-line="260" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
           <folding />
         </state>
       </provider>

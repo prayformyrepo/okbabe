@@ -259,15 +259,15 @@ class ConversationController extends Controller
         }
 
 //        $paginate['total']=$messages->total();
-        $paginate['per_page']=$messages->perPage();
-        $paginate['current_page']=$messages->currentPage();
-        $paginate['last_page']=$messages->lastPage();
-        $paginate['has_more_pages']=$messages->hasMorePages();
-        $paginate['next_page_url']=$messages->nextPageUrl();
-        $paginate['previous_page_url']=$messages->previousPageUrl();
+//        $paginate['per_page']=$messages->perPage();
+//        $paginate['current_page']=$messages->currentPage();
+//        $paginate['last_page']=$messages->lastPage();
+//        $paginate['has_more_pages']=$messages->hasMorePages();
+//        $paginate['next_page_url']=$messages->nextPageUrl();
+//        $paginate['previous_page_url']=$messages->previousPageUrl();
 
 
-        return response()->json(['success' => $mess,"pagination"=>$paginate], $this->successStatus);
+        return response()->json(['success' => $mess], $this->successStatus);
     }
 
     public function send_message(Request $request)
