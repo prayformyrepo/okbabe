@@ -31,8 +31,8 @@ class AdviserController extends Controller
         }
         else if (isset($request->user_id)){
             $a=array();
-            $advisers = Adviser::where('user_id',$request->user_id)->value('id');
-            $advisers=Adviser::find($advisers);
+            $advisers_id = Adviser::where('user_id',$request->user_id)->value('id');
+            $advisers=Adviser::find($advisers_id);
             $adviser['adviser']=$advisers;
             $adviser['adviser']['RN_field']=str_replace('<br>','',$advisers->field);
             $adviser['adviser']['RN_about']=str_replace('<br>','',$advisers->about);
@@ -43,6 +43,8 @@ class AdviserController extends Controller
             $adviser['adviser']['qa_count']=Question_answer::where('adviser_id',$advisers->id)->count();
             $adviser['adviser']['comment_count']=Adviser_rate::where('adviser_id',$advisers->id)->where('comment','!=',null)->count();
             $adviser['adviser']['call_count']=Call::where('adviser_id',$advisers->id)->where('duration','!=',null)->count();
+            $save_count=Saved_adviser::where('user_id',Auth::user()->id)->where('adviser_id',$advisers_id)->count();
+            $adviser['adviser']['is_saved']=$save_count==0?0:1;
 
             array_push($a,$adviser);
             return response()->json(['success' => $a], $this->successStatus);
