@@ -29,7 +29,14 @@ class BlogController extends Controller
                 array_push($posts,$p);
             }
         }
-        return response()->json(['success' => $posts], $this-> successStatus);
+        $paginate['total']=$show_posts->total();
+        $paginate['per_page']=$show_posts->perPage();
+        $paginate['current_page']=$show_posts->currentPage();
+        $paginate['last_page']=$show_posts->lastPage();
+        $paginate['has_more_pages']=$show_posts->hasMorePages();
+        $paginate['next_page_url']=$show_posts->nextPageUrl();
+        $paginate['previous_page_url']=$show_posts->previousPageUrl();
+        return response()->json(['success' => $posts,"pagination"=>$paginate], $this-> successStatus);
     }
 
     public function show_blog_categories()
