@@ -258,7 +258,7 @@ class ConversationController extends Controller
             array_push($mess, $me);
         }
 
-        $paginate['total']=$messages->total();
+//        $paginate['total']=$messages->total();
         $paginate['per_page']=$messages->perPage();
         $paginate['current_page']=$messages->currentPage();
         $paginate['last_page']=$messages->lastPage();
