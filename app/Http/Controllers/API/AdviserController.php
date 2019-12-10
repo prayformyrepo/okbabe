@@ -69,7 +69,14 @@ class AdviserController extends Controller
 
             array_push($a,$adviser);
         }
-        return response()->json(['success' => $a], $this->successStatus);
+        $paginate['total']=$advisers->total();
+        $paginate['per_page']=$advisers->perPage();
+        $paginate['current_page']=$advisers->currentPage();
+        $paginate['last_page']=$advisers->lastPage();
+        $paginate['has_more_pages']=$advisers->hasMorePages();
+        $paginate['next_page_url']=$advisers->nextPageUrl();
+        $paginate['previous_page_url']=$advisers->previousPageUrl();
+        return response()->json(['success' => $a,"pagination"=>$paginate], $this->successStatus);
 
     }
 
