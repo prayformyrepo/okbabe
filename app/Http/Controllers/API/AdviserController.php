@@ -64,6 +64,9 @@ class AdviserController extends Controller
             $adviser['adviser']['qa_count']=Question_answer::where('adviser_id',$advise->id)->count();
             $adviser['adviser']['comment_count']=Adviser_rate::where('adviser_id',$advise->id)->where('comment','!=',null)->count();
             $adviser['adviser']['call_count']=Call::where('adviser_id',$advise->id)->where('duration','!=',null)->count();
+            $save_count=Saved_adviser::where('user_id',Auth::user()->id)->where('adviser_id',$advise->id)->count();
+            $adviser['adviser']['is_saved']=$save_count==0?0:1;
+
             array_push($a,$adviser);
         }
         return response()->json(['success' => $a], $this->successStatus);
