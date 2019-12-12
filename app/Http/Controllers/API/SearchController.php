@@ -56,6 +56,7 @@ class SearchController extends Controller
         foreach ($questions as $question){
             if ($c<4) {
                 $save = $question;
+                $save['category_name']=Adviser_category::find($question->question_category_id)->name;
                 array_push($questions_show, $save);
             }
         }
