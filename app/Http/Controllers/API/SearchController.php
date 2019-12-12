@@ -59,9 +59,13 @@ class SearchController extends Controller
                 $save['category_name']=Adviser_category::find($question->question_category_id)->name;
                 if ($question->is_private==1){
                     $save['user_name']='ناشناس';
+                    $save['user_avatar']="/themes/custom-5176/userfiles/fdacd9.jpg";
                     $save['user_id']=null;
+
                 }else{
                     $save['user_name']=User::find($question->user_id)->name!=null?User::find($question->user_id)->name:User::find($question->user_id)->username;
+                    $save['user_avatar']=User::find($question->user_id)->avatar;
+
                 }
                 array_push($questions_show, $save);
             }
