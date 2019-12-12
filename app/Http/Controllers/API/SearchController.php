@@ -57,6 +57,12 @@ class SearchController extends Controller
             if ($c<4) {
                 $save = $question;
                 $save['category_name']=Adviser_category::find($question->question_category_id)->name;
+                if ($question->is_private==1){
+                    $save['user_name']='ناشناس';
+
+                }else{
+                    $save['user_name']=User::find($question->user_id)->name!=null?User::find($question->user_id)->name:User::find($question->user_id)->username;
+                }
                 array_push($questions_show, $save);
             }
         }
