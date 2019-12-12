@@ -304,8 +304,19 @@ class QuestionController extends Controller
             $question = Question::find($request->question_id);
             $question['name']=User::find($question->user_id)->name==null?User::find($question->user_id)->username:User::find($question->user_id)->name;
             $question['avatar']=User::find($question->user_id)->avatar;
-            $question['answers'] = Question::find($request->question_id)->answers()->get();
-
+            $question_a = Question::find($request->question_id)->answers()->get();
+            $question['answers'] = array();
+            $qq=array();
+            foreach ($question_a as $answers){
+                $qq['id']=$answers->id;
+                $qq['question_id']=$answers->question_id;
+                $qq['adviser_id']=$answers->adviser_id;
+                $adviser_user_id=Adviser::find($answers->adviser_id)->value('user_id');
+                $adviser_user=User::find($adviser_user_id);
+                $qq['adviser_name']=$adviser_user->name;
+                $qq['adviser_avatar']=$adviser_user->avatar;
+                array_push( $question['answers'],$qq);
+            }
         }
         $liked=Like_question::where('user_id',$user->id)->where('question_id',$request->question_id)->count();
 
