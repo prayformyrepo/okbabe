@@ -98,6 +98,7 @@ class QuestionController extends Controller
 
         } else if (isset($request->self) && $request->self == 1) {
             if ($user->is_adviser == 1) {
+                $qcount=0;
                 $adviser_id = Adviser::where('user_id', $user->id)->value('id');
                 $adviser_categories = Adviser_to_category::where('adviser_id', $adviser_id)->get();
                 $questions_array = array();
@@ -106,6 +107,7 @@ class QuestionController extends Controller
                     foreach ($questionsArray as $questionArray) {
                         $q = $questionArray;
                         $q['now'] = Carbon::now()->format('Y-m-d H:i:s');
+                        $qcount++;
                         array_push($questions_array, $q);
                     }
                 }
@@ -145,10 +147,14 @@ class QuestionController extends Controller
 //        $questions_array['now'] = Carbon::now()->format('Y-m-d H:i:s');
 
     if ($user->is_adviser == 1 && isset($request->self)){
-        $paginate['total'] = 'ok';
-    }else {
-
-
+        $paginate['total'] = $qcount;
+        $paginate['per_page'] = $qcount;
+        $paginate['current_page'] = 1;
+        $paginate['last_page'] = 1;
+        $paginate['has_more_pages'] = false;
+        $paginate['next_page_url'] = null;
+        $paginate['previous_page_url'] = null;
+        }else {
         $paginate['total'] = $questions->total();
         $paginate['per_page'] = $questions->perPage();
         $paginate['current_page'] = $questions->currentPage();
