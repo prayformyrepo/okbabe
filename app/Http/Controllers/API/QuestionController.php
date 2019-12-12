@@ -308,13 +308,13 @@ class QuestionController extends Controller
             $question['answers'] = array();
             $qq=array();
             foreach ($question_a as $answers){
-                $qq['id']=$answers->id;
-                $qq['question_id']=$answers->question_id;
-                $qq['adviser_id']=$answers->adviser_id;
+                $question['answers']['id']=$answers->id;
+                $question['answers']['question_id']=$answers->question_id;
+                $question['answers']['adviser_id']=$answers->adviser_id;
                 $adviser_user_id=Adviser::find($answers->adviser_id)->value('user_id');
                 $adviser_user=User::find($adviser_user_id);
-                $qq['adviser_name']=$adviser_user->name;
-                $qq['adviser_avatar']=$adviser_user->avatar;
+                $question['answers']['adviser_name']=$adviser_user->name;
+                $question['answers']['adviser_avatar']=$adviser_user->avatar;
                 array_push( $question['answers'],$qq);
             }
         }
