@@ -298,8 +298,8 @@ class QuestionController extends Controller
                 $qq['adviser_name']=$adviser_user->name;
                 $qq['adviser_avatar']=$adviser_user->avatar;
                 $qq['text']=$answers->text;
-                $qq['created_at']=$answers->created_at;
-                $qq['updated_at']=$answers->updated_at;
+                $qq['created_at']=$answers->created_at->format('Y-m-d H:i:s');
+                $qq['updated_at']=$answers->updated_at->format('Y-m-d H:i:s');
                 array_push( $qqq,$qq);
             }
             $question['answers'] = $qqq;
@@ -320,8 +320,8 @@ class QuestionController extends Controller
                 $qq['adviser_name']=$adviser_user->name;
                 $qq['adviser_avatar']=$adviser_user->avatar;
                 $qq['text']=$answers->text;
-                $qq['created_at']=$answers->created_at;
-                $qq['updated_at']=$answers->updated_at;
+                $qq['created_at']=$answers->created_at->format('Y-m-d H:i:s');
+                $qq['updated_at']=$answers->updated_at->format('Y-m-d H:i:s');
                 array_push( $qqq,$qq);
             }
             $question['answers'] = $qqq;
