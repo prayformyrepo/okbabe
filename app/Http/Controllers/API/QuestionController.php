@@ -144,14 +144,19 @@ class QuestionController extends Controller
         }
 //        $questions_array['now'] = Carbon::now()->format('Y-m-d H:i:s');
 
+    if ($user->is_adviser == 1 && isset($request->self)){
+        $paginate['total'] = 'ok';
+    }else {
 
-        $paginate['total']=$questions->total();
-        $paginate['per_page']=$questions->perPage();
-        $paginate['current_page']=$questions->currentPage();
-        $paginate['last_page']=$questions->lastPage();
-        $paginate['has_more_pages']=$questions->hasMorePages();
-        $paginate['next_page_url']=$questions->nextPageUrl();
-        $paginate['previous_page_url']=$questions->previousPageUrl();
+
+        $paginate['total'] = $questions->total();
+        $paginate['per_page'] = $questions->perPage();
+        $paginate['current_page'] = $questions->currentPage();
+        $paginate['last_page'] = $questions->lastPage();
+        $paginate['has_more_pages'] = $questions->hasMorePages();
+        $paginate['next_page_url'] = $questions->nextPageUrl();
+        $paginate['previous_page_url'] = $questions->previousPageUrl();
+    }
         return response()->json(['success' => $questions_array,'pagination'=>$paginate], $this->successStatus);
 
     }
