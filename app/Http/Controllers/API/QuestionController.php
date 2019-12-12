@@ -286,7 +286,20 @@ class QuestionController extends Controller
         if ($question->status == 0 && $user->is_adviser==0) return response()->json(['error' => 'unauthorized'], 401);
         if ($question->is_private == 1) {
             $question = Question::select('id', 'question_category_id', 'subject', 'text', 'is_private', 'status', 'views', 'likes', 'created_at', 'updated_at')->find($request->question_id);
-            $question['answers'] = Question::find($request->question_id)->answers()->get();
+            $question_a = Question::find($request->question_id)->answers()->get();
+            $question['answers'] = array();
+            $qq=array();
+            foreach ($question_a as $answers){
+                $qq['id']=$answers->id;
+                $qq['question_id']=$answers->question_id;
+                $qq['adviser_id']=$answers->adviser_id;
+                $adviser_user_id=Adviser::find($answers->adviser_id)->value('user_id');
+                $adviser_user=User::find($adviser_user_id);
+                $qq['adviser_name']=$adviser_user->name;
+                $qq['adviser_avatar']=$adviser_user->avatar;
+                array_push( $question['answers'],$qq);
+            }
+
         } else {
             $question = Question::find($request->question_id);
             $question['name']=User::find($question->user_id)->name==null?User::find($question->user_id)->username:User::find($question->user_id)->name;
