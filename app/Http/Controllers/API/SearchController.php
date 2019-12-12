@@ -55,7 +55,7 @@ class SearchController extends Controller
         $c=0;
         foreach ($questions as $question){
             if ($c<4) {
-                $save['info'] = $question;
+                $save = $question;
                 array_push($questions_show, $save);
             }
         }
