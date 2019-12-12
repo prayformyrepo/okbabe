@@ -86,7 +86,13 @@ class QuestionController extends Controller
             foreach ($questions as $question) {
                 $save['question'] = $question;
                 $save['question']['user_info'] = User::select('id', 'username', 'avatar')->find($question->user_id);
+                if ($question->is_private==1) {
+                    $save['question']['user_info']['username'] = 'ناشناس';
+                    $save['question']['user_info']['avatar'] =  "/themes/custom-5176/userfiles/fdacd9.jpg";
+
+                }
                 $save['question']['user_info']['now'] = Carbon::now()->format('Y-m-d H:i:s');
+
                 array_push($questions_array, $save);
             }
 
@@ -126,6 +132,11 @@ class QuestionController extends Controller
             foreach ($questions as $question) {
                 $save['question'] = $question;
                 $save['question']['user_info'] = User::select('id', 'username', 'avatar')->find($question->user_id);
+                if ($question->is_private==1) {
+                    $save['question']['user_info']['username'] = 'ناشناس';
+                    $save['question']['user_info']['avatar'] =  "/themes/custom-5176/userfiles/fdacd9.jpg";
+
+                }
                 $save['question']['user_info']['now'] = Carbon::now()->format('Y-m-d H:i:s');
 
                 array_push($questions_array, $save);
