@@ -287,9 +287,9 @@ class QuestionController extends Controller
         if ($question->is_private == 1) {
             $question = Question::select('id', 'question_category_id', 'subject', 'text', 'is_private', 'status', 'views', 'likes', 'created_at', 'updated_at')->find($request->question_id);
             $question_a = Question::find($request->question_id)->answers()->get();
-            $question['answers'] = array();
-            $qq=array();
+            $qqq=array();
             foreach ($question_a as $answers){
+                $qq=array();
                 $qq['id']=$answers->id;
                 $qq['question_id']=$answers->question_id;
                 $qq['adviser_id']=$answers->adviser_id;
@@ -297,8 +297,12 @@ class QuestionController extends Controller
                 $adviser_user=User::find($adviser_user_id);
                 $qq['adviser_name']=$adviser_user->name;
                 $qq['adviser_avatar']=$adviser_user->avatar;
-                array_push( $question['answers'],$qq);
+                $qq['text']=$answers->text;
+                $qq['created_at']=$answers->created_at;
+                $qq['updated_at']=$answers->updated_at;
+                array_push( $qqq,$qq);
             }
+            $question['answers'] = $qqq;
 
         } else {
             $question = Question::find($request->question_id);
@@ -315,6 +319,9 @@ class QuestionController extends Controller
                 $adviser_user=User::find($adviser_user_id);
                 $qq['adviser_name']=$adviser_user->name;
                 $qq['adviser_avatar']=$adviser_user->avatar;
+                $qq['text']=$answers->text;
+                $qq['created_at']=$answers->created_at;
+                $qq['updated_at']=$answers->updated_at;
                 array_push( $qqq,$qq);
             }
             $question['answers'] = $qqq;
