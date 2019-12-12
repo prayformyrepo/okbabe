@@ -315,7 +315,6 @@ class QuestionController extends Controller
                 $adviser_user=User::find($adviser_user_id);
                 $question['answers']['adviser_name']=$adviser_user->name;
                 $question['answers']['adviser_avatar']=$adviser_user->avatar;
-                array_push( $question['answers'],$qq);
             }
         }
         $liked=Like_question::where('user_id',$user->id)->where('question_id',$request->question_id)->count();
