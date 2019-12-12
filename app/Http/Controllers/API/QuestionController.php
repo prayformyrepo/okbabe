@@ -305,17 +305,19 @@ class QuestionController extends Controller
             $question['name']=User::find($question->user_id)->name==null?User::find($question->user_id)->username:User::find($question->user_id)->name;
             $question['avatar']=User::find($question->user_id)->avatar;
             $question_a = Question::find($request->question_id)->answers()->get();
-            $question['answers'] = array();
-            $qq=array();
+            $qqq=array();
             foreach ($question_a as $answers){
-                $question['answers']['id']=$answers->id;
-                $question['answers']['question_id']=$answers->question_id;
-                $question['answers']['adviser_id']=$answers->adviser_id;
+                $qq=array();
+                $qq['id']=$answers->id;
+                $qq['question_id']=$answers->question_id;
+                $qq['adviser_id']=$answers->adviser_id;
                 $adviser_user_id=Adviser::find($answers->adviser_id)->value('user_id');
                 $adviser_user=User::find($adviser_user_id);
-                $question['answers']['adviser_name']=$adviser_user->name;
-                $question['answers']['adviser_avatar']=$adviser_user->avatar;
+                $qq['adviser_name']=$adviser_user->name;
+                $qq['adviser_avatar']=$adviser_user->avatar;
+                array_push( $qqq,$qq);
             }
+            $question['answers'] = $qqq;
         }
         $liked=Like_question::where('user_id',$user->id)->where('question_id',$request->question_id)->count();
 
