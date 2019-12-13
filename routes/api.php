@@ -88,6 +88,10 @@ Route::group(['middleware' => 'auth:api'], function(){
 
         //search
         Route::post('universal-search', 'API\SearchController@universal_search');
+        Route::post('search-categories', 'API\SearchController@all_categories');
+        Route::post('search-questions', 'API\SearchController@all_questions');
+        Route::post('search-blog-categories', 'API\SearchController@all_blog_categories');
+        Route::post('search-posts', 'API\SearchController@all_posts');
 
         //call
         Route::post('make-call', 'API\CallController@make_call');
