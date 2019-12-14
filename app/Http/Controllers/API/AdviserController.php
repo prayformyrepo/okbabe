@@ -31,6 +31,7 @@ class AdviserController extends Controller
         }
         else if (isset($request->user_id)){
             $a=array();
+            if(User::find($request->user_id)->is_adviser==0) return response()->json(['error' => 'user is not adviser'], $this->successStatus);
             $advisers_id = Adviser::where('user_id',$request->user_id)->value('id');
             $advisers=Adviser::find($advisers_id);
             $adviser['adviser']=$advisers;

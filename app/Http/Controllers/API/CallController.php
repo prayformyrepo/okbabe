@@ -162,6 +162,7 @@ class CallController extends Controller
         $call = Call::where('call_file', $request->call_file)->value('id');
         $call = Call::find($call);
         if ($call->duration == null) {
+
             $nominal_call_price = Adviser::find($call->adviser_id)->nominal_call_price;
             $nominal_call_price = $nominal_call_price * $callinfo['duration'];
 

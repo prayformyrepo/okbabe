@@ -52,7 +52,7 @@ Route::group(['middleware' => 'auth:api'], function(){
         Route::post('accept-rate', 'API\AdviserController@accept_rate');
         Route::post('reach-adviser', 'API\AdviserController@reach_adviser');
 
-        Route::group(['middleware' => 'administrator'], function() {
+//        Route::group(['middleware' => 'administrator'], function() {
             Route::post('add-adviser', 'API\AdviserController@add_adviser');
             Route::post('add-adviser-category', 'API\AdviserController@add_adviser_category');
             Route::post('assign-adviser-to-category', 'API\AdviserController@assign_adviser_to_category');
@@ -62,7 +62,7 @@ Route::group(['middleware' => 'auth:api'], function(){
             Route::post('add-category-description', 'API\CategoryController@add_category_description');
             Route::post('show-categories', 'API\CategoryController@show_categories');
 
-        });
+//        });
 
         //events
         Route::post('show-events', 'API\EventController@show_events');
