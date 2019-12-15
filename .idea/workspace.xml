@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/AdviserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/AdviserController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -506,7 +507,7 @@
       <workItem from="1576234702925" duration="2919000" />
       <workItem from="1576329643535" duration="1621000" />
       <workItem from="1576352491368" duration="4371000" />
-      <workItem from="1576423206730" duration="686000" />
+      <workItem from="1576423206730" duration="818000" />
     </task>
     <task id="LOCAL-00094" summary="edit fetch messages">
       <created>1575015968174</created>
@@ -863,7 +864,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253915000" />
+    <option name="totallyTimeSpent" value="254047000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
