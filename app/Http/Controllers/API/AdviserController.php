@@ -35,8 +35,8 @@ class AdviserController extends Controller
             $advisers_id = Adviser::where('user_id',$request->user_id)->value('id');
             $advisers=Adviser::find($advisers_id);
             $adviser['adviser']=$advisers;
-            $adviser['adviser']['RN_field']=str_replace('<br>',' - ', str_replace('\n','',$advisers->field));
-            $adviser['adviser']['RN_about']=str_replace('<br>',' - ',str_replace('\n','',$advisers->about));
+            $adviser['adviser']['RN_field']=str_replace('<br>',' - ', str_replace("\n",'',$advisers->field));
+            $adviser['adviser']['RN_about']=str_replace('<br>',' - ',str_replace("\n",'',$advisers->about));
             $adviser['adviser']['name']=User::find($request->user_id)->name;
             $adviser['adviser']['avatar']=User::find($request->user_id)->avatar;
 //            $adviser['adviser']['categories']=$advisers->categories()->get();
