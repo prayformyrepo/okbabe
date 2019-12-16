@@ -49,7 +49,7 @@ class AdviserController extends Controller
                     }
                 }
             }
-            dd($tt);
+            $adviser['adviser']['times']=$tt;
 
 
             $adviser['adviser']['qa_count'] = Question_answer::where('adviser_id', $advisers->id)->count();
