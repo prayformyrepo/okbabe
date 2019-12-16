@@ -42,7 +42,8 @@ class AdviserController extends Controller
 //            $adviser['adviser']['times']=$advisers->times()->get();
             $times = $advisers->times()->orderBy('date', 'ASC')->get();
             $tt = array();
-            $adviser['adviser']['ttt']=array();
+//            $adviser['adviser']['ttt']=array();
+            $testi=array();
             foreach ($times as $time) {
                 foreach ($times as $t) {
                     $tt['date']=$time->date;
@@ -53,7 +54,8 @@ class AdviserController extends Controller
                     }
 
                 }
-                array_push($adviser['adviser']['ttt'],$tt);
+                array_push($testi,$tt);
+                $adviser['adviser']['times']=$testi;
 
             }
 
