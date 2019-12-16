@@ -44,6 +44,7 @@ class AdviserController extends Controller
             $tt = $times;
             foreach ($times as $time) {
                 foreach ($times as $t) {
+                    dd($time,$t);
                     if ($time->date == $t->date) {
                         $tt['date'] = null;
                     }
