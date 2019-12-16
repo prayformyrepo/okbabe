@@ -40,7 +40,7 @@ class AdviserController extends Controller
             $adviser['adviser']['avatar'] = User::find($request->user_id)->avatar;
 //            $adviser['adviser']['categories']=$advisers->categories()->get();
 //            $adviser['adviser']['times']=$advisers->times()->get();
-            $times = $advisers->times()->orderBy('date', 'ASC')->get();
+            $times = $advisers->times()->orderBy('date', 'DESC')->get();
             $count=$advisers->times()->count();
             $tt = array();
 //            $adviser['adviser']['ttt']=array();
