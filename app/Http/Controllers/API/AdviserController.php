@@ -52,13 +52,13 @@ class AdviserController extends Controller
                     if ($time['date'] == $t['date']) {
                         $tt['date'] = null;
                     }
+                    array_push($testi,$tt);
 
                 }
-                array_push($testi,$tt);
-                $adviser['adviser']['times']=$testi;
 
             }
 
+            $adviser['adviser']['times']=$testi;
 
             $adviser['adviser']['qa_count'] = Question_answer::where('adviser_id', $advisers->id)->count();
             $adviser['adviser']['comment_count'] = Adviser_rate::where('adviser_id', $advisers->id)->where('comment', '!=', null)->count();
