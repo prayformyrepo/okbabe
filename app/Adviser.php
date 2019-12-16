@@ -12,7 +12,7 @@ class Adviser extends Model
     }
     public function times()
     {
-        return $this->hasMany(Adviser_time::class)->orderBy('id','DESC');
+        return $this->hasMany(Adviser_time::class)->orderBy('id','ASC');
     }
 
 }
