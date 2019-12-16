@@ -42,6 +42,7 @@ class AdviserController extends Controller
 //            $adviser['adviser']['times']=$advisers->times()->get();
             $times = $advisers->times()->orderBy('date', 'ASC')->get();
             $tt = array();
+            $adviser['adviser']['ttt']=array();
             foreach ($times as $time) {
                 foreach ($times as $t) {
                     $tt['date']=$time->date;
@@ -50,8 +51,9 @@ class AdviserController extends Controller
                     if ($time['date'] == $t['date']) {
                         $tt['date'] = null;
                     }
+                    array_push($tt,$adviser['adviser']['ttt']);
+
                 }
-                array_push($tt,$adviser['adviser']['tttt']);
             }
 
 
