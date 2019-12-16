@@ -41,15 +41,19 @@ class AdviserController extends Controller
 //            $adviser['adviser']['categories']=$advisers->categories()->get();
 //            $adviser['adviser']['times']=$advisers->times()->get();
             $times = $advisers->times()->orderBy('date', 'ASC')->get();
-            $tt = $times;
+            $tt = array();
             foreach ($times as $time) {
                 foreach ($times as $t) {
+                    $tt['date']=$time->date;
+                    $tt['time_from']=$time->time_from;
+                    $tt['time_to']=$time->time_to;
                     if ($time['date'] == $t['date']) {
                         $tt['date'] = null;
                     }
                 }
+                array_push($tt,$adviser['adviser']['times']);
+
             }
-            $adviser['adviser']['times']=$tt;
 
 
             $adviser['adviser']['qa_count'] = Question_answer::where('adviser_id', $advisers->id)->count();
