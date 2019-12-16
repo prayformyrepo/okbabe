@@ -41,24 +41,22 @@ class AdviserController extends Controller
 //            $adviser['adviser']['categories']=$advisers->categories()->get();
 //            $adviser['adviser']['times']=$advisers->times()->get();
             $times = $advisers->times()->orderBy('date', 'ASC')->get();
+            $count=$advisers->times()->count();
             $tt = array();
 //            $adviser['adviser']['ttt']=array();
             $testi=array();
-            foreach ($times as $time) {
-                foreach ($times as $t) {
-                    $tt['date']=$time->date;
-                    $tt['time_from']=$time->time_from;
-                    $tt['time_to']=$time->time_to;
-                    if ($time['date'] == $t['date']) {
-                        $tt['date'] = null;
-                    }
-                    array_push($testi,$tt);
-
+            for ($i=0;$i<$count;$i++){
+                $tt['date']=$times[$i]['date'];
+                $tt['time_from']=$times[$i]['time_from'];
+                $tt['time_to']=$times[$i]['time_to'];
+                if ($times[$i]['date']===$times[$i-1]['date']){
+                    $tt['date']=null;
                 }
+                array_push($testi,$tt);
 
             }
-
             $adviser['adviser']['times']=$testi;
+
 
             $adviser['adviser']['qa_count'] = Question_answer::where('adviser_id', $advisers->id)->count();
             $adviser['adviser']['comment_count'] = Adviser_rate::where('adviser_id', $advisers->id)->where('comment', '!=', null)->count();
