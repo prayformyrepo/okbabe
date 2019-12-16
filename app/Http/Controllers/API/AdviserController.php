@@ -51,8 +51,7 @@ class AdviserController extends Controller
                         $tt['date'] = null;
                     }
                 }
-                array_push($tt,$adviser['adviser']['times']);
-
+                array_push($tt,$adviser['adviser']['tttt']);
             }
 
 
