@@ -49,8 +49,10 @@ class AdviserController extends Controller
                 $tt['date']=$times[$i]['date'];
                 $tt['time_from']=$times[$i]['time_from'];
                 $tt['time_to']=$times[$i]['time_to'];
-                if ($times[$i]['date']===$times[$i-1]['date'] && $i!=0){
-                    $tt['date']=null;
+                if($i!=0) {
+                    if ($times[$i]['date'] === $times[$i - 1]['date']) {
+                        $tt['date'] = null;
+                    }
                 }
                 array_push($testi,$tt);
 
