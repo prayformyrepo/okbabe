@@ -51,9 +51,10 @@ class AdviserController extends Controller
                     if ($time['date'] == $t['date']) {
                         $tt['date'] = null;
                     }
-                    array_push($tt,$adviser['adviser']['ttt']);
 
                 }
+                array_push($adviser['adviser']['ttt'],$tt);
+
             }
 
 
