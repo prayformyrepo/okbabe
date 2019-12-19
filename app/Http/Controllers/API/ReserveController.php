@@ -42,7 +42,7 @@ class ReserveController extends Controller
         $reserve->save();
 
         $reserve=reserve_call::find($reserve->id);
-        $reserve['user_name']=User::find(Auth::user()->id)->value('name')==null?User::find(Auth::user()->id)->value('username'):ser::find(Auth::user()->id)->value('name');
+        $reserve['user_name']=User::find(Auth::user()->id)->value('name')==null?User::find(Auth::user()->id)->value('username'):User::find(Auth::user()->id)->value('name');
         $reserve['user_avatar']=User::find(Auth::user()->id)->value('avatar');
         $reserve['adviser_name']=User::find($request->adviser_id)->value('name');
         $reserve['adviser_avatar']=User::find($request->adviser_id)->value('avatar');
