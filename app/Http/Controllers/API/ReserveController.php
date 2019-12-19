@@ -50,4 +50,30 @@ class ReserveController extends Controller
         return response()->json(['success' => $reserve], $this->successStatus);
 
     }
+
+    public function change_reserve_call_status(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'reserve_call_id' => 'integer|required',
+            'status' => 'required|integer', //0: requested - 1:accepted - 2:ended - 3:rejected - 4:canceled
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 401);
+        }
+
+        $is_exist=reserve_call::where('id',$request->reserve_call_id)->count();
+        if ($is_exist==0) return response()->json(['error' => 'شماره رزرو نادرست است'], 401);
+        if ($request->status>4||$request->status<0) return response()->json(['error' => 'استاتوس باید بین ۰ تا ۴ باشد'], 401);
+        $reserve=reserve_call::find($request->reserve_call_id);
+        $reserve->status=$request->status;
+        $reserve->save();
+        $reserve=reserve_call::find($reserve->id);
+
+
+        return response()->json(['success' => $reserve], $this->successStatus);
+
+
+    }
+
+
 }
