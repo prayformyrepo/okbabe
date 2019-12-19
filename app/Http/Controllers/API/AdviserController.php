@@ -38,6 +38,9 @@ class AdviserController extends Controller
             $adviser['adviser']['RN_about'] = str_replace('<br>', '', $advisers->about);
             $adviser['adviser']['name'] = User::find($request->user_id)->name;
             $adviser['adviser']['avatar'] = User::find($request->user_id)->avatar;
+            $adviser['adviser']['lat'] = Adviser::where('user_id',$request->user_id)->value('lat');
+            $adviser['adviser']['long'] = Adviser::where('user_id',$request->user_id)->value('long');
+            $adviser['adviser']['video'] = Adviser::where('user_id',$request->user_id)->value('video');
 //            $adviser['adviser']['categories']=$advisers->categories()->get();
 //            $adviser['adviser']['times']=$advisers->times()->get();
             $times = $advisers->times()->orderBy('date', 'ASC')->get();
@@ -78,6 +81,9 @@ class AdviserController extends Controller
             $adviser['adviser']['RN_about'] = str_replace('<br>', '', $advise->about);
             $adviser['adviser']['name'] = User::find($advise->user_id)->name;
             $adviser['adviser']['avatar'] = User::find($advise->user_id)->avatar;
+            $adviser['adviser']['lat'] = Adviser::where('user_id',$advise->user_id)->value('lat');
+            $adviser['adviser']['long'] = Adviser::where('user_id',$advise->user_id)->value('long');
+            $adviser['adviser']['video'] = Adviser::where('user_id',$advise->user_id)->value('video');
             $adviser['adviser']['categories'] = $advise->categories()->get();
             $adviser['adviser']['times'] = $advise->times()->get();
             $adviser['adviser']['qa_count'] = Question_answer::where('adviser_id', $advise->id)->count();

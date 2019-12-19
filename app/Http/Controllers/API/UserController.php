@@ -334,4 +334,9 @@ class UserController extends Controller
         return response()->json(['success' => $success], $this-> successStatus);
     }
 
+    public function update_info(Request $request)
+    {
+
+    }
+
 }
