@@ -42,10 +42,10 @@ class ReserveController extends Controller
         $reserve->save();
 
         $reserve=reserve_call::find($reserve->id);
-        $reserve['user_name']=User::find(Auth::user()->id)->value('name')==null?User::find(Auth::user()->id)->value('username'):User::find(Auth::user()->id)->value('name');
-        $reserve['user_avatar']=User::find(Auth::user()->id)->value('avatar');
-        $reserve['adviser_name']=User::find($request->adviser_id)->value('name');
-        $reserve['adviser_avatar']=User::find($request->adviser_id)->value('avatar');
+        $reserve['user_name']=User::find($reserve->user)->value('name')==null?User::find($reserve->user)->value('username'):User::find($reserve->user)->value('name');
+        $reserve['user_avatar']=User::find($reserve->user_id)->value('avatar');
+        $reserve['adviser_name']=User::find($reserve->adviser_id)->value('name');
+        $reserve['adviser_avatar']=User::find($reserve->adviser_id)->value('avatar');
 
 
         return response()->json(['success' => $reserve], $this->successStatus);
