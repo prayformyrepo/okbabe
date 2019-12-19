@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Adviser;
 use App\Http\Controllers\Controller;
 use App\reserve_call;
 use App\User;
@@ -34,6 +35,10 @@ class ReserveController extends Controller
             $is_adviser=User::where('id',$request->adviser_id)->value('is_adviser');
         }
         if ($is_adviser==0) return response()->json(['error' => 'امکان رزرو تماس با این کاربر مقدور نمی باشد'], 401);
+
+        $call_price=Adviser::where('user_id',$request->adviser_id)->value('nominal_call_price');
+        $wallet=User::find(Auth::user()->id)->wallet;
+        if ($wallet/$call_price<1) return response()->json(['error' => 'موجودی کافی نیست'], 401);
         $reserve=new reserve_call();
         $reserve->user_id=Auth::user()->id;
         $reserve->adviser_id=$request->adviser_id;
@@ -71,7 +76,6 @@ class ReserveController extends Controller
 
 
         return response()->json(['success' => $reserve], $this->successStatus);
-
 
     }
 
