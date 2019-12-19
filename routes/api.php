@@ -108,6 +108,10 @@ Route::group(['middleware' => 'auth:api'], function(){
         Route::post('show-posts','API\BlogController@show_posts');
         Route::post('show-blog-categories','API\BlogController@show_blog_categories');
 
+
+        //reserve call
+        Route::post('reserve-call','API\ReserveController@reserve_call');
+
     });
 
 
