@@ -36,7 +36,7 @@ class ReserveController extends Controller
         if ($is_adviser==0) return response()->json(['error' => 'امکان رزرو تماس با این کاربر مقدور نمی باشد'], 401);
         $reserve=new reserve_call();
         $reserve->user_id=Auth::user()->id;
-        $reserve->adviser_id=$request->user_id;
+        $reserve->adviser_id=$request->adviser_id;
         $reserve->date_time=$request->date_time;
         $reserve->status=0;
         $reserve->save();
