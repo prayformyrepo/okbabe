@@ -261,7 +261,7 @@ class CallController extends Controller
     public function call_history()
     {
         $user=Auth::user();
-        if ($user->as_adviser==1){
+        if ($user->is_adviser==1){
             $adviser_id=Adviser::where('user_id',$user->id)->value('id');
             $calls=Call::where('adviser_id',$adviser_id)->get();
             $calls['adviser_user_id']=$user->id;
