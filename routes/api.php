@@ -110,8 +110,9 @@ Route::group(['middleware' => 'auth:api'], function(){
 
 
         //reserve call
-        Route::post('reserve-call','API\ReserveController@reserve_call');
-        Route::post('change-reserve-call-status','API\ReserveController@change_reserve_call_status');
+        Route::post('reserve','API\ReserveController@reserve');
+        Route::post('change-reserve-status','API\ReserveController@change_reserve_status');
+        Route::post('reserve-history','API\ReserveController@reserve_history');
 
     });
 
