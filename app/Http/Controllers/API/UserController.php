@@ -346,10 +346,10 @@ class UserController extends Controller
 
         $user_id=Auth::user()->id;
         $user=User::find($user_id);
-        isset($request->name)?$user->name=$request->name:$user->name=$user->name;
-        isset($request->username)?$user->username=$request->name:$user->username=$user->username;
-        isset($request->gender)?$user->gender=$request->name:$user->gender=$user->gender;
-        isset($request->email)?$user->email=$request->name:$user->email=$user->email;
+        $user->name=isset($request->name)?$request->name:$user->name;
+        $user->username=isset($request->username)?$request->username:$user->username;
+        $user->gender=isset($request->gender)?$request->gender:$user->gender;
+        $user->email=isset($request->email)?$request->email:$user->email;
         $user->save();
 
         $user=User::find($user_id);
