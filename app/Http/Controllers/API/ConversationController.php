@@ -141,6 +141,7 @@ class ConversationController extends Controller
                 $con['adviser_avatar'] = User::find($conversation->adviser_id)->avatar;
                 $con['user_id'] = $conversation->user_id;
                 $con['status'] = $conversation->status;
+                $con['is_online'] =  User::find($conversation->adviser_id)->is_online;
                 $con['last_message_id'] = $conversation->last_message_id;
                 $con['last_message_text'] = $conversation->last_message_text;
                 $conversation->unread_user_id==Auth::user()->id?$con['has_unread'] = $conversation->has_unread : $con['has_unread']=0;
@@ -159,6 +160,12 @@ class ConversationController extends Controller
                 $con['user_id'] = $conversation->user_id;
                 User::find($conversation->user_id)->name==null?$con['user_name'] = User::find($conversation->user_id)->username:$con['user_name'] = User::find($conversation->user_id)->name;
                 $con['user_avatar'] = User::find($conversation->user_id)->avatar;
+
+                User::find($conversation->user_id)->name==null?$con['adviser_name'] = User::find($conversation->user_id)->username:$con['adviser_name'] = User::find($conversation->user_id)->name;
+                $con['adviser_avatar'] = User::find($conversation->user_id)->avatar;
+
+                $con['is_online'] =  User::find($conversation->adviser_id)->is_online;
+
                 $con['status'] = $conversation->status;
                 $con['last_message_id'] = $conversation->last_message_id;
                 $con['last_message_text'] = $conversation->last_message_text;
