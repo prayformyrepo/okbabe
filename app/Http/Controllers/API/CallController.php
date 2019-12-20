@@ -268,7 +268,15 @@ class CallController extends Controller
             return response()->json(['success' => $calls], $this->successStatus);
         }else{
             $calls=Call::where('user_id',$user->id)->get();
-            return response()->json(['success' => $calls], $this->successStatus);
+            $c=array();
+            foreach ($calls as $call){
+                $cc=$call;
+                $user_id=Adviser::find($call->adviser_id)->user_id;
+                $cc['user_name']=User::find($user_id)->name;
+                $cc['user_avatar']=User::find($user_id)->avatar;
+                array_push($c,$cc);
+            }
+            return response()->json(['success' => $c], $this->successStatus);
         }
     }
 
