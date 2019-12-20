@@ -264,7 +264,14 @@ class CallController extends Controller
         if ($user->is_adviser==1){
             $adviser_id=Adviser::where('user_id',$user->id)->value('id');
             $calls=Call::where('adviser_id',$adviser_id)->get();
-            $calls['adviser_user_id']=$user->id;
+            $c=array();
+            foreach ($calls as $call){
+                $cc=$call;
+                $cc['user_name']=User::find($call->user_id)->name==null?User::find($call->user_id)->username:User::find($call->user_id)->name;
+                $cc['user_avatar']=User::find($call->user_id)->avatar;
+                array_push($c,$cc);
+            }
+
             return response()->json(['success' => $calls], $this->successStatus);
         }else{
             $calls=Call::where('user_id',$user->id)->get();
