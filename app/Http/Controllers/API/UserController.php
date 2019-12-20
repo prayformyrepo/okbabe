@@ -337,12 +337,16 @@ class UserController extends Controller
     public function update_info(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'username' => 'required|unique:users',
+            'username' => 'required',
         ]);
 
         if ($validator->fails()) {
             return response()->json(['error'=>$validator->errors()], 401);
         }
+
+        $duplicated=User::find('username',$request->username)->count();
+        $user_username=User::find(Auth::user()->id)->username;
+        if ($duplicated!=0 && $user_username!=$request->username) return response()->json(['error'=>'نام کاربری انتخاب شده تکراری است'], 401);
 
         $user_id=Auth::user()->id;
         $user=User::find($user_id);
