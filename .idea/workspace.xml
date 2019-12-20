@@ -505,7 +505,7 @@
       <workItem from="1576773784056" duration="39000" />
       <workItem from="1576829018016" duration="1437000" />
       <workItem from="1576842899345" duration="1517000" />
-      <workItem from="1576846213497" duration="3177000" />
+      <workItem from="1576846213497" duration="3258000" />
     </task>
     <task id="LOCAL-00094" summary="edit fetch messages">
       <created>1575015968174</created>
@@ -862,7 +862,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="270573000" />
+    <option name="totallyTimeSpent" value="270654000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
