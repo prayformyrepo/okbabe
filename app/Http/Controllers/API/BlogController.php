@@ -21,7 +21,7 @@ class BlogController extends Controller
             $posts=Post::find($request->post_id);
             $posts['categories']=$posts->categories()->get();
         }else{
-            $show_posts=Post::select('id','title','description','image','created_at')->paginate(10);
+            $show_posts=Post::select('id','title','description','image','created_at')->orderBy('id','DESC')->paginate(10);
             $posts=array();
             foreach ($show_posts as $post){
                 $p=$post;
