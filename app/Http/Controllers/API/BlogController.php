@@ -13,9 +13,9 @@ class BlogController extends Controller
 
     public function show_posts(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'post_id' => 'required',
-        ]);
+//        $validator = Validator::make($request->all(), [
+//            'post_id' => 'required',
+//        ]);
 
         if (isset($request->post_id)){
             $posts=Post::find($request->post_id);
@@ -29,14 +29,19 @@ class BlogController extends Controller
                 array_push($posts,$p);
             }
         }
-        $paginate['total']=$show_posts->total();
-        $paginate['per_page']=$show_posts->perPage();
-        $paginate['current_page']=$show_posts->currentPage();
-        $paginate['last_page']=$show_posts->lastPage();
-        $paginate['has_more_pages']=$show_posts->hasMorePages();
-        $paginate['next_page_url']=$show_posts->nextPageUrl();
-        $paginate['previous_page_url']=$show_posts->previousPageUrl();
-        return response()->json(['success' => $posts,"pagination"=>$paginate], $this-> successStatus);
+        if (!isset($request->post_id)) {
+            $paginate['total'] = $show_posts->total();
+            $paginate['per_page'] = $show_posts->perPage();
+            $paginate['current_page'] = $show_posts->currentPage();
+            $paginate['last_page'] = $show_posts->lastPage();
+            $paginate['has_more_pages'] = $show_posts->hasMorePages();
+            $paginate['next_page_url'] = $show_posts->nextPageUrl();
+            $paginate['previous_page_url'] = $show_posts->previousPageUrl();
+            return response()->json(['success' => $posts,"pagination"=>$paginate], $this-> successStatus);
+        }
+        else{
+            return response()->json(['success' => $posts], $this-> successStatus);
+        }
     }
 
     public function show_blog_categories()
