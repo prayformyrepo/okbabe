@@ -34,6 +34,11 @@ Route::group(['middleware' => 'auth:api'], function(){
         Route::post('user-info', 'API\UserController@user_info');
         Route::post('set-data', 'API\UserController@set_data');
 
+        Route::post('update-info', 'API\UserController@update_info');
+        Route::post('change-pass', 'API\UserController@change_pass');
+
+
+
         //toggle online-offline
         Route::post('toggle-online', 'API\UserController@toggle_online');
 

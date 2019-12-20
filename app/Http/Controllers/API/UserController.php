@@ -336,6 +336,54 @@ class UserController extends Controller
 
     public function update_info(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'username' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);
+        }
+
+        $user_id=Auth::user()->id;
+        $user=User::find($user_id);
+        $user->name=isset($request->name)?$request->name:$user->name;
+        $user->username=isset($request->username)?$request->name:$user->username;
+        $user->gender=isset($request->gender)?$request->name:$user->gender;
+        $user->email=isset($request->email)?$request->name:$user->email;
+        $user->save();
+
+        $user=User::find($user_id);
+
+        return response()->json(['success' => $user], $this-> successStatus);
+
+    }
+
+    public function change_pass(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'old_pass' => 'required',
+            'new_pass' => 'required',
+            'new_pass_confirm' => 'required|same:new_pass',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);
+        }
+
+        $user = Auth::user();
+
+
+        if (password_verify($request->old_pass, $user->password)) {
+            $user_p=User::find(Auth::user()->id);
+            $user_p->password=Hash::make($request->new_pass);
+            $user_p->save();
+        }
+        else{
+            return response()->json(['error'=>'کلمه عبور صحیح نیست'], 401);
+        }
+        $user=User::find(Auth::user()->id);
+
+        return response()->json(['success' => $user], $this-> successStatus);
 
     }
 
