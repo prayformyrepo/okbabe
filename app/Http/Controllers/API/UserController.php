@@ -15,6 +15,7 @@ use Kavenegar\Exceptions\HttpException;
 use Kavenegar\KavenegarApi;
 use Validator;
 use Kavenegar;
+use Hash;
 class UserController extends Controller
 {
 
