@@ -344,7 +344,7 @@ class UserController extends Controller
             return response()->json(['error'=>$validator->errors()], 401);
         }
 
-        $duplicated=User::find('username',$request->username)->count();
+        $duplicated=User::where('username', $request->username)->count();
         $user_username=User::find(Auth::user()->id)->username;
         if ($duplicated!=0 && $user_username!=$request->username) return response()->json(['error'=>'نام کاربری انتخاب شده تکراری است'], 401);
 
