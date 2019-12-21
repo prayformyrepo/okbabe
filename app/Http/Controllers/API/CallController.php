@@ -31,7 +31,7 @@ class CallController extends Controller
         if ($validator->fails()) {
             return response()->json(['error' => $validator->errors()], 401);
         }
-        $adviser_id=Adviser::where('user_id',$request->user_id)->value('id');
+        $adviser_id = Adviser::where('user_id', $request->user_id)->value('id');
 
 
         $adviser = Adviser::find($adviser_id);
@@ -42,8 +42,8 @@ class CallController extends Controller
             $call->status = 1; //offline status
             $call->save();
 
-            $error['message']='مشاور آفلاین است';
-            $error['status']='offline';
+            $error['message'] = 'مشاور آفلاین است';
+            $error['status'] = 'offline';
             return response()->json(['error' => $error], 401);
         }
 
@@ -54,8 +54,8 @@ class CallController extends Controller
             $call->status = 4; //offline status
             $call->save();
 
-            $error['message']='مشاور در دسترس نیست';
-            $error['status']='unreachable';
+            $error['message'] = 'مشاور در دسترس نیست';
+            $error['status'] = 'unreachable';
             return response()->json(['error' => $error], 401);
         }
 
@@ -67,8 +67,8 @@ class CallController extends Controller
             $call->status = 0; //busy status
             $call->save();
 
-            $error['message']='مشاور در حال مکالمه است';
-            $error['status']='busy';
+            $error['message'] = 'مشاور در حال مکالمه است';
+            $error['status'] = 'busy';
             return response()->json(['error' => $error], 401);
         }
 
@@ -158,71 +158,110 @@ class CallController extends Controller
 
         $response = $client->request('GET', 'http://45.156.186.248/my/getCDR.php?email=' . $call_secure->username . '&pass=' . $call_secure->password . '&callfile=' . $request->call_file);
         $body = $response->getBody();
+
+
         $callinfo = json_decode($body, true);
+
+
         $call = Call::where('call_file', $request->call_file)->value('id');
         $call = Call::find($call);
+
         if ($call->duration == null) {
 
-            $nominal_call_price = Adviser::find($call->adviser_id)->nominal_call_price;
-            $nominal_call_price = $nominal_call_price * $callinfo['duration'];
+            //for when user reject call
+            if ($callinfo['result'] == null) {
+                $call->duration = 0;
+                $call->billing = 0;
+                $call->status = 3; //ended status
+                $call->save();
 
-            $call_price = Adviser::find($call->adviser_id)->call_price;
-            $call_price = $call_price * $callinfo['duration'];
+                //turn off adviser busy
+                $adviser = Adviser::find($call->adviser_id);
+                $adviser->is_busy = 0;
+                $adviser->save();
 
+                return response()->json(['success' => 'success'], $this->successStatus);
 
-            $user = User::find(Auth::user()->id);
-            $user->wallet = $user->wallet - $nominal_call_price;
-            $user->save();
-
-
-            $user = User::find(Adviser::find($call->adviser_id)->user_id);
-            $user->wallet = $user->wallet + $call_price;
-            $user->save();
-
-            $adviser = Adviser::find($call->adviser_id);
-            $adviser->is_busy = 0;
-            $adviser->save();
-
-
-            $wallet = new Wallet();
-            $wallet->user_id = Auth::user()->id;
-            $wallet->finance = $nominal_call_price * -1;
-            $wallet->call_id = $call->id;
-            $wallet->save();
-
-            $wallet = new Wallet();
-            $wallet->user_id = Adviser::find($call->adviser_id)->user_id;
-            $wallet->finance = $call_price;
-            $wallet->call_id = $call->id;
-            $wallet->save();
-
-            $call->duration = $callinfo['duration'];
-            $call->billing = $nominal_call_price;
-            $call->recording_file = $callinfo['recordingfile'];
-            $call->status = 3; //ended status
-            $call->save();
-
-            $call_center_price = 250 * $callinfo['duration'];
-            $sms_price = 160;
-            //sms
-            try {
-                $receptor = User::find(Adviser::find($call->adviser_id)->user_id)->mobile;
-                $template = "callStatus";
-                $type = "sms";
-                $token = $nominal_call_price;
-                $token2 = $nominal_call_price - $call_price - $call_center_price - $sms_price;
-                $token3 = $call_price;
-                $result = Kavenegar::VerifyLookup($receptor, $token, $token2, $token3, $template, $type);
-            } catch (ApiException $e) {
-                echo $e->errorMessage();
-            } catch (HttpException $e) {
-                echo $e->errorMessage();
             }
 
+            $duration = $callinfo['duration'];
+            if ($duration == 1) {
+                $call->duration = 1;
+                $call->billing = 0;
+                $call->status = 3; //ended status
+                $call->save();
 
-            return response()->json(['success' => $call], $this->successStatus);
+                //turn off adviser busy
+                $adviser = Adviser::find($call->adviser_id);
+                $adviser->is_busy = 0;
+                $adviser->save();
+
+                return response()->json(['success' => 'show reason page'], $this->successStatus);
+            }
+
+            if ($duration > 1) {
+                $nominal_call_price = Adviser::find($call->adviser_id)->nominal_call_price;
+                $nominal_call_price = $nominal_call_price * $callinfo['duration'];
+
+                $call_price = Adviser::find($call->adviser_id)->call_price;
+                $call_price = $call_price * $callinfo['duration'];
+
+
+                $user = User::find(Auth::user()->id);
+                $user->wallet = $user->wallet - $nominal_call_price;
+                $user->save();
+
+
+                $user = User::find(Adviser::find($call->adviser_id)->user_id);
+                $user->wallet = $user->wallet + $call_price;
+                $user->save();
+
+                $adviser = Adviser::find($call->adviser_id);
+                $adviser->is_busy = 0;
+                $adviser->save();
+
+
+                $wallet = new Wallet();
+                $wallet->user_id = Auth::user()->id;
+                $wallet->finance = $nominal_call_price * -1;
+                $wallet->call_id = $call->id;
+                $wallet->save();
+
+                $wallet = new Wallet();
+                $wallet->user_id = Adviser::find($call->adviser_id)->user_id;
+                $wallet->finance = $call_price;
+                $wallet->call_id = $call->id;
+                $wallet->save();
+
+                $call->duration = $callinfo['duration'];
+                $call->billing = $nominal_call_price;
+                $call->recording_file = $callinfo['recordingfile'];
+                $call->status = 3; //ended status
+                $call->save();
+
+                $call_center_price = 250 * $callinfo['duration'];
+                $sms_price = 160;
+                //sms
+                try {
+                    $receptor = User::find(Adviser::find($call->adviser_id)->user_id)->mobile;
+                    $template = "callStatus";
+                    $type = "sms";
+                    $token = $nominal_call_price;
+                    $token2 = $nominal_call_price - $call_price - $call_center_price - $sms_price;
+                    $token3 = $call_price;
+                    $result = Kavenegar::VerifyLookup($receptor, $token, $token2, $token3, $template, $type);
+                } catch (ApiException $e) {
+                    echo $e->errorMessage();
+                } catch (HttpException $e) {
+                    echo $e->errorMessage();
+                }
+
+                return response()->json(['success' => $call], $this->successStatus);
+            }
         }
-        return response()->json(['success' => 'ok'], $this->successStatus);
+
+
+        return response()->json(['success' => 'success'], $this->successStatus);
 
     }
 
@@ -248,40 +287,40 @@ class CallController extends Controller
             $call->duration = $callinfo['duration'];
             $call->billing = 0;
             $call->recording_file = $callinfo['recordingfile'];
-            isset($request->unreachable)&&$request->unreachable==1?$call->status = 4:$call->status = 5; //4:unreachable & 5:reject status
+            isset($request->unreachable) && $request->unreachable == 1 ? $call->status = 4 : $call->status = 5; //4:unreachable & 5:reject status
             $call->save();
             return response()->json(['success' => $call], $this->successStatus);
         }
-        $adviser=Adviser::find($call->adviser_id);
-        $adviser->status=0;
+        $adviser = Adviser::find($call->adviser_id);
+        $adviser->status = 0;
         $adviser->save();
         return response()->json(['success' => 'ok'], $this->successStatus);
     }
 
     public function call_history()
     {
-        $user=Auth::user();
-        if ($user->is_adviser==1){
-            $adviser_id=Adviser::where('user_id',$user->id)->value('id');
-            $calls=Call::where('adviser_id',$adviser_id)->get();
-            $c=array();
-            foreach ($calls as $call){
-                $cc=$call;
-                $cc['user_name']=User::find($call->user_id)->name==null?User::find($call->user_id)->username:User::find($call->user_id)->name;
-                $cc['user_avatar']=User::find($call->user_id)->avatar;
-                array_push($c,$cc);
+        $user = Auth::user();
+        if ($user->is_adviser == 1) {
+            $adviser_id = Adviser::where('user_id', $user->id)->value('id');
+            $calls = Call::where('adviser_id', $adviser_id)->get();
+            $c = array();
+            foreach ($calls as $call) {
+                $cc = $call;
+                $cc['user_name'] = User::find($call->user_id)->name == null ? User::find($call->user_id)->username : User::find($call->user_id)->name;
+                $cc['user_avatar'] = User::find($call->user_id)->avatar;
+                array_push($c, $cc);
             }
 
             return response()->json(['success' => $calls], $this->successStatus);
-        }else{
-            $calls=Call::where('user_id',$user->id)->get();
-            $c=array();
-            foreach ($calls as $call){
-                $cc=$call;
-                $user_id=Adviser::find($call->adviser_id)->user_id;
-                $cc['user_name']=User::find($user_id)->name;
-                $cc['user_avatar']=User::find($user_id)->avatar;
-                array_push($c,$cc);
+        } else {
+            $calls = Call::where('user_id', $user->id)->get();
+            $c = array();
+            foreach ($calls as $call) {
+                $cc = $call;
+                $user_id = Adviser::find($call->adviser_id)->user_id;
+                $cc['user_name'] = User::find($user_id)->name;
+                $cc['user_avatar'] = User::find($user_id)->avatar;
+                array_push($c, $cc);
             }
             return response()->json(['success' => $c], $this->successStatus);
         }

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/CallController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/CallController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,8 +20,8 @@
       <file leaf-file-name="ReserveController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/ReserveController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="107" column="31" lean-forward="true" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
+            <state relative-caret-position="0">
+              <caret line="107" column="31" lean-forward="false" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -29,18 +30,18 @@
       <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="36" column="21" lean-forward="true" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="32" />
+            <state relative-caret-position="540">
+              <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="381" column="34" lean-forward="false" selection-start-line="381" selection-start-column="30" selection-end-line="381" selection-end-column="34" />
+            <state relative-caret-position="255">
+              <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
               <folding>
                 <element signature="e#42#58#0#PHP" expanded="true" />
               </folding>
@@ -48,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CallController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CallController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/CallController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3870">
-              <caret line="272" column="13" lean-forward="false" selection-start-line="272" selection-start-column="13" selection-end-line="272" selection-end-column="13" />
+            <state relative-caret-position="365">
+              <caret line="266" column="0" lean-forward="true" selection-start-line="266" selection-start-column="0" selection-end-line="266" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -71,7 +72,7 @@
       <file leaf-file-name="mainController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/mainController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
+            <state relative-caret-position="3135">
               <caret line="214" column="64" lean-forward="false" selection-start-line="214" selection-start-column="64" selection-end-line="214" selection-end-column="64" />
               <folding />
             </state>
@@ -160,7 +161,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2019_11_19_112633_create_ticket_answers_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_11_16_151256_create_admins_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_11_19_112230_create_tickets_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_11_19_162545_add_subject_to_tickets_table.php" />
@@ -203,7 +203,6 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_12_19_192431_add_lat_long_video_to_advisers.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/AdviserController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/CallController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/ConversationController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/BlogController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_12_20_162201_add_type_to_reserve_calls.php" />
@@ -211,6 +210,8 @@
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_12_21_134356_add_call_page_to_users.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/CallController.php" />
       </list>
     </option>
   </component>
@@ -367,6 +368,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -388,17 +391,13 @@
             <path>
               <item name="shaverno" type="b2602c69:ProjectViewProjectNode" />
               <item name="shaverno" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="shaverno" type="b2602c69:ProjectViewProjectNode" />
               <item name="shaverno" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="API" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="migrations" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="shaverno" type="b2602c69:ProjectViewProjectNode" />
@@ -420,8 +419,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -507,7 +504,8 @@
       <workItem from="1576773784056" duration="39000" />
       <workItem from="1576829018016" duration="1437000" />
       <workItem from="1576842899345" duration="1517000" />
-      <workItem from="1576846213497" duration="3926000" />
+      <workItem from="1576846213497" duration="4134000" />
+      <workItem from="1576918204815" duration="2017000" />
     </task>
     <task id="LOCAL-00094" summary="edit fetch messages">
       <created>1575015968174</created>
@@ -864,7 +862,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="271322000" />
+    <option name="totallyTimeSpent" value="273547000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -934,13 +932,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_23_174657_add_wallet_change_to_users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="60" lean-forward="false" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_19_112230_create_tickets_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -1196,7 +1187,6 @@
           <caret line="16" column="68" lean-forward="false" selection-start-line="16" selection-start-column="68" selection-end-line="16" selection-end-column="68" />
           <caret line="17" column="69" lean-forward="false" selection-start-line="17" selection-start-column="69" selection-end-line="17" selection-end-column="69" />
           <caret line="18" column="106" lean-forward="false" selection-start-line="18" selection-start-column="106" selection-end-line="18" selection-end-column="106" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1204,9 +1194,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1155">
           <caret line="77" column="22" lean-forward="false" selection-start-line="77" selection-start-column="22" selection-end-line="77" selection-end-column="22" />
-          <folding>
-            <marker date="1576771356658" expanded="true" signature="30:73" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1214,14 +1201,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="960">
           <caret line="79" column="65" lean-forward="false" selection-start-line="79" selection-start-column="65" selection-end-line="79" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/CallController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3870">
-          <caret line="272" column="13" lean-forward="false" selection-start-line="272" selection-start-column="13" selection-end-line="272" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1252,7 +1231,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/mainController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
+        <state relative-caret-position="3135">
           <caret line="214" column="64" lean-forward="false" selection-start-line="214" selection-start-column="64" selection-end-line="214" selection-end-column="64" />
           <folding />
         </state>
@@ -1262,14 +1241,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="16" column="81" lean-forward="false" selection-start-line="16" selection-start-column="81" selection-end-line="16" selection-end-column="81" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/ReserveController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="107" column="31" lean-forward="true" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
+        <state relative-caret-position="0">
+          <caret line="107" column="31" lean-forward="false" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -1278,25 +1256,40 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="439">
           <caret line="49" column="45" lean-forward="false" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="36" column="21" lean-forward="true" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="32" />
+        <state relative-caret-position="540">
+          <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="381" column="34" lean-forward="false" selection-start-line="381" selection-start-column="30" selection-end-line="381" selection-end-column="34" />
+        <state relative-caret-position="255">
+          <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
           <folding>
             <element signature="e#42#58#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_12_21_134356_add_call_page_to_users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="70" lean-forward="false" selection-start-line="16" selection-start-column="70" selection-end-line="16" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/CallController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="266" column="0" lean-forward="true" selection-start-line="266" selection-start-column="0" selection-end-line="266" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
