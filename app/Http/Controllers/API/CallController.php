@@ -189,7 +189,7 @@ class CallController extends Controller
 
                 $u_id=Auth::user()->id;
                 $u=User::find($u_id);
-                $u->call_page=1;
+                $u->call_page=0;
                 $u->save();
                 return response()->json(['success' => 'success'], $this->successStatus);
 
@@ -218,7 +218,7 @@ class CallController extends Controller
 
                 $u_id=Auth::user()->id;
                 $u=User::find($u_id);
-                $u->call_page=1;
+                $u->call_page=0;
                 $u->save();
 
                 return response()->json(['success' => $success], $this->successStatus);
@@ -283,7 +283,7 @@ class CallController extends Controller
 
                 $u_id=Auth::user()->id;
                 $u=User::find($u_id);
-                $u->call_page=1;
+                $u->call_page=0;
                 $u->save();
 
 
@@ -297,7 +297,7 @@ class CallController extends Controller
 
         $u_id=Auth::user()->id;
         $u=User::find($u_id);
-        $u->call_page=1;
+        $u->call_page=0;
         $u->save();
         return response()->json(['success' => 'success'], $this->successStatus);
 
