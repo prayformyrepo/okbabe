@@ -134,7 +134,10 @@ class CallController extends Controller
 //                    echo $e->errorMessage();
 //                }
 
-
+                $u_id=Auth::user()->id;
+                $u=User::find($u_id);
+                $u->call_page=1;
+                $u->save();
                 $calli['info'] = Call::find($call->id);
                 $adviser_id=Call::find($call->id)->adviser_id;
                 $adviser_user_id=Adviser::find($adviser_id)->user_id;
@@ -184,6 +187,10 @@ class CallController extends Controller
                 $adviser->is_busy = 0;
                 $adviser->save();
 
+                $u_id=Auth::user()->id;
+                $u=User::find($u_id);
+                $u->call_page=1;
+                $u->save();
                 return response()->json(['success' => 'success'], $this->successStatus);
 
             }
@@ -207,6 +214,12 @@ class CallController extends Controller
                 $adviser_user_id=Adviser::find($adviser_id)->user_id;
                 $success['adviser_name']=User::find($adviser_user_id)->name;
                 $success['adviser_avatar']=User::find($adviser_user_id)->avatar;
+
+
+                $u_id=Auth::user()->id;
+                $u=User::find($u_id);
+                $u->call_page=1;
+                $u->save();
 
                 return response()->json(['success' => $success], $this->successStatus);
             }
@@ -268,6 +281,12 @@ class CallController extends Controller
                     echo $e->errorMessage();
                 }
 
+                $u_id=Auth::user()->id;
+                $u=User::find($u_id);
+                $u->call_page=1;
+                $u->save();
+
+
                 $adviser_id=$call->adviser_id;
                 $adviser_user_id=Adviser::find($adviser_id)->user_id;
                 $call['adviser_name']=User::find($adviser_user_id)->name;
@@ -276,7 +295,10 @@ class CallController extends Controller
             }
         }
 
-
+        $u_id=Auth::user()->id;
+        $u=User::find($u_id);
+        $u->call_page=1;
+        $u->save();
         return response()->json(['success' => 'success'], $this->successStatus);
 
     }
