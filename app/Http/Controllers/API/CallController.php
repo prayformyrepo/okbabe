@@ -136,6 +136,10 @@ class CallController extends Controller
 
 
                 $calli['info'] = Call::find($call->id);
+                $adviser_id=Call::find($call->id)->adviser_id;
+                $adviser_user_id=Adviser::find($adviser_id)->user_id;
+                $calli['adviser_name']=User::find($adviser_user_id)->name;
+                $calli['adviser_avatar']=User::find($adviser_user_id)->avatar;
                 $calli['info']['message'] = 'تماس برقرار شد. لطفا منتظر بمانید';
             }
             return response()->json(['success' => $calli], $this->successStatus);
@@ -199,6 +203,11 @@ class CallController extends Controller
                 $success['text']='show reason page';
                 $success['call_file']=$request->call_file;
 
+                $adviser_id=$call->adviser_id;
+                $adviser_user_id=Adviser::find($adviser_id)->user_id;
+                $success['adviser_name']=User::find($adviser_user_id)->name;
+                $success['adviser_avatar']=User::find($adviser_user_id)->avatar;
+
                 return response()->json(['success' => $success], $this->successStatus);
             }
 
@@ -259,6 +268,10 @@ class CallController extends Controller
                     echo $e->errorMessage();
                 }
 
+                $adviser_id=$call->adviser_id;
+                $adviser_user_id=Adviser::find($adviser_id)->user_id;
+                $call['adviser_name']=User::find($adviser_user_id)->name;
+                $call['adviser_avatar']=User::find($adviser_user_id)->avatar;
                 return response()->json(['success' => $call], $this->successStatus);
             }
         }
