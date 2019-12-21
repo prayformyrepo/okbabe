@@ -35,6 +35,7 @@ class SearchController extends Controller
         foreach ($advisers as $adviser) {
             if ($c < 8) {
                 $save['user_id'] = $adviser->id;
+                $save['adviser_id'] = Adviser::where('user_id',$adviser->id)->value('id');
                 $save['name'] = $adviser->name;
                 $save['avatar'] = $adviser->avatar;
                 $save['field'] = $adviser->adviser($adviser)->field;

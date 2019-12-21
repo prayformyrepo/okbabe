@@ -349,6 +349,9 @@ class CallController extends Controller
             return response()->json(['success' => 'success'], $this->successStatus);
 
         }else{
+            $success['text']='show rate page';
+            $success['adviser_id']='show rate page';
+
             return response()->json(['success' => 'show rate page'], $this->successStatus);
         }
 
