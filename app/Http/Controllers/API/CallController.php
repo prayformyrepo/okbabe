@@ -196,7 +196,10 @@ class CallController extends Controller
                 $adviser->is_busy = 0;
                 $adviser->save();
 
-                return response()->json(['success' => 'show reason page'], $this->successStatus);
+                $success['text']='show reason page';
+                $success['call_file']=$request->call_file;
+
+                return response()->json(['success' => $success], $this->successStatus);
             }
 
             if ($duration > 1) {
@@ -350,9 +353,9 @@ class CallController extends Controller
 
         }else{
             $success['text']='show rate page';
-            $success['adviser_id']='show rate page';
+            $success['adviser_id']=$call->adviser_id;
 
-            return response()->json(['success' => 'show rate page'], $this->successStatus);
+            return response()->json(['success' => $success], $this->successStatus);
         }
 
 
