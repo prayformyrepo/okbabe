@@ -103,6 +103,7 @@ Route::group(['middleware' => 'auth:api'], function(){
         Route::post('end-call', 'API\CallController@end_call');
         Route::post('reject-call', 'API\CallController@reject_call');
         Route::post('call-history', 'API\CallController@call_history');
+        Route::post('reason-call', 'API\CallController@reason_call');
 
         //tickets
         Route::post('create-ticket','API\TicketController@create_ticket');

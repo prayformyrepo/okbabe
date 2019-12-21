@@ -326,4 +326,34 @@ class CallController extends Controller
         }
     }
 
+    public function reason_call(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'call_file' => 'required',
+            'reason' => 'required'
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 401);
+        }
+        $call = Call::where('call_file', $request->call_file)->value('id');
+        $call = Call::find($call);
+        if ($request->reason==1){
+            $call->status=4;
+            $call->save();
+            return response()->json(['success' => 'success'], $this->successStatus);
+
+        }
+        elseif($request->reason=2){
+            $call->status=5;
+            $call->save();
+            return response()->json(['success' => 'success'], $this->successStatus);
+
+        }else{
+            return response()->json(['success' => 'show rate page'], $this->successStatus);
+        }
+
+
+    }
+
+
 }
