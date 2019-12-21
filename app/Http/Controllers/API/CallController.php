@@ -343,7 +343,7 @@ class CallController extends Controller
             return response()->json(['success' => 'success'], $this->successStatus);
 
         }
-        elseif($request->reason=2){
+        elseif($request->reason==2){
             $call->status=5;
             $call->save();
             return response()->json(['success' => 'success'], $this->successStatus);
