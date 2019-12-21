@@ -169,7 +169,7 @@ class CallController extends Controller
         if ($call->duration == null) {
 
             //for when user reject call
-            if ($callinfo['result'] == null) {
+            if (isset($callinfo['result']) && $callinfo['result'] == null) {
                 $call->duration = 0;
                 $call->billing = 0;
                 $call->status = 3; //ended status
