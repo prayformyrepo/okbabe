@@ -49,6 +49,8 @@ class AdviserController extends Controller
 //            $adviser['adviser']['ttt']=array();
             $testi=array();
             for ($i=0;$i<$count;$i++){
+
+                $tt['id']=$times[$i]['id'];
                 $tt['date']=$times[$i]['date'];
                 $tt['time_from']=$times[$i]['time_from'];
                 $tt['time_to']=$times[$i]['time_to'];
