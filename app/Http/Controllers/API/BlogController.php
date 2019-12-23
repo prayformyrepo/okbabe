@@ -24,7 +24,7 @@ class BlogController extends Controller
         else if (isset($request->category)){
             if ($request->category=='0') { //nino
                 $category_id=149518063;
-                $show_posts = Post::select('id', 'title', 'description', 'image', 'created_at')->orderBy('id', 'DESC')->paginate(10);
+                $show_posts = Post::select('id', 'title', 'description','content', 'image', 'created_at')->orderBy('id', 'DESC')->paginate(10);
                 $posts = array();
                 foreach ($show_posts as $post) {
                     $categories=$post->categories()->get();
