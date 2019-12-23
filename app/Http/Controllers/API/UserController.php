@@ -216,12 +216,12 @@ class UserController extends Controller
 //            return response()->json(['error'=>$validator->errors()], 401);
 //        }
         if(isset($request->user_id)){
-            $user = User::select('id','name','username','email','mobile','gender','call_page','wallet','is_adviser','avatar')->find($request->user_id);
+            $user = User::select('id','name','username','email','mobile','gender','call_page','call_file','call_adviser_name','call_adviser_avatar','wallet','is_adviser','avatar')->find($request->user_id);
 
         }
         else{
             $user=Auth::user();
-            $user = User::select('id','name','username','email','mobile','gender','call_page','wallet','is_adviser','avatar')->find($user->id);
+            $user = User::select('id','name','username','email','mobile','gender','call_page','call_file','call_adviser_name','call_adviser_avatar','wallet','is_adviser','avatar')->find($user->id);
             }
 
 

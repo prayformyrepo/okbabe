@@ -137,6 +137,9 @@ class CallController extends Controller
                 $u_id=Auth::user()->id;
                 $u=User::find($u_id);
                 $u->call_page=1;
+                $u->call_file=$callfile;
+                $u->call_adviser_name=User::find($adviser_user_id)->name;
+                $u->call_adviser_avatar=User::find($adviser_user_id)->avatar;
                 $u->save();
                 $calli['info'] = Call::find($call->id);
                 $adviser_id=Call::find($call->id)->adviser_id;
@@ -190,6 +193,9 @@ class CallController extends Controller
                 $u_id=Auth::user()->id;
                 $u=User::find($u_id);
                 $u->call_page=0;
+                $u->call_file=null;
+                $u->call_adviser_name=null;
+                $u->call_adviser_avatar=null;
                 $u->save();
                 return response()->json(['success' => 'success'], $this->successStatus);
 
@@ -219,6 +225,9 @@ class CallController extends Controller
                 $u_id=Auth::user()->id;
                 $u=User::find($u_id);
                 $u->call_page=0;
+                $u->call_file=null;
+                $u->call_adviser_name=null;
+                $u->call_adviser_avatar=null;
                 $u->save();
 
                 return response()->json(['success' => $success], $this->successStatus);
@@ -284,6 +293,9 @@ class CallController extends Controller
                 $u_id=Auth::user()->id;
                 $u=User::find($u_id);
                 $u->call_page=0;
+                $u->call_file=null;
+                $u->call_adviser_name=null;
+                $u->call_adviser_avatar=null;
                 $u->save();
 
 
@@ -298,6 +310,9 @@ class CallController extends Controller
         $u_id=Auth::user()->id;
         $u=User::find($u_id);
         $u->call_page=0;
+        $u->call_file=null;
+        $u->call_adviser_name=null;
+        $u->call_adviser_avatar=null;
         $u->save();
         return response()->json(['success' => 'success'], $this->successStatus);
 
