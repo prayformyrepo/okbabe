@@ -79,12 +79,19 @@ class EventController extends Controller
             $paginate['has_more_pages'] = $events->hasMorePages();
             $paginate['next_page_url'] = $events->nextPageUrl();
             $paginate['previous_page_url'] = $events->previousPageUrl();
-            return response()->json(['success' => $eventArray, 'pagination' => $paginate], $this->successStatus);
 
         }else{
-            return response()->json(['success' => $eventArray], $this->successStatus);
+            $paginate['total'] = $evs->total();
+            $paginate['per_page'] = $evs->perPage();
+            $paginate['current_page'] = $evs->currentPage();
+            $paginate['last_page'] = $evs->lastPage();
+            $paginate['has_more_pages'] = $evs->hasMorePages();
+            $paginate['next_page_url'] = $evs->nextPageUrl();
+            $paginate['previous_page_url'] = $evs->previousPageUrl();
 
         }
+        return response()->json(['success' => $eventArray, 'pagination' => $paginate], $this->successStatus);
+
 
     }
 
