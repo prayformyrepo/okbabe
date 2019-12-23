@@ -60,7 +60,7 @@ Route::get('unbusy-mohi',function (){
 
 
     $a=\App\Adviser::find(6);
-    $a->is_busy=1;
+    $a->is_busy=0;
     $a->save();
     return 'unbusy shod!';
 
