@@ -71,13 +71,15 @@ class EventController extends Controller
             array_push($eventArray, $ev);
         }
 
-        $paginate['total'] = $events->total();
-        $paginate['per_page'] = $events->perPage();
-        $paginate['current_page'] = $events->currentPage();
-        $paginate['last_page'] = $events->lastPage();
-        $paginate['has_more_pages'] = $events->hasMorePages();
-        $paginate['next_page_url'] = $events->nextPageUrl();
-        $paginate['previous_page_url'] = $events->previousPageUrl();
+        if (!isset($request->category_id)) {
+            $paginate['total'] = $events->total();
+            $paginate['per_page'] = $events->perPage();
+            $paginate['current_page'] = $events->currentPage();
+            $paginate['last_page'] = $events->lastPage();
+            $paginate['has_more_pages'] = $events->hasMorePages();
+            $paginate['next_page_url'] = $events->nextPageUrl();
+            $paginate['previous_page_url'] = $events->previousPageUrl();
+        }
 
         return response()->json(['success' => $eventArray, 'pagination' => $paginate], $this->successStatus);
     }
