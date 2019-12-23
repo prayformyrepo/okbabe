@@ -120,6 +120,11 @@ Route::group(['middleware' => 'auth:api'], function(){
         Route::post('change-reserve-status','API\ReserveController@change_reserve_status');
         Route::post('reserve-history','API\ReserveController@reserve_history');
 
+
+        //route
+        Route::post('show-filter','API\FilterController@show_filter');
+
+
     });
 
 
