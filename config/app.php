@@ -229,6 +229,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Agent' => Jenssegers\Agent\Facades\Agent::class,
         'Kavenegar' => Kavenegar\Laravel\Facade::class,
+        'Verta' => Hekmatinasser\Verta\Verta::class,
 
     ],
 

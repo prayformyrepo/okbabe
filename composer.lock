@@ -1002,16 +1002,16 @@
         },
         {
             "name": "hekmatinasser/verta",
-            "version": "v1.10.1",
+            "version": "v1.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hekmatinasser/verta.git",
-                "reference": "dbdf86e11062ab9a61984ee1263be7c6cebd1ced"
+                "reference": "0cd5ee45e46709985769025c38915879e57ddc97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hekmatinasser/verta/zipball/dbdf86e11062ab9a61984ee1263be7c6cebd1ced",
-                "reference": "dbdf86e11062ab9a61984ee1263be7c6cebd1ced",
+                "url": "https://api.github.com/repos/hekmatinasser/verta/zipball/0cd5ee45e46709985769025c38915879e57ddc97",
+                "reference": "0cd5ee45e46709985769025c38915879e57ddc97",
                 "shasum": ""
             },
             "require": {
@@ -1062,7 +1062,7 @@
                 "laravel",
                 "shamsi"
             ],
-            "time": "2019-09-17T10:18:45+00:00"
+            "time": "2019-12-23T10:53:43+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
