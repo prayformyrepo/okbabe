@@ -15,6 +15,11 @@ class filterController extends Controller
         $categories=Adviser_category::all();
         foreach ($categories as $category){
             if ($category->parent_category_id==null){
+                $c['id']=$category->id;
+                $c['name']=$category->name;
+                $c['slug']=$category->slug;
+                $c['created_at']=$category->created_at;
+                $c['updated_at']=$category->updated_at;
                 $c=$category;
                 $subcategories=Adviser_category::where('parent_category_id',$category->id)->get();
                 $c['sub_categories']=$subcategories;
