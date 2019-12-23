@@ -122,7 +122,7 @@ Route::group(['middleware' => 'auth:api'], function(){
 
 
         //route
-        Route::post('show-filter','API\FilterController@show_filter');
+        Route::post('show-filter','API\filterController@show_filter');
 
 
     });
