@@ -108,24 +108,10 @@ class BlogController extends Controller
     {
 
         $categories_show=Post_category::all();
-        $cc=array();
-        foreach ($categories_show as $category){
-            if ($category->parent_category_id==null){
-                $c['id']=$category->id;
-                $c['title']=$category->title;
-                $c['image']=$category->image;
-                $subs=Post_category::where('parent_category_id',$category->id)->count();
-                if ($subs!=null){
-                    $c['subs']=$category->sub_categories($category->id);
-                    array_push($cc,$c);
-                }
-                array_push($cc,$c);
-
-            }
-        }
 
 
-        return response()->json(['success' => $cc], $this-> successStatus);
+
+        return response()->json(['success' => $categories_show], $this-> successStatus);
 
     }
 }
