@@ -78,7 +78,7 @@ class TicketController extends Controller
     {
         if(isset($request->ticket_id)){
             $tickets=Ticket::find($request->ticket_id);
-            $tickets['answers']=Ticket::find($request->ticket_id)->answers();
+            $tickets['answers']=Ticket::find($request->ticket_id)->ticketanswers();
 
         }
         $tickets=Ticket::where('user_id',Auth::user()->id)->get();

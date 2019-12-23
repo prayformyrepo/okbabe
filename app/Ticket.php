@@ -18,7 +18,7 @@ class Ticket extends Model
         return $this->belongsTo(Ticket_category::class);
     }
 
-    public function answers()
+    public function ticketAnswers()
     {
         return $this->hasMany(Ticket_answer::class);
     }
