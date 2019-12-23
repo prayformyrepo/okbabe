@@ -258,11 +258,11 @@ class mainController extends Controller
             foreach (array_reverse($categories) as $name => $values) {
                 @$check = Post_category::find($values->id);
                 if ($check != null) {
-                    $has=Post_to_category::where('post_id',$post_id)->where('category_id',$values->id)->count();
+                    $has=Post_to_category::where('post_id',$post_id)->where('post_category_id',$values->id)->count();
                     if ($has==0) {
                         $add = new Post_to_category();
                         $add->post_id = $post_id;
-                        $add->category_id = $values->id;
+                        $add->post_category_id = $values->id;
                         $add->save();
                         echo '<h1>' . $values->id . 'saved</h1>';
                     }
