@@ -21,7 +21,7 @@ class filterController extends Controller
                 $c['created_at']=$category->created_at;
                 $c['updated_at']=$category->updated_at;
                 $c=$category;
-                $subcategories=Adviser_category::where('parent_category_id',$category->id)->get();
+                $subcategories=Adviser_category::select('id','name','slug','parent_category_id')->where('parent_category_id',$category->id)->get();
                 $c['sub_categories']=$subcategories;
                 array_push($cat,$c);
             }
