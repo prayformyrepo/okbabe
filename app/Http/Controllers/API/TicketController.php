@@ -78,7 +78,7 @@ class TicketController extends Controller
     {
         if(isset($request->ticket_id)){
             $tickets=Ticket::find($request->ticket_id);
-            $tickets['answers']=Ticket::find($request->ticket_id)->ticketanswers();
+            $tickets['answers']=Ticket::find($request->ticket_id)->ticketAnswers();
 
         }
         else
