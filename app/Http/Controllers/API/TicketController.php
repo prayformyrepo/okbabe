@@ -74,8 +74,16 @@ class TicketController extends Controller
 
     }
 
+    public function show_tickets()
+    {
+        $tickets=Ticket::where('user_id',Auth::user()->id)->get();
+
+        return response()->json(['success'=>$tickets],200);
+
+    }
+
    /* public function add_ticket_category(Request $request)
     {
-        
+
     }*/
 }
