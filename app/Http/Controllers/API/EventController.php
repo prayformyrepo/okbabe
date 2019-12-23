@@ -19,18 +19,18 @@ class EventController extends Controller
     {
         if (isset($request->type)) {
             if (isset($request->category_id)) {
-                $events = Event::categories()->where('id',$request->category_id)->orderBy('id', 'DESC')->paginate(10);
-//                $events = array();
-//                foreach ($evs as $ev) {
-//                    $adviser_categories = Adviser_to_category::where('adviser_id', $ev->adviser_id)->get();
-//                    $flag = false;
-//                    foreach ($adviser_categories as $adviser_category) {
-//                        if ($adviser_category->adviser_category_id == $request->category_id) $flag = true;
-//                    }
-//                    if ($flag == true) {
-//                        array_push($events,$ev);
-//                    }
-//                }
+                $evs = Event::where('type', $request->type)->orderBy('id', 'DESC')->paginate(10);
+                $events = array();
+                foreach ($evs as $ev) {
+                    $adviser_categories = Adviser_to_category::where('adviser_id', $ev->adviser_id)->get();
+                    $flag = false;
+                    foreach ($adviser_categories as $adviser_category) {
+                        if ($adviser_category->adviser_category_id == $request->category_id) $flag = true;
+                    }
+                    if ($flag == true) {
+                        array_push($events,$ev);
+                    }
+                }
             } else {
                 $events = Event::where('type', $request->type)->orderBy('id', 'DESC')->paginate(10);
             }

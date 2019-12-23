@@ -8,6 +8,6 @@ class Event extends Model
 {
     public function scopeCategories($query)
     {
-        return $query->find($this->adviser_id)->categories();
+        return $query->where('id',$this->adviser_id)->categories();
     }
 }
