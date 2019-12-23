@@ -45,13 +45,17 @@ Route::get('call',function (){
 });
 
 Route::get('online-mohi',function (){
-    $u=\App\User::find(40);
-    $u->is_online=1;
-    $u->save();
+    $us=\App\User::all();
+    foreach ($us as $u) {
+        $u->is_online = 1;
+        $u->save();
+    }
 
-    $a=\App\Adviser::find(6);
-    $a->is_online=1;
-    $a->save();
+    $as=\App\Adviser::all();
+    foreach ($as as $a) {
+        $a->is_online = 1;
+        $a->save();
+    }
     return 'online shod!';
 
 });
@@ -59,9 +63,11 @@ Route::get('online-mohi',function (){
 Route::get('unbusy-mohi',function (){
 
 
-    $a=\App\Adviser::find(6);
-    $a->is_busy=0;
-    $a->save();
+    $as=\App\Adviser::all();
+    foreach ($as as $a) {
+        $a->is_busy = 0;
+        $a->save();
+    }
     return 'unbusy shod!';
 
 });
