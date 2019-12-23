@@ -81,6 +81,7 @@ class TicketController extends Controller
             $tickets['answers']=Ticket::find($request->ticket_id)->ticketanswers();
 
         }
+        else
         $tickets=Ticket::where('user_id',Auth::user()->id)->get();
 
         return response()->json(['success'=>$tickets],200);
