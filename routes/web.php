@@ -44,6 +44,30 @@ Route::get('call',function (){
     return view('call');
 });
 
+Route::get('online-mohi',function (){
+    $u=\App\User::find(40);
+    $u->is_online=1;
+    $u->save();
+
+    $a=\App\Adviser::find(6);
+    $a->is_online=1;
+    $a->save();
+    return 'online shod!';
+
+});
+
+Route::get('unbusy-mohi',function (){
+
+
+    $a=\App\Adviser::find(6);
+    $a->is_busy=1;
+    $a->save();
+    return 'unbusy shod!';
+
+});
+
+
+
 Route::get('/pay/callback', 'API\WalletController@verify');
 
 //Route::get('/test',function(){
