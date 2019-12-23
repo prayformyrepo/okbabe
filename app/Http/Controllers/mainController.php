@@ -115,6 +115,7 @@ class mainController extends Controller
                         echo $values2->title . '<br>';
                     }else{
                         echo 'bood<br>';
+                        $category=Post_category::find($values2->id);
 
                     }
 
@@ -134,6 +135,7 @@ class mainController extends Controller
                                 echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $values3->title . '<br>';
                             }else{
                                 echo 'bood<br>';
+                                $category=Post_category::find($values3->id);
 
                             }
 
@@ -153,6 +155,7 @@ class mainController extends Controller
                                         echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $values4->title . '<br>';
                                     }else{
                                         echo 'bood<br>';
+                                        $category=Post_category::find($values4->id);
 
                                     }
 
@@ -173,6 +176,7 @@ class mainController extends Controller
                                                 echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $values5->title . '<br>';
                                             }else{
                                                 echo 'bood<br>';
+                                                $category=Post_category::find($values5->id);
 
                                             }
 
@@ -193,6 +197,7 @@ class mainController extends Controller
                                                         echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $values6->title . '<br>';
                                                     }else{
                                                         echo 'bood<br>';
+                                                        $category=Post_category::find($values6->id);
 
                                                     }
 
@@ -214,6 +219,7 @@ class mainController extends Controller
 
                                                             }else{
                                                                 echo 'bood<br>';
+                                                                $category=Post_category::find($values7->id);
 
                                                             }
                                                             $current_id = $category->id;
