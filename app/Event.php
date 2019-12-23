@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
-    public function categories()
+    public function scopeCategories($query)
     {
-        return Adviser::find($this->adviser_id)->categories;
+        return $query->find($this->adviser_id)->categories();
     }
 }
