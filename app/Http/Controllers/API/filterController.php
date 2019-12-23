@@ -18,8 +18,6 @@ class filterController extends Controller
                 $c['id']=$category->id;
                 $c['name']=$category->name;
                 $c['slug']=$category->slug;
-                $c['created_at']=$category->created_at;
-                $c['updated_at']=$category->updated_at;
                 $subcategories=Adviser_category::select('id','name','slug','parent_category_id')->where('parent_category_id',$category->id)->get();
                 $c['sub_categories']=$subcategories;
                 array_push($cat,$c);
