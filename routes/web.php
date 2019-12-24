@@ -76,19 +76,6 @@ Route::get('unbusy-mohi',function (){
 
 Route::get('/pay/callback', 'API\WalletController@verify');
 
-//Route::get('/test',function(){
-//    $weekMap = [
-//
-//        0 => 1,
-//        1 => 2,
-//        2 => 3,
-//        3 => 4,
-//        4 => 5,
-//        5 => 6,
-//        6 => 0,
-//    ];
-//    $dayOfTheWeek = \Carbon\Carbon::now()->dayOfWeek;
-//    $weekday = $weekMap[$dayOfTheWeek];
-//    $hour = \Carbon\Carbon::now()->format('G');
-//    echo $hour;
-//});
+
+
+Route::view('/panel', 'panel.index');

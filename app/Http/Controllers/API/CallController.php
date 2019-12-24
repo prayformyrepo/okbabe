@@ -404,6 +404,9 @@ class CallController extends Controller
         }else{
             $success['text']='show rate page';
             $success['adviser_id']=$call->adviser_id;
+            $adviser_user_id=Adviser::find($call->adviser_id)->user_id;
+            $success['adviser_name']=User::find($adviser_user_id)->name;
+            $success['adviser_avatar']=User::find($adviser_user_id)->avatar;
 
             return response()->json(['success' => $success], $this->successStatus);
         }

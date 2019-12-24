@@ -1,4 +1,22 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/js/index.js": "/js/index.js",
+    "/css/app.css": "/css/app.css",
+    "/app.js": "/app.js",
+    "/applications.js": "/applications.js",
+    "/applications~dashboards~pages~ui.js": "/applications~dashboards~pages~ui.js",
+    "/app~pages.js": "/app~pages.js",
+    "/dashboards.js": "/dashboards.js",
+    "/dashboards~pages.js": "/dashboards~pages.js",
+    "/dashboards~pages~ui.js": "/dashboards~pages~ui.js",
+    "/dashboards~ui.js": "/dashboards~ui.js",
+    "/error.js": "/error.js",
+    "/pages.js": "/pages.js",
+    "/ui.js": "/ui.js",
+    "/user.js": "/user.js",
+    "/vendors~applications~dashboards~pages~ui.js": "/vendors~applications~dashboards~pages~ui.js",
+    "/vendors~applications~dashboards~ui.js": "/vendors~applications~dashboards~ui.js",
+    "/vendors~dashboards.js": "/vendors~dashboards.js",
+    "/vendors~dashboards~pages.js": "/vendors~dashboards~pages.js",
+    "/vendors~dashboards~ui.js": "/vendors~dashboards~ui.js",
+    "/vendors~ui.js": "/vendors~ui.js"
 }
