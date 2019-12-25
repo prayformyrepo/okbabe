@@ -88,4 +88,19 @@ Route::get('unbusy-mohi',function (){
 
 });
 
+Route::get('ttime',function (){
+    $today=strtotime(\Carbon\Carbon::now()->format('H:i'));
+//    $last=\Carbon\Carbon::now()->format('H:i');
+    $first=strtotime('00:00');
+    $last=strtotime('23:59');
+    if ($today<$last && $today>$first){
+        echo 'yes';
+    }else{
+        echo 'no';
+    }
+
+
+});
+
+
 

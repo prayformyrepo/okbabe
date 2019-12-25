@@ -283,6 +283,7 @@ class UserController extends Controller
         $dayOfTheWeek = Carbon::now()->dayOfWeek;
         $weekday = $weekMap[$dayOfTheWeek];
         $hour = Carbon::now()->format('G');
+        $today=strtotime(\Carbon\Carbon::now()->format('H:i'));
 
         //get all advisers
         $users=User::where('is_adviser',1)->get();
@@ -294,8 +295,10 @@ class UserController extends Controller
             foreach ($adviser_times as $adviser_time) {
                 //check date time
                 if ($adviser_time->date == $weekday) {
+                    $time_from=strtotime($adviser_time->time_from);
+                    $time_to=strtotime($adviser_time->time_to);
                     //echo $userr->id .'date is ok<br>time from:'.$adviser_time->time_from.'<br>time to: '. $adviser_time->time_to .'<br><br>' ;
-                    if ($adviser_time->time_from < $hour && $adviser_time->time_to > $hour) {
+                    if ($time_from < $today && $time_to > $today) {
                         $flag = true;
                     }
                 }
