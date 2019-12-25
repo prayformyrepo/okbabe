@@ -50,7 +50,10 @@ class AdviserController extends Controller
             foreach ($rates as $rate){
                 $all=$all+$rate->rate;
             }
+            if ($rate_count!=0)
             $adviser['adviser']['rate']=$all/$rate_count;
+            else
+                $adviser['adviser']['rate']=0;
 //            $adviser['adviser']['categories']=$advisers->categories()->get();
 //            $adviser['adviser']['times']=$advisers->times()->get();
             $times = $advisers->times()->orderBy('date', 'ASC')->get();
