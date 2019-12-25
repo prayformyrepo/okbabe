@@ -230,6 +230,21 @@ class CallController extends Controller
                 $u->call_adviser_avatar=null;
                 $u->save();
 
+
+                $user = User::find(Auth::user()->id);
+                $user->wallet = $user->wallet - 500;
+                $user->save();
+
+
+                $wallet = new Wallet();
+                $wallet->user_id = Auth::user()->id;
+                $wallet->finance = 500 * -1;
+                $wallet->call_id = $call->id;
+                $wallet->save();
+
+
+
+
                 return response()->json(['success' => $success], $this->successStatus);
             }
 
@@ -396,12 +411,75 @@ class CallController extends Controller
             return response()->json(['success' => 'success'], $this->successStatus);
 
         }
-        elseif($request->reason==2){
+        else if($request->reason==2){
             $call->status=5;
             $call->save();
             return response()->json(['success' => 'success'], $this->successStatus);
 
-        }else{
+        }else if($request->reason==0){
+
+/////return money
+            $user = User::find(Auth::user()->id);
+            $user->wallet = $user->wallet + 500;
+            $user->save();
+
+
+            $wallet = new Wallet();
+            $wallet->user_id = Auth::user()->id;
+            $wallet->finance = 500 ;
+            $wallet->call_id = $call->id;
+            $wallet->save();
+
+////////////////
+            $nominal_call_price = Adviser::find($call->adviser_id)->nominal_call_price;
+            $call_price = Adviser::find($call->adviser_id)->call_price;
+
+
+            $user = User::find(Auth::user()->id);
+            $user->wallet = $user->wallet - $nominal_call_price;
+            $user->save();
+
+
+            $user = User::find(Adviser::find($call->adviser_id)->user_id);
+            $user->wallet = $user->wallet + $call_price;
+            $user->save();
+
+
+
+            $wallet = new Wallet();
+            $wallet->user_id = Auth::user()->id;
+            $wallet->finance = $nominal_call_price * -1;
+            $wallet->call_id = $call->id;
+            $wallet->save();
+
+            $wallet = new Wallet();
+            $wallet->user_id = Adviser::find($call->adviser_id)->user_id;
+            $wallet->finance = $call_price;
+            $wallet->call_id = $call->id;
+            $wallet->save();
+
+
+            ///
+            $call_center_price = 250;
+            $sms_price = 160;
+            //sms
+            try {
+                $receptor = User::find(Adviser::find($call->adviser_id)->user_id)->mobile;
+                $template = "callStatus";
+                $type = "sms";
+                $token = $nominal_call_price;
+                $token2 = $nominal_call_price - $call_price - $call_center_price - $sms_price;
+                $token3 = $call_price;
+                $result = Kavenegar::VerifyLookup($receptor, $token, $token2, $token3, $template, $type);
+            } catch (ApiException $e) {
+                echo $e->errorMessage();
+            } catch (HttpException $e) {
+                echo $e->errorMessage();
+            }
+
+
+////////////////
+
             $success['text']='show rate page';
             $success['adviser_id']=$call->adviser_id;
             $adviser_user_id=Adviser::find($call->adviser_id)->user_id;
