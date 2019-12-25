@@ -68,6 +68,7 @@ class EventController extends Controller
             $ev['user_info']['about'] = Adviser::find($event->adviser_id)->about;
             $ev['user_info']['field'] = Adviser::find($event->adviser_id)->field;
             $ev['user_info']['is_online'] = Adviser::find($event->adviser_id)->is_online;
+            $ev['user_info']['is_busy'] = Adviser::find($event->adviser_id)->is_busy;
             array_push($eventArray, $ev);
         }
 
