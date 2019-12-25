@@ -146,6 +146,8 @@ class CallController extends Controller
                 $adviser_user_id=Adviser::find($adviser_id)->user_id;
                 $calli['adviser_name']=User::find($adviser_user_id)->name;
                 $calli['adviser_avatar']=User::find($adviser_user_id)->avatar;
+                $calli['max_call_time']=$maxcalltime;
+
                 $calli['info']['message'] = 'تماس برقرار شد. لطفا منتظر بمانید';
             }
             return response()->json(['success' => $calli], $this->successStatus);
