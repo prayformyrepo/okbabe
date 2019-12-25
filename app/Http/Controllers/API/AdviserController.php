@@ -40,8 +40,17 @@ class AdviserController extends Controller
             $adviser['adviser']['avatar'] = User::find($request->user_id)->avatar;
             $adviser['adviser']['lat'] = Adviser::where('user_id',$request->user_id)->value('lat');
             $adviser['adviser']['long'] = Adviser::where('user_id',$request->user_id)->value('long');
+            $adviser['adviser']['video_cover'] = Adviser::where('user_id',$request->user_id)->value('video_cover');
             $adviser['adviser']['video'] = Adviser::where('user_id',$request->user_id)->value('video');
             $adviser['adviser']['is_busy'] = Adviser::where('user_id',$request->user_id)->value('is_busy');
+            $adv_id= Adviser::where('user_id',$request->user_id)->value('id');
+            $rates=Adviser_rate::where('adviser_id',$adv_id)->get();
+            $rate_count=Adviser_rate::where('adviser_id',$adv_id)->count();
+            $all=0;
+            foreach ($rates as $rate){
+                $all=$all+$rate->rate;
+            }
+            $adviser['adviser']['rate']=$all/$rate_count;
 //            $adviser['adviser']['categories']=$advisers->categories()->get();
 //            $adviser['adviser']['times']=$advisers->times()->get();
             $times = $advisers->times()->orderBy('date', 'ASC')->get();
