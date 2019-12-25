@@ -2,340 +2,755 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/babel.config.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/css/sass/_mixins.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/css/sass/_piaf.style.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/css/sass/themes/piaf.dark.blue.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/css/sass/themes/piaf.dark.green.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/css/sass/themes/piaf.dark.orange.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/css/sass/themes/piaf.dark.purple.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/css/sass/themes/piaf.dark.red.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/css/sass/themes/piaf.light.blue.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/css/sass/themes/piaf.light.green.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/css/sass/themes/piaf.light.orange.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/css/sass/themes/piaf.light.purple.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/css/sass/themes/piaf.light.red.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/css/vendor/bootstrap.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/css/vendor/dropzone.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/README.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/config.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/css/animation.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/css/iconsminds-codes.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/css/iconsminds-embedded.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/css/iconsminds-ie7-codes.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/css/iconsminds-ie7.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/css/iconsminds.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/demo.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/font/iconsminds.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/font/iconsminds.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/font/iconsminds.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/font/iconsminds.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/font/iconsminds.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/iconsmind/icomoon.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/iconsmind/icomoon.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/iconsmind/icomoon.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/iconsmind/icomoon.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/iconsmind/style.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/simple-line-icons/LICENSE.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/simple-line-icons/css/simple-line-icons.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/simple-line-icons/fonts/Simple-Line-Icons.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/simple-line-icons/fonts/Simple-Line-Icons.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/simple-line-icons/fonts/Simple-Line-Icons.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/simple-line-icons/fonts/Simple-Line-Icons.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/fonts/simple-line-icons/fonts/Simple-Line-Icons.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/balloon.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/bebinca-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/card-thumb-1.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/card-thumb-2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/card-thumb-3.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/card-thumb-4.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/carousel-1.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/carousel-2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/carousel-3.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/cheesecake-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/chocolate-cake-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/coconut-cake.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/cremeschnitte-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/detail.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/fat-rascal-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/financier-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/fruitcake-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/genoise-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/gingerbread-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/goose-breast-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/login-balloon.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/logo-black.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/logo-mobile.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/logo-white.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/magdalena-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/marble-cake-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/menu-left.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/menu-right.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/menu-single.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/merveilleux-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/napoleonshat-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/notification-thumb-2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/notification-thumb-3.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/notification-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/parkin-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/petit-gateau-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/plane.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/profile-pic-l-10.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/profile-pic-l-11.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/profile-pic-l-2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/profile-pic-l-3.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/profile-pic-l-4.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/profile-pic-l-5.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/profile-pic-l-6.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/profile-pic-l-7.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/profile-pic-l-8.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/profile-pic-l-9.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/profile-pic-l.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/salzburger-nockerl-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/souffle-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/streuselkuchen-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/tea-loaf-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/thumb-1.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/thumb-2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/thumb-3.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/thumb-4.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/App.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/css/sass/_mixins.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/css/sass/_piaf.style.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/css/sass/themes/piaf.dark.blue.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/css/sass/themes/piaf.dark.green.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/css/sass/themes/piaf.dark.orange.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/css/sass/themes/piaf.dark.purple.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/css/sass/themes/piaf.dark.red.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/css/sass/themes/piaf.light.blue.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/css/sass/themes/piaf.light.green.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/css/sass/themes/piaf.light.orange.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/css/sass/themes/piaf.light.purple.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/css/sass/themes/piaf.light.red.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/css/vendor/bootstrap.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/css/vendor/dropzone.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/README.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/config.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/css/animation.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/css/iconsminds-codes.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/css/iconsminds-embedded.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/css/iconsminds-ie7-codes.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/css/iconsminds-ie7.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/css/iconsminds.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/demo.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/font/iconsminds.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/font/iconsminds.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/font/iconsminds.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/font/iconsminds.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/font/iconsminds.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind/icomoon.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind/icomoon.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind/icomoon.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind/icomoon.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind/style.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/simple-line-icons/LICENSE.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/simple-line-icons/css/simple-line-icons.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/simple-line-icons/fonts/Simple-Line-Icons.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/simple-line-icons/fonts/Simple-Line-Icons.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/simple-line-icons/fonts/Simple-Line-Icons.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/simple-line-icons/fonts/Simple-Line-Icons.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/fonts/simple-line-icons/fonts/Simple-Line-Icons.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/balloon.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/bebinca-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/card-thumb-1.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/card-thumb-2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/card-thumb-3.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/card-thumb-4.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/carousel-1.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/carousel-2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/carousel-3.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/cheesecake-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/chocolate-cake-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/coconut-cake.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/cremeschnitte-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/detail.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/fat-rascal-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/financier-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/fruitcake-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/genoise-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/gingerbread-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/goose-breast-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/login-balloon.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/logo-black.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/logo-mobile.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/logo-white.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/magdalena-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/marble-cake-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/menu-left.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/menu-right.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/menu-single.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/merveilleux-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/napoleonshat-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/notification-thumb-2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/notification-thumb-3.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/notification-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/parkin-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/petit-gateau-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/plane.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/profile-pic-l-10.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/profile-pic-l-11.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/profile-pic-l-2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/profile-pic-l-3.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/profile-pic-l-4.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/profile-pic-l-5.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/profile-pic-l-6.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/profile-pic-l-7.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/profile-pic-l-8.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/profile-pic-l-9.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/profile-pic-l.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/salzburger-nockerl-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/souffle-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/streuselkuchen-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/tea-loaf-thumb.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/thumb-1.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/thumb-2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/thumb-3.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/assets/img/thumb-4.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Cards/GradientCard.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Cards/GradientWithRadialProgressCard.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Cards/IconCard.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Cards/RadialProgressCard.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Cards/SmallLineChartCard.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Charts/Area.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Charts/AreaShadow.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Charts/Bar.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Charts/BarShadow.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Charts/Doughnut.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Charts/DoughnutShadow.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Charts/Line.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Charts/LineShadow.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Charts/Pie.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Charts/PieShadow.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Charts/PolarArea.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Charts/PolarAreaShadow.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Charts/Radar.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Charts/RadarShadow.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Charts/Scatter.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Charts/ScatterShadow.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Charts/SmallLine.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Charts/config.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/ChatApp/ContactList.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/ChatApp/ConversationDetail.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/ChatApp/ConversationList.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Common/ApplicationMenu.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Common/Breadcrumb.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Common/ColorSwitcher.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Common/Colxx.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Common/Notification/Notify.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Common/Notification/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Common/RefreshButton.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Common/RightMenu.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Common/Stars.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Common/StateButton.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Common/VideoPlayer.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Common/VuetablePaginationBootstrap.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Form/InputTag.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Listing/CommentItem.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Listing/DataListItem.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Listing/ImageListItem.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Listing/ListWithUserItem.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Listing/LogList.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Listing/OrderItem.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Listing/RecentOrderItem.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Listing/ThumbListItem.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Listing/TopRatedSlideItem.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Listing/TwoColumnList.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/SurveyApp/QuestionBuilder.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/SurveyApp/SurveyListItem.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Svg/DataListIcon.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Svg/ImageListIcon.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Svg/MenuIcon.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Svg/MobileMenuIcon.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Svg/ThumbListIcon.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/Svg/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/components/TodoApp/TodoListItem.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/constants/config.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/containers/Sidebar.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/containers/TopNav.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/data/cakes.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/data/charts.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/data/comments.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/data/icons.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/data/logs.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/data/notifications.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/data/orders.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/data/products.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/data/profileStatuses.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/data/tickets.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/locales/en.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/locales/es.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/main.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/router.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/store/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/store/modules/chat.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/store/modules/menu.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/store/modules/survey.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/store/modules/todo.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/store/modules/user.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/utils/AuthRequired.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/utils/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/Error.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/applications/Chat.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/applications/Survey.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/applications/SurveyDetail.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/applications/Todo.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/applications/index.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/dashboards/Analytics.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/dashboards/Content.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/dashboards/Default.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/dashboards/Ecommerce.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/dashboards/index.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/index.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/pages/DataList.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/pages/Details.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/pages/ImageList.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/pages/Invoice.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/pages/Mailing.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/pages/Search.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/pages/ThumbList.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/pages/index.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/ui/Alerts.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/ui/Badges.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/ui/Buttons.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/ui/Cards.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/ui/Carousel.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/ui/Charts.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/ui/Collapse.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/ui/Dropdowns.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/ui/Editors.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/ui/FormComponents.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/ui/Forms.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/ui/Icons.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/ui/InputGroups.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/ui/Jumbotron.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/ui/Maps.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/ui/Modal.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/ui/Navigation.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/ui/PopoverTooltip.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/ui/Sortable.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/ui/Tables.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/app/ui/index.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/user/ForgotPassword.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/user/Login.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/user/Register.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/src/views/user/index.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/views/panel/index.blade.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vue.config.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/attached-files/img-1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/attached-files/img-2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/attached-files/img-3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/clear.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/email/1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/email/2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/email/3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/favicon.ico" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/10.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/11.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/12.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/4.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/5.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/6.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/7.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/8.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/9.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/jstree.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/loading.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/logo-dark.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/logo-light.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/logo-sm.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/mail_confirm.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/multiple-arrow.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/profile.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/small/img-1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/small/img-2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/small/img-3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/users/user-1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/users/user-10.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/users/user-11.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/users/user-2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/users/user-3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/users/user-4.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/users/user-5.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/users/user-6.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/users/user-7.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/users/user-8.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/users/user-9.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/dripicons-v2.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/dripicons-v2.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/dripicons-v2.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/dripicons-v2.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/dripicons-v2d41d.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/dropify.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/dropify.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/dropify.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/dropify.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/fa-brands-400.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/fa-brands-400.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/fa-brands-400.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/fa-brands-400.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/fa-brands-400.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/fa-brands-400d41d.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/fa-regular-400.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/fa-regular-400.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/fa-regular-400.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/fa-regular-400.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/fa-regular-400.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/fa-regular-400d41d.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/fa-solid-900.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/fa-solid-900.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/fa-solid-900.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/fa-solid-900.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/fa-solid-900.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/fa-solid-900d41d.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/feathere8ab.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/feathere8ab.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/feathere8ab.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/feathere8ab.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/materialdesignicons-webfont62bd.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/materialdesignicons-webfont62bd.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/materialdesignicons-webfont62bd.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/materialdesignicons-webfont62bd.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/materialdesignicons-webfont62bd.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/materialdesignicons-webfontd41d.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/summernote.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/summernoted41d.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/summernoted41d.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/summernoted41d.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/themify9f24.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/themify9f24.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/themify9f24.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/themify9f24.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/fonts/themifyd41d.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/attached-files/img-1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/attached-files/img-2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/attached-files/img-3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/clear.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/email/1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/email/2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/email/3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/favicon.ico" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/gallery/1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/gallery/10.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/gallery/11.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/gallery/12.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/gallery/2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/gallery/3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/gallery/4.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/gallery/5.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/gallery/6.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/gallery/7.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/gallery/8.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/gallery/9.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/jstree.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/loading.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/logo-dark.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/logo-light.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/logo-sm.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/mail_confirm.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/multiple-arrow.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/profile.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/small/img-1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/small/img-2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/small/img-3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/users/user-1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/users/user-10.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/users/user-11.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/users/user-2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/users/user-3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/users/user-4.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/users/user-5.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/users/user-6.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/users/user-7.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/users/user-8.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/images/users/user-9.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/panel/app.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/panel/bootstrap.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/panel/icons.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/panel/app.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/panel/vendor.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/css/app.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/css/bootstrap.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/css/icons.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/dripicons-v2.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/dripicons-v2.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/dripicons-v2.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/dripicons-v2.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/dripicons-v2d41d.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/dropify.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/dropify.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/dropify.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/dropify.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/fa-brands-400.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/fa-brands-400.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/fa-brands-400.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/fa-brands-400.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/fa-brands-400.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/fa-brands-400d41d.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/fa-regular-400.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/fa-regular-400.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/fa-regular-400.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/fa-regular-400.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/fa-regular-400.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/fa-regular-400d41d.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/fa-solid-900.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/fa-solid-900.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/fa-solid-900.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/fa-solid-900.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/fa-solid-900.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/fa-solid-900d41d.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/feathere8ab.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/feathere8ab.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/feathere8ab.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/feathere8ab.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/materialdesignicons-webfont62bd.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/materialdesignicons-webfont62bd.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/materialdesignicons-webfont62bd.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/materialdesignicons-webfont62bd.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/materialdesignicons-webfont62bd.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/materialdesignicons-webfontd41d.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/summernote.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/summernoted41d.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/summernoted41d.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/summernoted41d.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/themify9f24.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/themify9f24.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/themify9f24.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/themify9f24.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/fonts/themifyd41d.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/attached-files/img-1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/attached-files/img-2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/attached-files/img-3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/clear.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/email/1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/email/2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/email/3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/favicon.ico" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/gallery/1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/gallery/10.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/gallery/11.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/gallery/12.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/gallery/2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/gallery/3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/gallery/4.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/gallery/5.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/gallery/6.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/gallery/7.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/gallery/8.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/gallery/9.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/jstree.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/loading.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/logo-dark.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/logo-light.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/logo-sm.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/mail_confirm.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/multiple-arrow.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/profile.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/small/img-1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/small/img-2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/small/img-3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/users/user-1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/users/user-10.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/users/user-11.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/users/user-2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/users/user-3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/users/user-4.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/users/user-5.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/users/user-6.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/users/user-7.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/users/user-8.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/images/users/user-9.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/app.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/chartist.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/chartjs.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/charts-other.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/countdown.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/dashboard.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/datatables.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/draggable.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/flot.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/form-advanced.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/form-editor.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/form-fileupload.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/form-validation.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/form-wizard.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/form-xeditable.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/fullcalendar.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/gallery.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/google-maps.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/inbox.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/jvectormap.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/kanban.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/morris.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/range-sliders.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/responsive-table.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/sweet-alerts.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/tabledit.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/tablesaw.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/toastr.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/tour.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/pages/treeview.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/js/vendor.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/bootstrap-datepicker/bootstrap-datepicker.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/bootstrap-datepicker/bootstrap-datepicker.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/bootstrap-daterangepicker/daterangepicker.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/bootstrap-daterangepicker/daterangepicker.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/bootstrap-maxlength/bootstrap-maxlength.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/bootstrap-timepicker/bootstrap-timepicker.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/bootstrap-timepicker/bootstrap-timepicker.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/chart-js/Chart.bundle.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/chartist/chartist-plugin-tooltip.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/chartist/chartist.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/chartist/chartist.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/custombox/custombox.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/custombox/custombox.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/datatables/buttons.bootstrap4.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/datatables/buttons.bootstrap4.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/datatables/buttons.flash.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/datatables/buttons.html5.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/datatables/buttons.print.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/datatables/dataTables.bootstrap4.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/datatables/dataTables.bootstrap4.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/datatables/dataTables.buttons.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/datatables/dataTables.keyTable.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/datatables/dataTables.responsive.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/datatables/dataTables.select.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/datatables/jquery.dataTables.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/datatables/responsive.bootstrap4.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/datatables/responsive.bootstrap4.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/datatables/select.bootstrap4.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/dropify/dropify.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/dropify/dropify.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/flot-charts/jquery.flot.crosshair.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/flot-charts/jquery.flot.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/flot-charts/jquery.flot.orderBars.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/flot-charts/jquery.flot.pie.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/flot-charts/jquery.flot.resize.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/flot-charts/jquery.flot.selection.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/flot-charts/jquery.flot.stack.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/flot-charts/jquery.flot.time.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/flot-charts/jquery.flot.tooltip.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/fonts/dropify-2.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/fonts/dropify-3.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/fonts/dropify-4.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/fonts/dropify.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/fullcalendar/fullcalendar.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/fullcalendar/fullcalendar.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/gmaps/gmaps.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/hopscotch/hopscotch.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/hopscotch/hopscotch.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/img/clear.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/img/loading.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/img/sprite-green.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/img/switch.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/ion-rangeslider/ion.rangeSlider.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/ion-rangeslider/ion.rangeSlider.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/isotope/isotope.pkgd.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/jquery-countdown/jquery.countdown.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/jquery-knob/jquery.knob.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/jquery-mask-plugin/jquery.mask.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/jquery-quicksearch/jquery.quicksearch.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/jquery-sparkline/jquery.sparkline.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/jquery-tabledit/jquery.tabledit.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/jquery-ui/jquery-ui.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/jquery-vectormap/jquery-jvectormap-1.2.2.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/jquery-vectormap/jquery-jvectormap-1.2.2.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/jquery-vectormap/jquery-jvectormap-au-mill-en.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/jquery-vectormap/jquery-jvectormap-ca-lcc-en.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/jquery-vectormap/jquery-jvectormap-uk-mill-en.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/jquery-vectormap/jquery-jvectormap-us-merc-en.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/jquery-vectormap/jquery-jvectormap-world-mill-en.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/katex/katex.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/magnific-popup/jquery.magnific-popup.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/magnific-popup/magnific-popup.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/moment/moment.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/morris-js/morris.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/morris-js/morris.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/multiselect/jquery.multi-select.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/multiselect/multi-select.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/parsleyjs/parsley.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/pdfmake/pdfmake.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/pdfmake/vfs_fonts.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/peity/jquery.peity.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/quill/quill.bubble.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/quill/quill.core.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/quill/quill.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/quill/quill.snow.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/raphael/raphael.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/rwd-table/rwd-table.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/rwd-table/rwd-table.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/select2/select2.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/select2/select2.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/summernote/font/summernotec360-2.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/summernote/font/summernotec360-3.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/summernote/font/summernotec360.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/summernote/summernote-bs4.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/summernote/summernote-bs4.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/sweetalert2/sweetalert2.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/sweetalert2/sweetalert2.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/switchery/switchery.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/switchery/switchery.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/tablesaw/tablesaw.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/tablesaw/tablesaw.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/toastr/toastr.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/toastr/toastr.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/treeview/32px.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/treeview/40px.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/treeview/jstree.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/treeview/style.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/treeview/throbber.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/x-editable/bootstrap-editable.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/assets/panel/libs/x-editable/bootstrap-editable.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/views/includes/users/footerLinks.blade.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/views/includes/users/headLinks.blade.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/views/users/auth.blade.php" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/shaverno.iml" afterPath="$PROJECT_DIR$/.idea/shaverno.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/CallController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/CallController.php" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/WalletController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/WalletController.php" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
+      <change beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
       <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change beforePath="$PROJECT_DIR$/public/0.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/1.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/2.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/3.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/4.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/5.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/6.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/7.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/8.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/9.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/app.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/applications.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/applications~dashboards.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/applications~dashboards~pages~ui.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/app~pages.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/sass/_mixins.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/sass/_piaf.style.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/sass/themes/piaf.dark.blue.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/sass/themes/piaf.dark.green.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/sass/themes/piaf.dark.orange.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/sass/themes/piaf.dark.purple.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/sass/themes/piaf.dark.red.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/sass/themes/piaf.light.blue.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/sass/themes/piaf.light.green.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/sass/themes/piaf.light.orange.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/sass/themes/piaf.light.purple.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/sass/themes/piaf.light.red.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/vendor/bootstrap.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/vendor/dropzone.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/README.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/config.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/css/animation.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/css/iconsminds-codes.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/css/iconsminds-embedded.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/css/iconsminds-ie7-codes.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/css/iconsminds-ie7.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/css/iconsminds.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/demo.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/font/iconsminds.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/font/iconsminds.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/font/iconsminds.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/font/iconsminds.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/iconsmind-s/font/iconsminds.woff2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/iconsmind/icomoon.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/iconsmind/icomoon.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/iconsmind/icomoon.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/iconsmind/icomoon.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/iconsmind/style.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/simple-line-icons/LICENSE.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/simple-line-icons/css/simple-line-icons.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/simple-line-icons/fonts/Simple-Line-Icons.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/simple-line-icons/fonts/Simple-Line-Icons.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/simple-line-icons/fonts/Simple-Line-Icons.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/simple-line-icons/fonts/Simple-Line-Icons.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/simple-line-icons/fonts/Simple-Line-Icons.woff2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/balloon.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/bebinca-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/card-thumb-1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/card-thumb-2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/card-thumb-3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/card-thumb-4.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/carousel-1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/carousel-2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/carousel-3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/cheesecake-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/chocolate-cake-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/coconut-cake.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/cremeschnitte-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/detail.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/fat-rascal-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/financier-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/fruitcake-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/genoise-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/gingerbread-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/goose-breast-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/login-balloon.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/logo-black.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/logo-mobile.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/logo-white.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/magdalena-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/marble-cake-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/menu-left.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/menu-right.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/menu-single.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/merveilleux-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/napoleonshat-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/notification-thumb-2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/notification-thumb-3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/notification-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/parkin-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/petit-gateau-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/plane.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/profile-pic-l-10.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/profile-pic-l-11.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/profile-pic-l-2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/profile-pic-l-3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/profile-pic-l-4.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/profile-pic-l-5.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/profile-pic-l-6.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/profile-pic-l-7.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/profile-pic-l-8.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/profile-pic-l-9.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/profile-pic-l.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/salzburger-nockerl-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/souffle-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/streuselkuchen-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/tea-loaf-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/thumb-1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/thumb-2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/thumb-3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/thumb-4.jpg" afterPath="" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" afterPath="$PROJECT_DIR$/public/css/app.css" />
+      <change beforePath="$PROJECT_DIR$/public/dashboards.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/dashboards~pages.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/dashboards~pages~ui.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/dashboards~ui.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/error.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/error~user.js" afterPath="" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" afterPath="$PROJECT_DIR$/public/js/app.js" />
+      <change beforePath="$PROJECT_DIR$/public/js/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/js/main.js" afterPath="" />
       <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" afterPath="$PROJECT_DIR$/public/mix-manifest.json" />
+      <change beforePath="$PROJECT_DIR$/public/pages.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/ui.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/user.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/vendors~applications.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/vendors~applications~dashboards.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/vendors~applications~dashboards~pages~ui.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/vendors~applications~dashboards~ui.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/vendors~dashboards.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/vendors~dashboards~pages.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/vendors~dashboards~ui.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/vendors~ui.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" afterPath="$PROJECT_DIR$/resources/js/app.js" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" afterPath="$PROJECT_DIR$/resources/sass/app.scss" />
+      <change beforePath="$PROJECT_DIR$/resources/src/App.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/css/sass/_mixins.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/css/sass/_piaf.style.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/css/sass/themes/piaf.dark.blue.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/css/sass/themes/piaf.dark.green.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/css/sass/themes/piaf.dark.orange.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/css/sass/themes/piaf.dark.purple.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/css/sass/themes/piaf.dark.red.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/css/sass/themes/piaf.light.blue.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/css/sass/themes/piaf.light.green.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/css/sass/themes/piaf.light.orange.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/css/sass/themes/piaf.light.purple.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/css/sass/themes/piaf.light.red.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/css/vendor/bootstrap.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/css/vendor/dropzone.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/README.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/config.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/css/animation.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/css/iconsminds-codes.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/css/iconsminds-embedded.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/css/iconsminds-ie7-codes.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/css/iconsminds-ie7.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/css/iconsminds.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/demo.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/font/iconsminds.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/font/iconsminds.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/font/iconsminds.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/font/iconsminds.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind-s/font/iconsminds.woff2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind/icomoon.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind/icomoon.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind/icomoon.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind/icomoon.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/iconsmind/style.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/simple-line-icons/LICENSE.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/simple-line-icons/css/simple-line-icons.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/simple-line-icons/fonts/Simple-Line-Icons.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/simple-line-icons/fonts/Simple-Line-Icons.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/simple-line-icons/fonts/Simple-Line-Icons.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/simple-line-icons/fonts/Simple-Line-Icons.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/fonts/simple-line-icons/fonts/Simple-Line-Icons.woff2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/balloon.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/bebinca-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/card-thumb-1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/card-thumb-2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/card-thumb-3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/card-thumb-4.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/carousel-1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/carousel-2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/carousel-3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/cheesecake-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/chocolate-cake-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/coconut-cake.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/cremeschnitte-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/detail.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/fat-rascal-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/financier-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/fruitcake-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/genoise-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/gingerbread-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/goose-breast-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/login-balloon.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/logo-black.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/logo-mobile.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/logo-white.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/magdalena-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/marble-cake-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/menu-left.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/menu-right.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/menu-single.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/merveilleux-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/napoleonshat-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/notification-thumb-2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/notification-thumb-3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/notification-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/parkin-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/petit-gateau-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/plane.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/profile-pic-l-10.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/profile-pic-l-11.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/profile-pic-l-2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/profile-pic-l-3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/profile-pic-l-4.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/profile-pic-l-5.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/profile-pic-l-6.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/profile-pic-l-7.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/profile-pic-l-8.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/profile-pic-l-9.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/profile-pic-l.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/salzburger-nockerl-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/souffle-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/streuselkuchen-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/tea-loaf-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/thumb-1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/thumb-2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/thumb-3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/assets/img/thumb-4.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Cards/GradientCard.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Cards/GradientWithRadialProgressCard.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Cards/IconCard.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Cards/RadialProgressCard.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Cards/SmallLineChartCard.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Charts/Area.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Charts/AreaShadow.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Charts/Bar.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Charts/BarShadow.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Charts/Doughnut.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Charts/DoughnutShadow.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Charts/Line.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Charts/LineShadow.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Charts/Pie.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Charts/PieShadow.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Charts/PolarArea.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Charts/PolarAreaShadow.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Charts/Radar.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Charts/RadarShadow.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Charts/Scatter.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Charts/ScatterShadow.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Charts/SmallLine.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Charts/config.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/ChatApp/ContactList.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/ChatApp/ConversationDetail.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/ChatApp/ConversationList.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Common/ApplicationMenu.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Common/Breadcrumb.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Common/ColorSwitcher.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Common/Colxx.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Common/Notification/Notify.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Common/Notification/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Common/RefreshButton.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Common/RightMenu.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Common/Stars.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Common/StateButton.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Common/VideoPlayer.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Common/VuetablePaginationBootstrap.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Form/InputTag.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Listing/CommentItem.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Listing/DataListItem.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Listing/ImageListItem.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Listing/ListWithUserItem.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Listing/LogList.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Listing/OrderItem.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Listing/RecentOrderItem.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Listing/ThumbListItem.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Listing/TopRatedSlideItem.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Listing/TwoColumnList.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/SurveyApp/QuestionBuilder.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/SurveyApp/SurveyListItem.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Svg/DataListIcon.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Svg/ImageListIcon.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Svg/MenuIcon.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Svg/MobileMenuIcon.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Svg/ThumbListIcon.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/Svg/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/components/TodoApp/TodoListItem.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/constants/config.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/containers/Sidebar.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/containers/TopNav.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/data/cakes.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/data/charts.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/data/comments.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/data/icons.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/data/logs.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/data/notifications.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/data/orders.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/data/products.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/data/profileStatuses.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/data/tickets.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/locales/en.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/locales/es.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/main.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/router.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/store/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/store/modules/chat.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/store/modules/menu.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/store/modules/survey.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/store/modules/todo.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/store/modules/user.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/utils/AuthRequired.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/utils/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/Error.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/applications/Chat.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/applications/Survey.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/applications/SurveyDetail.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/applications/Todo.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/applications/index.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/dashboards/Analytics.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/dashboards/Content.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/dashboards/Default.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/dashboards/Ecommerce.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/dashboards/index.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/index.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/pages/DataList.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/pages/Details.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/pages/ImageList.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/pages/Invoice.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/pages/Mailing.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/pages/Search.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/pages/ThumbList.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/pages/index.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/ui/Alerts.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/ui/Badges.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/ui/Buttons.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/ui/Cards.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/ui/Carousel.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/ui/Charts.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/ui/Collapse.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/ui/Dropdowns.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/ui/Editors.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/ui/FormComponents.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/ui/Forms.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/ui/Icons.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/ui/InputGroups.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/ui/Jumbotron.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/ui/Maps.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/ui/Modal.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/ui/Navigation.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/ui/PopoverTooltip.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/ui/Sortable.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/ui/Tables.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/app/ui/index.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/user/ForgotPassword.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/user/Login.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/user/Register.vue" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/src/views/user/index.vue" afterPath="" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
-      <change beforePath="$PROJECT_DIR$/vendor.zip" afterPath="" />
       <change beforePath="$PROJECT_DIR$/webpack.mix.js" afterPath="$PROJECT_DIR$/webpack.mix.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -350,105 +765,54 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="router.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/src/router.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/src/views/app/index.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/src/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="69" column="8" lean-forward="false" selection-start-line="69" selection-start-column="2" selection-end-line="69" selection-end-column="8" />
-              <folding>
-                <element signature="e#759#814#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CallController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/CallController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="406" column="12" lean-forward="true" selection-start-line="406" selection-start-column="12" selection-end-line="406" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/src/App.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="15" lean-forward="false" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Error.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/src/views/Error.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="26" lean-forward="false" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/src/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="webpack.mix.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webpack.mix.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="80" column="19" lean-forward="false" selection-start-line="80" selection-start-column="19" selection-end-line="80" selection-end-column="19" />
+            <state relative-caret-position="0">
+              <caret line="28" column="43" lean-forward="false" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/panel/index.blade.php">
+      <file leaf-file-name="auth.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/users/auth.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="52" column="26" lean-forward="false" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="26" />
+            <state relative-caret-position="446">
+              <caret line="80" column="42" lean-forward="false" selection-start-line="80" selection-start-column="42" selection-end-line="80" selection-end-column="42" />
+              <folding>
+                <marker date="1577192081608" expanded="true" signature="62:88" ph="..." />
+                <marker date="1577192081608" expanded="true" signature="3591:3619" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WalletController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/WalletController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1097">
+              <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="headLinks.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/includes/users/headLinks.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.min.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/css/panel/app.min.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -466,15 +830,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$user</find>
-      <find>oauth_access_token</find>
-      <find>fetch_conversations</find>
-      <find>last_message_id</find>
-      <find>echo</find>
-      <find>broad</find>
-      <find>status</find>
-      <find>return</find>
-      <find>subtitle</find>
       <find>$request-&gt;adviser_id</find>
       <find>unauthorized</find>
       <find>$success['message']</find>
@@ -496,6 +851,15 @@
       <find>@/data/tickets</find>
       <find>/constants/config</find>
       <find>router</find>
+      <find>/</find>
+      <find>&quot;/app/</find>
+      <find>&quot;/user/</find>
+      <find>/dashboards/</find>
+      <find>'/user/login</find>
+      <find>'panel/user/login</find>
+      <find>'/panel/user/login</find>
+      <find>login</find>
+      <find>axios</find>
     </findStrings>
     <replaceStrings>
       <replace>$adviser_id</replace>
@@ -505,6 +869,10 @@
       <replace>../../../</replace>
       <replace>../</replace>
       <replace>../../</replace>
+      <replace>&quot;/panel/app/</replace>
+      <replace>&quot;/panel/user/</replace>
+      <replace>'panel/user/login</replace>
+      <replace>/panel/app/</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -512,6 +880,7 @@
       <dir>$PROJECT_DIR$/resources/src/components</dir>
       <dir>$PROJECT_DIR$/resources/src/containers</dir>
       <dir>$PROJECT_DIR$/resources/src/store/modules</dir>
+      <dir>$PROJECT_DIR$/resources/src/views</dir>
       <dir>$PROJECT_DIR$/resources/src</dir>
     </dirStrings>
   </component>
@@ -522,22 +891,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/WalletController.php" />
-        <option value="$PROJECT_DIR$/resources/views/callback.blade.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_12_08_002837_add_socket_id_to_users.php" />
-        <option value="$PROJECT_DIR$/app/Conversation.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/QuestionController.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_12_14_172223_create_reserve_calls_table.php" />
-        <option value="$PROJECT_DIR$/app/Adviser.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_12_16_175911_create_products_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_12_16_175919_create_product_categories_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_12_16_175927_create_product_to_categories_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_12_16_182439_create_product_types_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_12_19_192431_add_lat_long_video_to_advisers.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/ConversationController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_12_20_162201_add_type_to_reserve_calls.php" />
-        <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_12_21_134356_add_call_page_to_users.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/SearchController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/AdviserController.php" />
@@ -560,19 +916,32 @@
         <option value="$PROJECT_DIR$/resources/src/views/app/applications/SurveyDetail.vue" />
         <option value="$PROJECT_DIR$/resources/src/components/Charts/config.js" />
         <option value="$PROJECT_DIR$/resources/src/components/Charts/DoughnutShadow.vue" />
-        <option value="$PROJECT_DIR$/resources/src/views/app/dashboards/Default.vue" />
         <option value="$PROJECT_DIR$/resources/src/data/charts.js" />
         <option value="$PROJECT_DIR$/resources/src/views/app/pages/Search.vue" />
         <option value="$PROJECT_DIR$/resources/src/views/app/dashboards/Ecommerce.vue" />
-        <option value="$PROJECT_DIR$/resources/src/main.js" />
         <option value="$PROJECT_DIR$/resources/src/App.vue" />
         <option value="$PROJECT_DIR$/resources/views/panel/index.blade.php" />
-        <option value="$PROJECT_DIR$/webpack.mix.js" />
-        <option value="$PROJECT_DIR$/resources/src/utils/AuthRequired.js" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/src/views/Error.vue" />
-        <option value="$PROJECT_DIR$/resources/src/router.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/CallController.php" />
+        <option value="$PROJECT_DIR$/resources/src/router.js" />
+        <option value="$PROJECT_DIR$/resources/src/views/app/dashboards/Default.vue" />
+        <option value="$PROJECT_DIR$/resources/src/utils/AuthRequired.js" />
+        <option value="$PROJECT_DIR$/resources/src/store/modules/user.js" />
+        <option value="$PROJECT_DIR$/resources/src/locales/fa.json" />
+        <option value="$PROJECT_DIR$/resources/src/main.js" />
+        <option value="$PROJECT_DIR$/resources/src/views/user/Login.vue" />
+        <option value="$PROJECT_DIR$/public/.htaccess" />
+        <option value="$PROJECT_DIR$/app/User.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/users/login.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Users/LoginController.php" />
+        <option value="$PROJECT_DIR$/resources/views/users/auth.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/includes/users/headLinks.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/includes/users/footerLinks.blade.php" />
+        <option value="$PROJECT_DIR$/webpack.mix.js" />
+        <option value="$PROJECT_DIR$/resources/js/app.js" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/WalletController.php" />
       </list>
     </option>
   </component>
@@ -705,11 +1074,14 @@
       <path value="$PROJECT_DIR$/vendor/saeedvaziry/payir" />
       <path value="$PROJECT_DIR$/vendor/hekmatinasser/verta" />
       <path value="$PROJECT_DIR$/vendor/hekmatinasser/notowo" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="x" value="726" />
+    <option name="y" value="23" />
+    <option name="width" value="714" />
+    <option name="height" value="825" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -727,6 +1099,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -763,14 +1137,70 @@
             <path>
               <item name="shaverno" type="b2602c69:ProjectViewProjectNode" />
               <item name="shaverno" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="shaverno" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shaverno" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="shaverno" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shaverno" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="panel" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="shaverno" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shaverno" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="shaverno" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shaverno" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="shaverno" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shaverno" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="panel" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="shaverno" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shaverno" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="shaverno" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shaverno" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="shaverno" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shaverno" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="includes" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="shaverno" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shaverno" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="includes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="users" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -786,14 +1216,15 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/assets/panel" />
       <recent name="$PROJECT_DIR$/database/migrations/m" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/assets" />
-      <recent name="$PROJECT_DIR$/resources" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/resources/views/panel" />
       <recent name="$PROJECT_DIR$/public/css" />
+      <recent name="$PROJECT_DIR$/public/css/panel" />
+      <recent name="$PROJECT_DIR$/public/js/panel" />
+      <recent name="$PROJECT_DIR$/resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -859,7 +1290,8 @@
       <workItem from="1576842899345" duration="1517000" />
       <workItem from="1576846213497" duration="4134000" />
       <workItem from="1576918204815" duration="6124000" />
-      <workItem from="1577047921611" duration="17883000" />
+      <workItem from="1577047921611" duration="25328000" />
+      <workItem from="1577257463949" duration="377000" />
     </task>
     <task id="LOCAL-00094" summary="edit fetch messages">
       <created>1575015968174</created>
@@ -1234,24 +1666,22 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="295537000" />
+    <option name="totallyTimeSpent" value="303359000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2647059" sideWeight="0.50555557" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34823528" sideWeight="0.49444443" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19305556" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2647059" sideWeight="0.50555557" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38470587" sideWeight="0.49444443" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1259,7 +1689,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1304,168 +1736,175 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Ticket.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/QuestionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="310" column="72" lean-forward="false" selection-start-line="310" selection-start-column="65" selection-end-line="310" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/TicketController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="80" column="83" lean-forward="false" selection-start-line="80" selection-start-column="83" selection-end-line="80" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="235" column="2" lean-forward="false" selection-start-line="235" selection-start-column="2" selection-end-line="235" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/ReserveController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="104" column="59" lean-forward="false" selection-start-line="104" selection-start-column="59" selection-end-line="104" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/BlogController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="62" column="12" lean-forward="false" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_12_24_001946_add_call_file_to_users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="47" lean-forward="false" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Call.php">
+    <entry file="file://$PROJECT_DIR$/public/assets/css/sass/themes/piaf.dark.red.scss" />
+    <entry file="file://$PROJECT_DIR$/resources/src/App.vue" />
+    <entry file="file://$PROJECT_DIR$/resources/src/views/Error.vue" />
+    <entry file="file://$PROJECT_DIR$/resources/src/views/app/index.vue" />
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/CallController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="373">
+          <caret line="411" column="9" lean-forward="true" selection-start-line="411" selection-start-column="9" selection-end-line="411" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/UserController.php">
+    <entry file="file://$PROJECT_DIR$/resources/src/views/app/dashboards/index.vue" />
+    <entry file="file://$PROJECT_DIR$/resources/src/views/app/dashboards/Default.vue" />
+    <entry file="file://$PROJECT_DIR$/resources/src/utils/AuthRequired.js" />
+    <entry file="file://$PROJECT_DIR$/resources/src/views/user/index.vue" />
+    <entry file="file://$PROJECT_DIR$/resources/src/constants/config.js" />
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="218" column="146" lean-forward="false" selection-start-line="218" selection-start-column="146" selection-end-line="218" selection-end-column="146" />
-          <caret line="223" column="146" lean-forward="false" selection-start-line="223" selection-start-column="146" selection-end-line="223" selection-end-column="146" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/fonts/iconsmind/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/6.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1086">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/v-contextmenu/dist/index.esm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/views/app/dashboards/Analytics.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="131" column="30" lean-forward="false" selection-start-line="131" selection-start-column="29" selection-end-line="131" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/babel.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-195">
-          <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json2">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/data/logs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="203">
+          <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-401">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/src/views/user/Login.vue" />
+    <entry file="file://$PROJECT_DIR$/public/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/src/locales/fa.json" />
+    <entry file="file://$PROJECT_DIR$/resources/src/index.js" />
+    <entry file="file://$PROJECT_DIR$/resources/src/store/modules/user.js" />
+    <entry file="file://$PROJECT_DIR$/resources/src/data/logs.js" />
+    <entry file="file://$PROJECT_DIR$/resources/src/data/notifications.js" />
+    <entry file="file://$PROJECT_DIR$/resources/src/utils/index.js" />
+    <entry file="file://$PROJECT_DIR$/resources/src/main.js" />
+    <entry file="file://$PROJECT_DIR$/resources/src/router.js" />
+    <entry file="file://$PROJECT_DIR$/config/auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="48" column="6" lean-forward="false" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/verify.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/View_question.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Notifications/NewMessage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/AuthServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-124">
+          <caret line="20" column="23" lean-forward="false" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/ExampleComponent.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/panel/js/pages/flot.init.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Users/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/mix-manifest.json">
+    <entry file="file://$PROJECT_DIR$/public/css/auth.css" />
+    <entry file="file://$PROJECT_DIR$/resources/assets/panel/js/app.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/panel/vendor.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/panel/app.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1473,250 +1912,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/public/js/auth2.js" />
+    <entry file="file://$PROJECT_DIR$/public/js/auth.js" />
+    <entry file="file://$PROJECT_DIR$/resources/views/includes/users/headLinks.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/views/user/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/views/user/Login.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/views/user/Register.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/views/user/ForgotPassword.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/views/app/ui/Alerts.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-708">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/views/app/pages/DataList.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="95" column="17" lean-forward="false" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/views/app/applications/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/views/app/applications/SurveyDetail.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="236" column="37" lean-forward="false" selection-start-line="236" selection-start-column="37" selection-end-line="236" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/components/Charts/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="35" lean-forward="false" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/components/Charts/DoughnutShadow.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="39" lean-forward="false" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/views/app/dashboards/Default.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="439" column="19" lean-forward="false" selection-start-line="439" selection-start-column="19" selection-end-line="439" selection-end-column="19" />
-          <folding>
-            <element signature="e#13457#13500#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/data/charts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/views/app/pages/Search.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="45" column="19" lean-forward="false" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/store/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#21#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/views/app/dashboards/Ecommerce.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="171" column="69" lean-forward="false" selection-start-line="171" selection-start-column="69" selection-end-line="171" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/panel/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="52" column="26" lean-forward="false" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.mix.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/css/sass/themes/piaf.dark.red.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/utils/AuthRequired.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/utils/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-263">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="80" column="19" lean-forward="false" selection-start-line="80" selection-start-column="19" selection-end-line="80" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="69" column="8" lean-forward="false" selection-start-line="69" selection-start-column="2" selection-end-line="69" selection-end-column="8" />
-          <folding>
-            <element signature="e#759#814#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/App.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="15" lean-forward="false" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/views/app/dashboards/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="28" column="43" lean-forward="false" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/views/Error.vue">
+    <entry file="file://$PROJECT_DIR$/webpack.mix.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="26" lean-forward="false" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+        <state relative-caret-position="300">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/views/app/index.vue">
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/src/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        <state relative-caret-position="255">
+          <caret line="17" column="191" lean-forward="false" selection-start-line="17" selection-start-column="191" selection-end-line="17" selection-end-column="191" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <marker date="1577190628115" expanded="true" signature="9:22" ph="..." />
+            <marker date="1577190628115" expanded="true" signature="34:43" ph="..." />
+            <marker date="1577190628115" expanded="true" signature="219:232" ph="..." />
+            <marker date="1577190628115" expanded="true" signature="332:348" ph="..." />
+            <marker date="1577190628115" expanded="true" signature="747:762" ph="..." />
+            <marker date="1577190628115" expanded="true" signature="988:998" ph="..." />
+            <marker date="1577190628115" expanded="true" signature="1314:1330" ph="..." />
+            <marker date="1577190628115" expanded="true" signature="1764:1774" ph="..." />
+            <marker date="1577190628115" expanded="true" signature="2228:2262" ph="..." />
+            <marker date="1577190628115" expanded="true" signature="2393:2412" ph="..." />
+            <marker date="1577190628115" expanded="true" signature="2804:2817" ph="..." />
+            <marker date="1577190628115" expanded="true" signature="2900:2930" ph="..." />
+            <marker date="1577190628115" expanded="true" signature="3000:3027" ph="..." />
+            <marker date="1577190628115" expanded="true" signature="3074:3103" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/CallController.php">
+    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="406" column="12" lean-forward="true" selection-start-line="406" selection-start-column="12" selection-end-line="406" selection-end-column="12" />
+        <state relative-caret-position="120">
+          <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/includes/users/footerLinks.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/users/auth.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="80" column="42" lean-forward="false" selection-start-line="80" selection-start-column="42" selection-end-line="80" selection-end-column="42" />
+          <folding>
+            <marker date="1577192081608" expanded="true" signature="62:88" ph="..." />
+            <marker date="1577192081608" expanded="true" signature="3591:3619" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/WalletController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1097">
+          <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
           <folding />
         </state>
       </provider>

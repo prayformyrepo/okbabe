@@ -10,6 +10,11 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
+//
+mix.js(['resources/js/app.js','resources/assets/panel/js/vendor.min.js','resources/assets/panel/js/app.min.js'],'public/js/panel/auth.js');
 
-mix.js('resources/src/index.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+mix.styles(['resources/assets/panel/css/bootstrap.min.css','resources/assets/panel/css/icons.min.css','assets/panel/css/app.min.css'],'public/css/panel/auth.css');
+
+
+// mix.js('resources/js/app.js', 'public/js')
+//    .sass('resources/sass/app.scss', 'public/css');

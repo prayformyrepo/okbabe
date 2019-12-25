@@ -15,20 +15,34 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+//pay callback
+Route::get('/pay/callback', 'API\WalletController@verify');
+
+
+
+Route::view('panel', 'panel.index');
+//
+//Auth::routes();
+//
+
+Route::get('/auth','Users\AuthController@showAuthForm')->name('user.showAuth');
+Route::post('/login','Users\AuthController@login')->name('user.login');
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+///////////////////////////////////////////////
+
+//update blog
 Route::get('/gpost','mainController@gpost');
 Route::get('/gcategory','mainController@gcategory');
 Route::get('/add-category','mainController@add_category');
-//Route::get('/open',function (){
-//    return view('test');
-//});
-//Route::post('/testopen','mainController@test_inp');
 
 
-
-//Route::get('token',function(){
-//    Artisan::call('passport:client --personal');
-//});
-
+//artisan commands
 Route::get('migrate',function(){
     Artisan::call('migrate');
     die('migrate complete');
@@ -39,6 +53,8 @@ Route::get('cache',function(){
     Artisan::call('cache:clear');
     die('cache cleared');
 });
+
+//test routes
 
 Route::get('call',function (){
     return view('call');
@@ -73,9 +89,3 @@ Route::get('unbusy-mohi',function (){
 });
 
 
-
-Route::get('/pay/callback', 'API\WalletController@verify');
-
-
-
-Route::view('/panel', 'panel.index');

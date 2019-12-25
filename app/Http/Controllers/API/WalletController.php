@@ -94,17 +94,22 @@ class WalletController extends Controller
             $body = $response->getBody();
             $body=json_decode($body);
            // echo $body;
-            $wallet=Wallet::find($wallet_id);
-            $wallet->status=1;
-            $wallet->trans_id=$body->transId;
-            $wallet->save();
 
             $amount=$amount/10;
+            $wallet=Wallet::find($wallet_id);
+
             if ($wallet->trans_id==null) {
                 $user = User::find($user_id);
                 $user->wallet = $user->wallet + $amount;
                 $user->save();
             }
+
+            $wallet=Wallet::find($wallet_id);
+            $wallet->status=1;
+            $wallet->trans_id=$body->transId;
+            $wallet->save();
+
+
 
         }
         return view('callback', compact('user', 'amount', 'status'));
