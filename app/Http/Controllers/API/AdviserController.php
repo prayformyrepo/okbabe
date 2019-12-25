@@ -41,6 +41,7 @@ class AdviserController extends Controller
             $adviser['adviser']['lat'] = Adviser::where('user_id',$request->user_id)->value('lat');
             $adviser['adviser']['long'] = Adviser::where('user_id',$request->user_id)->value('long');
             $adviser['adviser']['video'] = Adviser::where('user_id',$request->user_id)->value('video');
+            $adviser['adviser']['is_busy'] = Adviser::where('user_id',$request->user_id)->value('is_busy');
 //            $adviser['adviser']['categories']=$advisers->categories()->get();
 //            $adviser['adviser']['times']=$advisers->times()->get();
             $times = $advisers->times()->orderBy('date', 'ASC')->get();
