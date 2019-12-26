@@ -30,20 +30,18 @@
       <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1577365584976" expanded="true" signature="41:419" ph="..." />
-              </folding>
+            <state relative-caret-position="1530">
+              <caret line="102" column="97" lean-forward="false" selection-start-line="102" selection-start-column="97" selection-end-line="102" selection-end-column="97" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2019_12_25_174827_add_cover_to_advisers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_12_25_174827_add_cover_to_advisers.php">
+      <file leaf-file-name="SearchController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/SearchController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="16" column="79" lean-forward="false" selection-start-line="16" selection-start-column="79" selection-end-line="16" selection-end-column="79" />
+            <state relative-caret-position="309">
+              <caret line="250" column="34" lean-forward="true" selection-start-line="250" selection-start-column="34" selection-end-line="250" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -84,16 +82,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
               <caret line="21" column="96" lean-forward="false" selection-start-line="21" selection-start-column="96" selection-end-line="21" selection-end-column="96" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/SearchController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="101" column="3" lean-forward="false" selection-start-line="101" selection-start-column="3" selection-end-line="104" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -197,7 +185,6 @@
         <option value="$PROJECT_DIR$/tests/Unit/ExampleTest.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/filterController.php" />
         <option value="$PROJECT_DIR$/app/Event.php" />
-        <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Ticket.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/TicketController.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
@@ -242,6 +229,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/QuestionController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/EventController.php" />
+        <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/SearchController.php" />
       </list>
     </option>
@@ -539,7 +527,7 @@
       <workItem from="1576846213497" duration="4134000" />
       <workItem from="1576918204815" duration="6124000" />
       <workItem from="1577047921611" duration="25328000" />
-      <workItem from="1577257463949" duration="10582000" />
+      <workItem from="1577257463949" duration="11202000" />
     </task>
     <task id="LOCAL-00094" summary="edit fetch messages">
       <created>1575015968174</created>
@@ -914,10 +902,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="313564000" />
+    <option name="totallyTimeSpent" value="314184000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19305556" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -928,7 +917,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38470587" sideWeight="0.49444443" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38470587" sideWeight="0.49444443" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1254,16 +1243,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1577365584976" expanded="true" signature="41:419" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
@@ -1296,10 +1275,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="102" column="97" lean-forward="false" selection-start-line="102" selection-start-column="97" selection-end-line="102" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/SearchController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="101" column="3" lean-forward="false" selection-start-line="101" selection-start-column="3" selection-end-line="104" selection-end-column="0" />
+        <state relative-caret-position="309">
+          <caret line="250" column="34" lean-forward="true" selection-start-line="250" selection-start-column="34" selection-end-line="250" selection-end-column="34" />
           <folding />
         </state>
       </provider>
