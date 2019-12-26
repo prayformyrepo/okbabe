@@ -36,7 +36,7 @@ class SearchController extends Controller
         foreach ($advisers as $adviser) {
             if ($c < 8) {
                 $save['user_id'] = $adviser->id;
-                $save['adviser_id'] = Adviser::where('user_id',$adviser->id)->value('id');
+                $save['adviser_id'] = Adviser::where('user_id', $adviser->id)->value('id');
                 $save['name'] = $adviser->name;
                 $save['avatar'] = $adviser->avatar;
                 $save['field'] = $adviser->adviser($adviser)->field;
@@ -50,23 +50,24 @@ class SearchController extends Controller
 
         //adviser by category
         $adviser_cat = array();
-        $cats= Adviser_category::where('name', 'like', '%' . $request->q . '%')->select('id', 'name', 'parent_category_id')->get();
-        foreach ($cats as $cat){
-            $has_users=Adviser_to_category::where('adviser_category_id',$cat->id)->get();
-            foreach ($has_users as $has_user){
-                $adviser = User::find(Adviser::find($has_user->id)->user_id);
-                $save['user_id'] = $adviser->id;
-                $save['adviser_id'] = Adviser::where('user_id',$adviser->id)->value('id');
-                $save['name'] = $adviser->name;
-                $save['avatar'] = $adviser->avatar;
-                $save['field'] = $adviser->adviser($adviser)->field;
-                $save['about'] = $adviser->adviser($adviser)->about;
-                array_push($adviser_cat, $save);
+        $cats = Adviser_category::where('name', 'like', '%' . $request->q . '%')->select('id', 'name', 'parent_category_id')->get();
+        foreach ($cats as $cat) {
+            $has_users = Adviser_to_category::where('adviser_category_id', $cat->id)->get();
+            if (Adviser_to_category::where('adviser_category_id', $cat->id)->count() != 0) {
+                foreach ($has_users as $has_user) {
+                    $adviser = User::find(Adviser::find($has_user->id)->user_id);
+                    $save['user_id'] = $adviser->id;
+                    $save['adviser_id'] = Adviser::where('user_id', $adviser->id)->value('id');
+                    $save['name'] = $adviser->name;
+                    $save['avatar'] = $adviser->avatar;
+                    $save['field'] = $adviser->adviser($adviser)->field;
+                    $save['about'] = $adviser->adviser($adviser)->about;
+                    array_push($adviser_cat, $save);
+                }
             }
         }
 
         $all['advisers_by_category'] = $adviser_cat;
-
 
 
         //categories
