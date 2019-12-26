@@ -308,6 +308,8 @@ class QuestionController extends Controller
         if ($question->status == 0 && $user->is_adviser==0) return response()->json(['error' => 'unauthorized'], 401);
         if ($question->is_private == 1) {
             $question = Question::select('id', 'question_category_id', 'subject', 'text', 'is_private', 'status', 'views', 'likes', 'created_at', 'updated_at')->find($request->question_id);
+            $question['answers_count']= Question::find($request->question_id)->answers()->count();
+
             $question_a = Question::find($request->question_id)->answers()->get();
             $qqq=array();
             foreach ($question_a as $answers){

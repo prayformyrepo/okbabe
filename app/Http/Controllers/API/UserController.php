@@ -192,6 +192,7 @@ class UserController extends Controller
         $user_set=User::find($user->id);
         isset($request->name)?$user_set->name=$request->name:$user_set->name=null;
         $user_set->username=$request->username;
+        $user_set->name=$request->username;
         $user_set->password=bcrypt($request->password);
         $user_set->password_set_at=Carbon::now();
         $user_set->save();
