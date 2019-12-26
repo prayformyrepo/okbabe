@@ -55,7 +55,7 @@ class SearchController extends Controller
             $has_users = Adviser_to_category::where('adviser_category_id', $cat->id)->get();
             if (Adviser_to_category::where('adviser_category_id', $cat->id)->count() != 0) {
                 foreach ($has_users as $has_user) {
-                    $adviser = User::find(Adviser::find($has_user->id)->user_id);
+                    $adviser = User::find(Adviser::find($has_user->adviser_id)->user_id);
                     $save['user_id'] = $adviser->id;
                     $save['adviser_id'] = Adviser::where('user_id', $adviser->id)->value('id');
                     $save['name'] = $adviser->name;
