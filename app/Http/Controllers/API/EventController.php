@@ -19,7 +19,7 @@ class EventController extends Controller
     {
         if (isset($request->type)) {
             if (isset($request->category_id)) {
-                $evs = Event::where('type', $request->type)->orderBy('id', 'DESC')->paginate(10);
+                $evs = Event::where('type', $request->type)->orderBy('id', 'DESC')->paginate(100);
                 $events = array();
                 foreach ($evs as $ev) {
                     $adviser_categories = Adviser_to_category::where('adviser_id', $ev->adviser_id)->get();
@@ -36,7 +36,7 @@ class EventController extends Controller
             }
         } else {
             if (isset($request->category_id)) {
-                $evs = Event::orderBy('id', 'DESC')->paginate(10);
+                $evs = Event::orderBy('id', 'DESC')->paginate(100);
                 $events = array();
                 foreach ($evs as $ev) {
                     $adviser_categories = Adviser_to_category::where('adviser_id', $ev->adviser_id)->get();
