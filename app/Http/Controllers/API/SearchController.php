@@ -257,6 +257,7 @@ class SearchController extends Controller
                         $save['avatar'] = $adviser->avatar;
                         $save['field'] = $adviser->adviser($adviser)->field;
                         $save['about'] = $adviser->adviser($adviser)->about;
+                        $save['adviser_category']=Adviser_category::find($has_user->adviser_category_id)->name;
                         array_push($adviser_cat, $save);
                         array_push($list, $adviser->id);
                     }
