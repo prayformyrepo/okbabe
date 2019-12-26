@@ -65,21 +65,7 @@ class SearchController extends Controller
             }
         }
 
-        $advisers = User::where('is_adviser', 1)->where('name', 'like', '%' . $request->q . '%')->get();
-        $c = 0;
-        foreach ($advisers as $adviser) {
-            if ($c < 8) {
-                $save['user_id'] = $adviser->id;
-                $save['adviser_id'] = Adviser::where('user_id',$adviser->id)->value('id');
-                $save['name'] = $adviser->name;
-                $save['avatar'] = $adviser->avatar;
-                $save['field'] = $adviser->adviser($adviser)->field;
-                $save['about'] = $adviser->adviser($adviser)->about;
-                array_push($adviser_show, $save);
-                $c++;
-            }
-        }
-        $all['advisers'] = $adviser_show;
+        $all['advisers_by_category'] = $adviser_cat;
 
 
 
