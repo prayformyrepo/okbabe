@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/QuestionController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/QuestionController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,7 +32,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1577365584976" expanded="true" signature="41:419" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,8 +85,8 @@
       <file leaf-file-name="QuestionController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/QuestionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-691">
-              <caret line="253" column="32" lean-forward="true" selection-start-line="253" selection-start-column="32" selection-end-line="253" selection-end-column="32" />
+            <state relative-caret-position="194">
+              <caret line="312" column="105" lean-forward="false" selection-start-line="312" selection-start-column="105" selection-end-line="312" selection-end-column="105" />
               <folding />
             </state>
           </provider>
@@ -183,7 +185,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2019_12_20_162201_add_type_to_reserve_calls.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_12_21_134356_add_call_page_to_users.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/SearchController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/mainController.php" />
@@ -234,6 +235,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/CallController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/AdviserController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/QuestionController.php" />
       </list>
     </option>
   </component>
@@ -530,7 +532,7 @@
       <workItem from="1576846213497" duration="4134000" />
       <workItem from="1576918204815" duration="6124000" />
       <workItem from="1577047921611" duration="25328000" />
-      <workItem from="1577257463949" duration="8608000" />
+      <workItem from="1577257463949" duration="8839000" />
     </task>
     <task id="LOCAL-00094" summary="edit fetch messages">
       <created>1575015968174</created>
@@ -905,7 +907,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="311590000" />
+    <option name="totallyTimeSpent" value="311821000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1258,7 +1260,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1577365584976" expanded="true" signature="41:419" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1280,8 +1284,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/QuestionController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-691">
-          <caret line="253" column="32" lean-forward="true" selection-start-line="253" selection-start-column="32" selection-end-line="253" selection-end-column="32" />
+        <state relative-caret-position="194">
+          <caret line="312" column="105" lean-forward="false" selection-start-line="312" selection-start-column="105" selection-end-line="312" selection-end-column="105" />
           <folding />
         </state>
       </provider>
