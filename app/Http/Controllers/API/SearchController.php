@@ -69,10 +69,10 @@ class SearchController extends Controller
 
         $all['advisers_by_category'] = $adviser_cat;
 
-
-        //categories
-        $categories_show = Adviser_category::where('name', 'like', '%' . $request->q . '%')->select('id', 'name', 'parent_category_id')->limit(12)->get();
-        $all['categories'] = $categories_show;
+//
+//        //categories
+//        $categories_show = Adviser_category::where('name', 'like', '%' . $request->q . '%')->select('id', 'name', 'parent_category_id')->limit(12)->get();
+//        $all['categories'] = $categories_show;
 
 
         //questions
@@ -99,9 +99,9 @@ class SearchController extends Controller
         $all['questions'] = $questions_show;
 
 
-        //blog categories
-        $blog_categories = Post_category::where('title', 'like', '%' . $request->q . '%')->select('id', 'title', 'image', 'parent_category_id')->limit(12)->get();
-        $all['blog_categories'] = $blog_categories;
+//        //blog categories
+//        $blog_categories = Post_category::where('title', 'like', '%' . $request->q . '%')->select('id', 'title', 'image', 'parent_category_id')->limit(12)->get();
+//        $all['blog_categories'] = $blog_categories;
 
         //posts
         $posts = Post::where('title', 'like', '%' . $request->q . '%')->select('id', 'title', 'image')->limit(4)->get();
