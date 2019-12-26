@@ -205,4 +205,64 @@ class SearchController extends Controller
 
     }
 
+    public function all_advisers(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'q' => 'required',
+
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 401);
+        }
+
+        $adviser_show = array();
+        $advisers = User::where('is_adviser', 1)->where('name', 'like', '%' . $request->q . '%')->get();
+        foreach ($advisers as $adviser) {
+                $save['user_id'] = $adviser->id;
+                $save['adviser_id'] = Adviser::where('user_id', $adviser->id)->value('id');
+                $save['name'] = $adviser->name;
+                $save['avatar'] = $adviser->avatar;
+                $save['field'] = $adviser->adviser($adviser)->field;
+                $save['about'] = $adviser->adviser($adviser)->about;
+                array_push($adviser_show, $save);
+        }
+        $all['advisers'] = $adviser_show;
+        return response()->json(['success' => $all], $this->successStatus);
+    }
+
+    public function all_advisers_by_category(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'q' => 'required',
+
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 401);
+        }
+
+        $adviser_cat = array();
+        $cats = Adviser_category::where('name', 'like', '%' . $request->q . '%')->select('id', 'name', 'parent_category_id')->get();
+        foreach ($cats as $cat) {
+            $has_users = Adviser_to_category::where('adviser_category_id', $cat->id)->get();
+            if (Adviser_to_category::where('adviser_category_id', $cat->id)->count() != 0) {
+                foreach ($has_users as $has_user) {
+                    $adviser = User::find(Adviser::find($has_user->adviser_id)->user_id);
+                    $save['user_id'] = $adviser->id;
+                    $save['adviser_id'] = Adviser::where('user_id', $adviser->id)->value('id');
+                    $save['name'] = $adviser->name;
+                    $save['avatar'] = $adviser->avatar;
+                    $save['field'] = $adviser->adviser($adviser)->field;
+                    $save['about'] = $adviser->adviser($adviser)->about;
+                    array_push($adviser_cat, $save);
+                }
+            }
+        }
+
+        $all['advisers_by_category'] = $adviser_cat;
+        return response()->json(['success' => $all], $this->successStatus);
+
+    }
+
 }
