@@ -50,6 +50,7 @@ class SearchController extends Controller
 
         //adviser by category
         $adviser_cat = array();
+        $list=array();
         $cats = Adviser_category::where('name', 'like', '%' . $request->q . '%')->select('id', 'name', 'parent_category_id')->get();
         foreach ($cats as $cat) {
             $has_users = Adviser_to_category::where('adviser_category_id', $cat->id)->get();
