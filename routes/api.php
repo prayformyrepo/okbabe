@@ -129,6 +129,8 @@ Route::group(['middleware' => 'auth:api'], function(){
 
         //shop for users
         Route::post('show-products','API\ProductController@showProducts');
+        Route::post('show-product-categories','API\ProductController@showCategories');
+        Route::post('store-product-comment','API\ProductController@commentStore');
 
 
 
