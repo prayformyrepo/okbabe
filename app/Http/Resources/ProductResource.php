@@ -22,15 +22,7 @@ class ProductResource extends JsonResource
            'images'=>$this->images->first(),
            'categories'=>$this->categories,
            'featured'=>$this->featured,
-           'created_at'=>Carbon::make($this->created_at)->format('Y-m-d H:i:s'),
-        ];
-    }
-
-    public function with($request)
-    {
-        return [
-            'version' => '1.0',
-            'success' => true,
+           'created_at'=>Carbon::make($this->created_at)->format('Y-m-d H:i:s')
         ];
     }
 
