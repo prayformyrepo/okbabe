@@ -22,4 +22,9 @@ class Product extends Model
     {
         return $this->belongsToMany(Image::class,'product_images')->select('id','image_path','thumbnail_path');
     }
+
+    public function productComments()
+    {
+        return $this->hasMany(Product_comment::class,'product_id');
+    }
 }
