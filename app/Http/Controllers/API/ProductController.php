@@ -30,10 +30,6 @@ class ProductController extends Controller
 
         }else{
 
-       /* $product->load('images');
-        $product->load('categories');
-        $product->load('productType');*/
-
         return response()->json(['success'=>
             ['id'=>$product->id,
               'name'=>$product->name,
@@ -43,6 +39,7 @@ class ProductController extends Controller
                 'pages'=>$product->language,
                 'size'=>$product->size,
                 'author'=>$product->author,
+                'announcer'=>$product->announcer,
                 'translator'=>$product->translator,
                 'published_date'=>$product->published_date,
                 'publisher'=>$product->publisher,
