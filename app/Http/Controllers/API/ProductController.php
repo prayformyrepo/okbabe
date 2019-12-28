@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Cart;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\CartResource;
 use App\Http\Resources\ProductCommentResource;
 use App\Http\Resources\ProductCommentsCollection;
 use App\Http\Resources\ProductResource;
@@ -115,6 +117,53 @@ class ProductController extends Controller
         ]);
         return response()->json(['success'],200);
     }
+
+
+    public function addCart(Request $request)
+    {
+        // in future I have to check existability of the product in orders table to prevent duplicate product
+
+        $cart_find = Cart::where(['product_id' => $request->p_id, 'user_id' => $request->user_id])->first();
+        if ($cart_find) {
+            return response()->json(['error' => 'این محصول از قبل در سبد خرید شما موجود است.'], 401);
+        } else {
+            $product = Product::find($request->p_id);
+            if($product) {
+                $cart = Cart::create([
+                    'product_id' => $request->p_id,
+                    'user_id' => $request->user_id,
+                    'total_price' => $product->price
+                ]);
+            }else{
+                return response()->json(['error'=>'محصولی با این مشخصات یافت نشد.'], 401);
+            }
+
+            return response()->json(['success']);
+        }
+    }
+
+    public function removeCart(Request $request)
+    {
+
+        $cart = Cart::find($request->cart_id);
+        if($cart != null){
+            $cart->delete();
+            return response()->json(['success']);
+        }
+        return response()->json(['error'=>'محصول مورد نظر در سبد خرید موجود نمیباشد!']);
+
+    }
+
+    public function showCart(Request $request)
+    {
+        $carts = Cart::where('user_id',$request->user_id)->get();
+        if(count($carts) !=0 ){
+            return response()->json(['success'=>CartResource::collection($carts)]);
+        }else{
+            return response()->json(['error'=>'هیج محصولی در سبد خرید شما موجود نمیباشد.']);
+        }
+    }
+
 
 
 }
