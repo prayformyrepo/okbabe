@@ -134,7 +134,7 @@ class QuestionController extends Controller
             $questions_array = array();
             foreach ($questions as $question) {
                 $save['question'] = $question;
-                $save['question']['answers']=Question::find($request->question_id)->answers()->count();
+                $save['question']['answers']=Question::find($question->id)->answers()->count();
                 $save['question']['user_info'] = User::select('id', 'username', 'avatar')->find($question->user_id);
                 if ($question->is_private==1) {
                     $save['question']['user_info']['username'] = 'ناشناس';
