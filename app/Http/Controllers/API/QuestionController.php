@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Adviser;
+use App\Adviser_category;
 use App\Adviser_to_category;
 use App\Event;
 use App\Http\Controllers\Controller;
@@ -133,6 +134,7 @@ class QuestionController extends Controller
             $questions_array = array();
             foreach ($questions as $question) {
                 $save['question'] = $question;
+                $save['question']['answers']=Question::find($question->id)->answers()->count();
                 $save['question']['user_info'] = User::select('id', 'username', 'avatar')->find($question->user_id);
                 if ($question->is_private==1) {
                     $save['question']['user_info']['username'] = 'ناشناس';
@@ -308,6 +310,9 @@ class QuestionController extends Controller
         if ($question->status == 0 && $user->is_adviser==0) return response()->json(['error' => 'unauthorized'], 401);
         if ($question->is_private == 1) {
             $question = Question::select('id', 'question_category_id', 'subject', 'text', 'is_private', 'status', 'views', 'likes', 'created_at', 'updated_at')->find($request->question_id);
+            $question['answers_count']= Question::find($request->question_id)->answers()->count();
+            $question['question_category']= Adviser_category::find($question->question_category_id)->name;
+
             $question_a = Question::find($request->question_id)->answers()->get();
             $qqq=array();
             foreach ($question_a as $answers){

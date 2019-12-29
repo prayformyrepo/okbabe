@@ -75,6 +75,9 @@
             <div class="content">
                 <div class="title m-b-md">
                    COMING SOON ...
+                    @if(isset($test))
+                        {{$test}}
+                        @endif
                 </div>
 
             </div>
