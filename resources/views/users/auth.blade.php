@@ -22,26 +22,27 @@
                             <a href="index-2.html">
                                 <span><img src="assets/images/logo-light.png" alt="" height="22"></span>
                             </a>
-                            <p class="text-muted mt-2 mb-4">Responsive Admin Dashboard</p>
+                            <p class="text-muted mt-2 mb-4">شاورنو</p>
                         </div>
                         <div class="card">
 
                             <div class="card-body p-4">
                                 
                                 <div class="text-center mb-4">
-                                    <h4 class="text-uppercase mt-0">Sign In</h4>
+                                    <h4 class="text-uppercase mt-0">ورود</h4>
                                 </div>
 
-                                <form action="#">
+                                <form action="{{route('user.login')}}" method="post">
+                                    @csrf
 
                                     <div class="form-group mb-3">
-                                        <label for="emailaddress">Email address</label>
-                                        <input class="form-control" type="email" id="emailaddress" required="" placeholder="Enter your email">
+                                        <label for="emailaddress">شماره موبایل</label>
+                                        <input class="form-control" name="mobile" type="tel" id="mobile" required="" placeholder="موبایل خود را وارد کنید">
                                     </div>
 
                                     <div class="form-group mb-3">
-                                        <label for="password">Password</label>
-                                        <input class="form-control" type="password" required="" id="password" placeholder="Enter your password">
+                                        <label for="password">کلمه عبور</label>
+                                        <input class="form-control" type="password" name="password" required="" id="password" placeholder="کلمه عبور خود را وارد کنید">
                                     </div>
 
                                     <div class="form-group mb-3">
@@ -52,7 +53,7 @@
                                     </div>
 
                                     <div class="form-group mb-0 text-center">
-                                        <button class="btn btn-primary btn-block" type="submit"> Log In </button>
+                                        <button class="btn btn-primary btn-block" type="submit"> ورود </button>
                                     </div>
 
                                 </form>
@@ -63,8 +64,8 @@
 
                         <div class="row mt-3">
                             <div class="col-12 text-center">
-                                <p> <a href="pages-recoverpw.html" class="text-muted ml-1"><i class="fa fa-lock mr-1"></i>Forgot your password?</a></p>
-                                <p class="text-muted">Don't have an account? <a href="pages-register.html" class="text-dark ml-1"><b>Sign Up</b></a></p>
+                                <p> <a href="pages-recoverpw.html" class="text-muted ml-1"><i class="fa fa-lock mr-1"></i>کلمه عبور خود را فراموش کردید؟</a></p>
+                                <p class="text-muted">حساب کاربری ندارید؟ <a href="pages-register.html" class="text-dark ml-1"><b>ثبت نام</b></a></p>
                             </div> <!-- end col -->
                         </div>
                         <!-- end row -->
@@ -81,5 +82,4 @@
     @include('includes.users.footerLinks')
     </body>
 
-<!-- Mirrored from coderthemes.com/adminto/layouts/dark-rtl/pages-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 24 Dec 2019 12:28:41 GMT -->
 </html>
