@@ -50,6 +50,5 @@
       To create a production bundle, use `npm run prod` or `yarn prod`.
     -->
 
-    <script src="/js/index.js"></script>
 </body>
 </html>
