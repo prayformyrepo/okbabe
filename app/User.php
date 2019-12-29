@@ -50,5 +50,19 @@ class User extends Authenticatable
         return $this->hasMany(Ticket::class);
     }
 
+    public function carts()
+    {
+        return $this->hasMany(Cart::class,'user_id');
+    }
+
+    public function toArray()
+    {
+        return [
+          'id'=>$this->id ,
+           'name'=> $this->name != null ? $this->name : $this->username  ,
+           'avatar'=>$this->avatar
+        ];
+    }
+
 
 }

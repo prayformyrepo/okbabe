@@ -3,7 +3,6 @@
 use Illuminate\Http\Request;
 
 
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -131,6 +130,15 @@ Route::group(['middleware' => 'auth:api'], function(){
 
         //route
         Route::post('show-filter','API\filterController@show_filters');
+
+        //shop for users
+        Route::post('show-products','API\ProductController@showProducts');
+        Route::post('show-product-categories','API\ProductController@showCategories');
+        Route::post('store-product-comment','API\ProductController@commentStore');
+        Route::post('add-cart','API\ProductController@addCart');
+        Route::post('remove-cart','API\ProductController@removeCart');
+        Route::post('show-cart','API\ProductController@showCart');
+
 
 
     });
