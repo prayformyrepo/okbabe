@@ -139,6 +139,7 @@ Route::group(['middleware' => 'auth:api'], function(){
         Route::post('remove-cart','API\ProductController@removeCart');
         Route::post('show-cart','API\ProductController@showCart');
 
+        Route::post('pay-product','OrderController@doPay');
 
 
     });
