@@ -20,7 +20,13 @@ class ProductCommentResource extends JsonResource
         return [
             'id'=>$this->id,
             'title'=>$this->title,
-            'user'=>$this->user()->get(),
+
+            'user'=>[
+                'id'=>$this->user->id,
+                'name'=> $this->user->name != null ? $this->user->name : $this->user->username  ,
+                'avatar'=>$this->user->avatar
+            ],
+
             'text'=>$this->text,
             'created_at'=>Carbon::make($this->created_at)->format('Y-m-d H:i:s')
         ];
