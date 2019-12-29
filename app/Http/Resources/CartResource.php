@@ -18,7 +18,7 @@ class CartResource extends JsonResource
         return [
         'id'=>$this->id,
         'product'=>new ProductResource($this->product),
-         'price'=>$this->total_price
+        'price'=>$this->total_price
 
         ];
     }
