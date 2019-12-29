@@ -18,6 +18,13 @@ use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
+    public $user_id;
+
+    public function user()
+    {
+        return \Auth::user();
+    }
+    
     public function showProducts(Request $request){
 
     if($request->p_id){
@@ -83,7 +90,6 @@ class ProductController extends Controller
     public function showCategories()
     {
         $categories = Product_category::select('id','name')->get();
-
         return response()->json(['success'=>$categories]);
 
     }
@@ -94,23 +100,19 @@ class ProductController extends Controller
             'title'=>'nullable',
             'text'=>'required',
             'p_id'=>'required|numeric',
-            'user_id'=>'required|numeric'
-
         ],[
             'text.required'=>'متن دیدگاه را وارد کنید.',
             'p_id.required'=>'شماره محصول را ارسال کنید.',
-            'user_id.required'=>'شماره کاربر را ارسال کنید.',
             'p_id.numeric'=>'شماره محصول را عددی وارد کنید.',
-            'user_id.numeric'=>'شماره کاربر را عددی وارد کنید.'
         ]);
 
         if($validator->fails()){
             return response()->json(['error'=>$validator->errors()],401);
-
         }
+
         $comment = Product_comment::create([
            'product_id'=>$request->p_id,
-           'user_id'=>$request->user_id,
+           'user_id'=>$this->user()->id,
            'title'=>$request->title,
            'text'=>$request->text,
            'status'=>0
@@ -123,7 +125,7 @@ class ProductController extends Controller
     {
         // in future I have to check existability of the product in orders table to prevent duplicate product
 
-        $cart_find = Cart::where(['product_id' => $request->p_id, 'user_id' => $request->user_id])->first();
+        $cart_find = Cart::where(['product_id' => $request->p_id, 'user_id' => $this->user()->id])->first();
         if ($cart_find) {
             return response()->json(['error' => 'این محصول از قبل در سبد خرید شما موجود است.'], 401);
         } else {
@@ -131,7 +133,7 @@ class ProductController extends Controller
             if($product) {
                 $cart = Cart::create([
                     'product_id' => $request->p_id,
-                    'user_id' => $request->user_id,
+                    'user_id' => $this->user()->id,
                     'total_price' => $product->price
                 ]);
             }else{
@@ -145,7 +147,10 @@ class ProductController extends Controller
     public function removeCart(Request $request)
     {
 
-        $cart = Cart::find($request->cart_id);
+        $cart = $this->user()->carts->where('id',$request->cart_id)->first();
+     /*   dd($cart);
+        dd($this->user()->carts()->get());*/
+
         if($cart != null){
             $cart->delete();
             return response()->json(['success']);
@@ -156,14 +161,13 @@ class ProductController extends Controller
 
     public function showCart(Request $request)
     {
-        $carts = Cart::where('user_id',$request->user_id)->get();
+        $carts = Cart::where('user_id',$this->user()->id)->get();
         if(count($carts) !=0 ){
+
             return response()->json(['success'=>CartResource::collection($carts)]);
         }else{
             return response()->json(['error'=>'هیج محصولی در سبد خرید شما موجود نمیباشد.']);
         }
     }
-
-
 
 }
