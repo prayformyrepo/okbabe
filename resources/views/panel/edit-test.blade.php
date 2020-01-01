@@ -5,7 +5,7 @@
     @include('includes.panel.headLinks')
     <script src="/ckeditor/ckeditor.js"></script>
 
-    <title> شاورنو - افزودن تست </title>
+    <title> شاورنو - ویرایش تست </title>
 
     </head>
 
@@ -40,7 +40,6 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="card-box">
-
                                     <div class="dropdown float-right">
                                         <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown"
                                            aria-expanded="false">
@@ -52,23 +51,22 @@
 
                                         </div>
                                     </div>
-
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="p-2">
-                                                <form class="form-horizontal" role="form" method="post" action="{{route('add-test')}}">
+                                                <form class="form-horizontal" role="form" method="post" action="{{route('update-test',['id'=>$test->id])}}">
                                                         @csrf
                                                     <div class="form-group row">
                                                         <label class="col-sm-2  col-form-label" for="simpleinput">عنوان تست</label>
                                                         <div class="col-sm-10">
-                                                            <input type="text" id="name" name="name" class="form-control" placeholder="عنوان تست"  value="{{old('name')}}">
+                                                            <input type="text" id="name" name="name" class="form-control" placeholder="عنوان تست"  value="{{$test->name}}">
                                                         </div>
                                                     </div>
 
                                                     <div class="form-group row">
                                                         <label class="col-sm-2  col-form-label" for="simpleinput">اسلاگ تست</label>
                                                         <div class="col-sm-10">
-                                                            <input type="text" id="slug" name="slug" class="form-control" placeholder="اسلاگ تست" value="{{old('slug')}}">
+                                                            <input type="text" id="slug" name="slug" class="form-control" placeholder="اسلاگ تست" value="{{$test->slug}}">
                                                         </div>
                                                     </div>
 
@@ -77,7 +75,7 @@
                                                         <div class="col-sm-10">
                                                             <textarea class="form-control" rows="5" id="description" name="description">
 
-                                                                {{old('description')}}
+                                                                {{$test->description}}
 
                                                             </textarea>
                                                         </div>
@@ -86,14 +84,14 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-2  col-form-label" for="simpleinput">تعداد سوالات</label>
                                                         <div class="col-sm-10">
-                                                            <input type="number" id="questions_count" name="questions_count" class="form-control" placeholder="تعداد سوالات"  value="{{old('questions_count')}}">
+                                                            <input type="number" id="questions_count" name="questions_count" class="form-control" placeholder="تعداد سوالات"  value="{{$test->questions_count}}">
                                                         </div>
                                                     </div>
 
                                                     <div class="form-group row">
                                                         <label class="col-sm-2  col-form-label" for="simpleinput">تعداد گزینه های پاسخ</label>
                                                         <div class="col-sm-10">
-                                                            <input type="number" id="answers_per_question" name="answers_per_question" class="form-control" placeholder="تعداد گزینه های پاسخ" value="{{old('answers_per_question')}}">
+                                                            <input type="number" id="answers_per_question" name="answers_per_question" class="form-control" placeholder="تعداد گزینه های پاسخ" value="{{$test->answers_per_question}}">
                                                         </div>
                                                     </div>
 
@@ -128,7 +126,7 @@
 
                                                     <div class="form-group mb-0 justify-content-end row">
                                                         <div class="col-sm-12">
-                                                            <button type="submit" class="btn btn-info waves-effect waves-light" style="float: left"> ثبت تست</button>
+                                                            <button type="submit" class="btn btn-info waves-effect waves-light" style="float: left"> ویرایش تست</button>
                                                         </div>
                                                     </div>
 

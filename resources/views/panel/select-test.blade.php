@@ -81,11 +81,21 @@
                                                     </button>
                                                 </form>
 
-                                                {{--<a href="{{route('assign-test',['test_id'=>$test->id])}}" class="btn btn-info"><i class="fa fa-question-circle"> ویرایش سوالات </i></a>--}}
 
                                             </td>
-                                            <td><a href="#" class="btn btn-warning"><i class="fa fa-edit"> ویرایش
-                                                        تست </i></a></td>
+                                            <td>
+
+                                                <form action="{{route('edit-test',['test_id'=>$test->id])}}"
+                                                      method="post">
+                                                    {{csrf_field()}}
+                                                    <button type="submit" class="btn btn-warning btn-small"><i
+                                                                class="fa fa-edit"> ویرایش تست </i>
+                                                    </button>
+                                                </form>
+
+
+
+                                            </td>
                                             <td>
                                                 <form onsubmit="return confirm(this);" action="{{route('test.destroy',['test_id'=>$test->id])}}"
                                                       method="post" >
