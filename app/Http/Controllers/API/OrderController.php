@@ -76,7 +76,7 @@ class OrderController extends Controller
         if ($validator->fails()) {
             return response()->json(['error' => $validator->errors()], 401);
         }
-
+        //dar ayande vojod ya adam vojode order check shavad
         if($request->payment_id == 1) {  //if wanna pay for it
 
                $order = Order::find($request->order_id);
@@ -250,11 +250,12 @@ class OrderController extends Controller
                     // You can set any number of default request options.
                     'timeout' => 2.0,
                 ]);
-                $response = $client->post( '/pg/verify', [
+                $response = $client->request('POST','/pg/verify', [
                     'form_params' => [
                         'api' => $this->api,
                         'token' => $token
-                    ]
+                    ],
+                    'headers' => ['Content-type' => 'application/json'],
                 ]);
                 $body = $response->getBody();
                 $body=json_decode($body);
