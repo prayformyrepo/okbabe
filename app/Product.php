@@ -27,4 +27,9 @@ class Product extends Model
     {
         return $this->hasMany(Product_comment::class,'product_id');
     }
+
+    public function productFiles()
+    {
+        return $this->hasMany(ProductFile::class,'product_id');
+    }
 }
