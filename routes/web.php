@@ -1,6 +1,6 @@
 <?php
 
-/*
+/*callback
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -19,6 +19,7 @@ Route::get('/', function () {
 //pay callback
 Route::get('/pay/callback', 'API\WalletController@verify');
 
+Route::get('/pay/verify-product', 'API\OrderController@verifyPay');
 
 //Route::view('panel', 'panel.index');
 //
