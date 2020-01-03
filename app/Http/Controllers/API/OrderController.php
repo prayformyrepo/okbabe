@@ -250,7 +250,7 @@ class OrderController extends Controller
                     // You can set any number of default request options.
                     'timeout' => 2.0,
                 ]);
-                $response = $client->request('POST','/pg/verify', [
+                $response = $client->createRequest('POST','/pg/verify', [
                     'form_params' => [
                         'api' => $this->api,
                         'token' => $token
