@@ -250,12 +250,12 @@ class OrderController extends Controller
                     // You can set any number of default request options.
                     'timeout' => 2.0,
                 ]);
-                $response = $client->createRequest('POST','/pg/verify', [
-                    'form_params' => [
+                $response = $client->request('POST','/pg/verify', [
+                    'headers' => ['Content-type' => 'application/json'],
+                    'json' => [
                         'api' => $this->api,
                         'token' => $token
-                    ],
-                    'headers' => ['Content-type' => 'application/json'],
+                    ]
                 ]);
                 $body = $response->getBody();
                 $body=json_decode($body);
