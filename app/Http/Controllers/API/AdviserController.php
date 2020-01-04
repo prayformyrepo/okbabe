@@ -19,6 +19,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Jenssegers\Agent\Agent;
 use Validator;
+use Kavenegar;
+use Kavenegar\Exceptions\ApiException;
+use Kavenegar\Exceptions\HttpException;
+
 
 
 class AdviserController extends Controller
@@ -455,4 +459,43 @@ class AdviserController extends Controller
 
     }
 
+    public function change_number(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'mobile' => 'required|unique:users|iran_mobile|regex:/^((?!(0))[0-9]{10})$/'
+//
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 401);
+        }
+
+        $user = Auth::user();
+        if ($user->is_adviser == 0) return response()->json(['error' => 'user is not adviser'], '401');
+
+        $user=User::find($user->id);
+        $user->mobile=$request->mobile;
+        $user->mobile_verified_at=null;
+        $digits = 4;
+        $code = rand(pow(10, $digits - 1), pow(10, $digits) - 1);
+
+
+        //sms
+        try {
+            $receptor = $request->mobile;
+            $template = "shaverno";
+            $type = "sms";
+            $token = $code;
+            $token2 = "";
+            $token3 = "";
+            $result = Kavenegar::VerifyLookup($receptor, $token, $token2, $token3, $template, $type);
+        } catch (ApiException $e) {
+            echo $e->errorMessage();
+        } catch (HttpException $e) {
+            echo $e->errorMessage();
+        }
+
+        $success['code']=$code;
+        $success['message']='open verify page';
+        return response()->json(['success' => $success], $this->successStatus);
+    }
 }

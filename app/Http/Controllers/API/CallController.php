@@ -376,6 +376,9 @@ class CallController extends Controller
             $c = array();
             foreach ($calls as $call) {
                 $cc = $call;
+                if($cc->duration!=null)
+                $cc['billing']=Adviser::find($adviser_id)->call_price * $cc->duration;
+
                 $cc['user_name'] = User::find($call->user_id)->name == null ? User::find($call->user_id)->username : User::find($call->user_id)->name;
                 $cc['user_avatar'] = User::find($call->user_id)->avatar;
                 array_push($c, $cc);
