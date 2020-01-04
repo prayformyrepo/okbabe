@@ -24,6 +24,9 @@ Route::post('auth', 'API\UserController@auth');
 //remove pass
 Route::post('reset-password', 'API\UserController@reset_password');
 
+//download product files
+Route::get('product/file/{filelink}','API\OrderController@DownloadProductFile');
+
 
 Route::group(['middleware' => 'auth:api'], function(){
 
@@ -142,11 +145,10 @@ Route::group(['middleware' => 'auth:api'], function(){
         Route::post('remove-cart','API\ProductController@removeCart');
         Route::post('show-cart','API\ProductController@showCart');
 
-        Route::post('pay-product','OrderController@doPay');
+        Route::post('store-order','API\OrderController@storeOrder');
+        Route::post('pay-product','API\OrderController@doPay');
+/*        Route::post('pay/verify-product','API\OrderController@verifyPay');*/
 
-
+        Route::post('file-download/','API\OrderController@CreateDownloadLink');
     });
-
-
 });
-

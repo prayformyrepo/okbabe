@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductFilesTable extends Migration
+class AddUserIdColumnToOrderPaymentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateProductFilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_files', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('product_id');
-            $table->unsignedBigInteger('file_id');
-            $table->integer('status')->default(1);
+        Schema::table('order_payments', function (Blueprint $table) {
+            $table->unsignedInteger('user_id')->nullable()->after('order_id');
         });
     }
 
@@ -28,6 +25,8 @@ class CreateProductFilesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_files');
+        Schema::table('order_payments', function (Blueprint $table) {
+            $table->dropColumn('user_id');
+        });
     }
 }
