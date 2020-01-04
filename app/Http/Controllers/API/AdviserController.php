@@ -14,6 +14,7 @@ use App\oauth_access_token;
 use App\Question_answer;
 use App\Saved_adviser;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Jenssegers\Agent\Agent;
@@ -38,44 +39,44 @@ class AdviserController extends Controller
             $adviser['adviser']['RN_about'] = str_replace('<br>', '', $advisers->about);
             $adviser['adviser']['name'] = User::find($request->user_id)->name;
             $adviser['adviser']['avatar'] = User::find($request->user_id)->avatar;
-            $adviser['adviser']['lat'] = Adviser::where('user_id',$request->user_id)->value('lat');
-            $adviser['adviser']['long'] = Adviser::where('user_id',$request->user_id)->value('long');
-            $adviser['adviser']['video_cover'] = Adviser::where('user_id',$request->user_id)->value('video_cover');
-            $adviser['adviser']['video'] = Adviser::where('user_id',$request->user_id)->value('video');
-            $adviser['adviser']['is_busy'] = Adviser::where('user_id',$request->user_id)->value('is_busy');
-            $adv_id= Adviser::where('user_id',$request->user_id)->value('id');
-            $rates=Adviser_rate::where('adviser_id',$adv_id)->get();
-            $rate_count=Adviser_rate::where('adviser_id',$adv_id)->count();
-            $all=0;
-            foreach ($rates as $rate){
-                $all=$all+$rate->rate;
+            $adviser['adviser']['lat'] = Adviser::where('user_id', $request->user_id)->value('lat');
+            $adviser['adviser']['long'] = Adviser::where('user_id', $request->user_id)->value('long');
+            $adviser['adviser']['video_cover'] = Adviser::where('user_id', $request->user_id)->value('video_cover');
+            $adviser['adviser']['video'] = Adviser::where('user_id', $request->user_id)->value('video');
+            $adviser['adviser']['is_busy'] = Adviser::where('user_id', $request->user_id)->value('is_busy');
+            $adv_id = Adviser::where('user_id', $request->user_id)->value('id');
+            $rates = Adviser_rate::where('adviser_id', $adv_id)->get();
+            $rate_count = Adviser_rate::where('adviser_id', $adv_id)->count();
+            $all = 0;
+            foreach ($rates as $rate) {
+                $all = $all + $rate->rate;
             }
-            if ($rate_count!=0)
-            $adviser['adviser']['rate']=$all/$rate_count;
+            if ($rate_count != 0)
+                $adviser['adviser']['rate'] = $all / $rate_count;
             else
-                $adviser['adviser']['rate']=0;
+                $adviser['adviser']['rate'] = 0;
 //            $adviser['adviser']['categories']=$advisers->categories()->get();
 //            $adviser['adviser']['times']=$advisers->times()->get();
             $times = $advisers->times()->orderBy('date', 'ASC')->get();
-            $count=$advisers->times()->count();
+            $count = $advisers->times()->count();
             $tt = array();
 //            $adviser['adviser']['ttt']=array();
-            $testi=array();
-            for ($i=0;$i<$count;$i++){
+            $testi = array();
+            for ($i = 0; $i < $count; $i++) {
 
-                $tt['id']=$times[$i]['id'];
-                $tt['date']=$times[$i]['date'];
-                $tt['time_from']=$times[$i]['time_from'];
-                $tt['time_to']=$times[$i]['time_to'];
-                if($i!=0) {
+                $tt['id'] = $times[$i]['id'];
+                $tt['date'] = $times[$i]['date'];
+                $tt['time_from'] = $times[$i]['time_from'];
+                $tt['time_to'] = $times[$i]['time_to'];
+                if ($i != 0) {
                     if ($times[$i]['date'] === $times[$i - 1]['date']) {
                         $tt['date'] = null;
                     }
                 }
-                array_push($testi,$tt);
+                array_push($testi, $tt);
 
             }
-            $adviser['adviser']['times']=$testi;
+            $adviser['adviser']['times'] = $testi;
 
 
             $adviser['adviser']['qa_count'] = Question_answer::where('adviser_id', $advisers->id)->count();
@@ -96,9 +97,9 @@ class AdviserController extends Controller
             $adviser['adviser']['RN_about'] = str_replace('<br>', '', $advise->about);
             $adviser['adviser']['name'] = User::find($advise->user_id)->name;
             $adviser['adviser']['avatar'] = User::find($advise->user_id)->avatar;
-            $adviser['adviser']['lat'] = Adviser::where('user_id',$advise->user_id)->value('lat');
-            $adviser['adviser']['long'] = Adviser::where('user_id',$advise->user_id)->value('long');
-            $adviser['adviser']['video'] = Adviser::where('user_id',$advise->user_id)->value('video');
+            $adviser['adviser']['lat'] = Adviser::where('user_id', $advise->user_id)->value('lat');
+            $adviser['adviser']['long'] = Adviser::where('user_id', $advise->user_id)->value('long');
+            $adviser['adviser']['video'] = Adviser::where('user_id', $advise->user_id)->value('video');
             $adviser['adviser']['categories'] = $advise->categories()->get();
             $adviser['adviser']['times'] = $advise->times()->get();
             $adviser['adviser']['qa_count'] = Question_answer::where('adviser_id', $advise->id)->count();
@@ -351,6 +352,107 @@ class AdviserController extends Controller
         $adviser->status = 1;
         $adviser->save();
         return response()->json(['success' => $adviser], $this->successStatus);
+    }
+
+    public function force_toggle_online()
+    {
+        $user = Auth::user();
+        if ($user->is_adviser == 0) return response()->json(['error' => 'user is not adviser'], '401');
+
+
+//    now date time
+        $weekMap = [
+            0 => 1,
+            1 => 2,
+            2 => 3,
+            3 => 4,
+            4 => 5,
+            5 => 6,
+            6 => 0,
+        ];
+        $dayOfTheWeek = Carbon::now()->dayOfWeek;
+        $weekday = $weekMap[$dayOfTheWeek];
+        $today = strtotime(\Carbon\Carbon::now()->format('H:i'));
+
+        //get all advisers
+        $userr = $user;
+
+        $flag = false;
+        $adviser_id = Adviser::where('user_id', $userr->id)->value('id');
+
+        $force_toggle_online = Adviser::where('user_id', $userr->id)->value('force_toggle_online');
+
+        $adviser_times = Adviser_time::where('adviser_id', $adviser_id)->get();
+        foreach ($adviser_times as $adviser_time) {
+            //check date time
+            if ($adviser_time->date == $weekday) {
+                $time_from = strtotime($adviser_time->time_from);
+                $time_to = strtotime($adviser_time->time_to);
+                //echo $userr->id .'date is ok<br>time from:'.$adviser_time->time_from.'<br>time to: '. $adviser_time->time_to .'<br><br>' ;
+                if ($time_from < $today && $time_to > $today) {
+                    $flag = true;
+                }
+            }
+        }
+
+        //set advisers offline-online
+        if ($flag == true) {
+            // echo 'user_id:'.$userr->id.'<br> flag: true <br>';
+            if ($force_toggle_online == 0) {
+                $u = User::find($userr->id);
+                $u->is_online = 0;
+                $u->save();
+
+                $a = Adviser::find($adviser_id);
+                $a->is_online = 0;
+                $a->force_toggle_online = 1;
+                $a->save();
+
+            } else if ($force_toggle_online == 1) {
+                $u = User::find($userr->id);
+                $u->is_online = 1;
+                $u->save();
+
+                $a = Adviser::find($adviser_id);
+                $a->is_online = 1;
+                $a->force_toggle_online = 0;
+                $a->save();
+            }
+
+
+        }
+        if ($flag == false) {
+            //  echo 'user_id:'.$userr->id.'<br> flag:false<br>';
+            if ($force_toggle_online == 0) {
+
+                $u = User::find($userr->id);
+                $u->is_online = 1;
+                $u->save();
+
+                $a = Adviser::find($adviser_id);
+                $a->is_online = 1;
+                $a->force_toggle_online = 1;
+                $a->save();
+
+            }
+        } else if ($force_toggle_online == 1) {
+            $u = User::find($userr->id);
+            $u->is_online = 0;
+            $u->save();
+
+            $a = Adviser::find($adviser_id);
+            $a->is_online = 0;
+            $a->force_toggle_online = 0;
+            $a->save();
+
+        }
+
+//        }
+        $success['force_online_toggle'] = $force_toggle_online = Adviser::where('user_id', $userr->id)->value('force_toggle_online');
+        $success['is_online'] = $user->is_online;
+
+        return response()->json(['success' => $success], $this->successStatus);
+
     }
 
 }

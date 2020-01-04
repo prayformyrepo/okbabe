@@ -57,6 +57,9 @@ Route::group(['middleware' => 'auth:api'], function(){
         Route::post('rate-adviser', 'API\AdviserController@rate_adviser');
         Route::post('accept-rate', 'API\AdviserController@accept_rate');
         Route::post('reach-adviser', 'API\AdviserController@reach_adviser');
+        Route::post('force-toggle-online', 'API\AdviserController@force_toggle_online');
+
+
 
 //        Route::group(['middleware' => 'administrator'], function() {
             Route::post('add-adviser', 'API\AdviserController@add_adviser');
