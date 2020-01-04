@@ -97,7 +97,7 @@ Route::group(['middleware' => 'auth:api'], function(){
 
         //wallet
         Route::post('do-pay', 'API\WalletController@do_pay');
-        Route::post('transaction-history', 'API\WalletController@transaction_history');
+        Route::post('transaction-history', 'API\WalletController@transactions_history');
 
 
         //search
