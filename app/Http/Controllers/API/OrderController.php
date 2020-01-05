@@ -244,25 +244,20 @@ class OrderController extends Controller
         if(isset($status)) {
             if ($status == 1) {
 
-                $client = new Client([
+              /*  $client = new Client([
                     // Base URI is used with relative requests
                     'base_uri' => 'https://pay.ir',
                     // You can set any number of default request options.
                     'timeout' => 2.0,
-                ]);
-                $response = $client->request('POST','/pg/verify', [
-                    'headers' => ['Content-type' => 'application/json'],
-                    'json' => [
-                        'api' => $this->api,
-                        'token' => $token
-                    ]
-                ]);
-                $body = $response->getBody();
-                $body=json_decode($body);
-                $payment = OrderPayment::where([['user_id' => $this->user()->id], ['refid' => $token]])->first();
+                ]);*/
+                $response = json_decode(verify($this->api,$token));
+                /*$body = $response->getBody();
+                $body=json_decode($body);*/
+                /*$payment = OrderPayment::where([['user_id',$this->user()->id],['refid',$token]])->first();*/
+                $payment = OrderPayment::where('refid',$token)->first();
                 if ($payment != null) {
 
-                    if($body['status'] == 1 && $body['message']=='OK') {
+                    if($response->status == 1 && $response->message =='OK') {
                         $order = Order::find($payment->order_id);
                         $payment = $payment->update([
                             'state' => 1
@@ -277,9 +272,9 @@ class OrderController extends Controller
 
                         return response()->json(['success' => $success]);
 
-                }elseif($body['status'] == -5 ){
+                }elseif($response->status == -5 ){
                         return response()->json(['error'=>'تراکنش با خطا مواجه شده است.'],401);
-                    }elseif($body['status'] == -6 ){
+                    }elseif($response->status == -6 ){
                         return response()->json(['error'=>'این تراکنش قبلا انجام شده است.'],401);
                     }else{
                         return response()->json(['error'=>'در پرداخت اشکالی رخ داده است.'],401);
