@@ -29,9 +29,13 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function login()
+    public function user()
     {
-        if (Auth::attempt(['mobile' => request('mobile'), 'password' => request('password')])) {
+        return \Auth::user();
+    }
+  
+    public function login(){
+        if(Auth::attempt(['mobile' => request('mobile'), 'password' => request('password')])){
             $user = Auth::user();
             oauth_access_token::where('user_id', $user->id)->delete();
             $success['token'] = $user->createToken('login')->accessToken;
@@ -216,16 +220,24 @@ class UserController extends Controller
 //        if ($validator->fails()) {
 //            return response()->json(['error'=>$validator->errors()], 401);
 //        }
-        if (isset($request->user_id)) {
-            $user = User::select('id', 'name', 'username', 'email', 'mobile', 'gender', 'call_page', 'call_file', 'call_adviser_name', 'call_adviser_avatar', 'wallet', 'is_adviser', 'avatar')->find($request->user_id);
-
-        } else {
-            $user = Auth::user();
-            $user = User::select('id', 'name', 'username', 'email', 'mobile', 'gender', 'call_page', 'call_file', 'call_adviser_name', 'call_adviser_avatar', 'wallet', 'is_adviser', 'avatar')->find($user->id);
+        $success = array();
+        if(isset($request->user_id)){
+            $user = User::select('id','name','username','email','mobile','gender','call_page','call_file','call_adviser_name','call_adviser_avatar','wallet','is_adviser','avatar')->find($request->user_id)->toArray();
+            $cart['cart_count']=$this->user()->carts->count();
+            $cart['cart_price']=$this->user()->carts->sum('total_price');
+            $combined = array_merge($user,$cart);
+        }
+        else{
+            $user=Auth::user();
+            $user = User::select('id','name','username','email','mobile','gender','call_page','call_file','call_adviser_name','call_adviser_avatar','wallet','is_adviser','avatar')->find($user->id)->toArray();
+            $cart['cart_count']=$this->user()->carts->count();
+            $cart['cart_price']=$this->user()->carts->sum('total_price');
+            $combined = array_merge($user,$cart);
         }
 
 
-        return response()->json(['success' => $user], $this->successStatus);
+
+        return response()->json(['success' => $combined], $this-> successStatus);
 
     }
 
