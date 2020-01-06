@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\API;
 use App\Adviser;
 use App\Adviser_time;
+use App\Cart;
 use App\Conversation;
 use App\oauth_access_token;
 use Carbon\Carbon;
@@ -221,16 +222,14 @@ class UserController extends Controller
 //        if ($validator->fails()) {
 //            return response()->json(['error'=>$validator->errors()], 401);
 //        }
-        $success = array();
         if(isset($request->user_id)){
             $user = User::select('id','name','username','email','mobile','gender','call_page','call_file','call_adviser_name','call_adviser_avatar','wallet','is_adviser','avatar')->find($request->user_id)->toArray();
-            $cart['cart_count']=$this->user()->carts->count();
-            $cart['cart_price']=$this->user()->carts->sum('total_price');
+            $cart['cart_count']=Cart::where('user_id',$request->user_id)->count();
+            $cart['cart_price']=Cart::where('user_id',$request->user_id)->sum('total_price');
             $combined = array_merge($user,$cart);
         }
         else{
-            $user=Auth::user();
-            $user = User::select('id','name','username','email','mobile','gender','call_page','call_file','call_adviser_name','call_adviser_avatar','wallet','is_adviser','avatar')->find($user->id)->toArray();
+            $user = User::select('id','name','username','email','mobile','gender','call_page','call_file','call_adviser_name','call_adviser_avatar','wallet','is_adviser','avatar')->find($this->user()->id)->toArray();
             $cart['cart_count']=$this->user()->carts->count();
             $cart['cart_price']=$this->user()->carts->sum('total_price');
             $combined = array_merge($user,$cart);
