@@ -62,6 +62,40 @@ class TestController extends Controller
         return Redirect::to(route('show-test-question-page'));
     }
 
+    public function edit_test($id)
+    {
+        $test=Test::find($id);
+
+        $title='ویرایش تست';
+        return view('panel.edit-test',compact('title','test'));
+    }
+
+    public function update(Request $request , $id)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'slug' => 'required',
+            'description' => 'required',
+            'questions_count' => 'required|integer',
+            'answers_per_question' => 'required|integer'
+        ]);
+
+         Test::updateOrCreate(
+            [
+                'id' => $id,
+            ],
+            [
+                'name'=>$request->name,
+                'slug'=>$request->slug,
+                'description'=>$request->description,
+                'questions_count'=>$request->questions_count,
+                'answers_per_question'=>$request->answers_per_question
+            ]
+        );
+
+        return Redirect::to(route('show-select-test-page'));
+    }
+
     public function destroy($id)
     {
         Test::find($id)->delete();
