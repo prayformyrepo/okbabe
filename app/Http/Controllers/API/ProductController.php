@@ -139,8 +139,11 @@ class ProductController extends Controller
             }else{
                 return response()->json(['error'=>'محصولی با این مشخصات یافت نشد.'], 401);
             }
+            $success['count'] = $this->user()->carts->count();
+            $success['price']= $this->user()->carts->sum('total_price');
 
-            return response()->json(['success']);
+
+            return response()->json(['success'=>$success]);
         }
     }
 
