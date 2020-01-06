@@ -144,7 +144,6 @@ Route::group(['middleware' => 'auth:api'], function(){
 
         Route::post('store-order','API\OrderController@storeOrder');
         Route::post('pay-product','API\OrderController@doPay');
-/*        Route::post('pay/verify-product','API\OrderController@verifyPay');*/
 
         Route::post('file-download/','API\OrderController@CreateDownloadLink');
     });
