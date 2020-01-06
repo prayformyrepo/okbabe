@@ -116,5 +116,14 @@ class WalletController extends Controller
 
     }
 
+    public function transactions_history()
+    {
+        $user=Auth::user();
+        $transactions=Wallet::where('user_id',$user->id)->get();
+
+        return response()->json(['success' => $transactions], $this->successStatus);
+
+    }
+
 
 }
