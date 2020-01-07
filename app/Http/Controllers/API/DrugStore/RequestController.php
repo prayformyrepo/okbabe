@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API\DrugStore;
 
 use App\Drug_request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\DrogRequestResource;
 use App\Image;
 use Carbon\Carbon;
 use Facade\FlareClient\Time\Time;
@@ -61,9 +62,7 @@ class RequestController extends Controller
 
         }
 
-        $req->load('image');
-        $req->load('user');
-        return response()->json(['success' => $req], $this->successStatus);
+        return response()->json(['success' =>new DrogRequestResource($req)], $this->successStatus);
 
     }
 
