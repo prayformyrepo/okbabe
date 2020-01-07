@@ -58,8 +58,10 @@ class RequestController extends Controller
                     'image_id' => $image->id
                 ]);
 
+
         }
 
+        $req->load('image');
         return response()->json(['success' => $req], $this->successStatus);
 
     }
