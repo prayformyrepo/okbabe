@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Ticket;
 use App\Ticket_answer;
+use App\Ticket_category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Validator;
@@ -85,6 +86,13 @@ class TicketController extends Controller
         $tickets=Ticket::where('user_id',Auth::user()->id)->get();
 
         return response()->json(['success'=>$tickets],200);
+
+    }
+
+    public function ticket_categories()
+    {
+        $categories=Ticket_category::all();
+        return response()->json(['success'=>$categories],200);
 
     }
 

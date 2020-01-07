@@ -123,6 +123,7 @@ Route::group(['middleware' => 'auth:api'], function(){
         Route::post('answer-ticket','API\TicketController@answer_ticket');
         Route::post('end-ticket','API\TicketController@end_ticket');
         Route::post('show-tickets','API\TicketController@show_tickets');
+        Route::post('ticket-categories','API\TicketController@ticket_categories');
 
 
         //posts
