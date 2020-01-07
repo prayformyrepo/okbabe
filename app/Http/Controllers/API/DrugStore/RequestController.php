@@ -18,7 +18,7 @@ class RequestController extends Controller
     public function request_drug(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'image' => 'required|mimes:jpeg,jpg,png|size:5120|image',
+            'image' => 'required|mimes:jpeg,jpg,png|max:5120|image',
             'description' => 'required',
             'address' => 'required',
             'lat' => 'required',
