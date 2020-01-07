@@ -87,6 +87,16 @@ class ProductController extends Controller
 
     }
 
+    public function featuredProducts(Request $request){
+
+            $products = Product::where([['status',1],['featured',1]])->get();
+            ProductResource::wrap('success');
+            $products = ProductResource::collection($products);
+
+            return $products;
+    }
+
+
     public function showCategories()
     {
         $categories = Product_category::select('id','name')->get();
