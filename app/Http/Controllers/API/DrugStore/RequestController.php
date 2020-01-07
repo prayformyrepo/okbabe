@@ -55,7 +55,7 @@ class RequestController extends Controller
                     'id' => $req->id
                 ],
                 [
-                    'image_id' => $image->id
+                    'image_id' => 5
                 ]);
 
         }
