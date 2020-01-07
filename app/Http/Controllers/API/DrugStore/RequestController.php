@@ -50,7 +50,7 @@ class RequestController extends Controller
                 'thumbnail_path' => $file->getClientMimeType()
             ]);
 
-            $req_update = Drug_request::updateOrCreate(
+             Drug_request::updateOrCreate(
                 [
                     'id' => $req->id
                 ],
@@ -60,7 +60,7 @@ class RequestController extends Controller
 
         }
 
-        return response()->json(['success' => $req_update], $this->successStatus);
+        return response()->json(['success' => $req], $this->successStatus);
 
     }
 
