@@ -15,6 +15,10 @@ class RequestController extends Controller
 {
     public $successStatus = 200;
 
+    public function user()
+    {
+        return Auth::user();
+    }
     public function request_drug(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -30,6 +34,7 @@ class RequestController extends Controller
         }
 
         $req = Drug_request::create([
+            'user_id' => $this->user()->id,
             'description' => $request->description,
             'address' => $request->address,
             'lat' => $request->lat,
