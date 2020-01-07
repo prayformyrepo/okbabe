@@ -142,6 +142,8 @@ Route::group(['middleware' => 'auth:api'], function(){
 
         //shop for users
         Route::post('show-products','API\ProductController@showProducts');
+        Route::post('featured-products','API\ProductController@featuredProducts');
+
         Route::post('show-product-categories','API\ProductController@showCategories');
         Route::post('store-product-comment','API\ProductController@commentStore');
         Route::post('add-cart','API\ProductController@addCart');
