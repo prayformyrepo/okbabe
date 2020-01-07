@@ -15,10 +15,6 @@ class RequestController extends Controller
 {
     public $successStatus = 200;
 
-    public function user()
-    {
-        return Auth::user();
-    }
     public function request_drug(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -54,19 +50,22 @@ class RequestController extends Controller
                 'thumbnail_path' => $file->getClientMimeType()
             ]);
 
-            $req = Drug_request::updateOrCreate([
-                'description' => $request->description,
-                'address' => $request->address,
-                'lat' => $request->lat,
-                'long' => $request->long
-            ],
+            $req = Drug_request::updateOrCreate(
                 [
-                    'image_id'=>$image->id
+                    'id' => $req->id
+                ],
+                [
+                    'image_id' => $image->id
                 ]);
 
         }
 
         return response()->json(['success' => $req], $this->successStatus);
 
+    }
+
+    public function user()
+    {
+        return Auth::user();
     }
 }
