@@ -10,12 +10,12 @@ class Drug_request extends Model
 
     public function image()
     {
-        return $this->belongsTo(Image::class)->select('image_path');
+        return $this->belongsTo(Image::class)->select('id','image_path');
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class)->select('name','username','avatar');
+        return $this->belongsTo(User::class)->select('id','name','username','avatar');
 
     }
 }

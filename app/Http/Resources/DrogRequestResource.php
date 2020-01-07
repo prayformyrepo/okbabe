@@ -22,8 +22,11 @@ class DrogRequestResource extends JsonResource
             'long' =>$this->long,
 
             'image'=>$this->image()->get(),
-            'user'=>$this->user()->get()
-
+            'user'=>[
+                'id'=>$this->user->id,
+                'name'=> $this->user->name != null ? $this->user->name : $this->user->username  ,
+                'avatar'=>$this->user->avatar
+            ],
         ];
     }
 }
