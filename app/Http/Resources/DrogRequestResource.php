@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class DrogRequestResource extends JsonResource
@@ -20,7 +21,7 @@ class DrogRequestResource extends JsonResource
             'address' =>$this->address,
             'lat' =>$this->lat,
             'long' =>$this->long,
-            'created_at' =>$this->created_at,
+            'created_at' =>Carbon::make($this->created_at)->format('Y-m-d H:i:s'),
 
             'image'=>$this->image()->get(),
             'user'=>[
