@@ -50,12 +50,12 @@ class RequestController extends Controller
                 'thumbnail_path' => $file->getClientMimeType()
             ]);
 
-             Drug_request::updateOrCreate(
+             $req= Drug_request::updateOrCreate(
                 [
                     'id' => $req->id
                 ],
                 [
-                    'image_id' => 5
+                    'image_id' => $image->id
                 ]);
 
         }
