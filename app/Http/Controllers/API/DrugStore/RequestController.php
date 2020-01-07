@@ -61,8 +61,8 @@ class RequestController extends Controller
 
         }
 
-        $req->load('image')->load('user');
-//        $req->load('user');
+        $req->load('image');
+        $req->load('user');
         return response()->json(['success' => $req], $this->successStatus);
 
     }
