@@ -154,5 +154,15 @@ Route::group(['middleware' => 'auth:api'], function(){
         Route::post('pay-product','API\OrderController@doPay');
 
         Route::post('file-download/','API\OrderController@CreateDownloadLink');
+
+
+        //drugs
+
+        Route::post('request-drug','API\DrugStore\RequestController@request_drug');
+
+
+
+
     });
 });
+

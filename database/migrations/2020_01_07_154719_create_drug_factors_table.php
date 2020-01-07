@@ -23,6 +23,12 @@ class CreateDrugFactorsTable extends Migration
 
             $table->timestamps();
         });
+
+        Schema::table('drug_factors',function (Blueprint $table){
+            $table->foreign('drug_request_id')->references('id')->on('drug_requests')->onDelete('cascade');
+            $table->foreign('drug_store_id')->references('id')->on('drug_stores')->onDelete('cascade');
+            $table->foreign('drug_sender_id')->references('id')->on('drug_senders')->onDelete('cascade');
+        });
     }
 
     /**

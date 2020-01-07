@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDrugStoresTable extends Migration
+class CreateDrugPerFactorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,21 @@ class CreateDrugStoresTable extends Migration
      */
     public function up()
     {
-        Schema::create('drug_stores', function (Blueprint $table) {
+        Schema::create('drug_per_factors', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('slug')->nullable();
-            $table->text('description')->nullable();
-            $table->text('address');
+            $table->unsignedBigInteger('drug_factor_id')->index();
+            $table->string('drug_name');
+            $table->unsignedBigInteger('qty');
+            $table->unsignedBigInteger('price');
             $table->unsignedBigInteger('image_id')->index()->nullable();
-            $table->string('lat');
-            $table->string('long');
-            $table->integer('status')->default(1);
+
             $table->timestamps();
         });
-        Schema::table('drug_stores',function (Blueprint $table){
+
+        Schema::table('drug_per_factors',function (Blueprint $table){
+            $table->foreign('drug_factor_id')->references('id')->on('drug_factors')->onDelete('cascade');
             $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');
+
         });
     }
 
@@ -37,6 +38,6 @@ class CreateDrugStoresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('drug_stores');
+        Schema::dropIfExists('drug_per_factors');
     }
 }
