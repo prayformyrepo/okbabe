@@ -20,6 +20,7 @@ class DrogRequestResource extends JsonResource
             'address' =>$this->address,
             'lat' =>$this->lat,
             'long' =>$this->long,
+            'created_at' =>$this->created_at,
 
             'image'=>$this->image()->get(),
             'user'=>[
