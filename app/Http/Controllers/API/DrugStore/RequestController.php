@@ -50,7 +50,8 @@ class RequestController extends Controller
             $image = Image::create([
                 'image_path' => '/images/drugs/' . $filename,
                 'image_original' => $file->getClientOriginalName(),
-                'image_type' => $file->getClientMimeType()
+                'image_type' => $file->getClientMimeType(),
+                'thumbnail_path' => $file->getClientMimeType()
             ]);
 
             $req = Drug_request::updateOrCreate([
