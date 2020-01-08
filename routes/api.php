@@ -161,6 +161,10 @@ Route::group(['middleware' => 'auth:api'], function(){
         Route::post('request-drug','API\DrugStore\RequestController@request_drug');
 
 
+        //tests
+
+        Route::post('show-tests','API\TestController@show_tests');
+
 
 
     });
