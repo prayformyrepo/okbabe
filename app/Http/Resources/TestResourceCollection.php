@@ -18,19 +18,19 @@ class TestResourceCollection extends ResourceCollection
 
         return [
             'id'=>$this->id,
-            'name'=>$this->name,
-            'slug' =>$this->slug,
-            'description' =>$this->description,
-            'questions_count' =>$this->questions_count,
-            'answers_per_question' =>$this->answers_per_question,
+            'test_id'=>$this->test_id,
+            'question_number' =>$this->question_number,
+            'question_text' =>$this->question_text,
             'created_at' =>Carbon::make($this->created_at)->format('Y-m-d H:i:s'),
 
 //            'image'=>$this->image()->get(),
-//            'user'=>[
-//                'id'=>$this->user->id,
-//                'name'=> $this->user->name != null ? $this->user->name : $this->user->username  ,
-//                'avatar'=>$this->user->avatar
-//            ],
+            'answers'=>[
+                'id'=>$this->answers->id,
+                'test_question_id'=>$this->answers->test_question_id,
+                'answer_number'=>$this->answers->answer_number,
+                'answer_text'=>$this->answers->answer_text,
+                'answer_weight'=>$this->answers->answer_weight
+            ],
         ];
 
 
