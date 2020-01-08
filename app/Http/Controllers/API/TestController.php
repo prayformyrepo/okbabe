@@ -35,7 +35,7 @@ class TestController extends Controller
             $t['answers_per_question']=$test->answers_per_question;
             $t['status']=$test->status;
 
-            if(UserTestAnswer::where('user_id',Auth::user()->id)->where('test_question_id',$test->id)->count()==0)
+            if(UserTestAnswer::where('user_id',Auth::user()->id)->where('test_id',$test->id)->count()==0)
                 $t['last_answered_question']=null;
                 else
             $t['last_answered_question']= UserTestAnswer::where('user_id',Auth::user()->id)->where('test_id',$test->id)->orderBy('test_question_id','ASC')->last();
