@@ -23,14 +23,14 @@ class TestResourceCollection extends ResourceCollection
             'question_text' =>$this->question_text,
             'created_at' =>Carbon::make($this->created_at)->format('Y-m-d H:i:s'),
 
-//            'image'=>$this->image()->get(),
-            'answers'=>[
-                'id'=>$this->answers->id,
-                'test_question_id'=>$this->answers->test_question_id,
-                'answer_number'=>$this->answers->answer_number,
-                'answer_text'=>$this->answers->answer_text,
-                'answer_weight'=>$this->answers->answer_weight
-            ],
+            'answers'=>$this->answers()->get(),
+//            'answers'=>[
+//                'id'=>$this->answers()->id,
+//                'test_question_id'=>$this->answers()->test_question_id,
+//                'answer_number'=>$this->answers()->answer_number,
+//                'answer_text'=>$this->answers()->answer_text,
+//                'answer_weight'=>$this->answers()->answer_weight
+//            ],
         ];
 
 
