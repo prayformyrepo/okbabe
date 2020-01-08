@@ -3,9 +3,10 @@
 namespace App\Http\Resources;
 
 use Carbon\Carbon;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class TestResourceCollection extends ResourceCollection
+class TestResourceCollection extends JsonResource
 {
     /**
      * Transform the resource collection into an array.
