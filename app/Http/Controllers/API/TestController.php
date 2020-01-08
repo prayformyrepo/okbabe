@@ -38,7 +38,10 @@ class TestController extends Controller
             if(UserTestAnswer::where('user_id',Auth::user()->id)->where('test_id',$test->id)->count()==0)
                 $t['last_answered_question']=null;
                 else
-            $t['last_answered_question']= UserTestAnswer::where('user_id',Auth::user()->id)->where('test_id',$test->id)->orderBy('test_question_id','ASC')->limit(1)->get();
+
+               $test_question_id= UserTestAnswer::where('user_id',Auth::user()->id)->where('test_id',$test->id)->orderBy('test_question_id','ASC')->limit(1)->get()->test_question_id;
+
+            $t['last_answered_question_number']= TestQuestion::find($test_question_id)->question_number;
 
 
             $t['created_at']=Carbon::make($test->created_at)->format('Y-m-d H:i:s');
