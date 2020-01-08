@@ -15,8 +15,8 @@ class TestController extends Controller
     public function show_tests(Request $request)
     {
         if (isset($request->test_id)){
-            $test=TestQuestion::where('test_id',$request->test_id)->where('question_number',$request->question_number)->get();
-            return response()->json(['success' => TestResourceCollection::collection($test)], $this->successStatus);
+            $test=TestQuestion::where('test_id',$request->test_id)->where('question_number',$request->question_number)->first();
+            return response()->json(['success' => new TestResourceCollection($test)], $this->successStatus);
 
         }
 
