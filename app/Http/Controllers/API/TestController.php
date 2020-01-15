@@ -95,7 +95,7 @@ class TestController extends Controller
             return response()->json(['error' => $validator->errors()], 401);
         }
 
-        $exist=Test::where('id',$request->rest_id)->count();
+        $exist=Test::where('id',$request->test_id)->count();
         if ($exist==0) {
             $error['fa_text'] = 'این تست وجود ندارد';
             $error['text'] = 'test is not exist';
