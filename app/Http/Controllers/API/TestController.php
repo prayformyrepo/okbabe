@@ -112,6 +112,8 @@ class TestController extends Controller
             $error['fa_text']='تمام سوالات تست پاسخ داده نشده است';
             $error['text']='test is not complete';
             $error['last_answered_question_number']=$user_answers->first();
+            return response()->json(['error' => $error], 401);
+
         }
     }
 }
