@@ -41,7 +41,10 @@ class TestController extends Controller
                 $t['last_answered_question'] = null;
             }
                 else {
-                    $test_question_id = UserTestAnswer::where('user_id', Auth::user()->id)->where('test_id', $test->id)->orderBy('test_question_id', 'ASC')->limit(1)->get()->test_question_id;
+                    $test_question_idd = UserTestAnswer::where('user_id', Auth::user()->id)->where('test_id', $test->id)->orderBy('test_question_id', 'ASC')->limit(1)->get();
+                    foreach ($test_question_idd as $ttt){
+                        $test_question_id=$ttt->test_question_id;
+                    }
                     $t['last_answered_question_number'] = TestQuestion::find($test_question_id)->question_number;
                 }
 
