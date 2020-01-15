@@ -82,4 +82,36 @@ class TestController extends Controller
         return response()->json(['success' => $ans], $this->successStatus);
     }
 
+
+    public function result_test(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'test_id' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 401);
+        }
+
+        $exist=Test::where('id',$request->rest_id)->count();
+        if ($exist==0) {
+            $error['fa_text'] = 'این تست وجود ندارد';
+            $error['text'] = 'test is not exist';
+            return response()->json(['error' => $error], 404);
+        }
+        $user=Auth::user();
+        $test=Test::find($request->test_id);
+        $questions_count=$test->questions_count;
+        $user_answers=UserTestAnswer::where('user_id',$user->id)->where('test_id',$request->test_id)->orderBy('test_question_id','DESC');
+        if ($user_answers->count()==0){
+            $error['fa_text'] = 'به سوالات پاسخ داده نشده است';
+            $error['text'] = 'non of questions was answered';
+            return response()->json(['error' => $error], 401);
+        }
+        if ($user_answers->count()<$questions_count){
+            $error['fa_text']='تمام سوالات تست پاسخ داده نشده است';
+            $error['text']='test is not complete';
+            $error['last_answered_question_number']=$user_answers->first();
+        }
+    }
 }
