@@ -5,11 +5,13 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\TestResourceCollection;
 use App\Test;
+use App\TestAnswer;
 use App\TestQuestion;
 use App\UserTestAnswer;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Validator;
 
 class TestController extends Controller
 {
@@ -56,6 +58,28 @@ class TestController extends Controller
 
     public function save_test(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'test_answer_id' => 'required'
+        ]);
 
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 401);
+        }
+
+
+        $test_question_id=TestAnswer::find($request->test_answer_id)->test_question_id;
+        $test_id=TestQuestion::find($test_question_id)->test_id;
+        $ans= UserTestAnswer::updateOrCreate(
+            [
+                'user_id' => Auth::user()->id,
+                'test_question_id' => $test_question_id,
+                'test_id' => $test_id,
+            ],
+            [
+                'test_answer_id' => $request->test_answer_id
+            ]);
+
+        return response()->json(['success' => $ans], $this->successStatus);
     }
+
 }
