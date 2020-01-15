@@ -113,7 +113,8 @@ class TestController extends Controller
         if ($user_answers->count()<$questions_count){
             $error['fa_text']='تمام سوالات تست پاسخ داده نشده است';
             $error['text']='test is not complete';
-            $error['last_answered_question_number']=$user_answers->first()->test_question_id;
+            $test_question_id=$user_answers->first()->test_question_id;
+            $error['last_answered_question_number']=TestQuestion::find($test_question_id)->question_number;
             return response()->json(['error' => $error], 401);
 
         }
