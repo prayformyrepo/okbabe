@@ -9,6 +9,7 @@ use App\TestAnswer;
 use App\TestQuestion;
 use App\UserTestAnswer;
 use Carbon\Carbon;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Validator;
@@ -116,7 +117,10 @@ class TestController extends Controller
             $test_question_id=$user_answers->first()->test_question_id;
             $error['last_answered_question_number']=TestQuestion::find($test_question_id)->question_number;
             return response()->json(['error' => $error], 401);
-
         }
+        $client = new Client(['base_uri' => 'https://shavernoapp.ir']);
+        $response = $client->request('POST', '/');
+        $body = $response->getBody();
+
     }
 }
