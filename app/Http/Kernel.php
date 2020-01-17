@@ -5,6 +5,7 @@ namespace App\Http;
 use App\Http\Middleware\AdminAuth;
 use App\Http\Middleware\administrator;
 use App\Http\Middleware\mobile_verified;
+use App\Http\Middleware\SystemAuth;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -78,6 +79,8 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'mobile_verify' => mobile_verified::class,
         'admin' => AdminAuth::class,
+        'administrator' => administrator::class,
+        'SystemAuth' => SystemAuth::class,
     ];
 
     /**

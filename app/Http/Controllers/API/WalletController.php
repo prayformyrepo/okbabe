@@ -119,8 +119,17 @@ class WalletController extends Controller
     public function transactions_history()
     {
         $user=Auth::user();
-        $transactions=Wallet::where('user_id',$user->id)->get();
+        $transactions=Wallet::where('user_id',$user->id)->paginate(10);
+        $tran=array();
+        foreach ($transactions as $transaction){
+            $tr['id']=$transaction->id;
+            $tr['user_id']=$transaction->user_id;
+            $tr['finance']=$transaction->finance;
+            $tr['state']=$transaction->finance>0?'incoming':'outgoing';
+            if ($transaction->call_id!=null) $tr['text']='بابت هزینه تماس';
 
+
+        }
         return response()->json(['success' => $transactions], $this->successStatus);
 
     }

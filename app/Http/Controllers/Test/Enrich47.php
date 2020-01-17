@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class Enrich47 extends Controller
 {
-    public function show_test(Request $request)
+    public function show_result(Request $request)
     {
 
     }

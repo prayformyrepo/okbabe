@@ -222,13 +222,13 @@ class UserController extends Controller
 //            return response()->json(['error'=>$validator->errors()], 401);
 //        }
         if(isset($request->user_id)){
-            $user = User::select('id','name','username','email','mobile','gender','call_page','call_file','call_adviser_name','call_adviser_avatar','wallet','is_adviser','avatar')->find($request->user_id)->toArray();
+            $user = User::select('id','name','username','email','mobile','gender','call_page','call_file','call_adviser_name','call_adviser_avatar','wallet','is_adviser','is_online','avatar')->find($request->user_id)->toArray();
             $cart['cart_count']=Cart::where('user_id',$request->user_id)->count();
             $cart['cart_price']=Cart::where('user_id',$request->user_id)->sum('total_price');
             $combined = array_merge($user,$cart);
         }
         else{
-            $user = User::select('id','name','username','email','mobile','gender','call_page','call_file','call_adviser_name','call_adviser_avatar','wallet','is_adviser','avatar')->find($this->user()->id)->toArray();
+            $user = User::select('id','name','username','email','mobile','gender','call_page','call_file','call_adviser_name','call_adviser_avatar','wallet','is_adviser','is_online','avatar')->find($this->user()->id)->toArray();
             $cart['cart_count']=$this->user()->carts->count();
             $cart['cart_price']=$this->user()->carts->sum('total_price');
             $combined = array_merge($user,$cart);

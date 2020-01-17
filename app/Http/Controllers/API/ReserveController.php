@@ -27,34 +27,36 @@ class ReserveController extends Controller
             return response()->json(['error' => $validator->errors()], 401);
         }
 
+        $adviser_id=Adviser::find($request->adviser_id)->user_id;
+
         if ($request->type == 1) {
-            $visitable = Adviser::where('user_id', $request->adviser_id)->value('visit_price');
+            $visitable = Adviser::where('user_id', $adviser_id)->value('visit_price');
             if ($visitable == null) return response()->json(['error' => 'امکان رزرو حضوری با این مشاور فراهم نیست'], 401);
         }
 
-        $exist = reserve_call::where('user_id', Auth::user()->id)->where('adviser_id', $request->adviser_id)->where('type', $request->type)->where('status', 0)->count();
-        if ($exist == 0) $exist = reserve_call::where('user_id', Auth::user()->id)->where('adviser_id', $request->adviser_id)->where('type', $request->type)->where('status', 1)->count();
+        $exist = reserve_call::where('user_id', Auth::user()->id)->where('adviser_id', $adviser_id)->where('type', $request->type)->where('status', 0)->count();
+        if ($exist == 0) $exist = reserve_call::where('user_id', Auth::user()->id)->where('adviser_id', $adviser_id)->where('type', $request->type)->where('status', 1)->count();
         if ($exist != 0) {
             return response()->json(['error' => 'رزرو قبلی با این مشاور هنوز به اتمام نرسیده است'], 401);
         }
-        $is_user = User::where('id', $request->adviser_id)->count();
+        $is_user = User::where('id', $adviser_id)->count();
         if ($is_user == 0) return response()->json(['error' => 'کاربر یافت نشد'], 401);
         else {
-            $is_adviser = User::where('id', $request->adviser_id)->value('is_adviser');
+            $is_adviser = User::where('id', $adviser_id)->value('is_adviser');
         }
         if ($is_adviser == 0) return response()->json(['error' => 'امکان رزرو تماس با این کاربر مقدور نمی باشد'], 401);
 
         if ($request->type == 0) {
-            $reserve_price = Adviser::where('user_id', $request->adviser_id)->value('nominal_call_price');
+            $reserve_price = Adviser::where('user_id', $adviser_id)->value('nominal_call_price');
         } else {
-            $reserve_price = Adviser::where('user_id', $request->adviser_id)->value('visit_price');
+            $reserve_price = Adviser::where('user_id', $adviser_id)->value('visit_price');
         }
         $wallet = User::find(Auth::user()->id)->wallet;
 
         if ($wallet / $reserve_price < 1) return response()->json(['error' => 'موجودی کافی نیست'], 401);
         $reserve = new reserve_call();
         $reserve->user_id = Auth::user()->id;
-        $reserve->adviser_id = $request->adviser_id;
+        $reserve->adviser_id = $adviser_id;
         $reserve->date_time = $request->date_time;
         $reserve->status = 0;
         $reserve->type = $request->type;
@@ -63,8 +65,8 @@ class ReserveController extends Controller
         $reserve = reserve_call::find($reserve->id);
         $reserve['user_name'] = User::find(Auth::user()->id)->name == null ? User::find(Auth::user()->id)->username : User::find(Auth::user()->id)->name;
         $reserve['user_avatar'] = User::find(Auth::user()->id)->avatar;
-        $reserve['adviser_name'] = User::find($request->adviser_id)->name;
-        $reserve['adviser_avatar'] = User::find($request->adviser_id)->avatar;
+        $reserve['adviser_name'] = User::find($adviser_id)->name;
+        $reserve['adviser_avatar'] = User::find($adviser_id)->avatar;
 
         return response()->json(['success' => $reserve], $this->successStatus);
 

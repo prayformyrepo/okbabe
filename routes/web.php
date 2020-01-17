@@ -141,4 +141,9 @@ Route::get('ttime', function () {
 });
 
 
+Route::get('now', function () {
+    echo \Carbon\Carbon::now()->format('dmyHi');
+});
+
+
 

@@ -123,6 +123,7 @@ Route::group(['middleware' => 'auth:api'], function(){
         Route::post('answer-ticket','API\TicketController@answer_ticket');
         Route::post('end-ticket','API\TicketController@end_ticket');
         Route::post('show-tickets','API\TicketController@show_tickets');
+        Route::post('ticket-categories','API\TicketController@ticket_categories');
 
 
         //posts
@@ -153,5 +154,25 @@ Route::group(['middleware' => 'auth:api'], function(){
         Route::post('pay-product','API\OrderController@doPay');
 
         Route::post('file-download/','API\OrderController@CreateDownloadLink');
+
+
+        //drugs
+
+        Route::post('request-drug','API\DrugStore\RequestController@request_drug');
+
+
+        //tests
+
+        Route::post('show-tests','API\TestController@show_tests');
+        Route::post('save-test','API\TestController@save_test');
+        Route::post('result-test','API\TestController@result_test');
+
+
     });
+});
+
+Route::group(['middleware' => 'auth:api'], function() {
+
+//different tests!
+    Route::post('enrich47-result', 'Test\TestController@result_test');
 });
