@@ -15,13 +15,13 @@ class TestQuestionController extends Controller
     public function create()
     {
         if (!Session::has('test')) {
-            return Redirect::to(route('show-select-test-page'));
+            return Redirect::to(route('admin.test.show-select-test-page'));
         }
         $test = Session::get('test');
         $title = 'افزودن پرسش و پاسخ های تست ' . $test->name;
         $defaults = defaultTestAnswers::all();
         $edit = true;
-        return view('panel.add-test-question', compact('title', 'test', 'defaults', 'edit'));
+        return view('admin.test.add-test-question', compact('title', 'test', 'defaults', 'edit'));
     }
 
     public function store(Request $request)
@@ -50,7 +50,7 @@ class TestQuestionController extends Controller
         $title = 'افزودن پرسش و پاسخ های تست ' . $test->name;
         $defaults = defaultTestAnswers::all();
         if (count($err) != 0) {
-            return view('panel.add-test-question', compact('title', 'test', 'defaults', 'err', 'request'));
+            return view('admin.test.add-test-question', compact('title', 'test', 'defaults', 'err', 'request'));
         }
         for ($i = 1; $i <= $test->questions_count; $i++) {
             $q = 'q' . $i;
@@ -83,7 +83,7 @@ class TestQuestionController extends Controller
 
         }
 
-        return Redirect::to(route('show-select-test-page'));
+        return Redirect::to(route('admin.test.show-select-test-page'));
 
     }
 }

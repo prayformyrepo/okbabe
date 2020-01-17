@@ -48,7 +48,7 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <!-- item-->
-                                    <a href="{{route('show-select-test-page')}}" class="dropdown-item">لیست تست ها</a>
+                                    <a href="{{route('admin.test.show-select-test-page')}}" class="dropdown-item">لیست تست ها</a>
 
                                 </div>
                             </div>
@@ -58,7 +58,7 @@
                                 <div class="col-12">
                                     <div class="p-2">
                                         <form class="form-horizontal" role="form" method="post"
-                                              action="{{route('test-question-page')}}">
+                                              action="{{route('admin.test.test-question-page')}}">
                                             @csrf
 
                                             @for($i=1;$i<=$test->questions_count;$i++)

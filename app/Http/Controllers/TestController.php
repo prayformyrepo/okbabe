@@ -18,12 +18,12 @@ class TestController extends Controller
     {
         $tests=Test::all();
         $title='لیست تست ها';
-        return view('panel.select-test',compact('title','tests'));
+        return view('admin.test.select-test',compact('title','tests'));
     }
     public function create()
     {
         $title='افزودن تست';
-        return view('panel.add-test',compact('title'));
+        return view('admin.test.add-test',compact('title'));
     }
 
     public function store(Request $request)
@@ -46,12 +46,7 @@ class TestController extends Controller
 //        $title='افزودن سوالات تست '. $test->name;
         Session::put('test', $test);
 
-        return Redirect::to(route('show-test-question-page'));
-
-//        return redirect()->route('show-test-question-page',$test);
-
-//        return view('panel.add-test-question',compact('title','test'));
-
+        return Redirect::to(route('admin.test.show-test-question-page'));
     }
 
     public function assign_test(Request $request)
@@ -59,7 +54,7 @@ class TestController extends Controller
         $test_id=$request->test_id;
         $test=Test::findOrFail($test_id);
         Session::put('test', $test);
-        return Redirect::to(route('show-test-question-page'));
+        return Redirect::to(route('admin.test.show-test-question-page'));
     }
 
     public function edit_test($id)
@@ -67,7 +62,7 @@ class TestController extends Controller
         $test=Test::find($id);
 
         $title='ویرایش تست';
-        return view('panel.edit-test',compact('title','test'));
+        return view('admin.test.edit-test',compact('title','test'));
     }
 
     public function update(Request $request , $id)
@@ -93,7 +88,7 @@ class TestController extends Controller
             ]
         );
 
-        return Redirect::to(route('show-select-test-page'));
+        return Redirect::to(route('admin.test.show-select-test-page'));
     }
 
     public function destroy($id)

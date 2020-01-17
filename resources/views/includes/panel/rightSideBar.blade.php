@@ -14,8 +14,8 @@
                 <a href="javascript:void(0);" class="user-edit"><i class="mdi mdi-pencil"></i></a>
             </div>
 
-            <h5><a href="javascript: void(0);">Nowak Helme</a> </h5>
-            <p class="text-muted mb-0"><small>Admin Head</small></p>
+            <h5><a href="javascript: void(0);">{{\Auth::guard('admin')->user()->name}}</a> </h5>
+            <p class="text-muted mb-0"><small>مدیریت</small></p>
         </div>
 
         <!-- Settings -->

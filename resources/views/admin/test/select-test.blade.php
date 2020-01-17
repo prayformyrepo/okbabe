@@ -39,7 +39,7 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <!-- item-->
-                                    <a href="{{route('add-test')}}" class="dropdown-item">افزودن تست</a>
+                                    <a href="{{route('admin.test.add-test')}}" class="dropdown-item">افزودن تست</a>
 
                                 </div>
                             </div>
@@ -73,7 +73,7 @@
                                             <td>{{ $test->questions_count  }}</td>
                                             <td>{{ $test->answers_per_question  }}</td>
                                             <td>
-                                                <form action="{{route('assign-test',['test_id'=>$test->id])}}"
+                                                <form action="{{route('admin.test.assign-test',['test_id'=>$test->id])}}"
                                                       method="post">
                                                     {{csrf_field()}}
                                                     <button type="submit" class="btn btn-info btn-small"><i
@@ -85,7 +85,7 @@
                                             </td>
                                             <td>
 
-                                                <form action="{{route('edit-test',['test_id'=>$test->id])}}"
+                                                <form action="{{route('admin.test.edit-test',['test_id'=>$test->id])}}"
                                                       method="post">
                                                     {{csrf_field()}}
                                                     <button type="submit" class="btn btn-warning btn-small"><i
@@ -97,7 +97,7 @@
 
                                             </td>
                                             <td>
-                                                <form onsubmit="return confirm(this);" action="{{route('test.destroy',['test_id'=>$test->id])}}"
+                                                <form onsubmit="return confirm(this);" action="{{route('admin.test.destroy',['test_id'=>$test->id])}}"
                                                       method="post" >
                                                     {{method_field('delete')}}
                                                     {{csrf_field()}}
