@@ -9,4 +9,4 @@ require('jquery');
 import $ from 'jquery';
 window.jQuery = $;
 window.$ = $;
-global.$ = require("jquery")
+global.$ = require("jquery");

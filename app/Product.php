@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $hidden = ['pivot'];
+    protected $fillable = ['name','description','short_description','language','pages','size','author','announcer','translator','published_date','publisher','product_type_id','slug','price','featured','status'];
 
     public function categories()
     {

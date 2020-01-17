@@ -7,7 +7,7 @@
         <div class="user-box text-center">
             <img src="/assets/images/users/user-1.jpg" alt="user-img" title="Mat Helme" class="rounded-circle img-thumbnail avatar-lg">
             <div class="dropdown">
-                <a href="#" class="text-dark dropdown-toggle h5 mt-2 mb-1 d-block" data-toggle="dropdown">Nowak Helme</a>
+                <a href="#" class="text-dark dropdown-toggle h5 mt-2 mb-1 d-block" data-toggle="dropdown">{{\Auth::guard('admin')->user()->name}}</a>
                 <div class="dropdown-menu user-pro-dropdown">
 
                     <!-- item-->
@@ -38,14 +38,14 @@
             </div>
             <p class="text-muted">Admin Head</p>
             <ul class="list-inline">
-                <li class="list-inline-item">
+               {{-- <li class="list-inline-item">
                     <a href="#" class="text-muted">
                         <i class="mdi mdi-settings"></i>
                     </a>
-                </li>
+                </li>--}}
 
                 <li class="list-inline-item">
-                    <a href="#" class="text-custom">
+                    <a href="{{route('admin.logout')}}" class="text-custom">
                         <i class="mdi mdi-power"></i>
                     </a>
                 </li>
@@ -57,16 +57,16 @@
 
             <ul class="metismenu" id="side-menu">
 
-                <li class="menu-title">Navigation</li>
+                <li class="menu-title">منو ها</li>
 
                 <li>
-                    <a href="index-2.html">
+                    <a href="{{route('admin.panel')}}">
                         <i class="mdi mdi-view-dashboard"></i>
-                        <span> Dashboard </span>
+                        <span> داشبورد </span>
                     </a>
                 </li>
 
-                <li>
+           {{--     <li>
                     <a href="typography.html">
                         <i class="mdi mdi-format-font"></i>
                         <span> Typography </span>
@@ -217,32 +217,65 @@
                         <li><a href="extras-comingsoon.html">Coming Soon</a></li>
                     </ul>
                 </li>
-
+--}}
                 <li>
                     <a href="javascript: void(0);">
                         <i class="mdi mdi-share-variant"></i>
-                        <span> Multi Level </span>
+                        <span>مدیریت تست ها</span>
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level nav" aria-expanded="false">
                         <li>
-                            <a href="javascript: void(0);">Level 1.1</a>
+                            <a href="{{route('admin.test.add-test')}}">افزودن  تست جدید</a>
                         </li>
                         <li>
+                            <a href="{{route('admin.test.show-select-test-page')}}">نمایش تست</a>
+                        </li>
+                       {{-- <li>
                             <a href="javascript: void(0);" aria-expanded="false">Level 1.2
                                 <span class="menu-arrow"></span>
                             </a>
-                            <ul class="nav-third-level nav" aria-expanded="false">
+                          --}}{{--  <ul class="nav-third-level nav" aria-expanded="false">
                                 <li>
                                     <a href="javascript: void(0);">Level 2.1</a>
                                 </li>
                                 <li>
                                     <a href="javascript: void(0);">Level 2.2</a>
                                 </li>
-                            </ul>
-                        </li>
+                            </ul>--}}{{--
+                        </li>--}}
                     </ul>
                 </li>
+
+                <li>
+                    <a href="javascript: void(0);">
+                        <i class="mdi mdi-shopping"></i>
+                        <span>مدیریت فروشگاه</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul class="nav-second-level nav" aria-expanded="false">
+                        <li>
+                            <a href="{{route('admin.product.create')}}">افزودن  محصول جدید</a>
+                        </li>
+                        <li>
+                            <a href="{{route('admin.product.index')}}">نمایش محصولات</a>
+                        </li>
+                        {{-- <li>
+                             <a href="javascript: void(0);" aria-expanded="false">Level 1.2
+                                 <span class="menu-arrow"></span>
+                             </a>
+                           --}}{{--  <ul class="nav-third-level nav" aria-expanded="false">
+                                 <li>
+                                     <a href="javascript: void(0);">Level 2.1</a>
+                                 </li>
+                                 <li>
+                                     <a href="javascript: void(0);">Level 2.2</a>
+                                 </li>
+                             </ul>--}}{{--
+                         </li>--}}
+                    </ul>
+                </li>
+
             </ul>
 
         </div>
