@@ -526,12 +526,12 @@ class AdviserController extends Controller
                 if (($time_from<$all_time->time_to && $time_from>$all_time->time_from)||($time_to>$all_time->time_from && $time_to<$all_time->time_to) || ($time_from==$all_time->time_from && $time_to==$all_time->time_to)){
                     $flag=true;
                     return response()->json(['error' => 'زمان انتخابی با زمان های فعلی تداخل دارد'], '401');
-                }else{
+                } else{
                     if ($flag==false) {
                         $times = Adviser_time::create([
                             'adviser_id' => $adviser_id,
                             'date' => $date,
-                            'time_from' => $time_from,
+                            'time_from' => 'hahaha',
                             'time_to' => $time_to,
                         ]);
                     }
