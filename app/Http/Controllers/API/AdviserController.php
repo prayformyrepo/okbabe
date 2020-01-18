@@ -523,7 +523,7 @@ class AdviserController extends Controller
             $all_times = Adviser_time::where('adviser_id', $adviser_id)->where('date', $date)->get();
             $flag=false;
             foreach ($all_times as $all_time) {
-                if (($time_from<$all_time->time_to && $time_from>$all_time->time_from)||($time_to>$all_time->time_from && $time_to<$all_time->time_to)){
+                if (($time_from<$all_time->time_to && $time_from>$all_time->time_from)||($time_to>$all_time->time_from && $time_to<$all_time->time_to) || ($time_from==$all_time->time_from && $time_to==$all_time->time_to)){
                     return response()->json(['error' => 'زمان انتخابی با زمان های فعلی تداخل دارد'], '401');
                 }else{
                     $times = Adviser_time::create([
