@@ -498,4 +498,90 @@ class AdviserController extends Controller
         $success['message']='open verify page';
         return response()->json(['success' => $success], $this->successStatus);
     }
+
+    public function add_time(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'date' => 'required',
+            'time_from' => 'required',
+            'time_to' => 'required',
+//
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 401);
+        }
+
+        $user = Auth::user();
+        if ($user->is_adviser == 0) return response()->json(['error' => 'user is not adviser'], '401');
+
+        $date=$request->date;
+        $time_from=$request->time_from;
+        $time_to=$request->time_to;
+        $adviser_id=Adviser::where('user_id',$user->id)->value('id');
+        if (Adviser_time::where('adviser_id',$adviser_id)->where('date',$date)->count()!=0) {
+
+            $all_times = Adviser_time::where('adviser_id', $adviser_id)->where('date', $date)->get();
+            $flag=false;
+            foreach ($all_times as $all_time) {
+                if (($time_from<$all_time->time_to && $time_from>$all_time->time_from)||($time_to>$all_time->time_from && $time_to<$all_time->time_to)){
+                    return response()->json(['error' => 'زمان انتخابی با زمان های فعلی تداخل دارد'], '401');
+                }else{
+                    $times = Adviser_time::create([
+                        'adviser_id' => $adviser_id,
+                        'date' => $date,
+                        'time_from' => $time_from,
+                        'time_to' => $time_to,
+                    ]);
+                }
+
+            }
+        }else {
+
+            $times = Adviser_time::create([
+                'adviser_id' => $adviser_id,
+                'date' => $date,
+                'time_from' => $time_from,
+                'time_to' => $time_to,
+            ]);
+        }
+
+        $adviser_times=Adviser_time::where('adviser_id',$adviser_id)->get();
+
+        return response()->json(['success' => $adviser_times], $this->successStatus);
+
+
+    }
+
+
+    public function edit_time(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'time_id'=>'required',
+            'date' => 'required',
+            'time_from' => 'required',
+            'time_to' => 'required',
+//
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 401);
+        }
+        $adviser_id=Adviser::where('user_id',Auth::user()->id)->value('id');
+
+
+        $times = Adviser_time::updateOrCreate(
+            [
+                'id'=>$request->time_id
+            ],
+
+            [
+            'date' => $request->date,
+            'time_from' => $request->time_from,
+            'time_to' => $request->time_to,
+        ]
+            );
+        $adviser_times=Adviser_time::where('adviser_id',$adviser_id)->get();
+
+        return response()->json(['success' => $adviser_times], $this->successStatus);
+
+    }
 }

@@ -85,30 +85,29 @@ class WalletController extends Controller
                 // You can set any number of default request options.
                 'timeout' => 2.0,
             ]);
-            $response = $client->post( '/pg/verify', [
+            $response = $client->post('/pg/verify', [
                 'form_params' => [
                     'api' => $this->api,
                     'token' => $request->token
                 ]
             ]);
             $body = $response->getBody();
-            $body=json_decode($body);
-           // echo $body;
+            $body = json_decode($body);
+            // echo $body;
 
-            $amount=$amount/10;
-            $wallet=Wallet::find($wallet_id);
+            $amount = $amount / 10;
+            $wallet = Wallet::find($wallet_id);
 
-            if ($wallet->trans_id==null) {
+            if ($wallet->trans_id == null) {
                 $user = User::find($user_id);
                 $user->wallet = $user->wallet + $amount;
                 $user->save();
             }
 
-            $wallet=Wallet::find($wallet_id);
-            $wallet->status=1;
-            $wallet->trans_id=$body->transId;
+            $wallet = Wallet::find($wallet_id);
+            $wallet->status = 1;
+            $wallet->trans_id = $body->transId;
             $wallet->save();
-
 
 
         }
@@ -118,17 +117,17 @@ class WalletController extends Controller
 
     public function transactions_history()
     {
-        $user=Auth::user();
-        $transactions=Wallet::where('user_id',$user->id)->paginate(10);
-        $tran=array();
-        foreach ($transactions as $transaction){
-            $tr['id']=$transaction->id;
-            $tr['user_id']=$transaction->user_id;
-            $tr['finance']=$transaction->finance;
-            $tr['state']=$transaction->finance>0?'incoming':'outgoing';
-            if ($transaction->call_id!=null) $tr['text']='بابت هزینه تماس';
-
-
+        $user = Auth::user();
+        $transactions = Wallet::where('user_id', $user->id)->paginate(10);
+        $tran = array();
+        foreach ($transactions as $transaction) {
+            $tr['id'] = $transaction->id;
+            $tr['user_id'] = $transaction->user_id;
+            $tr['finance'] = $transaction->finance;
+            $tr['state'] = $transaction->finance > 0 ? 'incoming' : 'outgoing';
+            if ($transaction->call_id != null && $transaction->finance > 0) $tr['text'] = 'بابت مشاوره شما در شاورنو';
+            if ($transaction->call_id != null && $transaction->finance < 0) $tr['text'] = 'بابت دریافت مشاوره از شاورنو';
+            if ($transaction->payment_method_id != null && $transaction->status == 1) $tr['text'] = 'شارژ حساب کاربری';
         }
         return response()->json(['success' => $transactions], $this->successStatus);
 
