@@ -128,8 +128,9 @@ class WalletController extends Controller
             if ($transaction->call_id != null && $transaction->finance > 0) $tr['text'] = 'بابت مشاوره شما در شاورنو';
             if ($transaction->call_id != null && $transaction->finance < 0) $tr['text'] = 'بابت دریافت مشاوره از شاورنو';
             if ($transaction->payment_method_id != null && $transaction->status == 1) $tr['text'] = 'شارژ حساب کاربری';
+            array_push($tran,$tr);
         }
-        return response()->json(['success' => $transactions], $this->successStatus);
+        return response()->json(['success' => $tran], $this->successStatus);
 
     }
 
