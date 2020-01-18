@@ -590,4 +590,21 @@ class AdviserController extends Controller
         return response()->json(['success' => $adviser_times], $this->successStatus);
 
     }
+
+    public function delete_time(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'time_id'=>'required',
+//
+        ]);
+        $adviser_id=Adviser::where('user_id',Auth::user()->id)->value('id');
+
+
+        Adviser_time::find($request->time_id)->delete();
+
+        $adviser_times=Adviser_time::where('adviser_id',$adviser_id)->get();
+
+        return response()->json(['success' => $adviser_times], $this->successStatus);
+    }
+
 }
