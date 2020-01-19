@@ -81,36 +81,38 @@ class OrderController extends Controller
         //dar ayande vojod ya adam vojode order check shavad
         if($request->payment_id == 1) {  //if wanna pay for it
 
-               $order = Order::find($request->order_id);
-
-                if($order->total_price == 0){
+            $order = Order::find($request->order_id);
+            if ($order->payments()->exists() && $order->payments()->where('state', 1)->first() != null) {
+                return response()->json(['error'=>'این محصول قبلا خریداری شده و نیازی به خرید دوباره نیست!'],401);
+            } else {
+                if ($order->total_price == 0) {
                     $orderPayment = OrderPayment::create([
-                        'order_id'=>$request->order_id,
-                        'user_id'=>$this->user()->id,
-                        'authority'=>null,
-                        'refid'=>null,
-                        'total_price'=>0,
-                        'state'=>1
+                        'order_id' => $request->order_id,
+                        'user_id' => $this->user()->id,
+                        'authority' => null,
+                        'refid' => null,
+                        'total_price' => 0,
+                        'state' => 1
                     ]);
 
                     $payment = OrderPayment::create([
                         'state' => 1,
-                        'order_id'=>$request->order_id,
-                        'total_price'=>$order->total_price,
-                        'payment_method'=>1,
-                        'authority'=>null,
-                        'refid'=>null
+                        'order_id' => $request->order_id,
+                        'total_price' => $order->total_price,
+                        'payment_method' => 1,
+                        'authority' => null,
+                        'refid' => null
                     ]);
 
-                    foreach ($order->productOrders as $product){
-                        $carts = Cart::where([['product_id',$product->id],['user_id',$this->user()->id]])->first();
+                    foreach ($order->productOrders as $product) {
+                        $carts = Cart::where([['product_id', $product->id], ['user_id', $this->user()->id]])->first();
                         $carts->delete();
                     }
-                    $success['message']='محصول مورد نظر با موفقیت خریداری شده و آماده دانلود میباشد.';
-                    $success['status']=200;
-                    return response()->json(['success'=>$success]);
+                    $success['message'] = 'محصول مورد نظر با موفقیت خریداری شده و آماده دانلود میباشد.';
+                    $success['status'] = 200;
+                    return response()->json(['success' => $success]);
 
-                }else {
+                } else {
 
 //        $payir->factorNumber = 'Factor-Number'; // Optional
                     $redirect = 'shavernoapp.ir/pay/verify-product';
@@ -154,7 +156,7 @@ class OrderController extends Controller
                             'amount' => $order->total_price,
                             'refid' => $token,
                             'authority' => $token,
-                            'state'=>0
+                            'state' => 0
                         ]);
                         $success['url'] = 'https://pay.ir/pg/' . $token;
                         return response()->json(['success' => $success]);
@@ -174,7 +176,7 @@ class OrderController extends Controller
                             'amount' => $order->total_price,
                             'refid' => null,
                             'authority' => null,
-                            'state'=>0
+                            'state' => 0
                         ]);
 
                         return response()->json(['error' => 'اشکال در ورود به درگاه پیش آمده است،کد خطا:  ' . $status]);
@@ -182,59 +184,76 @@ class OrderController extends Controller
 
 
                 }
+            }
+            } else{
 
-        }else{
-            $order = Order::find($request->order_id);
-            $amount = $order->total_price;
-            if($amount == 0){
+                $order = Order::find($request->order_id);
+                $amount = $order->total_price;
+            if ($order->payments()->exists() && $order->payments()->where('state', 1)->first() != null) {
+                return response()->json(['error'=>'این محصول قبلا خریداری شده و نیازی به خرید دوباره نیست!'],401);
 
-                $orderPayment = OrderPayment::where([
-                    'order_id'=>$request->order_id,
-                    'total_price'=>$amount,
-                    'payment_method'=>2,
-                    'authority'=> null,
-                    'refid'=> null,
-                    'state'=>1
-                ]);
-                foreach ($order->productOrders as $product){
-                    $carts = Cart::where([['product_id',$product->id],['user_id',$this->user()->id]])->first();
-                    $carts->delete();
+            } else {
+                if ($amount == 0) {
+
+                    $orderPayment = OrderPayment::create([
+                        'order_id' => $request->order_id,
+                        'total_price' => $amount,
+                        'payment_method' => 2,
+                        'authority' => null,
+                        'refid' => null,
+                        'state' => 1
+                    ]);
+                    foreach ($order->productOrders as $product) {
+                        $carts = Cart::where([['product_id', $product->id], ['user_id', $this->user()->id]])->first();
+                        $carts->delete();
+                    }
+                    $success['message'] = 'محصول مورد نظر با موفقیت خریداری شده و آماده دانلود میباشد.';
+                    $success['status'] = 200;
+
+                    return response()->json(['success' => $success]);
+
+
+                } else {
+
+                    if ($this->user()->wallet >= $amount) {
+                        $wallet = new Wallet();
+                        $wallet->user_id = $this->user()->id;
+                        $wallet->finance = -$amount;
+                        $wallet->payment_method_id = null;
+                        $wallet->save();
+                        $this->user()->update([
+                            'wallet' => $this->user()->wallet - $amount
+                        ]);
+                        $orderPayment = OrderPayment::create([
+                            'order_id' => $request->order_id,
+                            'total_price' => $amount,
+                            'payment_method' => 2,
+                            'authority' => null,
+                            'refid' => null,
+                            'state' => 1
+                        ]);
+
+                        $wallet = Wallet::create([
+                            'user_id' => $this->user()->id,
+                            'finance' => -$amount
+                        ]);
+
+                        $success['message'] = 'محصول مورد نظر با موفقیت خریداری شده و آماده دانلود میباشد.';
+                        $success['status'] = 200;
+
+                        return response()->json(['success' => $success]);
+
+                    } else {
+                        return response()->json(['error' => 'در کیف پول شما موجودی کافی برای خرید این محصول وجود ندارد.'], 401);
+                    }
                 }
-                $success['message']='محصول مورد نظر با موفقیت خریداری شده و آماده دانلود میباشد.';
-                $success['status']=200;
-
-                return response()->json(['success'=>$success]);
-
-
-            }else{
-
-            if($this->user()->wallet >= $amount) {
-                $wallet = new Wallet();
-                $wallet->user_id = $this->user()->id;
-                $wallet->finance = -$amount;
-                $wallet->payment_method_id = null;
-                $wallet->save();
-                $this->user()->update([
-                   'wallet' =>$this->user()->wallet - $amount
-                ]);
-                $orderPayment = OrderPayment::where([
-                    'order_id'=>$request->order_id,
-                    'total_price'=>$amount,
-                    'payment_method'=>2,
-                    'authority'=> null,
-                    'refid'=> null,
-                    'state'=>1
-                ]);
-
-
-            }else{
-                return response()->json(['error'=>'در کیف پول شما موجودی کافی برای خرید این محصول وجود ندارد.'],401);
             }
 
 
-            }
+                }
 
-        }
+
+
 
 
     }
