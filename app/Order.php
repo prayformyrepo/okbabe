@@ -7,6 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     protected $fillable = ['user_id','total_price','discount_info','state'];
+    protected $appends = ['paid'];
+
+    public function getPaidAttribute()
+    {
+        if($this->payments()->where('state',1)->first() != null){
+            return true;
+        }
+    }
 
     public function productOrders()
     {
