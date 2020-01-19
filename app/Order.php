@@ -13,6 +13,8 @@ class Order extends Model
     {
         if($this->payments()->where('state',1)->first() != null){
             return true;
+        }else{
+            return false;
         }
     }
 
