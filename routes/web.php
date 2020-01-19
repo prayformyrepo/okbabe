@@ -120,6 +120,16 @@ Route::get('cache', function () {
     die('cache cleared');
 });
 
+Route::get('config', function () {
+    Artisan::call('config:clear');
+    die('cache cleared');
+});
+
+Route::get('config-cache', function () {
+    Artisan::call('config:cache');
+    die('cache cleared');
+});
+
 //test routes
 
 Route::get('call', function () {
