@@ -203,7 +203,7 @@ class OrderController extends Controller
                         'state' => 1
                     ]);
                     foreach ($order->productOrders as $product) {
-                        $carts = Cart::where([['product_id', $product->id], ['user_id', $this->user()->id]])->first();
+                        $carts = Cart::where([['product_id', $product->product_id], ['user_id', $this->user()->id]])->first();
                         $carts->delete();
                     }
                     $success['message'] = 'محصول مورد نظر با موفقیت خریداری شده و آماده دانلود میباشد.';
@@ -341,7 +341,7 @@ class OrderController extends Controller
                         'order_id' => $request->order_id,
                         'product_id' => $request->p_id,
                     ]);
-                    $success['url'] = $orderLink->link;
+                    $success['url'] = url('/').'/api/product/file/'.$orderLink->link;
                 } else {
                     $check = $previous->update([
                         'link' => $randomtext,
