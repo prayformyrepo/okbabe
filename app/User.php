@@ -10,6 +10,7 @@ use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
+
     use HasApiTokens, Notifiable;
 
     /**
@@ -18,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'mobile', 'password',
+        'name', 'mobile', 'password','wallet'
     ];
 
     /**
@@ -53,5 +54,11 @@ class User extends Authenticatable
     public function carts()
     {
         return $this->hasMany(Cart::class,'user_id');
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class,'user_id');
+
     }
 }

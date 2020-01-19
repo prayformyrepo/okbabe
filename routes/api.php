@@ -153,10 +153,12 @@ Route::group(['middleware' => 'auth:api'], function(){
         Route::post('remove-cart','API\ProductController@removeCart');
         Route::post('show-cart','API\ProductController@showCart');
 
+        Route::post('show-orders','API\OrderController@showOrders');
+
         Route::post('store-order','API\OrderController@storeOrder');
         Route::post('pay-product','API\OrderController@doPay');
 
-        Route::post('file-download/','API\OrderController@CreateDownloadLink');
+        Route::post('create-download-link','API\OrderController@CreateDownloadLink');
 
 
         //drugs
