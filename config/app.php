@@ -163,6 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Jenssegers\Agent\AgentServiceProvider::class,
         Kavenegar\Laravel\ServiceProvider::class,
+        Mews\Captcha\CaptchaServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -230,6 +231,7 @@ return [
         'Agent' => Jenssegers\Agent\Facades\Agent::class,
         'Kavenegar' => Kavenegar\Laravel\Facade::class,
         'Verta' => Hekmatinasser\Verta\Verta::class,
+        'Captcha' => Mews\Captcha\Facades\Captcha::class,
 
     ],
 
