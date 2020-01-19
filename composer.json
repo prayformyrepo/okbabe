@@ -21,7 +21,9 @@
         "laravel/tinker": "^1.0",
         "laravel/ui": "^1.1",
         "mews/captcha": "^3.0",
-        "saeedvaziry/payir": "dev-master"
+        "saeedvaziry/payir": "dev-master",
+        "symfony/translation": "4.3.8"
+
     },
     "require-dev": {
         "facade/ignition": "^1.4",
