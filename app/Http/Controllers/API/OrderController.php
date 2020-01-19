@@ -349,7 +349,7 @@ class OrderController extends Controller
                         'time_used' => null
                     ]);
 
-                    $success['url'] = $previous->link;
+                    $success['url'] = url('/').'/api/product/file/'.$previous->link;
                 }
                 return response()->json(['success' => $success]);
 
