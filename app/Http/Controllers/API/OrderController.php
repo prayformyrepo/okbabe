@@ -38,7 +38,7 @@ class OrderController extends Controller
             $order = Order::create([
                 'user_id' => $this->user()->id,
                 'total_price' => $amount,
-                'state' => 1, //سفارش فقط ثبت شده
+                'state' => 0, //سفارش فقط ثبت شده
             ]);
             foreach ($carts as $cart){
 
