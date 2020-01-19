@@ -71,6 +71,11 @@ Route::group(['middleware' => 'admin','prefix'=>'admin','as'=>'admin.'], functio
         Route::delete('product/image/delete',['uses'=>'ProductController@deleteProductImage','as'=>'product.image-delete']);
 });
 
+//add adviser
+Route::get('/add-adviser', 'Advisers\AdviserController@create')->name('add-adviser');
+
+
+
 //index Page
 Route::get('/home', 'HomeController@index')->name('home');
 
