@@ -126,36 +126,17 @@ class OrderController extends Controller
 //        $payir->factorNumber = 'Factor-Number'; // Optional
                     $redirect = 'shavernoapp.ir/pay/verify-product';
                     $description = 'خرید محصول به مبلغ ' .
-                        $request->value .
+                        $order->total_price .
                         ' تومان '; // Optional
-                    $mobile = '0' . $this->user()->mobile; // Optional, If you want to show user's saved card numbers in gateway
-                    /* $client = new Client([
-                        // Base URI is used with relative requests
-                        'base_uri' => 'https://pay.ir',
-                        // You can set any number of default request options.
-                        'timeout' => 2.0,
-                    ]);
-                   $response = $client->request('POST', '/pg/send', [
-                        'form_params' => [
-                            'api' => $this->api,
-                            'amount' => $order->total_price,
-                            'description' => $description,
-                            'mobile' => $mobile,
-                            'redirect' => $redirect,
-                        ]
-                    ]);*/
+                    $mobile = '0' . $this->user()->mobile;
                     $response = curl_post('https://pay.ir/pg/send',[
-                        'form_params' => [
                             'api' => $this->api,
                             'amount' => $order->total_price,
                             'description' => $description,
                             'mobile' => $mobile,
                             'redirect' => $redirect,
-                        ]
                     ]);
-
-                    $body = $response->getBody();
-                    $items = json_decode($body);
+                    $items = json_decode($response);
                     $status = $items->status;
                     if ($status == 1) {
                         $token = $items->token;
@@ -197,7 +178,7 @@ class OrderController extends Controller
                             'state' => 0
                         ]);
 
-                        return response()->json(['error' => 'اشکال در ورود به درگاه پیش آمده است،کد خطا:  ' . $status]);
+                        return response()->json(['error' => 'اشکال در ورود به درگاه پیش آمده است،کد خطا:  ' . $response->errorCode]);
                     }
 
 
