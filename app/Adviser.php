@@ -16,11 +16,11 @@ class Adviser extends Model
         return $this->hasMany(Adviser_time::class)->orderBy('date','ASC');
     }
 
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::addGlobalScope(new AdviserScope);
-    }
+//    protected static function boot()
+//    {
+//        parent::boot();
+//
+//        static::addGlobalScope(new AdviserScope);
+//    }
 
 }
