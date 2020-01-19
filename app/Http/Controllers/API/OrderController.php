@@ -78,7 +78,16 @@ class OrderController extends Controller
         if ($validator->fails()) {
             return response()->json(['error' => $validator->errors()], 401);
         }
+        /******************************************/
+       /*****************Important****************/
+       /*****************************************/
+
         //dar ayande vojod ya adam vojode order check shavad
+        //in vaghti k baraye neveshtan comment sarf shod az check kardan bishtar bod :D
+        /******************************************/
+        /*****************Important****************/
+        /*****************************************/
+
         if($request->payment_id == 1) {  //if wanna pay for it
 
             $order = Order::find($request->order_id);
@@ -120,13 +129,22 @@ class OrderController extends Controller
                         $request->value .
                         ' تومان '; // Optional
                     $mobile = '0' . $this->user()->mobile; // Optional, If you want to show user's saved card numbers in gateway
-                    $client = new Client([
+                    /* $client = new Client([
                         // Base URI is used with relative requests
                         'base_uri' => 'https://pay.ir',
                         // You can set any number of default request options.
                         'timeout' => 2.0,
                     ]);
-                    $response = $client->request('POST', '/pg/send', [
+                   $response = $client->request('POST', '/pg/send', [
+                        'form_params' => [
+                            'api' => $this->api,
+                            'amount' => $order->total_price,
+                            'description' => $description,
+                            'mobile' => $mobile,
+                            'redirect' => $redirect,
+                        ]
+                    ]);*/
+                    $response = curl_post('https://pay.ir/pg/send',[
                         'form_params' => [
                             'api' => $this->api,
                             'amount' => $order->total_price,
