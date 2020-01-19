@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\API;
 
 use App\Cart;
+use App\File;
 use App\Http\Controllers\Controller;
 use App\Order;
 use App\OrderLink;
 use App\OrderPayment;
 use App\Product;
+use App\ProductFile;
 use App\ProductOrder;
 use App\Transaction;
 use App\Wallet;
@@ -79,36 +81,38 @@ class OrderController extends Controller
         //dar ayande vojod ya adam vojode order check shavad
         if($request->payment_id == 1) {  //if wanna pay for it
 
-               $order = Order::find($request->order_id);
-
-                if($order->total_price == 0){
+            $order = Order::find($request->order_id);
+            if ($order->payments()->exists() && $order->payments()->where('state', 1)->first() != null) {
+                return response()->json(['error'=>'این محصول قبلا خریداری شده و نیازی به خرید دوباره نیست!'],401);
+            } else {
+                if ($order->total_price == 0) {
                     $orderPayment = OrderPayment::create([
-                        'order_id'=>$request->order_id,
-                        'user_id'=>$this->user()->id,
-                        'authority'=>null,
-                        'refid'=>null,
-                        'total_price'=>0,
-                        'state'=>1
+                        'order_id' => $request->order_id,
+                        'user_id' => $this->user()->id,
+                        'authority' => null,
+                        'refid' => null,
+                        'total_price' => 0,
+                        'state' => 1
                     ]);
 
                     $payment = OrderPayment::create([
                         'state' => 1,
-                        'order_id'=>$request->order_id,
-                        'total_price'=>$order->total_price,
-                        'payment_method'=>1,
-                        'authority'=>null,
-                        'refid'=>null
+                        'order_id' => $request->order_id,
+                        'total_price' => $order->total_price,
+                        'payment_method' => 1,
+                        'authority' => null,
+                        'refid' => null
                     ]);
 
-                    foreach ($order->productOrders as $product){
-                        $carts = Cart::where([['product_id',$product->id],['user_id',$this->user()->id]])->first();
+                    foreach ($order->productOrders as $product) {
+                        $carts = Cart::where([['product_id', $product->id], ['user_id', $this->user()->id]])->first();
                         $carts->delete();
                     }
-                    $success['message']='محصول مورد نظر با موفقیت خریداری شده و آماده دانلود میباشد.';
-                    $success['status']=200;
-                    return response()->json(['success'=>$success]);
+                    $success['message'] = 'محصول مورد نظر با موفقیت خریداری شده و آماده دانلود میباشد.';
+                    $success['status'] = 200;
+                    return response()->json(['success' => $success]);
 
-                }else {
+                } else {
 
 //        $payir->factorNumber = 'Factor-Number'; // Optional
                     $redirect = 'shavernoapp.ir/pay/verify-product';
@@ -152,7 +156,7 @@ class OrderController extends Controller
                             'amount' => $order->total_price,
                             'refid' => $token,
                             'authority' => $token,
-                            'state'=>0
+                            'state' => 0
                         ]);
                         $success['url'] = 'https://pay.ir/pg/' . $token;
                         return response()->json(['success' => $success]);
@@ -172,7 +176,7 @@ class OrderController extends Controller
                             'amount' => $order->total_price,
                             'refid' => null,
                             'authority' => null,
-                            'state'=>0
+                            'state' => 0
                         ]);
 
                         return response()->json(['error' => 'اشکال در ورود به درگاه پیش آمده است،کد خطا:  ' . $status]);
@@ -180,59 +184,76 @@ class OrderController extends Controller
 
 
                 }
+            }
+            } else{
 
-        }else{
-            $order = Order::find($request->order_id);
-            $amount = $order->total_price;
-            if($amount == 0){
+                $order = Order::find($request->order_id);
+                $amount = $order->total_price;
+            if ($order->payments()->exists() && $order->payments()->where('state', 1)->first() != null) {
+                return response()->json(['error'=>'این محصول قبلا خریداری شده و نیازی به خرید دوباره نیست!'],401);
 
-                $orderPayment = OrderPayment::where([
-                    'order_id'=>$request->order_id,
-                    'total_price'=>$amount,
-                    'payment_method'=>2,
-                    'authority'=> null,
-                    'refid'=> null,
-                    'state'=>1
-                ]);
-                foreach ($order->productOrders as $product){
-                    $carts = Cart::where([['product_id',$product->id],['user_id',$this->user()->id]])->first();
-                    $carts->delete();
+            } else {
+                if ($amount == 0) {
+
+                    $orderPayment = OrderPayment::create([
+                        'order_id' => $request->order_id,
+                        'total_price' => $amount,
+                        'payment_method' => 2,
+                        'authority' => null,
+                        'refid' => null,
+                        'state' => 1
+                    ]);
+                    foreach ($order->productOrders as $product) {
+                        $carts = Cart::where([['product_id', $product->id], ['user_id', $this->user()->id]])->first();
+                        $carts->delete();
+                    }
+                    $success['message'] = 'محصول مورد نظر با موفقیت خریداری شده و آماده دانلود میباشد.';
+                    $success['status'] = 200;
+
+                    return response()->json(['success' => $success]);
+
+
+                } else {
+
+                    if ($this->user()->wallet >= $amount) {
+                        $wallet = new Wallet();
+                        $wallet->user_id = $this->user()->id;
+                        $wallet->finance = -$amount;
+                        $wallet->payment_method_id = null;
+                        $wallet->save();
+                        $this->user()->update([
+                            'wallet' => $this->user()->wallet - $amount
+                        ]);
+                        $orderPayment = OrderPayment::create([
+                            'order_id' => $request->order_id,
+                            'total_price' => $amount,
+                            'payment_method' => 2,
+                            'authority' => null,
+                            'refid' => null,
+                            'state' => 1
+                        ]);
+
+                        $wallet = Wallet::create([
+                            'user_id' => $this->user()->id,
+                            'finance' => -$amount
+                        ]);
+
+                        $success['message'] = 'محصول مورد نظر با موفقیت خریداری شده و آماده دانلود میباشد.';
+                        $success['status'] = 200;
+
+                        return response()->json(['success' => $success]);
+
+                    } else {
+                        return response()->json(['error' => 'در کیف پول شما موجودی کافی برای خرید این محصول وجود ندارد.'], 401);
+                    }
                 }
-                $success['message']='محصول مورد نظر با موفقیت خریداری شده و آماده دانلود میباشد.';
-                $success['status']=200;
-
-                return response()->json(['success'=>$success]);
-
-
-            }else{
-
-            if($this->user()->wallet >= $amount) {
-                $wallet = new Wallet();
-                $wallet->user_id = $this->user()->id;
-                $wallet->finance = -$amount;
-                $wallet->payment_method_id = null;
-                $wallet->save();
-                $this->user()->update([
-                   'wallet' =>$this->user()->wallet - $amount
-                ]);
-                $orderPayment = OrderPayment::where([
-                    'order_id'=>$request->order_id,
-                    'total_price'=>$amount,
-                    'payment_method'=>2,
-                    'authority'=> null,
-                    'refid'=> null,
-                    'state'=>1
-                ]);
-
-
-            }else{
-                return response()->json(['error'=>'در کیف پول شما موجودی کافی برای خرید این محصول وجود ندارد.'],401);
             }
 
 
-            }
+                }
 
-        }
+
+
 
 
     }
@@ -250,9 +271,10 @@ class OrderController extends Controller
                     // You can set any number of default request options.
                     'timeout' => 2.0,
                 ]);*/
+
                 $response = json_decode(verify($this->api,$token));
                 /*$body = $response->getBody();
-                $body=json_decode($body);*/
+                $body=json_decode($body);
                 /*$payment = OrderPayment::where([['user_id',$this->user()->id],['refid',$token]])->first();*/
                 $payment = OrderPayment::where('refid',$token)->first();
                 if ($payment != null) {
@@ -295,66 +317,93 @@ class OrderController extends Controller
 
     public function CreateDownloadLink(Request $request)
     {
-        $validator = Validator::make($request->all(),[
-                'order_id'=>'required',
-                'p_id'=>'required'
+        $validator = Validator::make($request->all(), [
+            'order_id' => 'required',
+            'p_id' => 'required'
         ]);
 
-        if($validator->fails()){
-            return response()->json(['error'=>$validator->errors()],401);
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 401);
         }
 
-        $randomtext = $this->getLink(180,$request->order_id);
-        $previous = OrderLink::where([['user_id',$this->user()->id],['order_id',$request->order_id],['product_id',$request->p_id]])->first();
+        $order = Order::find($request->order_id);
 
-        if($previous != null) {
-            $orderLink = OrderLink::create([
-                'link' => $randomtext,
-                'used' => 0,
-                'user_id' => $this->user()->id,
-                'order_id' => $request->order_id,
-                'product_id' => $request->p_id,
-            ]);
-            $success['url'] = $orderLink->link;
-        }else{
-          $check = $previous->update([
-                'link' => $randomtext,
-                'used' => 0,
-                'time_used'=>null
-            ]);
+        if ($order->state == 1) {
+            if ($order->payments()->exists() && $order->payments()->where('state', 1)->first() != null) {
 
-            $success['url'] = $previous->link;
+                $randomtext = $this->getLink(180, $request->order_id);
+                $previous = OrderLink::where([['user_id', $this->user()->id], ['order_id', $request->order_id], ['product_id', $request->p_id]])->first();
+
+                if ($previous == null) {
+                    $orderLink = OrderLink::create([
+                        'link' => $randomtext,
+                        'used' => 0,
+                        'user_id' => $this->user()->id,
+                        'order_id' => $request->order_id,
+                        'product_id' => $request->p_id,
+                    ]);
+                    $success['url'] = $orderLink->link;
+                } else {
+                    $check = $previous->update([
+                        'link' => $randomtext,
+                        'used' => 0,
+                        'time_used' => null
+                    ]);
+
+                    $success['url'] = $previous->link;
+                }
+                return response()->json(['success' => $success]);
+
+            }else {
+                return response()->json(['error' => 'سفارش شما پرداخت نشده است.']);
+            }
+
+        } else {
+            return response()->json(['error' => 'سفارش شما پرداخت و تایید نشده است.']);
         }
-        return response()->json(['success'=>$success]);
+
     }
 
     public function DownloadProductFile($filelink)
     {
         $check = OrderLink::where('link',$filelink)->first();
+        $tmpfile = "temp.zip";
+        $newfile = time().$check->order_id.'.'.'zip';
+
+        //delete previous files
+        $files = glob('productFiles/*'); // get all file names
+        foreach($files as $file){ // iterate files
+            if(is_file($file))
+                unlink($file); // delete file
+        }
+
         if($check != null){
-            if($check->used == 0) {
+            if($check->used <=1) {
+                copy(public_path($tmpfile),public_path('/').'/productFiles/'.$newfile);
+
                 $updated = $check->update([
-                    'used' => 1,
+                    'used' => ++$check->used,
                     'time_used'=>Carbon::now()
                 ]);
                 $products = Product::find($check->product_id);
-                $zip = new ZipArchive;
+                $zip = new ZipArchive();
 
-                $fileName = $filelink.'.zip';
-
-                if ($zip->open(public_path($fileName), ZipArchive::CREATE) === TRUE)
+                if ($zip->open(public_path('/').'/productFiles/'.$newfile, ZipArchive::CREATE) === true)
                 {
                    // $files = File::files(public_path('myFiles'));
 
                     foreach ($products->productFiles as $file) {
-                        $relativeNameInZipFile = basename($file);
-                        $zip->addFile($file, $relativeNameInZipFile);
+                        $file = File::find($file->file_id);
+                        //dd($file);
+                        ///$relativeNameInZipFile = basename($file);
+                        $zip->addFile(public_path('/').'/'.$file->file_path,$file->orginal_name);
+
                     }
 
                     $zip->close();
                 }
 
-        return response()->download(public_path($fileName));
+        return response()->download(public_path('productFiles/'.$newfile));
 
             }else{
                 abort(404);
@@ -374,6 +423,13 @@ class OrderController extends Controller
             $token .= $codeAlphabet[random_int(0, $max-1)];
         }
         return sha1(md5(sha1($token.$order_id.time().rand().bin2hex($codeAlphabet.time()).md5(uniqid(rand(), true)))));
+    }
+
+    public function showOrders()
+    {
+        $orders = $this->user()->orders()->get();
+        $orders->load('productOrders');
+        return response()->json($orders);
     }
 
 /*    public function do_pay(Request $request)

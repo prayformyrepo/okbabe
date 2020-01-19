@@ -12,4 +12,9 @@ class Order extends Model
     {
         return $this->hasMany(ProductOrder::class,'order_id');
     }
+
+    public function payments()
+    {
+        return $this->hasMany(OrderPayment::class,'order_id');
+    }
 }
