@@ -30,7 +30,6 @@ class AdviserController extends Controller
             'call_price' => 'required',
             'visit_price' => 'required',
             'categories' => 'required',
-            'captcha' =>'required|captcha'
         ]);
 
         $mobile=$request->mobile;
