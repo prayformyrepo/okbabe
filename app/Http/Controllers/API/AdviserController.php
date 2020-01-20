@@ -423,8 +423,8 @@ class AdviserController extends Controller
                 $a->save();
             }
 
-
         }
+
         if ($flag == false) {
             //  echo 'user_id:'.$userr->id.'<br> flag:false<br>';
             if ($force_toggle_online == 0) {
@@ -439,17 +439,20 @@ class AdviserController extends Controller
                 $a->save();
 
             }
-        } else if ($force_toggle_online == 1) {
-            $u = User::find($userr->id);
-            $u->is_online = 0;
-            $u->save();
 
-            $a = Adviser::find($adviser_id);
-            $a->is_online = 0;
-            $a->force_toggle_online = 0;
-            $a->save();
+            else if ($force_toggle_online == 1) {
+                $u = User::find($userr->id);
+                $u->is_online = 0;
+                $u->save();
 
+                $a = Adviser::find($adviser_id);
+                $a->is_online = 0;
+                $a->force_toggle_online = 0;
+                $a->save();
+
+            }
         }
+
 
 //        }
         $success['force_online_toggle'] = $force_toggle_online = Adviser::where('user_id', $userr->id)->value('force_toggle_online');
