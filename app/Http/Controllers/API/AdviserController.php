@@ -610,4 +610,14 @@ class AdviserController extends Controller
         return response()->json(['success' => $adviser_times], $this->successStatus);
     }
 
+    public function adviser_times()
+    {
+        $adviser_id=Adviser::where('user_id',Auth::user()->id)->value('id');
+
+
+        $adviser_times=Adviser_time::where('adviser_id',$adviser_id)->get();
+
+        return response()->json(['success' => $adviser_times], $this->successStatus);
+    }
+
 }

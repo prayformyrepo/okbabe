@@ -65,6 +65,7 @@ Route::group(['middleware' => 'auth:api'], function(){
         Route::post('add-time', 'API\AdviserController@add_time');
         Route::post('edit-time', 'API\AdviserController@edit_time');
         Route::post('delete-time', 'API\AdviserController@delete_time');
+        Route::post('adviser-times', 'API\AdviserController@advise_times');
 
 
 
