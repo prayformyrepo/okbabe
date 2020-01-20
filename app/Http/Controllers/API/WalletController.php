@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Transaction;
 use App\User;
 use App\Wallet;
+use Carbon\Carbon;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -128,6 +129,8 @@ class WalletController extends Controller
             if ($transaction->call_id != null && $transaction->finance > 0) $tr['text'] = 'بابت مشاوره شما در شاورنو';
             if ($transaction->call_id != null && $transaction->finance < 0) $tr['text'] = 'بابت دریافت مشاوره از شاورنو';
             if ($transaction->payment_method_id != null && $transaction->status == 1) $tr['text'] = 'شارژ حساب کاربری';
+            $tr['created_at'] = $transaction->format('Y-m-d H:i:s');
+
             array_push($tran,$tr);
         }
         return response()->json(['success' => $tran], $this->successStatus);
