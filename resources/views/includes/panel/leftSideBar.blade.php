@@ -66,6 +66,13 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="{{route('admin.ticket.index')}}">
+                        <i class="mdi mdi-ticket"></i>
+                        <span> تیکت ها </span>
+                    </a>
+                </li>
+
            {{--     <li>
                     <a href="typography.html">
                         <i class="mdi mdi-format-font"></i>

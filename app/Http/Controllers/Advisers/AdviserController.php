@@ -40,6 +40,7 @@ class AdviserController extends Controller
         $user->username=$request->username;
         $user->mobile=$mobile;
         $user->gender=$request->gender;
+        $user->is_adviser=1;
         $user->save();
         if ($request->file('avatar')) {
             $file = $request->file('avatar');

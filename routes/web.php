@@ -69,6 +69,12 @@ Route::group(['middleware' => 'admin','prefix'=>'admin','as'=>'admin.'], functio
         Route::patch('product/image/update',['uses'=>'ProductController@ProductImage','as'=>'product.image-update']);
 
         Route::delete('product/image/delete',['uses'=>'ProductController@deleteProductImage','as'=>'product.image-delete']);
+
+    Route::get('tickets',['uses'=>'Admins\TicketController@index','as'=>'ticket.index']);
+    Route::delete('/tickets/{ticket_id}', 'Admins\TicketController@destroy')->name('ticket.destroy');
+    Route::get('/tickets/{ticket_id}', 'Admins\TicketController@show_ticket')->name('ticket.show');
+    Route::post('/tickets/{ticket_id}', 'Admins\TicketController@answer_ticket')->name('ticket.answer');
+
 });
 
 //add adviser
