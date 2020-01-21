@@ -21,7 +21,8 @@ class ReserveController extends Controller
         $validator = Validator::make($request->all(), [
             'adviser_id' => 'integer|required',
             'date_time' => 'required|date_format:Y-m-d H:i:s',
-            'type' => 'required' //0:call / 1:visit
+            'type' => 'required', //0:call / 1:visit
+            'text' => 'required' //0:call / 1:visit
         ]);
         if ($validator->fails()) {
             return response()->json(['error' => $validator->errors()], 401);
@@ -60,6 +61,7 @@ class ReserveController extends Controller
         $reserve->date_time = $request->date_time;
         $reserve->status = 0;
         $reserve->type = $request->type;
+        $reserve->text=$request->text;
         $reserve->save();
 
         $reserve = reserve_call::find($reserve->id);

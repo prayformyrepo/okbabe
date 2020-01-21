@@ -43,7 +43,7 @@ class BlogController extends Controller
                 }
             }
 
-            else if ($request->category=='1') { //shino
+            else if ($request->category=='1') { //dino
                 $category_id=149048146;
                 $show_posts = Post::select('id', 'title', 'description', 'image', 'created_at')->where('main_category',149048146)->orderBy('id', 'DESC')->paginate(10);
                 $posts = array();
@@ -62,7 +62,7 @@ class BlogController extends Controller
                 }
             }
 
-            else if ($request->category=='2') { //dino
+            else if ($request->category=='2') { //shino
                 $category_id=149519032;
                 $show_posts = Post::select('id', 'title', 'description', 'image', 'created_at')->where('main_category',149519032)->orderBy('id', 'DESC')->paginate(10);
                 $posts = array();
