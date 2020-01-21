@@ -24,7 +24,7 @@ class BlogController extends Controller
         else if (isset($request->category)){
             if ($request->category=='0') { //nino
                 $category_id=149518063;
-                $show_posts = Post::select('id', 'title', 'description', 'image', 'created_at')->orderBy('id', 'DESC')->paginate(10);
+                $show_posts = Post::select('id', 'title', 'description', 'image', 'created_at')->where('main_category',149518063)->orderBy('id', 'DESC')->paginate(10);
                 $posts = array();
                 $count=0;
                 foreach ($show_posts as $post) {
@@ -45,7 +45,7 @@ class BlogController extends Controller
 
             else if ($request->category=='1') { //shino
                 $category_id=149048146;
-                $show_posts = Post::select('id', 'title', 'description', 'image', 'created_at')->orderBy('id', 'DESC')->paginate(10);
+                $show_posts = Post::select('id', 'title', 'description', 'image', 'created_at')->where('main_category',149048146)->orderBy('id', 'DESC')->paginate(10);
                 $posts = array();
                 foreach ($show_posts as $post) {
                     $categories=$post->categories()->get();
@@ -64,7 +64,7 @@ class BlogController extends Controller
 
             else if ($request->category=='2') { //dino
                 $category_id=149519032;
-                $show_posts = Post::select('id', 'title', 'description', 'image', 'created_at')->orderBy('id', 'DESC')->paginate(10);
+                $show_posts = Post::select('id', 'title', 'description', 'image', 'created_at')->where('main_category',149519032)->orderBy('id', 'DESC')->paginate(10);
                 $posts = array();
                 foreach ($show_posts as $post) {
                     $categories=$post->categories()->get();
