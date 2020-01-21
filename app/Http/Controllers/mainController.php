@@ -242,7 +242,7 @@ class mainController extends Controller
     {
         $client = new Client(['base_uri' => 'https://shaverno.com']);
 
-        $posts = Post::paginate(50);
+        $posts = Post::paginate(10);
         foreach ($posts as $post) {
 // Send a request to https://foo.com/api/test
             $response = $client->request('GET', '/site/api/v1/blog/posts/' . $post->id);
@@ -264,6 +264,13 @@ class mainController extends Controller
                         $add->post_id = $post_id;
                         $add->post_category_id = $values->id;
                         $add->save();
+                        if ($values->id==149518063||$values->id==149048146||$values->id==149519032) {
+                            $edit = Post::find($post_id);
+                            $edit->main_category = $values->id;
+                            $edit->save();
+                            echo '<h1 style="color: red">' . $values->id . 'main saved</h1>';
+
+                        }
                         echo '<h1>' . $values->id . 'saved</h1>';
                     }
                     else{
