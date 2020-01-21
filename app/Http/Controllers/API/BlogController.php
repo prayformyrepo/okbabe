@@ -24,8 +24,9 @@ class BlogController extends Controller
         else if (isset($request->category)){
             if ($request->category=='0') { //nino
                 $category_id=149518063;
-                $show_posts = Post::select('id', 'title', 'description', 'image', 'created_at')->orderBy('id', 'DESC')->paginate(50);
+                $show_posts = Post::select('id', 'title', 'description', 'image', 'created_at')->orderBy('id', 'DESC')->paginate(10);
                 $posts = array();
+                $count=0;
                 foreach ($show_posts as $post) {
                     $categories=$post->categories()->get();
                     $flag=false;
@@ -37,13 +38,14 @@ class BlogController extends Controller
                         $p = $post;
                         $p['categories'] = $post->categories()->get();
                         array_push($posts, $p);
+                        $count++;
                     }
                 }
             }
 
             else if ($request->category=='1') { //shino
                 $category_id=149048146;
-                $show_posts = Post::select('id', 'title', 'description', 'image', 'created_at')->orderBy('id', 'DESC')->paginate(9999999);
+                $show_posts = Post::select('id', 'title', 'description', 'image', 'created_at')->orderBy('id', 'DESC')->paginate(10);
                 $posts = array();
                 foreach ($show_posts as $post) {
                     $categories=$post->categories()->get();
@@ -62,7 +64,7 @@ class BlogController extends Controller
 
             else if ($request->category=='2') { //dino
                 $category_id=149519032;
-                $show_posts = Post::select('id', 'title', 'description', 'image', 'created_at')->orderBy('id', 'DESC')->paginate(99999999);
+                $show_posts = Post::select('id', 'title', 'description', 'image', 'created_at')->orderBy('id', 'DESC')->paginate(10);
                 $posts = array();
                 foreach ($show_posts as $post) {
                     $categories=$post->categories()->get();
