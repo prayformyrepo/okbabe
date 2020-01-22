@@ -82,7 +82,7 @@ class QuestionController extends Controller
         }
         $user = Auth::user();
         if (isset($request->show_all) && $request->show_all == 1 && !isset($request->self)) {
-            $questions = Question::orderBy('id', 'DESC')->paginate(10);
+            $questions = Question::orderBy('id', 'DESC')->paginate(100);
             $questions_array = array();
             foreach ($questions as $question) {
                 $save['question'] = $question;

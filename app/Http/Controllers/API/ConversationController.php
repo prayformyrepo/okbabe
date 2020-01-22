@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Adviser;
 use App\Conversation_Message;
+use App\File;
 use App\Http\Controllers\Controller;
 use App\Message;
 use App\Notification;
@@ -344,6 +345,42 @@ class ConversationController extends Controller
         // $message=$conversation->messages()->get()->where('id',$message_id);
         return response()->json(['success' => 'success'], $this->successStatus);
     }
+
+    public function send_file(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'file' => 'required|mimes:jpeg,jpg,png,zip,pdf|max:5120',
+
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 401);
+        }
+
+
+        if ($request->file('file')) {
+            $file = $request->file('file');
+            $filename = Auth::user()->id . '_' . time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/chat/'), $filename);
+
+
+            $file = File::create([
+                'file_path' => '/uploads/chat/' . $filename,
+                'original_name' => $file->getClientOriginalName(),
+                'file_type' => $file->getClientMimeType(),
+                'slug' => Auth::user()->id . '_' . time()
+            ]);
+
+
+
+
+
+
+
+        }
+
+    }
+
 
     public function fetch_message_by_id(Request $request)
     {
