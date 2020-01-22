@@ -88,15 +88,14 @@ class QuestionController extends Controller
                 $save['question'] = $question;
                 $save['question']['answers']=Question::find($question->id)->answers()->count();
                 $save['question']['user_info'] = User::find($question->user_id);
-                $save['question']['user_info']['username'] = 'ناشناس';
+//                $save['question']['user_info']['username'] = 'ناشناس';
 
-//                if ($question->is_private==1) {
-//                    $save['question']['user_info'] = 'ناشناس';
-//                    $save['question']['user_info']['username'] = 'ناشناس';
-//                    $save['question']['user_info']['avatar'] =  "/themes/custom-5176/userfiles/fdacd9.jpg";
-//
-//                }
-//                $save['question']['user_info']['now'] = Carbon::now()->format('Y-m-d H:i:s');
+                if ($question->is_private==1) {
+                    $save['question']['user_info'] = User::find($question->user_id);
+                    $save['question']['user_info']['username'] = 'ناشناس';
+                    $save['question']['user_info']['avatar'] =  "/themes/custom-5176/userfiles/fdacd9.jpg";
+                }
+                $save['question']['user_info']['now'] = Carbon::now()->format('Y-m-d H:i:s');
 
                 array_push($questions_array, $save);
             }
