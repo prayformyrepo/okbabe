@@ -342,7 +342,7 @@ class UserController extends Controller
                     $u->save();
 
                     $a = Adviser::find($adviser_id);
-                    echo $adviser_id;
+                    echo $adviser_id.'<br>----<br>';
                     $a->is_online = 0;
                     $a->force_toggle_online = 0;
                     $a->save();
