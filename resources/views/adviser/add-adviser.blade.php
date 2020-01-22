@@ -179,7 +179,7 @@
                                             <div class="form-group mb-0 justify-content-end row">
                                                 <div class="col-sm-12">
                                                     <button type="submit" class="btn btn-info waves-effect waves-light"
-                                                            style="float: left"> ثبت تست
+                                                            style="float: left"> ثبت اطلاعات
                                                     </button>
                                                 </div>
                                             </div>
