@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
-              <caret line="344" column="37" lean-forward="false" selection-start-line="344" selection-start-column="37" selection-end-line="344" selection-end-column="37" />
+              <caret line="344" column="50" lean-forward="false" selection-start-line="344" selection-start-column="50" selection-end-line="344" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -606,7 +606,7 @@
       <workItem from="1579507842415" duration="9249000" />
       <workItem from="1579640807258" duration="613000" />
       <workItem from="1579643820302" duration="294000" />
-      <workItem from="1579675992653" duration="9794000" />
+      <workItem from="1579675992653" duration="9872000" />
     </task>
     <task id="LOCAL-00094" summary="edit fetch messages">
       <created>1575015968174</created>
@@ -981,7 +981,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="424917000" />
+    <option name="totallyTimeSpent" value="424995000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1497,7 +1497,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
-          <caret line="344" column="37" lean-forward="false" selection-start-line="344" selection-start-column="37" selection-end-line="344" selection-end-column="37" />
+          <caret line="344" column="50" lean-forward="false" selection-start-line="344" selection-start-column="50" selection-end-line="344" selection-end-column="50" />
           <folding />
         </state>
       </provider>

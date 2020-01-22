@@ -300,7 +300,7 @@ class UserController extends Controller
         foreach ($users as $userr) {
             $flag = false;
             $adviser_id = Adviser::where('user_id', $userr->id)->value('id');
-
+            echo 'user_id = '.$userr->id .'\n';
             $adviser_times = Adviser_time::where('adviser_id', $adviser_id)->get();
             foreach ($adviser_times as $adviser_time) {
                 //check date time
