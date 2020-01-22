@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Adviser_category;
 use App\Http\Controllers\Controller;
+use App\Ticket_category;
 use Illuminate\Http\Request;
 use Validator;
 class CategoryController extends Controller
@@ -32,19 +33,28 @@ class CategoryController extends Controller
 
     }
 
-    public function show_categories()
+    public function show_categories(Request $request)
     {
-        $categories_show=Adviser_category::all();
 
-        $cc=array();
-        foreach ($categories_show as $category) {
-            if ($category->parent_category_id == null) {
-                $cat['id']=$category->id;
-                $cat['name']=$category->name;
-                $subcategories=Adviser_category::where('parent_category_id',$category->id)->select('id', 'name')->get();
-                $cat['sub_category']=$subcategories;
+
+        if(isset($request->ticket) && $request->ticket==1){
+            $categories_show=Ticket_category::all();
+
+            $cc=$categories_show;
+        }else {
+            $categories_show = Adviser_category::all();
+
+
+            $cc = array();
+            foreach ($categories_show as $category) {
+                if ($category->parent_category_id == null) {
+                    $cat['id'] = $category->id;
+                    $cat['name'] = $category->name;
+                    $subcategories = Adviser_category::where('parent_category_id', $category->id)->select('id', 'name')->get();
+                    $cat['sub_category'] = $subcategories;
 //                $category = Adviser_category::select('id', 'name')->get();
-                array_push($cc,$cat);
+                    array_push($cc, $cat);
+                }
             }
         }
 
