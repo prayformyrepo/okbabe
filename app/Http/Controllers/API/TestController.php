@@ -118,9 +118,13 @@ class TestController extends Controller
             $error['last_answered_question_number']=TestQuestion::find($test_question_id)->question_number;
             return response()->json(['error' => $error], 401);
         }
-        $client = new Client(['base_uri' => 'https://shavernoapp.ir']);
-        $response = $client->request('POST', '/');
-        $body = $response->getBody();
-        
+//        $client = new Client(['base_uri' => 'https://shavernoapp.ir']);
+//        $response = $client->request('POST', '/');
+//        $body = $response->getBody();
+
+        $text='تست شما ثبت شد و پاسخ آن برایتان ارسال می گردد. به زودی قابلیت تصحیح تست به صورت لحظه ای در اپلیکیشن شاورنو اضافه خواهد شد';
+        return response()->json(['success' => $text], 200);
+
+
     }
 }

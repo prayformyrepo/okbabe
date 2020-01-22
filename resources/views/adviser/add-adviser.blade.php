@@ -6,7 +6,7 @@
     <script src="/ckeditor/ckeditor.js"></script>
     <link href="/css/select2.min.css" rel="stylesheet" />
 
-    <title> شاورنو - افزودن مشاور </title>
+    <title> شاورنو - ثبت نام مشاور </title>
 
 </head>
 
@@ -23,7 +23,7 @@
     <!-- Start Page Content here -->
     <!-- ============================================================== -->
 
-    <div class="content-page">
+    <div class="content-page" style="margin-right: 0">
         <div class="content">
 
             <!-- Start Content-->
@@ -39,6 +39,7 @@
                     </div>
                 @endif
                 <div class="row">
+                    <h2 class="text-center" style="width: 100%;margin-bottom: 20px">فرم درخواست همکاری</h2>
                     <div class="col-12">
                         <div class="card-box">
 
