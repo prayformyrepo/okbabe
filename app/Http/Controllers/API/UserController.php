@@ -358,7 +358,6 @@ class UserController extends Controller
         $success['is_adviser'] = $user->is_adviser;
         $success['id'] = $user->id;
         $success['now'] = $hour;
-        $success['now2'] = $today;
 
         return response()->json(['success' => $success], $this->successStatus);
     }
