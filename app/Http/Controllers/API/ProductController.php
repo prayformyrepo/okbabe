@@ -127,7 +127,7 @@ class ProductController extends Controller
            'text'=>$request->text,
            'status'=>0
         ]);
-        return response()->json(['success'],200);
+        return response()->json(['success' => 'true'],200);
     }
 
 

@@ -94,7 +94,7 @@
                                                 <label class="col-sm-2  col-form-label" for="simpleinput">شماره موبایل
                                                     مشاور</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" id="mobile" name="mobile" class="form-control"
+                                                    <input type="number" id="mobile" name="mobile" class="form-control"
                                                            placeholder="شماره موبایل مشاور" value="{{old('mobile')}}">
                                                 </div>
                                             </div>
