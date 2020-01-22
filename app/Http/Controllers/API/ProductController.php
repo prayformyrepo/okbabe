@@ -45,7 +45,7 @@ class ProductController extends Controller
               'description'=>$product->description,
                'short_description'=>$product->short_description,
                 'language'=>$product->language,
-                'pages'=>$product->language,
+                'pages'=>$product->pages,
                 'size'=>$product->size,
                 'author'=>$product->author,
                 'announcer'=>$product->announcer,
