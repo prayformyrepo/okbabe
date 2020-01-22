@@ -252,6 +252,7 @@ class ConversationController extends Controller
         foreach ($messages as $m) {
             $me['id'] = $m->id;
             $me['text'] = $m->text;
+            $me['file'] = $m->file;
             $me['status'] = $m->status;
             $me['user_id'] = $m->user_id;
 
