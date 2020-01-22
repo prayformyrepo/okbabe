@@ -112,6 +112,42 @@
                                                 </div>
                                             </div>
 
+                                            <div class="form-group row">
+                                                <label class="col-sm-2  col-form-label" for="simpleinput"> تصویر کارت ملی
+                                                    مشاور</label>
+                                                <div class="col-sm-10">
+                                                    <input type="file" class="form-control" name="melli" id="melli">
+
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-2  col-form-label" for="simpleinput"> تصویر شناسنامه
+                                                    مشاور</label>
+                                                <div class="col-sm-10">
+                                                    <input type="file" class="form-control" name="shenasname" id="shenasname">
+
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-2  col-form-label" for="simpleinput"> نصویر مدرک تحصیلی
+                                                    مشاور</label>
+                                                <div class="col-sm-10">
+                                                    <input type="file" class="form-control" name="edu" id="edu">
+
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-2  col-form-label" for="simpleinput"> مجوز فعالیت
+                                                    مشاور</label>
+                                                <div class="col-sm-10">
+                                                    <input type="file" class="form-control" name="faaliat" id="faaliat">
+
+                                                </div>
+                                            </div>
+
 
                                             <div class="form-group row">
                                                 <label class="col-sm-2  col-form-label" for="example-textarea">درباره
@@ -174,6 +210,25 @@
                                                     </select>
                                                 </div>
                                             </div>
+
+                                            <div class="form-group row">
+                                                <div class="offset-sm-4 col-sm-8">
+                                                    <div class="checkbox">
+                                                        <input name="accept" id="accept" type="checkbox" data-parsley-multiple="accept">
+                                                        <label for="accept"> صحت اطلاعات وارد شده را تایید می کنم</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <div class="offset-sm-4 col-sm-8">
+                                                    <div class="checkbox">
+                                                        <input name="rights" id="rights" type="checkbox" data-parsley-multiple="rights">
+                                                        <label for="rights"><a href="https://shaverno.com/copyright" target="_blank">قوانین و ضوابط شاورنو </a> را می پذیرم</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
 
 
                                             <div class="form-group mb-0 justify-content-end row">

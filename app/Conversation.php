@@ -29,7 +29,9 @@ class Conversation extends Model
                 return $text->text;
             }
             else{
-                return 'file';
+                $message['type']='file';
+                $message['file_name']=File::find($file_id)->orginal_name;
+                return $message;
 
             }
         }
