@@ -56,6 +56,15 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="p-2">
+                                        <div class="row">
+                                            <div class="col-sm-9"></div>
+                                            <div class="alert alert-success col-sm-3">
+                                                {{\App\User::find($ticket->user_id)->name==null?\App\User::find($ticket->user_id)->username:\App\User::find($ticket->user_id)->name}}
+                                                :
+                                                {{$ticket->text}}</div>
+                                        </div>
+
+
                                         @foreach($ticket_answers as $ticket_answer)
                                             @if($ticket_answer->status==0)
                                                 <div class="row">

@@ -70,7 +70,8 @@
                                             <td>{{$ticket->subject}}</td>
                                             <td>{{\App\User::find($ticket->user_id)->name==null?\App\User::find($ticket->user_id)->username:\App\User::find($ticket->user_id)->name}}</td>
                                             <td>{{ \App\Ticket_category::find($ticket->ticket_category_id)->name  }}</td>
-                                            <td>@if($ticket->status==0) تیکت ایجاد شده  @elseif($ticket->status==1) پاسخ ادمین @elseif($ticket->status==2) پاسخ کاربر @endif</td>
+                                            <td>@if($ticket->status==0) تیکت ایجاد شده  @elseif($ticket->status==1) پاسخ ادمین @elseif($ticket->status==2) پاسخ کاربر
+                                                @elseif($ticket->status==3) تیکت بسته شده@endif</td>
                                             <td><a href="{{route('admin.ticket.show',[$ticket->id])}}" class="btn btn-primary fa fa-pen-square btn-md"> پاسخ به تیکت</a></td>
 
                                             <td>
