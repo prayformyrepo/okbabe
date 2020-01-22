@@ -15,8 +15,8 @@ class AdviserController extends Controller
 {
     public function create()
     {
-        $categories=Adviser_category::all();
-        return view('adviser.add-adviser',compact('categories'));
+        $categories = Adviser_category::all();
+        return view('adviser.add-adviser', compact('categories'));
     }
 
     public function store(Request $request)
@@ -60,117 +60,118 @@ class AdviserController extends Controller
         $this->validate($request, $validatedData, $messages);
 
 
-        $mobile=$request->mobile;
-        if ($mobile[0]==0) $mobile=substr($mobile,1);
+        $mobile = $request->mobile;
+        if ($mobile[0] == 0) $mobile = substr($mobile, 1);
 
-        $user=new User();
-        $user->name=$request->name;
-        $user->username=$request->username;
-        $user->mobile=$mobile;
-        $user->gender=$request->gender;
-        $user->is_adviser=1;
+        $user = new User();
+        $user->name = $request->name;
+        $user->username = $request->username;
+        $user->mobile = $mobile;
+        $user->gender = $request->gender;
+        $user->is_adviser = 1;
         $user->save();
         if ($request->file('avatar')) {
             $file = $request->file('avatar');
-            $filename = $user->id.'_'. time() . '.' . $file->getClientOriginalExtension();
+            $filename = $user->id . '_' . time() . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('images/avatars/'), $filename);
 
-            $user=User::find($user->id);
-            $user->avatar='/images/avatars/' . $filename;
+            $user = User::find($user->id);
+            $user->avatar = '/images/avatars/' . $filename;
             $user->save();
         }
 
 
-        $adviser=new Adviser();
-        $adviser->user_id=$user->id;
-        $adviser->field=$request->field;
-        $adviser->about=$request->about;
-        $adviser->call_price=$request->call_price;
-        $adviser->nominal_call_price=$request->call_price*1.5;
-        $adviser->visit_price=$request->visit_price;
-        $adviser->save();
-
-        $categories=$request->categories;
-        foreach ($categories as $category){
-            $cat=new Adviser_to_category();
-            $cat->adviser_id=$adviser->id;
-            $cat->adviser_category_id=$category;
-            $cat->save();
-        }
-
-
-
-        $adviser_id=$adviser->id;
-
         // cart melli
         $file = $request->file('melli');
-        $filename = $user->id.'_'. time() . '.' . $file->getClientOriginalExtension();
-        $file->move(public_path('files/advisers/'.$user->id.'/national_card/'), $filename);
+        $filename = $user->id . '_' . time() . '.' . $file->getClientOriginalExtension();
+        $file->move(public_path('files/advisers/' . $user->id . '/national_card/'), $filename);
 
-        $file = File::create([
-            'file_path' => '/files/advisers/'.$user->id.'/national_card/' . $filename,
+        $national_card_file = File::create([
+            'file_path' => '/files/advisers/' . $user->id . '/national_card/' . $filename,
             'orginal_name' => $file->getClientOriginalName(),
             'file_type' => $file->getClientMimeType(),
-            'slug' => $user->id.'_'. time()
+            'slug' => $user->id . '_' . time()
         ]);
-        $adviser_add=Adviser::find($adviser_id);
-        $adviser_add->national_card_file_id=$file->id;
-        $adviser_add->save();
+//        $adviser_add=Adviser::find($adviser_id);
+//        $adviser_add->national_card_file_id=$file->id;
+//        $adviser_add->save();
 
         // shenasname
         $file = $request->file('shenasname');
-        $filename = $user->id.'_'. time() . '.' . $file->getClientOriginalExtension();
-        $file->move(public_path('files/advisers/'.$user->id.'/birth_certificate/'), $filename);
+        $filename = $user->id . '_' . time() . '.' . $file->getClientOriginalExtension();
+        $file->move(public_path('files/advisers/' . $user->id . '/birth_certificate/'), $filename);
 
-        $file = File::create([
-            'file_path' => '/files/advisers/'.$user->id.'/birth_certificate/' . $filename,
+        $birth_certificate_file = File::create([
+            'file_path' => '/files/advisers/' . $user->id . '/birth_certificate/' . $filename,
             'orginal_name' => $file->getClientOriginalName(),
             'file_type' => $file->getClientMimeType(),
-            'slug' => $user->id.'_'. time()
+            'slug' => $user->id . '_' . time()
         ]);
-        $adviser_add=Adviser::find($adviser_id);
-        $adviser_add->birth_certificate_file_id=$file->id;
-        $adviser_add->save();
+//        $adviser_add=Adviser::find($adviser_id);
+//        $adviser_add->birth_certificate_file_id=$file->id;
+//        $adviser_add->save();
 
 
         // madrak tahsili
         $file = $request->file('edu');
-        $filename = $user->id.'_'. time() . '.' . $file->getClientOriginalExtension();
-        $file->move(public_path('files/advisers/'.$user->id.'/education_certificate/'), $filename);
+        $filename = $user->id . '_' . time() . '.' . $file->getClientOriginalExtension();
+        $file->move(public_path('files/advisers/' . $user->id . '/education_certificate/'), $filename);
 
-        $file = File::create([
-            'file_path' => '/files/advisers/'.$user->id.'/education_certificate/' . $filename,
+        $education_certificate_file = File::create([
+            'file_path' => '/files/advisers/' . $user->id . '/education_certificate/' . $filename,
             'orginal_name' => $file->getClientOriginalName(),
             'file_type' => $file->getClientMimeType(),
-            'slug' => $user->id.'_'. time()
+            'slug' => $user->id . '_' . time()
         ]);
-        $adviser_add=Adviser::find($adviser_id);
-        $adviser_add->education_certificate_file_id=$file->id;
-        $adviser_add->save();
-
+//        $adviser_add=Adviser::find($adviser_id);
+//        $adviser_add->education_certificate_file_id=$file->id;
+//        $adviser_add->save();
 
 
         // mojavez faaliat
         $file = $request->file('faaliat');
-        $filename = $user->id.'_'. time() . '.' . $file->getClientOriginalExtension();
-        $file->move(public_path('files/advisers/'.$user->id.'/work_certificate/'), $filename);
+        $filename = $user->id . '_' . time() . '.' . $file->getClientOriginalExtension();
+        $file->move(public_path('files/advisers/' . $user->id . '/work_certificate/'), $filename);
 
-        $file = File::create([
-            'file_path' => '/files/advisers/'.$user->id.'/work_certificate/' . $filename,
+        $work_certificate_file = File::create([
+            'file_path' => '/files/advisers/' . $user->id . '/work_certificate/' . $filename,
             'orginal_name' => $file->getClientOriginalName(),
             'file_type' => $file->getClientMimeType(),
-            'slug' => $user->id.'_'. time()
+            'slug' => $user->id . '_' . time()
         ]);
-        $adviser_add=Adviser::find($adviser_id);
-        $adviser_add->work_certificate_file_id=$file->id;
-        $adviser_add->save();
+//        $adviser_add=Adviser::find($adviser_id);
+//        $adviser_add->work_certificate_file_id=$file->id;
+//        $adviser_add->save();
 
 
+        $adviser = new Adviser();
+        $adviser->user_id = $user->id;
+        $adviser->field = $request->field;
+        $adviser->about = $request->about;
+        $adviser->call_price = $request->call_price;
+        $adviser->nominal_call_price = $request->call_price * 1.5;
+        $adviser->visit_price = $request->visit_price;
+        $adviser->work_certificate_file_id = $work_certificate_file->id;
+        $adviser->education_certificate_file_id = $education_certificate_file->id;
+        $adviser->birth_certificate_file_id = $birth_certificate_file->id;
+        $adviser->national_card_file_id = $national_card_file->id;
+        $adviser->save();
 
 
+        $categories = $request->categories;
+        foreach ($categories as $category) {
+            $cat = new Adviser_to_category();
+            $cat->adviser_id = $adviser->id;
+            $cat->adviser_category_id = $category;
+            $cat->save();
+        }
 
-        $categories=Adviser_category::all();
-        $pm='درخواست شما با موفقیت ارسال شد';
-        return view('adviser.add-adviser',compact('categories','pm'));
+
+        $adviser_id = $adviser->id;
+
+
+        $categories = Adviser_category::all();
+        $pm = 'درخواست شما با موفقیت ارسال شد';
+        return view('adviser.add-adviser', compact('categories', 'pm'));
     }
 }
