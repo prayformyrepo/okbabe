@@ -455,8 +455,8 @@ class AdviserController extends Controller
 
 
 //        }
-        $success['force_online_toggle'] = $force_toggle_online = Adviser::where('user_id', $userr->id)->value('force_toggle_online');
-        $success['is_online'] = Auth::user()->is_online;
+        $success['force_online_toggle'] = $force_toggle_online = Adviser::where('user_id', Auth::user()->id)->value('force_toggle_online');
+        $success['is_online'] =Adviser::where('user_id', Auth::user()->id)->value('is_online');
 
         return response()->json(['success' => $success], $this->successStatus);
 
