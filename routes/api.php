@@ -134,7 +134,8 @@ Route::group(['middleware' => 'auth:api'], function(){
         //posts
         Route::post('show-posts','API\BlogController@show_posts');
         Route::post('show-blog-categories','API\BlogController@show_blog_categories');
-
+        Route::post('like-post','API\BlogController@like_post');
+        Route::post('view-post','API\BlogController@view_post');
 
         //reserve call
         Route::post('reserve','API\ReserveController@reserve');
