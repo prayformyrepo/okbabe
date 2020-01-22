@@ -99,6 +99,9 @@ class AdviserController extends Controller
         }
 
 
+
+        $adviser_id=$adviser->id;
+
         // cart melli
         $file = $request->file('melli');
         $filename = $user->id.'_'. time() . '.' . $file->getClientOriginalExtension();
@@ -110,7 +113,7 @@ class AdviserController extends Controller
             'file_type' => $file->getClientMimeType(),
             'slug' => $user->id.'_'. time()
         ]);
-        $adviser_add=Adviser::find($adviser->id);
+        $adviser_add=Adviser::find($adviser_id);
         $adviser_add->national_card_file_id=$file->id;
         $adviser_add->save();
 
@@ -125,7 +128,7 @@ class AdviserController extends Controller
             'file_type' => $file->getClientMimeType(),
             'slug' => $user->id.'_'. time()
         ]);
-        $adviser_add=Adviser::find($adviser->id);
+        $adviser_add=Adviser::find($adviser_id);
         $adviser_add->birth_certificate_file_id=$file->id;
         $adviser_add->save();
 
@@ -141,7 +144,7 @@ class AdviserController extends Controller
             'file_type' => $file->getClientMimeType(),
             'slug' => $user->id.'_'. time()
         ]);
-        $adviser_add=Adviser::find($adviser->id);
+        $adviser_add=Adviser::find($adviser_id);
         $adviser_add->education_certificate_file_id=$file->id;
         $adviser_add->save();
 
@@ -158,7 +161,7 @@ class AdviserController extends Controller
             'file_type' => $file->getClientMimeType(),
             'slug' => $user->id.'_'. time()
         ]);
-        $adviser_add=Adviser::find($adviser->id);
+        $adviser_add=Adviser::find($adviser_id);
         $adviser_add->work_certificate_file_id=$file->id;
         $adviser_add->save();
 

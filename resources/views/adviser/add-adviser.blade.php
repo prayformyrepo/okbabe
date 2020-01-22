@@ -28,18 +28,21 @@
 
             <!-- Start Content-->
             <div class="container-fluid">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach($errors->all() as $err)
-                                <li>{{$err}}</li>
 
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
                 <div class="row">
                     <h2 class="text-center" style="width: 100%;margin-bottom: 20px">فرم درخواست همکاری</h2>
+
+                    @if ($errors->any())
+                        <div class="alert alert-danger" style="width: 100%">
+                            <ul>
+                                @foreach($errors->all() as $err)
+                                    <li>{{$err}}</li>
+
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <div class="col-12">
                         <div class="card-box">
 

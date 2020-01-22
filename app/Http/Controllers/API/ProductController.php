@@ -57,7 +57,7 @@ class ProductController extends Controller
                 'featured'=>$product->featured,
                 'images'=>$product->images()->get(),
                 'categories'=>$product->categories()->get(),
-                'comments'=>  ProductCommentResource::Collection($product->productComments()->get()),
+                'comments'=>  ProductCommentResource::Collection($product->productComments()->orderBy('created_at','DESC')->get()),
                 'created_at'=>Carbon::make($product->created_at)->format('Y-m-d H:i:s')
             ]
         ]);
