@@ -122,5 +122,48 @@ class ReserveController extends Controller
 
     }
 
+    public function show_reserve_note(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'reserve_id' => 'integer|required',
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 401);
+        }
+
+        $count=reserve_call::where('id',$request->reserve_id)->count();
+        if ($count==0) return response()->json(['error' => 'not found'], '404');
+
+        $note=reserve_call::find($request->reserve_id)->text;
+
+        return response()->json(['success' => $note], $this->successStatus);
+
+    }
+
+    public function store_reserve_note(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'reserve_id' => 'integer|required',
+            'text' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 401);
+        }
+
+        $count=reserve_call::where('id',$request->reserve_id)->count();
+        if ($count==0) return response()->json(['error' => 'not found'], '404');
+
+        $note=reserve_call::find($request->reserve_id);
+
+        $note->text=$request->text;
+
+        $note->save();
+
+        $note=reserve_call::find($request->reserve_id)->text;
+
+        return response()->json(['success' => $note], $this->successStatus);
+
+
+    }
 
 }
