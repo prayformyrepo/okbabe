@@ -25,18 +25,9 @@ class UserController extends Controller
 
     public $successStatus = 200;
 
-    /**
-     * login api
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function user()
+    public function login()
     {
-        return \Auth::user();
-    }
-  
-    public function login(){
-        if(Auth::attempt(['mobile' => request('mobile'), 'password' => request('password')])){
+        if (Auth::attempt(['mobile' => request('mobile'), 'password' => request('password')])) {
             $user = Auth::user();
             oauth_access_token::where('user_id', $user->id)->delete();
             $success['token'] = $user->createToken('login')->accessToken;
@@ -221,23 +212,31 @@ class UserController extends Controller
 //        if ($validator->fails()) {
 //            return response()->json(['error'=>$validator->errors()], 401);
 //        }
-        if(isset($request->user_id)){
-            $user = User::select('id','name','username','email','mobile','gender','call_page','call_file','call_adviser_name','call_adviser_avatar','wallet','is_adviser','is_online','avatar')->find($request->user_id)->toArray();
-            $cart['cart_count']=Cart::where('user_id',$request->user_id)->count();
-            $cart['cart_price']=Cart::where('user_id',$request->user_id)->sum('total_price');
-            $combined = array_merge($user,$cart);
+        if (isset($request->user_id)) {
+            $user = User::select('id', 'name', 'username', 'email', 'mobile', 'gender', 'call_page', 'call_file', 'call_adviser_name', 'call_adviser_avatar', 'wallet', 'is_adviser', 'is_online', 'avatar')->find($request->user_id)->toArray();
+            $cart['cart_count'] = Cart::where('user_id', $request->user_id)->count();
+            $cart['cart_price'] = Cart::where('user_id', $request->user_id)->sum('total_price');
+            $combined = array_merge($user, $cart);
+        } else {
+            $user = User::select('id', 'name', 'username', 'email', 'mobile', 'gender', 'call_page', 'call_file', 'call_adviser_name', 'call_adviser_avatar', 'wallet', 'is_adviser', 'is_online', 'avatar')->find($this->user()->id)->toArray();
+            $cart['cart_count'] = $this->user()->carts->count();
+            $cart['cart_price'] = $this->user()->carts->sum('total_price');
+            $combined = array_merge($user, $cart);
         }
-        else{
-            $user = User::select('id','name','username','email','mobile','gender','call_page','call_file','call_adviser_name','call_adviser_avatar','wallet','is_adviser','is_online','avatar')->find($this->user()->id)->toArray();
-            $cart['cart_count']=$this->user()->carts->count();
-            $cart['cart_price']=$this->user()->carts->sum('total_price');
-            $combined = array_merge($user,$cart);
-        }
 
 
+        return response()->json(['success' => $combined], $this->successStatus);
 
-        return response()->json(['success' => $combined], $this-> successStatus);
+    }
 
+    /**
+     * login api
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function user()
+    {
+        return \Auth::user();
     }
 
     public function reset_password(Request $request)
@@ -300,7 +299,6 @@ class UserController extends Controller
         foreach ($users as $userr) {
             $flag = false;
             $adviser_id = Adviser::where('user_id', $userr->id)->value('id');
-            echo 'user_id = '.$userr->id .'\n';
             $adviser_times = Adviser_time::where('adviser_id', $adviser_id)->get();
             foreach ($adviser_times as $adviser_time) {
                 //check date time
@@ -316,40 +314,42 @@ class UserController extends Controller
 
             //set advisers offline-online
             $force_toggle_online = Adviser::where('user_id', $userr->id)->value('force_toggle_online');
-            if ($flag == true) {
-                if ($force_toggle_online == 0) {
-                    // echo 'user_id:'.$userr->id.'<br> flag: true <br>';
-                    $u = User::find($userr->id);
-                    $u->is_online = 1;
-                    $u->save();
+            $count = Adviser::where('id', $adviser_id)->count();
+            if ($count != 0) {
+                if ($flag == true) {
+                    if ($force_toggle_online == 0) {
+                        // echo 'user_id:'.$userr->id.'<br> flag: true <br>';
+                        $u = User::find($userr->id);
+                        $u->is_online = 1;
+                        $u->save();
 
-                    $a = Adviser::find($adviser_id);
-                    $a->is_online = 1;
-                    $a->force_toggle_online = 0;
-                    $a->save();
-                } else if ($force_toggle_online == 1) {
-                    $a = Adviser::find($adviser_id);
-                    $a->is_online = 1 ? $a->force_toggle_online = 0 : $a->force_toggle_online = 1;
-                    $a->save();
+                        $a = Adviser::find($adviser_id);
+                        $a->is_online = 1;
+                        $a->force_toggle_online = 0;
+                        $a->save();
+                    } else if ($force_toggle_online == 1) {
+                        $a = Adviser::find($adviser_id);
+                        $a->is_online = 1 ? $a->force_toggle_online = 0 : $a->force_toggle_online = 1;
+                        $a->save();
+                    }
+
                 }
+                if ($flag == false) {
+                    if ($force_toggle_online == 0) {
 
-            }
-            if ($flag == false) {
-                if ($force_toggle_online == 0) {
+                        $u = User::find($userr->id);
+                        $u->is_online = 0;
+                        $u->save();
 
-                    $u = User::find($userr->id);
-                    $u->is_online = 0;
-                    $u->save();
-
-                    $a = Adviser::find($adviser_id);
-                    echo $adviser_id.'<br>----<br>';
-                    $a->is_online = 0;
-                    $a->force_toggle_online = 0;
-                    $a->save();
-                } else if ($force_toggle_online == 1) {
-                    $a = Adviser::find($adviser_id);
-                    $a->is_online = 0 ? $a->force_toggle_online = 0 : $a->force_toggle_online = 1;
-                    $a->save();
+                        $a = Adviser::find($adviser_id);
+                        $a->is_online = 0;
+                        $a->force_toggle_online = 0;
+                        $a->save();
+                    } else if ($force_toggle_online == 1) {
+                        $a = Adviser::find($adviser_id);
+                        $a->is_online = 0 ? $a->force_toggle_online = 0 : $a->force_toggle_online = 1;
+                        $a->save();
+                    }
                 }
             }
         }
