@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
-                2016 - 2020 &copy; shaverno by <a href="https://webtab.co">webtab</a>
+                2020 &copy; shaverno
             </div>
             <div class="col-md-6">
                 {{--<div class="text-md-right footer-links d-none d-sm-block">
