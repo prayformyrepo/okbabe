@@ -367,7 +367,7 @@ class ConversationController extends Controller
 
             $file = File::create([
                 'file_path' => '/uploads/chat/' . $filename,
-                'original_name' => $file->getClientOriginalName(),
+                'orginal_name' => $file->getClientOriginalName(),
                 'file_type' => $file->getClientMimeType(),
                 'slug' => Auth::user()->id . '_' . time()
             ]);
