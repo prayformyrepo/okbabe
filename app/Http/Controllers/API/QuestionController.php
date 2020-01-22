@@ -89,6 +89,7 @@ class QuestionController extends Controller
                 $save['question']['answers']=Question::find($question->id)->answers()->count();
                 $save['question']['user_info'] = User::select('id', 'username', 'avatar')->find($question->user_id);
                 if ($question->is_private==1) {
+                    $save['question']['user_info'] = 'ناشناس';
                     $save['question']['user_info']['username'] = 'ناشناس';
                     $save['question']['user_info']['avatar'] =  "/themes/custom-5176/userfiles/fdacd9.jpg";
 
