@@ -51,6 +51,7 @@ Route::group(['middleware' => 'auth:api'], function(){
         Route::post('fetch-conversations', 'API\ConversationController@fetch_conversations');
         Route::post('fetch-messages', 'API\ConversationController@fetch_messages');
         Route::post('send-message', 'API\ConversationController@send_message');
+        Route::post('send-file', 'API\ConversationController@send_file');
         Route::post('fetch-message-by-id', 'API\ConversationController@fetch_message_by_id');
 
         //advisers

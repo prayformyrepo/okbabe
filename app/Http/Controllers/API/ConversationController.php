@@ -350,6 +350,7 @@ class ConversationController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'file' => 'required|mimes:jpeg,jpg,png,zip,pdf|max:5120',
+            'conversation_id' => 'required'
 
         ]);
 
@@ -371,13 +372,64 @@ class ConversationController extends Controller
                 'slug' => Auth::user()->id . '_' . time()
             ]);
 
+            $user_id = Auth::user()->id;
+            $user = User::find($user_id);
+
+            $message = new Message();
+            $message->file_id = $file->id;
+            $message->user_id = $user_id;
+            $message->save();
 
 
+            $message_id = $message->id;
+            $conversation_message = new Conversation_Message();
+            $conversation_message->message_id = $message_id;
+            $conversation_message->conversation_id = $request->conversation_id;
+            $conversation_message->save();
+
+            $conversation = Conversation::find($request->conversation_id);
+            $conversation->has_unread = 1;
+            if ($user->is_adviser == 0) {
+                $conversation->unread_user_id = $conversation->adviser_id;
+            } else {
+                $conversation->unread_user_id = $conversation->user_id;
+            }
+            $conversation->last_message_id = $message_id;
+            $conversation->save();
+
+            if ($user->is_adviser == 0) {
+                $notifications = Notification::where('type', 1)->where('read_at', null)->where('user_id', $conversation->adviser_id)->where('sender_user_id', $user->id)->get();
+                if ($notifications->count() == 0) {
+                    $notification = new Notification();
+                    $notification->user_id = $conversation->adviser_id;
+                    $notification->is_adviser = 1;
+                    $notification->data = 'پیام جدید از طرف ' . $user->name;
+                    $notification->type = 1;
+                    $notification->sender_user_id = $user->id;
+                    $notification->save();
+                }
+            } else {
+                $notifications = Notification::where('type', 1)->where('read_at', null)->where('user_id', $conversation->adviser_id)->where('sender_user_id', $user->id)->get();
+                if ($notifications->count() == 0) {
+                    $notification = new Notification();
+                    $notification->user_id = $conversation->adviser_id;
+                    $notification->is_adviser = 0;
+                    $notification->data = 'پیام جدید از طرف ' . $user->name;
+                    $notification->type = 1;
+                    $notification->sender_user_id = $user->id;
+                    $notification->save();
+                }
+            }
 
 
+            return response()->json(['success' => 'success'], $this->successStatus);
 
+        }else{
+            return response()->json(['error' => 'ارسال فایل با خطا مواجه شد'], $this->successStatus);
 
         }
+
+
 
     }
 
