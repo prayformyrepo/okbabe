@@ -82,6 +82,8 @@ class TestController extends Controller
                 'test_answer_id' => $request->test_answer_id
             ]);
 
+        $ans['question_number']=TestQuestion::find($ans->test_question_id)->question_number;
+
         return response()->json(['success' => $ans], $this->successStatus);
     }
 
