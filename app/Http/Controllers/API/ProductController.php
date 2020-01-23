@@ -64,7 +64,9 @@ class ProductController extends Controller
             $product['product']['categories']=$product->categories()->get();
             $product['product']['comments']=ProductCommentResource::Collection($product->productComments()->orderBy('created_at','DESC')->get());
 
-        return response()->json(['success'=>$product]);
+//        return response()->json(['success'=>$product]);
+            return response()->json(['success' => $product], 200);
+
 
         }
 
