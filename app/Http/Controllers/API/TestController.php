@@ -143,7 +143,9 @@ class TestController extends Controller
 //        $response = $client->request('POST', '/');
 //        $body = $response->getBody();
 
-        $text='<p>تست شما ثبت شد و پاسخ آن برایتان ارسال می گردد. به زودی قابلیت تصحیح تست به صورت لحظه ای در اپلیکیشن شاورنو اضافه خواهد شد</p>';
+        $text='
+<img src="http://shavernoapp.ir/images/shsh.png" width="200px">
+<p>تست شما ثبت شد و پاسخ آن برایتان ارسال می گردد. به زودی قابلیت تصحیح تست به صورت لحظه ای در اپلیکیشن شاورنو اضافه خواهد شد</p>';
         return response()->json(['success' => $text], 200);
 
 

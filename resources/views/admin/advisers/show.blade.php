@@ -87,7 +87,7 @@
                                                     مشاور</label>
                                                 <div class="col-sm-10">
                                                     <input type="number" id="mobile" name="mobile" class="form-control"
-                                                           placeholder="شماره موبایل مشاور" value="{{$user->username}}">
+                                                           placeholder="شماره موبایل مشاور" value="{{$user->mobile}}">
                                                 </div>
                                             </div>
 
@@ -99,7 +99,7 @@
                                                     {{--<input type="text" id="mobile" name="mobile" class="form-control" placeholder="شماره تماس مشاور" value="{{old('mobile')}}">--}}
 
                                                     <select name="gender" id="gender" class="form-control">
-                                                        <option value="0">مرد</option>
+                                                        <option value="0" @if($user->gender==0) selected @endif>مرد</option>
                                                         <option value="1">زن</option>
                                                     </select>
                                                 </div>
