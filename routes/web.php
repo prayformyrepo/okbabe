@@ -75,6 +75,10 @@ Route::group(['middleware' => 'admin','prefix'=>'admin','as'=>'admin.'], functio
     Route::get('/tickets/{ticket_id}', 'Admins\TicketController@show_ticket')->name('ticket.show');
     Route::post('/tickets/{ticket_id}', 'Admins\TicketController@answer_ticket')->name('ticket.answer');
 
+    Route::get('advisers',['uses'=>'Admins\AdviserController@index','as'=>'adviser.index']);
+    Route::delete('/advisers/{adviser_id}', 'Admins\AdviserController@destroy')->name('adviser.destroy');
+
+
 });
 
 //add adviser

@@ -73,6 +73,13 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="{{route('admin.adviser.index')}}">
+                        <i class="mdi mdi-account-supervisor"></i>
+                        <span> مشاوران </span>
+                    </a>
+                </li>
+
            {{--     <li>
                     <a href="typography.html">
                         <i class="mdi mdi-format-font"></i>
@@ -227,7 +234,7 @@
 --}}
                 <li>
                     <a href="javascript: void(0);">
-                        <i class="mdi mdi-share-variant"></i>
+                        <i class="mdi mdi-help-circle-outline"></i>
                         <span>مدیریت تست ها</span>
                         <span class="menu-arrow"></span>
                     </a>
@@ -238,21 +245,9 @@
                         <li>
                             <a href="{{route('admin.test.show-select-test-page')}}">نمایش تست</a>
                         </li>
-                       {{-- <li>
-                            <a href="javascript: void(0);" aria-expanded="false">Level 1.2
-                                <span class="menu-arrow"></span>
-                            </a>
-                          --}}{{--  <ul class="nav-third-level nav" aria-expanded="false">
-                                <li>
-                                    <a href="javascript: void(0);">Level 2.1</a>
-                                </li>
-                                <li>
-                                    <a href="javascript: void(0);">Level 2.2</a>
-                                </li>
-                            </ul>--}}{{--
-                        </li>--}}
                     </ul>
                 </li>
+
 
                 <li>
                     <a href="javascript: void(0);">
