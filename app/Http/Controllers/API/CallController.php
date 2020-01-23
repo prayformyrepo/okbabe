@@ -463,7 +463,9 @@ class CallController extends Controller
             $wallet->call_id = $call->id;
             $wallet->save();
 
-
+            $call=Call::find($call->id);
+            $call->billing=$nominal_call_price;
+            $call->save();
             ///
             $call_center_price = 250;
             $sms_price = 160;
