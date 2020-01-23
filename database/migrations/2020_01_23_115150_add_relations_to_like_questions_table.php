@@ -14,9 +14,9 @@ class AddRelationsToLikeQuestionsTable extends Migration
     public function up()
     {
         Schema::table('like_questions', function (Blueprint $table) {
-            $table->unsignedInteger('user_id')->index()->change();
+//            $table->unsignedInteger('user_id')->index()->change();
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+//            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
 
         });
