@@ -75,7 +75,7 @@ class ProductController extends Controller
             return response()->json(['success' => $products]);
 
         } else {
-            $products = Product::where('status', 1)->paginate(10);
+            $products = Product::where('status', 1)->paginate(5);
             ProductResource::wrap('success');
             $products = ProductResource::collection($products);
             return response()->json(['success' => $products]);
