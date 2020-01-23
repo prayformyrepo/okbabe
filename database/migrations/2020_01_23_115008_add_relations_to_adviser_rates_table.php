@@ -14,7 +14,7 @@ class AddRelationsToAdviserRatesTable extends Migration
     public function up()
     {
         Schema::table('adviser_rates', function (Blueprint $table) {
-            $table->foreign('adviser_id')->references('id')->on('advisers')->onDelete('cascade');
+//            $table->foreign('adviser_id')->references('id')->on('advisers')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
         });

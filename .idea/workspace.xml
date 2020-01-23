@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_23_114947_add_relations_to_advisers_table.php" afterPath="$PROJECT_DIR$/database/migrations/2020_01_23_114947_add_relations_to_advisers_table.php" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_23_115008_add_relations_to_adviser_rates_table.php" afterPath="$PROJECT_DIR$/database/migrations/2020_01_23_115008_add_relations_to_adviser_rates_table.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,7 +27,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2020_01_23_114953_add_relations_to_adviser_times_table.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2020_01_23_114953_add_relations_to_adviser_times_table.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_23_114953_add_relations_to_adviser_times_table.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -38,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2020_01_23_115008_add_relations_to_adviser_rates_table.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="2020_01_23_115008_add_relations_to_adviser_rates_table.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_23_115008_add_relations_to_adviser_rates_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+            <state relative-caret-position="210">
+              <caret line="16" column="12" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -244,8 +243,8 @@
         <option value="$PROJECT_DIR$/database/migrations/2020_01_23_115130_add_relations_to_events_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_01_23_115150_add_relations_to_like_questions_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_01_23_115207_add_relations_to_messages_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2020_01_23_115008_add_relations_to_adviser_rates_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_01_23_114947_add_relations_to_advisers_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_01_23_115008_add_relations_to_adviser_rates_table.php" />
       </list>
     </option>
   </component>
@@ -606,7 +605,7 @@
       <workItem from="1579643820302" duration="294000" />
       <workItem from="1579675992653" duration="15969000" />
       <workItem from="1579760007488" duration="3224000" />
-      <workItem from="1579765330729" duration="2651000" />
+      <workItem from="1579765330729" duration="2805000" />
     </task>
     <task id="LOCAL-00094" summary="edit fetch messages">
       <created>1575015968174</created>
@@ -981,7 +980,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="436967000" />
+    <option name="totallyTimeSpent" value="437121000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1450,14 +1449,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_23_115008_add_relations_to_adviser_rates_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_23_114947_add_relations_to_advisers_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1470,6 +1461,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_23_115008_add_relations_to_adviser_rates_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="12" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
