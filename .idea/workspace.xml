@@ -59,8 +59,8 @@
       <file leaf-file-name="2020_01_23_115051_add_relations_to_conversations_table.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_23_115051_add_relations_to_conversations_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="270">
+              <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -594,7 +594,7 @@
       <workItem from="1579643820302" duration="294000" />
       <workItem from="1579675992653" duration="15969000" />
       <workItem from="1579760007488" duration="3224000" />
-      <workItem from="1579765330729" duration="3697000" />
+      <workItem from="1579765330729" duration="3777000" />
     </task>
     <task id="LOCAL-00094" summary="edit fetch messages">
       <created>1575015968174</created>
@@ -969,7 +969,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="438013000" />
+    <option name="totallyTimeSpent" value="438093000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1456,8 +1456,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_23_115051_add_relations_to_conversations_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="270">
+          <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
