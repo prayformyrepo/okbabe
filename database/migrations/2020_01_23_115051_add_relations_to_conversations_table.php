@@ -17,7 +17,7 @@ class AddRelationsToConversationsTable extends Migration
 //            $table->unsignedInteger('user_id')->index()->change();
 //            $table->unsignedInteger('adviser_id')->index()->change();
 //            $table->unsignedBigInteger('last_message_id')->index()->change();
-            $table->unsignedInteger('unread_user_id')->index()->change();
+            $table->unsignedInteger('unread_user_id')->index()->nullable()->change();
 
 //            $table->foreign('adviser_id')->references('id')->on('users')->onDelete('cascade');
 //            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
