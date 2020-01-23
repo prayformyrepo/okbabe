@@ -16,7 +16,7 @@ class AddRelationsToCallsTable extends Migration
         Schema::table('calls', function (Blueprint $table) {
             $table->unsignedInteger('user_id')->index()->change();
 
-            $table->foreign('adviser_id')->references('id')->on('advisers')->onDelete('cascade');
+//            $table->foreign('adviser_id')->references('id')->on('advisers')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
         });
