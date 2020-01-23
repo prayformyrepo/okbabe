@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/ProductController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/ProductController.php" />
-    </list>
+    <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,8 +114,8 @@
       <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/ProductController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="42" column="12" lean-forward="false" selection-start-line="42" selection-start-column="12" selection-end-line="61" selection-end-column="13" />
+            <state relative-caret-position="426">
+              <caret line="77" column="15" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -620,7 +617,7 @@
       <workItem from="1579643820302" duration="294000" />
       <workItem from="1579675992653" duration="15969000" />
       <workItem from="1579760007488" duration="3224000" />
-      <workItem from="1579765330729" duration="14094000" />
+      <workItem from="1579765330729" duration="14150000" />
     </task>
     <task id="LOCAL-00094" summary="edit fetch messages">
       <created>1575015968174</created>
@@ -995,7 +992,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="448410000" />
+    <option name="totallyTimeSpent" value="448466000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1546,8 +1543,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/ProductController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="42" column="12" lean-forward="false" selection-start-line="42" selection-start-column="12" selection-end-line="61" selection-end-column="13" />
+        <state relative-caret-position="426">
+          <caret line="77" column="15" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
           <folding />
         </state>
       </provider>
