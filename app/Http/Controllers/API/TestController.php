@@ -20,10 +20,27 @@ class TestController extends Controller
 
     public function show_tests(Request $request)
     {
-        if (isset($request->test_id)){
+        if (isset($request->test_id) && isset($request->question_number)) {
             $test=TestQuestion::where('test_id',$request->test_id)->where('question_number',$request->question_number)->first();
 
             return response()->json(['success' => new TestResourceCollection($test)], $this->successStatus);
+        }
+        if (isset($request->test_id) && !isset($request->question_number)){
+            $test_id=$request->test_id;
+            if(UserTestAnswer::where('user_id',Auth::user()->id)->where('test_id',$test_id)->count()==0) {
+                $t['last_answered_question_number'] = null;
+            }
+            else {
+                $test_question_idd = UserTestAnswer::where('user_id', Auth::user()->id)->where('test_id', $test_id)->orderBy('test_question_id', 'DESC')->limit(1)->get();
+                foreach ($test_question_idd as $ttt){
+                    $test_question_id=$ttt->test_question_id;
+                }
+                $t['last_answered_question_number'] = TestQuestion::find($test_question_id)->question_number;
+
+                return response()->json(['success' => new $t], $this->successStatus);
+
+            }
+
         }
 
         $tests=Test::all();
