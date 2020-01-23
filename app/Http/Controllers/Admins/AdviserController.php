@@ -38,7 +38,7 @@ class AdviserController extends Controller
         $adviser=Adviser::withoutGlobalScope(\App\Scopes\AdviserScope::class)->where('user_id',$id)->first();
         $adviser_categories=Adviser_to_category::where('adviser_id',$adviser->id)->get();
 
-        return view('admin.advisers.show',compact('categories','user','adviser_categories'));
+        return view('admin.advisers.show',compact('categories','user','adviser_categories','adviser'));
     }
 
 }

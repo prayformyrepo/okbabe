@@ -4,7 +4,7 @@
 <head>
     @include('includes.panel.headLinks')
     <script src="/ckeditor/ckeditor.js"></script>
-    <link href="/css/select2.min.css" rel="stylesheet" />
+    <link href="/css/select2.min.css" rel="stylesheet"/>
 
     <title> شاورنو - اطلاعات مشاور </title>
 
@@ -99,8 +99,10 @@
                                                     {{--<input type="text" id="mobile" name="mobile" class="form-control" placeholder="شماره تماس مشاور" value="{{old('mobile')}}">--}}
 
                                                     <select name="gender" id="gender" class="form-control">
-                                                        <option value="0" @if($user->gender==0) selected @endif>مرد</option>
-                                                        <option value="1">زن</option>
+                                                        <option value="0" @if($user->gender==0) selected @endif>مرد
+                                                        </option>
+                                                        <option value="1" @if($user->gender==1) selected @endif>زن
+                                                        </option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -109,34 +111,37 @@
                                                 <label class="col-sm-2  col-form-label" for="simpleinput"> تصویر
                                                     مشاور</label>
                                                 <div class="col-sm-10">
-                                                    <input type="file" class="form-control" name="avatar" id="avatar">
+                                                    <img src="{{Request::root().$user->avatar}}" height="100px"
+                                                         alt="تصویر مشاور">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-2  col-form-label" for="simpleinput"> تصویر کارت
+                                                    ملی
+                                                    مشاور</label>
+                                                <div class="col-sm-10">
+                                                    <a href="{{Request::root().\App\File::find($adviser->national_card_file_id)->file_path}}"  download>دانلود</a>
 
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
-                                                <label class="col-sm-2  col-form-label" for="simpleinput"> تصویر کارت ملی
+                                                <label class="col-sm-2  col-form-label" for="simpleinput"> تصویر
+                                                    شناسنامه
                                                     مشاور</label>
                                                 <div class="col-sm-10">
-                                                    <input type="file" class="form-control" name="melli" id="melli">
+                                                    <a href="{{Request::root().\App\File::find($adviser->birth_certificate_file_id)->file_path}}" download>دانلود</a>
 
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
-                                                <label class="col-sm-2  col-form-label" for="simpleinput"> تصویر شناسنامه
+                                                <label class="col-sm-2  col-form-label" for="simpleinput"> نصویر مدرک
+                                                    تحصیلی
                                                     مشاور</label>
                                                 <div class="col-sm-10">
-                                                    <input type="file" class="form-control" name="shenasname" id="shenasname">
-
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group row">
-                                                <label class="col-sm-2  col-form-label" for="simpleinput"> نصویر مدرک تحصیلی
-                                                    مشاور</label>
-                                                <div class="col-sm-10">
-                                                    <input type="file" class="form-control" name="edu" id="edu">
+                                                    <a href="{{Request::root().\App\File::find($adviser->education_certificate_file_id)->file_path}}" download>دانلود</a>
 
                                                 </div>
                                             </div>
@@ -145,7 +150,7 @@
                                                 <label class="col-sm-2  col-form-label" for="simpleinput"> مجوز فعالیت
                                                     مشاور</label>
                                                 <div class="col-sm-10">
-                                                    <input type="file" class="form-control" name="faaliat" id="faaliat">
+                                                    <a href="{{Request::root().\App\File::find($adviser->work_certificate_file_id)->file_path}}" download>دانلود</a>
 
                                                 </div>
                                             </div>
@@ -158,7 +163,7 @@
                                                             <textarea class="form-control" rows="5" id="about"
                                                                       name="about">
 
-                                                                {{old('about')}}
+                                                                {{$adviser->about}}
 
                                                             </textarea>
                                                 </div>
@@ -171,7 +176,7 @@
                                                             <textarea class="form-control" rows="5" id="field"
                                                                       name="field">
 
-                                                                {{old('field')}}
+                                                                {{$adviser->field}}
 
                                                             </textarea>
                                                 </div>
@@ -183,7 +188,7 @@
                                                 <div class="col-sm-10">
                                                     <input type="number" id="call_price" name="call_price"
                                                            class="form-control" placeholder="هزینه تماس مشاور"
-                                                           value="{{old('call_price')}}">
+                                                           value="{{$adviser->call_price}}">
                                                 </div>
                                             </div>
 
@@ -193,7 +198,7 @@
                                                 <div class="col-sm-10">
                                                     <input type="number" id="visit_price" name="visit_price"
                                                            class="form-control" placeholder="هزینه رزرو حضوری مشاور"
-                                                           value="{{old('visit_price')}}">
+                                                           value="{{$adviser->visit_price}}">
                                                 </div>
                                             </div>
 
@@ -206,14 +211,18 @@
                                                     <select class="js-example-basic-multiple" name="categories[]"
                                                             multiple="multiple">
                                                         @foreach($categories as $category)
-                                                            <option selected value="{{$category->id}}">{{$category->name}}</option>
+                                                            <option
+                                                                    @foreach($adviser_categories as $adviser_category)
+                                                                            @if($adviser_category->adviser_category_id==$category->id)
+                                                                            selected
+                                                                            @endif
+                                                                    @endforeach
+                                                                    value="{{$category->id}}">{{$category->name}}</option>
 
                                                         @endforeach
                                                     </select>
                                                 </div>
                                             </div>
-
-
 
 
                                             <div class="form-group mb-0 justify-content-end row">
@@ -264,7 +273,7 @@
 <script src="/js/select2.min.js"></script>
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('.js-example-basic-multiple').select2();
     });
 
@@ -284,18 +293,18 @@
 @if(isset($pm))
     <script src="/js/swal.js"></script>
 
-<script>
-    $(document).ready(function() {
+    <script>
+        $(document).ready(function () {
 
-        Swal.fire(
-            'تایید',
-            '{{$pm}}',
-            'success'
-        )
-    });
+            Swal.fire(
+                'تایید',
+                '{{$pm}}',
+                'success'
+            )
+        });
 
-</script>
-    @endif
+    </script>
+@endif
 
 </body>
 
