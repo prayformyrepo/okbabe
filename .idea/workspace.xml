@@ -3,17 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_23_140506_add_relations_to_questions_table.php" afterPath="$PROJECT_DIR$/database/migrations/2020_01_23_140506_add_relations_to_questions_table.php" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_23_140601_add_relations_to_question_answers_table.php" afterPath="$PROJECT_DIR$/database/migrations/2020_01_23_140601_add_relations_to_question_answers_table.php" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_23_140756_add_relations_to_reserve_calls_table.php" afterPath="$PROJECT_DIR$/database/migrations/2020_01_23_140756_add_relations_to_reserve_calls_table.php" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_23_140806_add_relations_to_saved_advisers_table.php" afterPath="$PROJECT_DIR$/database/migrations/2020_01_23_140806_add_relations_to_saved_advisers_table.php" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_23_140920_add_relations_to_test_answers_table.php" afterPath="$PROJECT_DIR$/database/migrations/2020_01_23_140920_add_relations_to_test_answers_table.php" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_23_140931_add_relations_to_test_questions_table.php" afterPath="$PROJECT_DIR$/database/migrations/2020_01_23_140931_add_relations_to_test_questions_table.php" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_23_141038_add_relations_to_tickets_table.php" afterPath="$PROJECT_DIR$/database/migrations/2020_01_23_141038_add_relations_to_tickets_table.php" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_23_141051_add_relations_to_ticket_answers_table.php" afterPath="$PROJECT_DIR$/database/migrations/2020_01_23_141051_add_relations_to_ticket_answers_table.php" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_23_141116_add_relations_to_transactions_table.php" afterPath="$PROJECT_DIR$/database/migrations/2020_01_23_141116_add_relations_to_transactions_table.php" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_23_141145_add_relations_to_view_questions_table.php" afterPath="$PROJECT_DIR$/database/migrations/2020_01_23_141145_add_relations_to_view_questions_table.php" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_23_141207_add_relations_to_wallets_table.php" afterPath="$PROJECT_DIR$/database/migrations/2020_01_23_141207_add_relations_to_wallets_table.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,16 +16,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="2020_01_23_140601_add_relations_to_question_answers_table.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_23_140601_add_relations_to_question_answers_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="16" column="15" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="2020_01_23_140756_add_relations_to_reserve_calls_table.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_23_140756_add_relations_to_reserve_calls_table.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -117,11 +96,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2020_01_23_141207_add_relations_to_wallets_table.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2020_01_23_141207_add_relations_to_wallets_table.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_23_141207_add_relations_to_wallets_table.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
               <caret line="18" column="67" lean-forward="false" selection-start-line="18" selection-start-column="67" selection-end-line="18" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2020_01_23_133450_add_relations_to_posts_table.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_23_133450_add_relations_to_posts_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -615,7 +604,7 @@
       <workItem from="1579643820302" duration="294000" />
       <workItem from="1579675992653" duration="15969000" />
       <workItem from="1579760007488" duration="3224000" />
-      <workItem from="1579765330729" duration="7587000" />
+      <workItem from="1579765330729" duration="7882000" />
     </task>
     <task id="LOCAL-00094" summary="edit fetch messages">
       <created>1575015968174</created>
@@ -990,7 +979,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="441903000" />
+    <option name="totallyTimeSpent" value="442198000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1373,14 +1362,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_23_133450_add_relations_to_posts_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/TestController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -1497,6 +1478,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="18" column="67" lean-forward="false" selection-start-line="18" selection-start-column="67" selection-end-line="18" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_23_133450_add_relations_to_posts_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
           <folding />
         </state>
       </provider>
