@@ -113,11 +113,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/ProductController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="41" column="25" lean-forward="false" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+            <state relative-caret-position="143">
+              <caret line="41" column="30" lean-forward="false" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -133,7 +133,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductResource.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProductResource.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Resources/ProductResource.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -619,7 +619,7 @@
       <workItem from="1579643820302" duration="294000" />
       <workItem from="1579675992653" duration="15969000" />
       <workItem from="1579760007488" duration="3224000" />
-      <workItem from="1579765330729" duration="13304000" />
+      <workItem from="1579765330729" duration="13545000" />
     </task>
     <task id="LOCAL-00094" summary="edit fetch messages">
       <created>1575015968174</created>
@@ -994,7 +994,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="447620000" />
+    <option name="totallyTimeSpent" value="447861000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1526,10 +1526,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/ProductController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/ProductResource.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="41" column="25" lean-forward="false" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+        <state relative-caret-position="255">
+          <caret line="18" column="14" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1542,10 +1542,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Resources/ProductResource.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/ProductController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="14" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="14" />
+        <state relative-caret-position="143">
+          <caret line="41" column="30" lean-forward="false" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
           <folding />
         </state>
       </provider>
