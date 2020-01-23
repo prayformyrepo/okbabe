@@ -39,34 +39,28 @@ class ProductController extends Controller
 
         }else{
 
-//            $product['product']=['id'=>$product->id,
-//                'name'=>$product->name,
-//                'description'=>$product->description,
-//                'short_description'=>$product->short_description,
-//                'language'=>$product->language,
-//                'pages'=>$product->pages,
-//                'size'=>$product->size,
-//                'author'=>$product->author,
-//                'announcer'=>$product->announcer,
-//                'translator'=>$product->translator,
-//                'published_date'=>$product->published_date,
-//                'publisher'=>$product->publisher,
-//                'productType'=>$product->productType->name,
-//                'price'=>$product->price,
-//                'featured'=>$product->featured,
-//                'images'=>$product->images()->get(),
-//                'categories'=>$product->categories()->get(),
-//                'comments'=>  ProductCommentResource::Collection($product->productComments()->orderBy('created_at','DESC')->get()),
-//                'created_at'=>Carbon::make($product->created_at)->format('Y-m-d H:i:s')
-//            ];
-            $producta['product']=$product;
-            $producta['product']['images']=$product->images()->get();
-            $producta['product']['categories']=$product->categories()->get();
-            $producta['product']['comments']=ProductCommentResource::Collection($product->productComments()->orderBy('created_at','DESC')->get());
-
-//        return response()->json(['success'=>$product]);
-            return response()->json(['success' => $producta], 200);
-
+        return response()->json(['success'=>
+            ['id'=>$product->id,
+              'name'=>$product->name,
+              'description'=>$product->description,
+               'short_description'=>$product->short_description,
+                'language'=>$product->language,
+                'pages'=>$product->pages,
+                'size'=>$product->size,
+                'author'=>$product->author,
+                'announcer'=>$product->announcer,
+                'translator'=>$product->translator,
+                'published_date'=>$product->published_date,
+                'publisher'=>$product->publisher,
+                'productType'=>$product->productType->name,
+                'price'=>$product->price,
+                'featured'=>$product->featured,
+                'images'=>$product->images()->get(),
+                'categories'=>$product->categories()->get(),
+                'comments'=>  ProductCommentResource::Collection($product->productComments()->orderBy('created_at','DESC')->get()),
+                'created_at'=>Carbon::make($product->created_at)->format('Y-m-d H:i:s')
+            ]
+        ]);
 
         }
 
