@@ -59,13 +59,13 @@ class ProductController extends Controller
 //                'comments'=>  ProductCommentResource::Collection($product->productComments()->orderBy('created_at','DESC')->get()),
 //                'created_at'=>Carbon::make($product->created_at)->format('Y-m-d H:i:s')
 //            ];
-            $product['product']=$product;
-            $product['product']['images']=$product->images()->get();
-            $product['product']['categories']=$product->categories()->get();
-            $product['product']['comments']=ProductCommentResource::Collection($product->productComments()->orderBy('created_at','DESC')->get());
+            $producta['product']=$product;
+            $producta['product']['images']=$product->images()->get();
+            $producta['product']['categories']=$product->categories()->get();
+            $producta['product']['comments']=ProductCommentResource::Collection($product->productComments()->orderBy('created_at','DESC')->get());
 
 //        return response()->json(['success'=>$product]);
-            return response()->json(['success' => $product], 200);
+            return response()->json(['success' => $producta], 200);
 
 
         }
