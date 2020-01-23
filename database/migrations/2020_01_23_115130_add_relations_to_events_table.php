@@ -15,6 +15,7 @@ class AddRelationsToEventsTable extends Migration
     {
         Schema::table('events', function (Blueprint $table) {
             $table->unsignedInteger('user_id')->index()->change();
+            $table->unsignedBigInteger('adviser_id')->index()->change();
 
             $table->foreign('adviser_id')->references('id')->on('advisers')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
