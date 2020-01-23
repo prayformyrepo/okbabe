@@ -14,10 +14,10 @@ class AddRelationsToConversationsTable extends Migration
     public function up()
     {
         Schema::table('conversations', function (Blueprint $table) {
-            $table->unsignedInteger('user_id')->index()->change();
-            $table->unsignedInteger('adviser_id')->index()->change();
+//            $table->unsignedInteger('user_id')->index()->change();
+//            $table->unsignedInteger('adviser_id')->index()->change();
 
-            $table->foreign('adviser_id')->references('id')->on('users')->onDelete('cascade');
+//            $table->foreign('adviser_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('last_message_id')->references('id')->on('messages')->onDelete('set null');
             $table->foreign('unread_user_id')->references('id')->on('users')->onDelete('cascade');
