@@ -14,7 +14,9 @@ class AddRelationsToPostToCategoriesTable extends Migration
     public function up()
     {
         Schema::table('post_to_categories', function (Blueprint $table) {
-            //
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+            $table->foreign('post_category_id')->references('id')->on('post_categories')->onDelete('cascade');
+
         });
     }
 

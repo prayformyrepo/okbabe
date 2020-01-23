@@ -37,10 +37,9 @@ class TestController extends Controller
                 }
                 $t['last_answered_question_number'] = TestQuestion::find($test_question_id)->question_number;
 
-                return response()->json(['success' => new $t], $this->successStatus);
-
             }
 
+            return response()->json(['success' => new $t], $this->successStatus);
         }
 
         $tests=Test::all();

@@ -14,7 +14,9 @@ class AddRelationsToNotificationsTable extends Migration
     public function up()
     {
         Schema::table('notifications', function (Blueprint $table) {
-            //
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('sender_user_id')->references('id')->on('users')->onDelete('cascade');
+
         });
     }
 

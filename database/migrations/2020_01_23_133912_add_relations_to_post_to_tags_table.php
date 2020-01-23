@@ -14,7 +14,9 @@ class AddRelationsToPostToTagsTable extends Migration
     public function up()
     {
         Schema::table('post_to_tags', function (Blueprint $table) {
-            //
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+            $table->foreign('tag_id')->references('id')->on('post_tags')->onDelete('cascade');
+
         });
     }
 
