@@ -39,7 +39,7 @@ class ProductController extends Controller
 
         }else{
 
-            $product=['id'=>$product->id,
+            $product['product']=['id'=>$product->id,
                 'name'=>$product->name,
                 'description'=>$product->description,
                 'short_description'=>$product->short_description,
