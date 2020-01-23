@@ -39,7 +39,7 @@ class TestController extends Controller
 
             }
 
-            return response()->json(['success' => new $t], $this->successStatus);
+            return response()->json(['success' => $t], $this->successStatus);
         }
 
         $tests=Test::all();
