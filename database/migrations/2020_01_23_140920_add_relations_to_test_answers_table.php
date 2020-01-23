@@ -14,7 +14,9 @@ class AddRelationsToTestAnswersTable extends Migration
     public function up()
     {
         Schema::table('test_answers', function (Blueprint $table) {
-            //
+
+            $table->foreign('test_question_id')->references('id')->on('test_questions')->onDelete('cascade');
+
         });
     }
 

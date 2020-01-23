@@ -14,7 +14,9 @@ class AddRelationsToTransactionsTable extends Migration
     public function up()
     {
         Schema::table('transactions', function (Blueprint $table) {
-            //
+            $table->unsignedInteger('user_id')->index()->change();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
         });
     }
 

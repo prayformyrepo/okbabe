@@ -14,7 +14,9 @@ class AddRelationsToTicketsTable extends Migration
     public function up()
     {
         Schema::table('tickets', function (Blueprint $table) {
-            //
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('ticket_category_id')->references('id')->on('ticket_categories')->onDelete('cascade');
+
         });
     }
 

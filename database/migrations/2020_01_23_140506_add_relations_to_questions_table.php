@@ -14,7 +14,11 @@ class AddRelationsToQuestionsTable extends Migration
     public function up()
     {
         Schema::table('questions', function (Blueprint $table) {
-            //
+            $table->unsignedBigInteger('question_category_id')->index()->change();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('question_category_id')->references('id')->on('adviser_categories')->onDelete('cascade');
+
         });
     }
 

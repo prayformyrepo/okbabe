@@ -14,7 +14,8 @@ class AddRelationsToTicketAnswersTable extends Migration
     public function up()
     {
         Schema::table('ticket_answers', function (Blueprint $table) {
-            //
+            $table->foreign('ticket_id')->references('id')->on('tickets')->onDelete('cascade');
+
         });
     }
 

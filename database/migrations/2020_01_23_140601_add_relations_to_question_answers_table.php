@@ -14,7 +14,10 @@ class AddRelationsToQuestionAnswersTable extends Migration
     public function up()
     {
         Schema::table('question_answers', function (Blueprint $table) {
-            //
+            $table->unsignedBigInteger('adviser_id')->index()->change();
+            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
+            $table->foreign('adviser_id')->references('id')->on('advisers')->onDelete('cascade');
+
         });
     }
 
