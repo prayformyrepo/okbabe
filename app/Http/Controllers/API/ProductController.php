@@ -78,7 +78,17 @@ class ProductController extends Controller
             $products = Product::where('status', 1)->paginate(5);
             ProductResource::wrap('success');
             $products = ProductResource::collection($products);
-            return response()->json(['success' => $products]);
+            $pr['product']=$products;
+            $paginate['total'] = $products->total();
+            $paginate['per_page'] = $products->perPage();
+            $paginate['current_page'] = $products->currentPage();
+            $paginate['last_page'] = $products->lastPage();
+            $paginate['has_more_pages'] = $products->hasMorePages();
+            $paginate['next_page_url'] = $products->nextPageUrl();
+            $paginate['previous_page_url'] = $products->previousPageUrl();
+            $pr['pagination']=$paginate;
+
+            return response()->json(['success' => $pr]);
 
 //            return $products;
         }
