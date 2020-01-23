@@ -39,11 +39,10 @@ class ProductController extends Controller
 
         }else{
 
-        return response()->json(['success'=>
-            ['id'=>$product->id,
-              'name'=>$product->name,
-              'description'=>$product->description,
-               'short_description'=>$product->short_description,
+            $product=['id'=>$product->id,
+                'name'=>$product->name,
+                'description'=>$product->description,
+                'short_description'=>$product->short_description,
                 'language'=>$product->language,
                 'pages'=>$product->pages,
                 'size'=>$product->size,
@@ -59,8 +58,8 @@ class ProductController extends Controller
                 'categories'=>$product->categories()->get(),
                 'comments'=>  ProductCommentResource::Collection($product->productComments()->orderBy('created_at','DESC')->get()),
                 'created_at'=>Carbon::make($product->created_at)->format('Y-m-d H:i:s')
-            ]
-        ]);
+            ];
+        return response()->json(['success'=>$product]);
 
         }
 
@@ -176,7 +175,7 @@ class ProductController extends Controller
     {
         $carts = Cart::where('user_id',$this->user()->id)->get();
         if(count($carts) !=0 ){
-            return response()->json(['success'=>$carts]);
+            return response()->json(['success'=>CartResource::collection($carts)]);
         }else{
             return response()->json(['error'=>'هیج محصولی در سبد خرید شما موجود نمیباشد.']);
         }
