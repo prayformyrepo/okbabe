@@ -27,18 +27,6 @@ class AdviserController extends Controller
         //delete adviser
         Adviser::withoutGlobalScope(\App\Scopes\AdviserScope::class)->where('user_id',$id)->first()->delete();
 
-        //delete adviser times
-        $adviser_times=Adviser_time::where('adviser_id',$adviser_id)->get();
-        foreach ($adviser_times as $adviser_time) {
-            Adviser_time::find($adviser_time->id)->delete();
-        }
-
-        //delete adviser categories
-        $adviser_categories=Adviser_to_category::where('adviser_id',$adviser_id)->get();
-        foreach ($adviser_categories as $adviser_categorie) {
-            Adviser_to_category::find($adviser_categorie->id)->delete();
-        }
-
 
 
 
