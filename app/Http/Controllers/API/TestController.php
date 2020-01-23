@@ -21,9 +21,10 @@ class TestController extends Controller
     public function show_tests(Request $request)
     {
         if (isset($request->test_id) && isset($request->question_number)) {
-            $test=TestQuestion::where('test_id',$request->test_id)->where('question_number',$request->question_number)->first();
             $number=Test::find($request->test_id)->$request->question_number;
             if($request->question_number > $number ) return response()->json(['success' => 'ended'], $this->successStatus);
+            $test=TestQuestion::where('test_id',$request->test_id)->where('question_number',$request->question_number)->first();
+
 
             return response()->json(['success' => new TestResourceCollection($test)], $this->successStatus);
         }
