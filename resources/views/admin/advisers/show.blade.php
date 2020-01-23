@@ -6,7 +6,7 @@
     <script src="/ckeditor/ckeditor.js"></script>
     <link href="/css/select2.min.css" rel="stylesheet" />
 
-    <title> شاورنو - ثبت نام مشاور </title>
+    <title> شاورنو - اطلاعات مشاور </title>
 
 </head>
 
@@ -14,8 +14,8 @@
 
 <!-- Begin page -->
 <div id="wrapper">
-{{--@include('includes.panel.topBar')--}}
-{{--@include('includes.panel.leftSideBar')--}}
+@include('includes.panel.topBar')
+@include('includes.panel.leftSideBar')
 
 
 
@@ -23,24 +23,16 @@
     <!-- Start Page Content here -->
     <!-- ============================================================== -->
 
-    <div class="content-page" style="margin-right: 0">
+    <div class="content-page">
         <div class="content">
 
             <!-- Start Content-->
             <div class="container-fluid">
 
                 <div class="row">
-                    <div class="row" style="width: 100%">
-                        <div class="col-sm-5 col-3"></div>
-                        <div class="col-sm-2 col-6">
-                            <img src="http://shavernoapp.ir/images/shsh.png" style="width: 100%;margin: 10px auto;" alt="">
-                        </div>
-                        <div class="col-sm-5 col-3"></div>
-                    </div>
-                    <h2 class="text-center" style="width: 100%;margin-bottom: 20px">فرم درخواست همکاری</h2>
 
                     @if ($errors->any())
-                        <div class="alert alert-danger" style="width: 100%">
+                        <div class="alert alert-danger">
                             <ul>
                                 @foreach($errors->all() as $err)
                                     <li>{{$err}}</li>
@@ -76,7 +68,7 @@
                                                     مشاور</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" id="name" name="name" class="form-control"
-                                                           placeholder="نام مشاور" value="{{old('name')}}">
+                                                           placeholder="نام مشاور" value="{{$user->name}}">
                                                 </div>
                                             </div>
 
@@ -86,7 +78,7 @@
                                                 <div class="col-sm-10">
                                                     <input type="text" id="username" name="username"
                                                            class="form-control" placeholder="نام کاربری مشاور"
-                                                           value="{{old('username')}}">
+                                                           value="{{$user->username}}">
                                                 </div>
                                             </div>
 
@@ -95,7 +87,7 @@
                                                     مشاور</label>
                                                 <div class="col-sm-10">
                                                     <input type="number" id="mobile" name="mobile" class="form-control"
-                                                           placeholder="شماره موبایل مشاور" value="{{old('mobile')}}">
+                                                           placeholder="شماره موبایل مشاور" value="{{$user->username}}">
                                                 </div>
                                             </div>
 
@@ -214,30 +206,13 @@
                                                     <select class="js-example-basic-multiple" name="categories[]"
                                                             multiple="multiple">
                                                         @foreach($categories as $category)
-                                                            <option value="{{$category->id}}">{{$category->name}}</option>
+                                                            <option selected value="{{$category->id}}">{{$category->name}}</option>
 
                                                         @endforeach
                                                     </select>
                                                 </div>
                                             </div>
 
-                                            <div class="form-group row">
-                                                <div class="offset-sm-4 col-sm-8">
-                                                    <div class="checkbox">
-                                                        <input name="accept" id="accept" type="checkbox" data-parsley-multiple="accept">
-                                                        <label for="accept"> صحت اطلاعات وارد شده را تایید می کنم</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group row">
-                                                <div class="offset-sm-4 col-sm-8">
-                                                    <div class="checkbox">
-                                                        <input name="rights" id="rights" type="checkbox" data-parsley-multiple="rights">
-                                                        <label for="rights"><a href="https://shaverno.com/copyright" target="_blank">قوانین و ضوابط شاورنو </a> را می پذیرم</label>
-                                                    </div>
-                                                </div>
-                                            </div>
 
 
 

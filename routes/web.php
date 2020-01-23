@@ -77,6 +77,7 @@ Route::group(['middleware' => 'admin','prefix'=>'admin','as'=>'admin.'], functio
 
     Route::get('advisers',['uses'=>'Admins\AdviserController@index','as'=>'adviser.index']);
     Route::delete('/advisers/{adviser_id}', 'Admins\AdviserController@destroy')->name('adviser.destroy');
+    Route::get('/advisers/{adviser_id}', 'Admins\AdviserController@show')->name('adviser.show');
 
 
 });

@@ -82,7 +82,7 @@
                                             </td>
 
                                             <td>
-                                                <a href="" class="btn btn-primary">
+                                                <a href="{{route('admin.adviser.show',[$adviser->id])}}" class="btn btn-primary">
                                                     <i class="fa fa-info-circle"> مشاهده جزئیات </i>
                                                 </a>
                                             </td>
