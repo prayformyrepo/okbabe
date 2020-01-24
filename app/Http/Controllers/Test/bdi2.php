@@ -4,6 +4,11 @@ namespace App\Http\Controllers\Test;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Test;
+use App\TestAnswer;
+use App\TestQuestion;
+use App\UserTestAnswer;
+use Illuminate\Support\Facades\Auth;
 
 class bdi2 extends Controller
 {
@@ -66,6 +71,7 @@ class bdi2 extends Controller
         افسردگی بیش از حد
         </p>';
     }
+    return response()->json(['success' => $ans], 200);
 
 
     }
