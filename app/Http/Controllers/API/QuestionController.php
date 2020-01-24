@@ -102,25 +102,16 @@ class QuestionController extends Controller
 
         } else if (isset($request->self) && $request->self == 1) {
             if ($user->is_adviser == 1) {
-                $qcount=0;
-                $adviser_id = Adviser::where('user_id', $user->id)->value('id');
-                $adviser_categories = Adviser_to_category::where('adviser_id', $adviser_id)->get();
+                $adviser=Adviser::where('user_id',$user->id)->first()->get();
+               $q_answers=Question_answer::where('adviser_id',$adviser->id)->get();
+                $qcount=Question_answer::where('adviser_id',$adviser->id)->count();
                 $questions_array = array();
-                foreach ($adviser_categories as $adviser_category) {
-                    $questionsArray = Question::where('question_category_id', $adviser_category->adviser_category_id)->orderBy('id', 'DESC')->get();
-                    foreach ($questionsArray as $questionArray) {
-                        $q = $questionArray;
-                        $q['now'] = Carbon::now()->format('Y-m-d H:i:s');
-                        $qcount++;
-                        array_push($questions_array, $q);
-                    }
+                foreach ($q_answers as $q_answer){
+                   $save['question']=Question::find($q_answer->question_id);
+                   $save['answer']=$q_answer->text;
+                    array_push($questions_array, $save);
                 }
-//                $questions_array=array();
-//                foreach ($questions as $question){
-//                    $save['question']=$question;
-//                    $save['question']['user_info']=User::select('id','name','avatar')->find($question->user_id);
-//                    array_push($questions_array,$save);
-//                }
+
             } else {
                 $questions = Question::where('user_id', $user->id)->orderBy('id', 'DESC')->paginate(10);
                 $questions_array = array();
