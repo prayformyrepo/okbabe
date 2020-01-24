@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddRelationsToSavedAdvisersTable extends Migration
+class AddNoteToCallsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class AddRelationsToSavedAdvisersTable extends Migration
      */
     public function up()
     {
-        Schema::table('saved_advisers', function (Blueprint $table) {
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('adviser_id')->references('id')->on('advisers')->onDelete('cascade');
-
+        Schema::table('calls', function (Blueprint $table) {
+            $table->text('note')->nullable()->after('status');
         });
     }
 
@@ -28,7 +25,7 @@ class AddRelationsToSavedAdvisersTable extends Migration
      */
     public function down()
     {
-        Schema::table('saved_advisers', function (Blueprint $table) {
+        Schema::table('calls', function (Blueprint $table) {
             //
         });
     }

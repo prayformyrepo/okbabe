@@ -40,44 +40,42 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CallController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CallController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/CallController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="388" column="81" lean-forward="false" selection-start-line="388" selection-start-column="81" selection-end-line="388" selection-end-column="81" />
-              <caret line="374" column="86" lean-forward="false" selection-start-line="374" selection-start-column="86" selection-end-line="374" selection-end-column="86" />
+            <state relative-caret-position="335">
+              <caret line="521" column="5" lean-forward="true" selection-start-line="521" selection-start-column="5" selection-end-line="521" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/advisers/index.blade.php">
+      <file leaf-file-name="2020_01_24_122722_add_note_to_calls_table.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_24_122722_add_note_to_calls_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1260">
-              <caret line="84" column="99" lean-forward="false" selection-start-line="84" selection-start-column="99" selection-end-line="84" selection-end-column="99" />
-              <folding>
-                <marker date="1579782262502" expanded="true" signature="54:80" ph="..." />
-                <marker date="1579782262502" expanded="true" signature="277:300" ph="..." />
-                <marker date="1579782262502" expanded="true" signature="311:339" ph="..." />
-                <marker date="1579782262502" expanded="true" signature="2569:2590" ph="..." />
-                <marker date="1579782262502" expanded="true" signature="2578:2582" ph="..." />
-                <marker date="1579782262502" expanded="true" signature="2701:2713" ph="..." />
-                <marker date="1579782262502" expanded="true" signature="2771:2780" ph="..." />
-                <marker date="1579782262502" expanded="true" signature="2771:2785" ph="..." />
-                <marker date="1579782262502" expanded="true" signature="2843:2861" ph="..." />
-                <marker date="1579782262502" expanded="true" signature="2968:2984" ph="..." />
-                <marker date="1579782262502" expanded="true" signature="3039:3069" ph="..." />
-                <marker date="1579782262502" expanded="true" signature="3039:3073" ph="..." />
-                <marker date="1579782262502" expanded="true" signature="3298:3416" ph="..." />
-                <marker date="1579782262502" expanded="true" signature="3946:3988" ph="..." />
-                <marker date="1579782262502" expanded="true" signature="4422:4481" ph="..." />
-                <marker date="1579782262502" expanded="true" signature="4608:4630" ph="..." />
-                <marker date="1579782262502" expanded="true" signature="4687:4699" ph="..." />
-                <marker date="1579782262502" expanded="true" signature="5423:5446" ph="..." />
-                <marker date="1579782262502" expanded="true" signature="5683:5712" ph="..." />
-                <marker date="1579782262502" expanded="true" signature="5725:5753" ph="..." />
-              </folding>
+            <state relative-caret-position="210">
+              <caret line="16" column="53" lean-forward="false" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdviserController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/AdviserController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-8192">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReserveController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/ReserveController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="166" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -119,16 +117,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductResource.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Resources/ProductResource.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/ProductController.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -152,7 +140,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>format</find>
       <find>auth:api</find>
       <find>user_info</find>
       <find>wallet</find>
@@ -182,6 +169,7 @@
       <find>در</find>
       <find>$shakhsiati</find>
       <find>$answer_number</find>
+      <find>add_note</find>
     </findStrings>
     <replaceStrings>
       <replace>paginate</replace>
@@ -220,7 +208,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/includes/panel/footer.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_01_22_134958_add_items_to_advisers_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/AdviserController.php" />
         <option value="$PROJECT_DIR$/app/Conversation.php" />
@@ -271,6 +258,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Test/Enrich47.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/TestController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/CallController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_01_24_122722_add_note_to_calls_table.php" />
       </list>
     </option>
   </component>
@@ -475,6 +463,17 @@
             <path>
               <item name="shaverno" type="b2602c69:ProjectViewProjectNode" />
               <item name="shaverno" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="shaverno" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shaverno" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="migrations" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="shaverno" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shaverno" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -609,7 +608,7 @@
       <workItem from="1579675992653" duration="15969000" />
       <workItem from="1579760007488" duration="3224000" />
       <workItem from="1579765330729" duration="17412000" />
-      <workItem from="1579849671463" duration="4272000" />
+      <workItem from="1579849671463" duration="4551000" />
     </task>
     <task id="LOCAL-00094" summary="edit fetch messages">
       <created>1575015968174</created>
@@ -984,10 +983,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="456000000" />
+    <option name="totallyTimeSpent" value="456279000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -998,7 +998,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24235295" sideWeight="0.49166667" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24235295" sideWeight="0.49166667" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1053,28 +1053,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/BlogController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2205">
-          <caret line="154" column="5" lean-forward="false" selection-start-line="154" selection-start-column="5" selection-end-line="154" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/includes/panel/leftSideBar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="76" column="51" lean-forward="false" selection-start-line="76" selection-start-column="51" selection-end-line="76" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Adviser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admins/VerificationController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1443,11 +1421,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/AdviserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8192">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/ReserveController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="166" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/CallController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="388" column="81" lean-forward="false" selection-start-line="388" selection-start-column="81" selection-end-line="388" selection-end-column="81" />
-          <caret line="374" column="86" lean-forward="false" selection-start-line="374" selection-start-column="86" selection-end-line="374" selection-end-column="86" />
+        <state relative-caret-position="335">
+          <caret line="521" column="5" lean-forward="true" selection-start-line="521" selection-start-column="5" selection-end-line="521" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_24_122722_add_note_to_calls_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="53" lean-forward="false" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
           <folding />
         </state>
       </provider>
