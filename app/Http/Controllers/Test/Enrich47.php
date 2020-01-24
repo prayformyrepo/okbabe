@@ -34,7 +34,7 @@ class Enrich47 extends Controller
 
             if ($answer_number==2||$answer_number==3||$answer_number==4||$answer_number==12||$answer_number==22||$answer_number==40){
                 $shakhsiati=$shakhsiati+$weight;
-                $ans.=$shakhsiati .' - ';
+                $ans.=$shakhsiati .' / '.$weight .' - ';
             }
             if ($answer_number==1||$answer_number==6||$answer_number==13||$answer_number==23||$answer_number==32||$answer_number==41){
                 $zanashooii=$zanashooii+$weight;
