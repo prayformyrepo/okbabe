@@ -100,20 +100,35 @@ class UserController extends Controller
 
         if ($user_count == 0 || $user_count != 0 && $user->password == null) {
 
-            //sms
-            try {
-                $receptor = $request->mobile;
-                $template = "shaverno";
-                $type = "sms";
-                $token = $code;
-                $token2 = "";
-                $token3 = "";
-                $result = Kavenegar::VerifyLookup($receptor, $token, $token2, $token3, $template, $type);
-            } catch (ApiException $e) {
-                echo $e->errorMessage();
-            } catch (HttpException $e) {
-                echo $e->errorMessage();
-            }
+          //sms
+          try {
+              $receptor = $request->mobile;
+              $template = "shaverno";
+              $type = "sms";
+              $token = $code;
+              $token2 = "";
+              $token3 = "";
+              $result = Kavenegar::VerifyLookup($receptor, $token, $token2, $token3, $template, $type);
+          } catch (ApiException $e) {
+              echo $e->errorMessage();
+          } catch (HttpException $e) {
+              echo $e->errorMessage();
+          }
+
+          //sms
+          try {
+              $receptor = $request->mobile;
+              $template = "welcome";
+              $type = "sms";
+              $token = " ";
+              $token2 = "";
+              $token3 = "";
+              $result = Kavenegar::VerifyLookup($receptor, $token, $token2, $token3, $template, $type);
+          } catch (ApiException $e) {
+              echo $e->errorMessage();
+          } catch (HttpException $e) {
+              echo $e->errorMessage();
+          }
 
 
         }
