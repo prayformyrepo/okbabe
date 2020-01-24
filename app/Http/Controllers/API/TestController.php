@@ -21,9 +21,6 @@ class TestController extends Controller
     public function show_tests(Request $request)
     {
         if (isset($request->test_id) && isset($request->question_number)) {
-            if (isset($request->reset) && $request->reset==1){
-                $user_answers=UserTestAnswer::where('user_id',Auth::user()->id)->delete();
-            }
             $number=Test::find($request->test_id)->questions_count;
             if($request->question_number > $number ) return response()->json(['success' => 'ended'], $this->successStatus);
             $test=TestQuestion::where('test_id',$request->test_id)->where('question_number',$request->question_number)->first();
@@ -32,6 +29,9 @@ class TestController extends Controller
             return response()->json(['success' => new TestResourceCollection($test)], $this->successStatus);
         }
         if (isset($request->test_id) && !isset($request->question_number)){
+            if (isset($request->reset) && $request->reset==1){
+                $user_answers=UserTestAnswer::where('user_id',Auth::user()->id)->delete();
+            }
             $test_id=$request->test_id;
             if(UserTestAnswer::where('user_id',Auth::user()->id)->where('test_id',$test_id)->count()==0) {
                 $t['last_answered_question_number'] = null;
