@@ -247,9 +247,13 @@
 
                                             <div class="form-group mb-0 justify-content-end row">
                                                 <div class="col-sm-12">
-                                                    <button type="submit" class="btn btn-info waves-effect waves-light"
-                                                            style="float: left"> ثبت اطلاعات
+                                                    <button type="submit"  class="btn btn-success waves-effect waves-light"
+                                                            style="float: left;margin: 0 10px"> تایید مشاور
                                                     </button>
+
+                                                    <a href="{{route('adviser.index')}}" class="btn btn-danger waves-effect waves-light"
+                                                            style="float: left"> رد مشاور
+                                                    </a>
                                                 </div>
                                             </div>
 
@@ -297,17 +301,6 @@
         $('.js-example-basic-multiple').select2();
     });
 
-
-    $('#reset').on('click', function () {
-        var captcha = $('#captcha_img');
-        var config = captcha.data('refresh-config');
-        $.ajax({
-            method: 'GET',
-            url: '/get_captcha/' + config,
-        }).done(function (response) {
-            captcha.prop('src', response);
-        });
-    });
 </script>
 
 @if(isset($pm))

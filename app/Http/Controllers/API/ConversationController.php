@@ -375,6 +375,7 @@ class ConversationController extends Controller
                 'file_path' => '/uploads/chat/' . $filename,
                 'orginal_name' => $file->getClientOriginalName(),
                 'file_type' => $file->getClientMimeType(),
+                'file_size' => $request->file('file')->getSize(),
                 'slug' => Auth::user()->id . '_' . time()
             ]);
 
