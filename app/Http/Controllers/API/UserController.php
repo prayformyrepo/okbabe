@@ -146,7 +146,7 @@ class UserController extends Controller
 
         $user = Auth::user();
         $user = User::find($user->id);
-
+        $mobile=$user->mobile;
         if ($user->code != $request->code) {
             $error['reason'] = 'code is wrong';
             return response()->json(['error' => $error], 401);
@@ -161,7 +161,7 @@ class UserController extends Controller
 
         //sms
         try {
-            $receptor = $request->mobile;
+            $receptor = $mobile;
             $template = "welcome";
             $type = "sms";
             $token = ",";
