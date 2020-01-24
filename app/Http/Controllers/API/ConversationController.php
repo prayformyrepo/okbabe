@@ -247,7 +247,7 @@ class ConversationController extends Controller
 
 //        $conversation=Conversation::select('id','text','status','updated_at')->find($request->conversation_id);
 
-        $messages = $conversation->messagesByLastId($last_message_id)->paginate(10);
+        $messages = $conversation->messagesByLastId($last_message_id)->paginate(10000);
         $mess = array();
         foreach ($messages as $m) {
             $me['id'] = $m->id;
