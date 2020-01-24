@@ -630,7 +630,7 @@ class AdviserController extends Controller
             $r=$rate;
             if ($rate->is_private==0){
                 $r['user_name']=User::find($rate->user_id)->name==null?find($rate->user_id)->username:find($rate->user_id)->name;
-                $r['avatar']=find($rate->user_id)->avatar;
+                $r['avatar']=User::find($rate->user_id)->avatar;
             }else{
                 $r['user_id']=null;
                 $r['user_name']='ناشناس';
