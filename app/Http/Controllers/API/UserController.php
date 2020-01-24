@@ -115,22 +115,6 @@ class UserController extends Controller
               echo $e->errorMessage();
           }
 
-          //sms
-          try {
-              $receptor = $request->mobile;
-              $template = "welcome";
-              $type = "sms";
-              $token = ",";
-              $token2 = "";
-              $token3 = "";
-              $result = Kavenegar::VerifyLookup($receptor, $token, $token2, $token3, $template, $type);
-          } catch (ApiException $e) {
-              echo $e->errorMessage();
-          } catch (HttpException $e) {
-              echo $e->errorMessage();
-          }
-
-
         }
 
 
@@ -174,6 +158,22 @@ class UserController extends Controller
         $success['token'] = $user->createToken('validation')->accessToken;
         $user->api_token = $success['token'];
         $user->save();
+
+        //sms
+        try {
+            $receptor = $request->mobile;
+            $template = "welcome";
+            $type = "sms";
+            $token = ",";
+            $token2 = "";
+            $token3 = "";
+            $result = Kavenegar::VerifyLookup($receptor, $token, $token2, $token3, $template, $type);
+        } catch (ApiException $e) {
+            echo $e->errorMessage();
+        } catch (HttpException $e) {
+            echo $e->errorMessage();
+        }
+
 
         return response()->json(['success' => $success], $this->successStatus);
     }
