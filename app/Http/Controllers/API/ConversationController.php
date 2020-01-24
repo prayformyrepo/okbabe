@@ -254,9 +254,9 @@ class ConversationController extends Controller
             $me['text'] = $m->text;
             $me['file_id'] = $m->file_id;
 //            $file_id=$m->file_id;
-            $me['file_name'] = File::find($m->file_id)->orginal_name;
-            $me['file_path'] = File::find($m->file_id)->file_path;
-            $me['file_type'] = File::find($m->file_id)->file_type;
+            $me['file_name'] = File::find($m->file_id);
+//            $me['file_path'] = File::find($m->file_id)->file_path;
+//            $me['file_type'] = File::find($m->file_id)->file_type;
 
             $me['status'] = $m->status;
             $me['user_id'] = $m->user_id;
