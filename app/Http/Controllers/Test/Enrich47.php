@@ -18,8 +18,47 @@ class Enrich47 extends Controller
         $test = Test::where('slug', 'enrich-47')->first();
         $user_answers = UserTestAnswer::where('user_id', $user->id)->where('test_id', $test->id)->get();
         $sum = 0;
+        $shakhsiati=0;
+        $zanashooii=0;
+        $hale_taaroz=0;
+        $modiriat_mali=0;
+        $faaliat_oghat_feraghat=0;
+        $jensi=0;
+        $farzandan=0;
+        $aghvam=0;
+        $mazhabi=0;
+
         foreach ($user_answers as $user_answer) {
+            $answer_number=TestAnswer::find($user_answer->test_answer_id)->answer_number;
             $weight = TestAnswer::find($user_answer->test_answer_id)->answer_weight;
+
+            if ($answer_number==2||$answer_number==3||$answer_number==4||$answer_number==12||$answer_number==22||$answer_number==40){
+                $shakhsiati=$shakhsiati+$weight;
+            }
+            if ($answer_number==1||$answer_number==6||$answer_number==13||$answer_number==23||$answer_number==32||$answer_number==41){
+                $zanashooii=$zanashooii+$weight;
+            }
+            if ($answer_number==7||$answer_number==14||$answer_number==24||$answer_number==33||$answer_number==42){
+                $hale_taaroz=$hale_taaroz+$weight;
+            }
+            if ($answer_number==8||$answer_number==15||$answer_number==16||$answer_number==25||$answer_number==34){
+                $modiriat_mali=$modiriat_mali+$weight;
+            }
+            if ($answer_number==9||$answer_number==17||$answer_number==26||$answer_number==35||$answer_number==43){
+                $faaliat_oghat_feraghat=$faaliat_oghat_feraghat+$weight;
+            }
+            if ($answer_number==10||$answer_number==18||$answer_number==27||$answer_number==36||$answer_number==44){
+                $jensi=$jensi+$weight;
+            }
+            if ($answer_number==11||$answer_number==19||$answer_number==28||$answer_number==37||$answer_number==45){
+                $farzandan=$farzandan+$weight;
+            }
+            if ($answer_number==20||$answer_number==29||$answer_number==31||$answer_number==38||$answer_number==46){
+                $aghvam=$aghvam+$weight;
+            }
+            if ($answer_number==5||$answer_number==21||$answer_number==30||$answer_number==39||$answer_number==47){
+                $mazhabi=$mazhabi+$weight;
+            }
             $sum = $sum + $weight;
         }
         $middle = 0;
@@ -125,52 +164,211 @@ class Enrich47 extends Controller
             $t = 72;
         }
 
+        //omoomi
         if ($t < 30) {
-            $ans = '
-<h1>پاسخ عمومی</h1>
+            $ans = '<h1>پاسخ عمومی</h1>
 <p>
 شما نارضایتی شدید از روابط زناشویی دارید
-</p>
-';
+</p>';
 
         }
         else if ($t>=30 && $t<40){
-            $ans = '
-<h1>پاسخ عمومی</h1>
+            $ans = '<h1>پاسخ عمومی</h1>
 <p>
 شما از روابط زناشویی خود ناراضی هستید
-</p>
-';
+</p>';
         }
 
         else if ($t>=40 && $t<60){
-            $ans = '
-<h1>پاسخ عمومی</h1>
+            $ans = '<h1>پاسخ عمومی</h1>
 <p>
 شما رضایت نسبی و متوسطی از روابط زناشویی خود دارید
-</p>
-';
+</p>';
         }
 
 
         else if ($t>=60 && $t<70){
-            $ans = '
-<h1>پاسخ عمومی</h1>
+            $ans = '<h1>پاسخ عمومی</h1>
 <p>
 شما رضایت زیادی از روابط زناشویی خود دارید
-</p>
-';
+</p>';
         }
 
 
         else if ($t>=70 ){
-            $ans = '
-<h1>پاسخ عمومی</h1>
+            $ans = '<h1>پاسخ عمومی</h1>
 <p>
 شما رضایتی فوق العاده از روابط زناشویی خود دارید
-</p>
-';
+</p>';
         }
+
+        //takhasosi
+        $shakhsiati=ceil($shakhsiati/6);
+        $zanashooii=ceil($zanashooii/6);
+        $hale_taaroz=ceil($hale_taaroz/5);
+        $modiriat_mali=ceil($modiriat_mali/5);
+        $faaliat_oghat_feraghat=ceil($faaliat_oghat_feraghat/5);
+        $jensi=ceil($jensi/5);
+        $farzandan=ceil($farzandan/5);
+        $aghvam=ceil($aghvam/5);
+        $mazhabi=ceil($mazhabi/5);
+        $ans.='<h1>پاسخ تخصصی</h1>';
+        switch ($shakhsiati){
+            case 1:
+                $ans.='<p>نارضایتی شدید از موضوعات شخضیتی</p>';
+                break;
+            case 2:
+                $ans.='<p>عدم رضایت از موضوعات شخضیتی</p>';
+                break;
+            case 3:
+                $ans.='<p>رضایت متوسط از موضوعات شخضیتی</p>';
+                break;
+            case 4:
+                $ans.='<p>رضایت زیاد از موضوعات شخضیتی</p>';
+                break;
+            case 5:
+                $ans.='<p>رضایت فوق العاده از موضوعات شخضیتی</p>';
+                break;
+        }
+        switch ($zanashooii){
+            case 1:
+                $ans.='<p>نارضایتی شدید از ارتباط زناشویی</p>';
+                break;
+            case 2:
+                $ans.='<p>عدم رضایت از ارتباط زناشویی</p>';
+                break;
+            case 3:
+                $ans.='<p>رضایت متوسط از ارتباط زناشویی</p>';
+                break;
+            case 4:
+                $ans.='<p>رضایت زیاد از ارتباط زناشویی</p>';
+                break;
+            case 5:
+                $ans.='<p>رضایت فوق العاده از ارتباط زناشویی</p>';
+                break;
+        }
+        switch ($hale_taaroz){
+            case 1:
+                $ans.='<p>نارضایتی شدید از حل تعارض</p>';
+                break;
+            case 2:
+                $ans.='<p>عدم رضایت از حل تعارض</p>';
+                break;
+            case 3:
+                $ans.='<p>رضایت متوسط از حل تعارض</p>';
+                break;
+            case 4:
+                $ans.='<p>رضایت زیاد از حل تعارض</p>';
+                break;
+            case 5:
+                $ans.='<p>رضایت فوق العاده از حل تعارض</p>';
+                break;
+        }
+        switch ($modiriat_mali){
+            case 1:
+                $ans.='<p>نارضایتی شدید از مدیریت مالی</p>';
+                break;
+            case 2:
+                $ans.='<p>عدم رضایت از مدیریت مالی</p>';
+                break;
+            case 3:
+                $ans.='<p>رضایت متوسط از مدیریت مالی</p>';
+                break;
+            case 4:
+                $ans.='<p>رضایت زیاد از مدیریت مالی</p>';
+                break;
+            case 5:
+                $ans.='<p>رضایت فوق العاده از مدیریت مالی</p>';
+                break;
+        }
+        switch ($faaliat_oghat_feraghat){
+            case 1:
+                $ans.='<p>نارضایتی شدید از فعالیت های اوقات فراغت</p>';
+                break;
+            case 2:
+                $ans.='<p>عدم رضایت از فعالیت های اوقات فراغت</p>';
+                break;
+            case 3:
+                $ans.='<p>رضایت متوسط از فعالیت های اوقات فراغت</p>';
+                break;
+            case 4:
+                $ans.='<p>رضایت زیاد از فعالیت های اوقات فراغت</p>';
+                break;
+            case 5:
+                $ans.='<p>رضایت فوق العاده از فعالیت های اوقات فراغت</p>';
+                break;
+        }
+        switch ($jensi){
+            case 1:
+                $ans.='<p>نارضایتی شدید از روابط جنسی</p>';
+                break;
+            case 2:
+                $ans.='<p>عدم رضایت از روابط جنسی</p>';
+                break;
+            case 3:
+                $ans.='<p>رضایت متوسط از روابط جنسی</p>';
+                break;
+            case 4:
+                $ans.='<p>رضایت زیاد از روابط جنسی</p>';
+                break;
+            case 5:
+                $ans.='<p>رضایت فوق العاده از روابط جنسی</p>';
+                break;
+        }
+        switch ($farzandan){
+            case 1:
+                $ans.='<p>نارضایتی شدید از ازدواج و فرزندان</p>';
+                break;
+            case 2:
+                $ans.='<p>عدم رضایت از ازدواج و فرزندان</p>';
+                break;
+            case 3:
+                $ans.='<p>رضایت متوسط از ازدواج و فرزندان</p>';
+                break;
+            case 4:
+                $ans.='<p>رضایت زیاد از ازدواج و فرزندان</p>';
+                break;
+            case 5:
+                $ans.='<p>رضایت فوق العاده از ازدواج و فرزندان</p>';
+                break;
+        }
+        switch ($aghvam){
+            case 1:
+                $ans.='<p>نارضایتی شدید از اقوام و دوستان</p>';
+                break;
+            case 2:
+                $ans.='<p>عدم رضایت از اقوام و دوستان</p>';
+                break;
+            case 3:
+                $ans.='<p>رضایت متوسط از اقوام و دوستان</p>';
+                break;
+            case 4:
+                $ans.='<p>رضایت زیاد از اقوام و دوستان</p>';
+                break;
+            case 5:
+                $ans.='<p>رضایت فوق العاده از اقوام و دوستان</p>';
+                break;
+        }
+        switch ($mazhabi){
+            case 1:
+                $ans.='<p>نارضایتی شدید از جهت گیری مذهبی</p>';
+                break;
+            case 2:
+                $ans.='<p>عدم رضایت از جهت گیری مذهبی</p>';
+                break;
+            case 3:
+                $ans.='<p>رضایت متوسط از جهت گیری مذهبی</p>';
+                break;
+            case 4:
+                $ans.='<p>رضایت زیاد از جهت گیری مذهبی</p>';
+                break;
+            case 5:
+                $ans.='<p>رضایت فوق العاده از جهت گیری مذهبی</p>';
+                break;
+        }
+
+
+
 
 
         return response()->json(['success' => $ans], 200);
