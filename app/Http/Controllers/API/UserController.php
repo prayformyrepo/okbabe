@@ -467,6 +467,7 @@ class UserController extends Controller
       } catch (HttpException $e) {
           echo $e->errorMessage();
       }
+      
 
       $user = User::select('id', 'name', 'username', 'email', 'mobile','code', 'gender', 'call_page', 'call_file', 'call_adviser_name', 'call_adviser_avatar', 'wallet', 'is_adviser', 'is_online', 'avatar','api_token')->find(Auth::user()->id)->toArray();
       $cart['cart_count'] = $this->user()->carts->count();
