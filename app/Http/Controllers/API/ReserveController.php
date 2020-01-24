@@ -100,7 +100,7 @@ class ReserveController extends Controller
 
     public function reserve_history()
     {
-        $reserves = reserve_call::orderBy('id','DESC')->all();
+        $reserves = reserve_call::orderBy('id','DESC')->paginate(1000000000);
         $r = array();
         foreach ($reserves as $reserve) {
             $rr = $reserve;
