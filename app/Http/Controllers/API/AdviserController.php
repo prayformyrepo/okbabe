@@ -629,7 +629,7 @@ class AdviserController extends Controller
         foreach ($rates as $rate){
             $r=$rate;
             if ($rate->is_private==0){
-                $r['user_name']=User::find($rate->user_id)->name==null?find($rate->user_id)->username:find($rate->user_id)->name;
+                $r['user_name']=User::find($rate->user_id)->name==null?User::find($rate->user_id)->username:User::find($rate->user_id)->name;
                 $r['avatar']=User::find($rate->user_id)->avatar;
             }else{
                 $r['user_id']=null;
