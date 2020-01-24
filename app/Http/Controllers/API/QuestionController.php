@@ -327,6 +327,7 @@ class QuestionController extends Controller
                 $qq['question_id']=$answers->question_id;
                 $qq['adviser_id']=$answers->adviser_id;
                 $adviser_user_id=Adviser::find($answers->adviser_id)->value('user_id');
+                $qq['adviser_user_id']=$adviser_user_id;
                 $adviser_user=User::find($adviser_user_id);
                 $qq['adviser_name']=$adviser_user->name;
                 $qq['adviser_avatar']=$adviser_user->avatar;
