@@ -40,6 +40,7 @@ Route::group(['middleware' => 'auth:api'], function(){
 
         Route::post('update-info', 'API\UserController@update_info');
         Route::post('change-pass', 'API\UserController@change_pass');
+        Route::post('remove-pass', 'API\UserController@remove_pass');
 
 
 

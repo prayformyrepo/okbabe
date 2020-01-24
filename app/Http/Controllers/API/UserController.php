@@ -437,4 +437,18 @@ class UserController extends Controller
 
     }
 
+    public function remove_pass(){
+      $user=Auth::user();
+      $user=User::find($user->id);
+      $user->mobile=null;
+      $user->mobile_verified_at=null;
+      $user->save();
+      $user = User::select('id', 'name', 'username', 'email', 'mobile', 'gender', 'call_page', 'call_file', 'call_adviser_name', 'call_adviser_avatar', 'wallet', 'is_adviser', 'is_online', 'avatar')->find(Auth::user()->id)->toArray();
+      $cart['cart_count'] = $this->user()->carts->count();
+      $cart['cart_price'] = $this->user()->carts->sum('total_price');
+      $combined = array_merge($user, $cart);
+
+      return response()->json(['success' => $combined], $this->successStatus);
+    }
+
 }
