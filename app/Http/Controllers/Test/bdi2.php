@@ -20,7 +20,7 @@ class bdi2 extends Controller
     $sum=0;
     foreach ($user_answers as $user_answer) {
         $weight = TestAnswer::find($user_answer->test_answer_id)->answer_weight;
-        $sum=sum+$weight;
+        $sum=$sum+$weight;
     }
     if ($sum>=1&&$sum<10) {
         $ans = '
