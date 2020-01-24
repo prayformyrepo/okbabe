@@ -41,4 +41,22 @@ class AdviserController extends Controller
         return view('admin.advisers.show',compact('categories','user','adviser_categories','adviser'));
     }
 
+    public function accept_adviser(Request $request)
+    {
+        $adviser_id=$request->adviser_id;
+        $adviser=Adviser::withoutGlobalScope(\App\Scopes\AdviserScope::class)->find($adviser_id);
+        $adviser->verified=1;
+        $adviser->save();
+        return redirect('/admin/advisers');
+    }
+
+    public function decline_adviser(Request $request)
+    {
+        $adviser_id=$request->adviser_id;
+        $adviser=Adviser::withoutGlobalScope(\App\Scopes\AdviserScope::class)->find($adviser_id);
+        $adviser->verified=0;
+        $adviser->save();
+        return redirect('/admin/advisers');
+    }
+
 }

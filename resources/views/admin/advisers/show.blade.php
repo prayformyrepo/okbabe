@@ -60,9 +60,6 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="p-2">
-                                        <form class="form-horizontal" role="form" method="post"
-                                              enctype="multipart/form-data" action="{{route('store-adviser')}}">
-                                            @csrf
                                             <div class="form-group row">
                                                 <label class="col-sm-2  col-form-label" for="simpleinput">نام
                                                     مشاور</label>
@@ -247,17 +244,26 @@
 
                                             <div class="form-group mb-0 justify-content-end row">
                                                 <div class="col-sm-12">
-                                                    <button type="submit"  class="btn btn-success waves-effect waves-light"
-                                                            style="float: left;margin: 0 10px"> تایید مشاور
-                                                    </button>
+                                                    <form action="{{route('admin.adviser.accept')}}" method="post">
+                                                        @csrf
+                                                        <input type="number" value="{{$adviser->id}}" name="adviser_id" hidden id="adviser_id">
+                                                        <button type="submit"  class="btn btn-success waves-effect waves-light"
+                                                                style="float: left;margin: 0 10px"> تایید مشاور
+                                                        </button>
+                                                    </form>
 
-                                                    <a href="{{route('adviser.index')}}" class="btn btn-danger waves-effect waves-light"
-                                                            style="float: left"> رد مشاور
-                                                    </a>
+
+                                                    <form action="{{route('admin.adviser.decline')}}" method="post">
+                                                        @csrf
+                                                        <input type="number" name="adviser_id" value="{{$adviser->id}}" hidden id="adviser_id">                                                        <button type="submit"  class="btn btn-danger waves-effect waves-light"
+                                                                style="float: left;margin: 0 10px"> رد مشاور
+                                                        </button>
+                                                    </form>
+
+
                                                 </div>
                                             </div>
 
-                                        </form>
                                     </div>
                                 </div>
 

@@ -79,6 +79,8 @@ Route::group(['middleware' => 'admin','prefix'=>'admin','as'=>'admin.'], functio
     Route::delete('/advisers/{adviser_id}', 'Admins\AdviserController@destroy')->name('adviser.destroy');
     Route::get('/advisers/{adviser_id}', 'Admins\AdviserController@show')->name('adviser.show');
 
+    Route::post('/advisers/accept-adviser', 'Admins\AdviserController@accept_adviser')->name('adviser.accept');
+    Route::post('/advisers/decline-adviser', 'Admins\AdviserController@decline_adviser')->name('adviser.decline');
 
 });
 

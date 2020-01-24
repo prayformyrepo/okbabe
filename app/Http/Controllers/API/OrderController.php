@@ -219,6 +219,7 @@ class OrderController extends Controller
                         $wallet->user_id = $this->user()->id;
                         $wallet->finance = -$amount;
                         $wallet->payment_method_id = null;
+                        $wallet->tracking_code=rand();
                         $wallet->save();
                         $this->user()->update([
                             'wallet' => $this->user()->wallet - $amount
@@ -234,7 +235,9 @@ class OrderController extends Controller
 
                         $wallet = Wallet::create([
                             'user_id' => $this->user()->id,
-                            'finance' => -$amount
+                            'tracking_code'=> rand(),
+
+                        'finance' => -$amount
                         ]);
 
                         $success['message'] = 'محصول مورد نظر با موفقیت خریداری شده و آماده دانلود میباشد.';

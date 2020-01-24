@@ -71,6 +71,7 @@ Route::group(['middleware' => 'auth:api'], function(){
 
 
 
+
 //        Route::group(['middleware' => 'administrator'], function() {
             Route::post('add-adviser', 'API\AdviserController@add_adviser');
             Route::post('add-adviser-category', 'API\AdviserController@add_adviser_category');

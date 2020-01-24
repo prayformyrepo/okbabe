@@ -240,6 +240,7 @@ class CallController extends Controller
 
                 $wallet = new Wallet();
                 $wallet->user_id = Auth::user()->id;
+                $wallet->tracking_code=rand();
                 $wallet->finance = 500 * -1;
                 $wallet->call_id = $call->id;
                 $wallet->save();
@@ -275,6 +276,7 @@ class CallController extends Controller
                 $wallet = new Wallet();
                 $wallet->user_id = Auth::user()->id;
                 $wallet->finance = $nominal_call_price * -1;
+                $wallet->tracking_code=rand();
                 $wallet->call_id = $call->id;
                 $wallet->save();
 
@@ -282,6 +284,7 @@ class CallController extends Controller
                 $wallet->user_id = Adviser::find($call->adviser_id)->user_id;
                 $wallet->finance = $call_price;
                 $wallet->call_id = $call->id;
+                $wallet->tracking_code=rand();
                 $wallet->save();
 
                 $call->duration = $callinfo['duration'];
@@ -433,6 +436,8 @@ class CallController extends Controller
             $wallet->user_id = Auth::user()->id;
             $wallet->finance = 500 ;
             $wallet->call_id = $call->id;
+            $wallet->tracking_code=rand();
+
             $wallet->save();
 
 ////////////////
@@ -455,12 +460,16 @@ class CallController extends Controller
             $wallet->user_id = Auth::user()->id;
             $wallet->finance = $nominal_call_price * -1;
             $wallet->call_id = $call->id;
+            $wallet->tracking_code=rand();
+
             $wallet->save();
 
             $wallet = new Wallet();
             $wallet->user_id = Adviser::find($call->adviser_id)->user_id;
             $wallet->finance = $call_price;
             $wallet->call_id = $call->id;
+            $wallet->tracking_code=rand();
+
             $wallet->save();
 
             $call=Call::find($call->id);

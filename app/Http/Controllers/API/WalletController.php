@@ -59,6 +59,7 @@ class WalletController extends Controller
         $wallet = new Wallet();
         $wallet->user_id = Auth::user()->id;
         $wallet->finance = $amount;
+        $wallet->tracking_code=rand();
         $wallet->payment_method_id = $token;
         $wallet->save();
         $success['url'] = 'https://pay.ir/pg/' . $token;
@@ -107,6 +108,7 @@ class WalletController extends Controller
 
             $wallet = Wallet::find($wallet_id);
             $wallet->status = 1;
+            $wallet->tracking_code=rand();
             $wallet->trans_id = $body->transId;
             $wallet->save();
 
@@ -125,6 +127,7 @@ class WalletController extends Controller
             $tr['id'] = $transaction->id;
             $tr['user_id'] = $transaction->user_id;
             $tr['finance'] = $transaction->finance;
+            $tr['tracking_code'] = $transaction->tracking_code;
             $tr['state'] = $transaction->finance > 0 ? 'incoming' : 'outgoing';
             if ($transaction->call_id != null && $transaction->finance > 0) $tr['text'] = 'بابت مشاوره شما در شاورنو';
             if ($transaction->call_id != null && $transaction->finance < 0) $tr['text'] = 'بابت دریافت مشاوره از شاورنو';
