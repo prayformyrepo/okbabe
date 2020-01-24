@@ -142,7 +142,7 @@ class TestController extends Controller
         if ($test->slug=='enrich-47') {
         $client = new Client(['base_uri' => 'https://shavernoapp.ir']);
         $response = $client->request('POST', '/api/enrich',['headers' => [
-            'Authorization' => 'Bearer'.Auth::user()->api_token,
+            'Authorization' => 'Bearer '.Auth::user()->api_token,
             'Accept'     => 'application/json'
         ]]);
 //        $body = $response->getBody();
