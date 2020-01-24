@@ -22,7 +22,7 @@ class ReserveController extends Controller
             'adviser_id' => 'integer|required',
             'date_time' => 'required|date_format:Y-m-d H:i:s',
             'type' => 'required', //0:call / 1:visit
-            'text' => 'required' //0:call / 1:visit
+//            'text' => 'required' //0:call / 1:visit
         ]);
         if ($validator->fails()) {
             return response()->json(['error' => $validator->errors()], 401);
