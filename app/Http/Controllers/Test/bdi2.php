@@ -31,13 +31,7 @@ class bdi2 extends Controller
         میزان افسردگی طبیعی
         </p>';
     } else if ($sum>=11&&$sum<16) {
-        $ans = '
-        <p>امتیاز: 
-        '.$sum.'
-        </p>
-        <p>
-        کمی افسرده
-        </p>';
+        $ans = '<p>امتیاز: '.$sum.'</p><p>شما کمی افسرده هستید</p>';
     } else if ($sum>=17&&$sum<20) {
         $ans = '
         <p>امتیاز: 

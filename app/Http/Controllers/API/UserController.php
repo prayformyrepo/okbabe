@@ -80,7 +80,7 @@ class UserController extends Controller
             if ($user->password != null) {
                 $user->os = $agent->platform();
                 $user->os_version = $agent->version($agent->platform());
-                $user->api_token = null;
+//                $user->api_token = null;
                 $user->save();
 
 
