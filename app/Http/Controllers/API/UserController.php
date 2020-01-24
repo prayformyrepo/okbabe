@@ -120,7 +120,7 @@ class UserController extends Controller
               $receptor = $request->mobile;
               $template = "welcome";
               $type = "sms";
-              $token = " و سلام";
+              $token = ",";
               $token2 = "";
               $token3 = "";
               $result = Kavenegar::VerifyLookup($receptor, $token, $token2, $token3, $template, $type);
