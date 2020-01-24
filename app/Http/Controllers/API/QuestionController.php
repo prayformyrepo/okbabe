@@ -107,7 +107,7 @@ class QuestionController extends Controller
                 $qcount=Question_answer::where('adviser_id',$adviser->id)->count();
                 $questions_array = array();
                 foreach ($q_answers as $q_answer){
-                    $save['id']=time()*rand();
+                    $save['id']=rand();
                    $save['question']=Question::find($q_answer->question_id);
                    $save['question']['adviser_name']=User::find(Auth::user()->id)->name;
                    $save['question']['adviser_avatar']=User::find(Auth::user()->id)->avatar;
