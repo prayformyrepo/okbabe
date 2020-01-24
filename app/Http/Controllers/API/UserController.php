@@ -208,8 +208,12 @@ class UserController extends Controller
         $user_set->password_set_at = Carbon::now();
         $user_set->save();
 
-        $success['message'] = 'data set';
-        return response()->json(['success' => $success], $this->successStatus);
+        // $success['message'] = 'data set';
+        $user = User::select('id', 'name', 'username', 'email', 'mobile', 'gender', 'call_page', 'call_file', 'call_adviser_name', 'call_adviser_avatar', 'wallet', 'is_adviser', 'is_online', 'avatar')->find(Auth::user()->id)->toArray();
+        $cart['cart_count'] = $this->user()->carts->count();
+        $cart['cart_price'] = $this->user()->carts->sum('total_price');
+        $combined = array_merge($user, $cart);
+        return response()->json(['success' => $combined], $this->successStatus);
     }
 
     /**
