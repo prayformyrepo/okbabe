@@ -203,15 +203,15 @@ class Enrich47 extends Controller
         }
 
         //takhasosi
-        $shakhsiati=ceil($shakhsiati/6);
-        $zanashooii=ceil($zanashooii/6);
-        $hale_taaroz=ceil($hale_taaroz/5);
-        $modiriat_mali=ceil($modiriat_mali/5);
-        $faaliat_oghat_feraghat=ceil($faaliat_oghat_feraghat/5);
-        $jensi=ceil($jensi/5);
-        $farzandan=ceil($farzandan/5);
-        $aghvam=ceil($aghvam/5);
-        $mazhabi=ceil($mazhabi/5);
+//        $shakhsiati=ceil($shakhsiati/6);
+//        $zanashooii=ceil($zanashooii/6);
+//        $hale_taaroz=ceil($hale_taaroz/5);
+//        $modiriat_mali=ceil($modiriat_mali/5);
+//        $faaliat_oghat_feraghat=ceil($faaliat_oghat_feraghat/5);
+//        $jensi=ceil($jensi/5);
+//        $farzandan=ceil($farzandan/5);
+//        $aghvam=ceil($aghvam/5);
+//        $mazhabi=ceil($mazhabi/5);
         $ans.=$shakhsiati . ' ' .$zanashooii . ' ' .$hale_taaroz . ' ' .$modiriat_mali . ' ' .$faaliat_oghat_feraghat . ' ' .$jensi . ' ' .$farzandan . ' ' .$aghvam . ' ' . $mazhabi ;
         $ans.='<h1>پاسخ تخصصی</h1>';
         switch ($shakhsiati){
