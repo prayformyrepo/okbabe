@@ -109,12 +109,12 @@ class QuestionController extends Controller
                 foreach ($q_answers as $q_answer){
                    $save['question']=Question::find($q_answer->question_id);
                     if ($save['question']->is_private==0){
-                        $save['user_name']=User::find($save['question']->user_id)->name==null?User::find($save['question']->user_id)->username:User::find($save['question']->user_id)->name;
-                        $save['avatar']=User::find($save['question']->user_id)->avatar;
+                        $save['question']['user_name']=User::find($save['question']->user_id)->name==null?User::find($save['question']->user_id)->username:User::find($save['question']->user_id)->name;
+                        $save['question']['avatar']=User::find($save['question']->user_id)->avatar;
                     }else{
-                        $save['user_id']=null;
-                        $save['user_name']='ناشناس';
-                        $save['avatar']='/themes/custom-5176/userfiles/fdacd9.jpg';
+                        $save['question']['user_id']=null;
+                        $save['question']['user_name']='ناشناس';
+                        $save['question']['avatar']='/themes/custom-5176/userfiles/fdacd9.jpg';
                     }
                    $save['answer']=$q_answer->text;
                     array_push($questions_array, $save);
