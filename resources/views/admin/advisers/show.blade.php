@@ -67,7 +67,7 @@
                                                 <label class="col-sm-2  col-form-label" for="simpleinput">نام
                                                     مشاور</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" id="name" name="name" class="form-control"
+                                                    <input readonly type="text" id="name" name="name" class="form-control"
                                                            placeholder="نام مشاور" value="{{$user->name}}">
                                                 </div>
                                             </div>
@@ -76,7 +76,7 @@
                                                 <label class="col-sm-2  col-form-label" for="simpleinput">نام کاربری
                                                     مشاور</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" id="username" name="username"
+                                                    <input readonly type="text" id="username" name="username"
                                                            class="form-control" placeholder="نام کاربری مشاور"
                                                            value="{{$user->username}}">
                                                 </div>
@@ -86,19 +86,19 @@
                                                 <label class="col-sm-2  col-form-label" for="simpleinput">شماره موبایل
                                                     مشاور</label>
                                                 <div class="col-sm-10">
-                                                    <input type="number" id="mobile" name="mobile" class="form-control"
+                                                    <input readonly type="number" id="mobile" name="mobile" class="form-control"
                                                            placeholder="شماره موبایل مشاور" value="{{$user->mobile}}">
                                                 </div>
                                             </div>
 
 
                                             <div class="form-group row">
-                                                <label class="col-sm-2  col-form-label" for="simpleinput">جنسیت
+                                                <label  class="col-sm-2  col-form-label" for="simpleinput">جنسیت
                                                     مشاور</label>
                                                 <div class="col-sm-10">
                                                     {{--<input type="text" id="mobile" name="mobile" class="form-control" placeholder="شماره تماس مشاور" value="{{old('mobile')}}">--}}
 
-                                                    <select name="gender" id="gender" class="form-control">
+                                                    <select readonly name="gender" id="gender" class="form-control">
                                                         <option value="0" @if($user->gender==0) selected @endif>مرد
                                                         </option>
                                                         <option value="1" @if($user->gender==1) selected @endif>زن
@@ -121,7 +121,13 @@
                                                     ملی
                                                     مشاور</label>
                                                 <div class="col-sm-10">
+                                                    @if(\App\File::find($adviser->national_card_file_id))
+
                                                     <a href="{{Request::root().\App\File::find($adviser->national_card_file_id)->file_path}}"  download>دانلود</a>
+                                                        @else
+                                                        <p>ندارد</p>
+
+                                                        @endif
 
                                                 </div>
                                             </div>
@@ -131,7 +137,12 @@
                                                     شناسنامه
                                                     مشاور</label>
                                                 <div class="col-sm-10">
+                                                    @if(\App\File::find($adviser->birth_certificate_file_id))
+
                                                     <a href="{{Request::root().\App\File::find($adviser->birth_certificate_file_id)->file_path}}" download>دانلود</a>
+                                                        @else
+                                                        <p>ندارد</p>
+                                                        @endif
 
                                                 </div>
                                             </div>
@@ -141,7 +152,12 @@
                                                     تحصیلی
                                                     مشاور</label>
                                                 <div class="col-sm-10">
+                                                    @if(\App\File::find($adviser->education_certificate_file_id))
+
                                                     <a href="{{Request::root().\App\File::find($adviser->education_certificate_file_id)->file_path}}" download>دانلود</a>
+                                                        @else
+                                                        <p>ندارد</p>
+                                                        @endif
 
                                                 </div>
                                             </div>
@@ -150,7 +166,11 @@
                                                 <label class="col-sm-2  col-form-label" for="simpleinput"> مجوز فعالیت
                                                     مشاور</label>
                                                 <div class="col-sm-10">
+                                                    @if(\App\File::find($adviser->work_certificate_file_id))
                                                     <a href="{{Request::root().\App\File::find($adviser->work_certificate_file_id)->file_path}}" download>دانلود</a>
+                                                        @else
+                                                        <p>ندارد</p>
+                                                        @endif
 
                                                 </div>
                                             </div>
@@ -160,7 +180,7 @@
                                                 <label class="col-sm-2  col-form-label" for="example-textarea">درباره
                                                     مشاور</label>
                                                 <div class="col-sm-10">
-                                                            <textarea class="form-control" rows="5" id="about"
+                                                            <textarea readonly class="form-control" rows="5" id="about"
                                                                       name="about">
 
                                                                 {{$adviser->about}}
@@ -186,7 +206,7 @@
                                                 <label class="col-sm-2  col-form-label" for="simpleinput">هزینه تماس
                                                     مشاور به تومان</label>
                                                 <div class="col-sm-10">
-                                                    <input type="number" id="call_price" name="call_price"
+                                                    <input readonly type="number" id="call_price" name="call_price"
                                                            class="form-control" placeholder="هزینه تماس مشاور"
                                                            value="{{$adviser->call_price}}">
                                                 </div>
@@ -196,7 +216,7 @@
                                                 <label class="col-sm-2  col-form-label" for="simpleinput">هزینه رزرو
                                                     حضوری مشاور به تومان</label>
                                                 <div class="col-sm-10">
-                                                    <input type="number" id="visit_price" name="visit_price"
+                                                    <input readonly type="number" id="visit_price" name="visit_price"
                                                            class="form-control" placeholder="هزینه رزرو حضوری مشاور"
                                                            value="{{$adviser->visit_price}}">
                                                 </div>
@@ -208,7 +228,7 @@
                                                     ها</label>
                                                 <div class="col-sm-10">
 
-                                                    <select class="js-example-basic-multiple" name="categories[]"
+                                                    <select readonly="" class="js-example-basic-multiple" name="categories[]"
                                                             multiple="multiple">
                                                         @foreach($categories as $category)
                                                             <option

@@ -522,18 +522,19 @@ class CallController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'call_id' => 'integer|required',
-            'text' => 'required',
         ]);
         if ($validator->fails()) {
             return response()->json(['error' => $validator->errors()], 401);
         }
 
+
         $count=Call::where('id',$request->call_id)->count();
         if ($count==0) return response()->json(['error' => 'not found'], '404');
 
         $note=Call::find($request->call_id);
-
-        $note->note=$request->text;
+        if (!isset($request->text) || $request->text==null || $request->text=='')$text=null;
+        else $text=$request->text;
+        $note->note=$text;
 
         $note->save();
 
