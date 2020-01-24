@@ -252,7 +252,11 @@ class ConversationController extends Controller
         foreach ($messages as $m) {
             $me['id'] = $m->id;
             $me['text'] = $m->text;
-            $me['file'] = $m->file;
+            $me['file_id'] = $m->file_id;
+            $me['file_name'] = File::find($m->file_id)->orginal_name;
+            $me['file_path'] = File::find($m->file_id)->file_path;
+            $me['file_type'] = File::find($m->file_id)->file_type;
+
             $me['status'] = $m->status;
             $me['user_id'] = $m->user_id;
 
