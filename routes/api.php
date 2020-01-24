@@ -184,6 +184,7 @@ Route::group(['middleware' => 'auth:api'], function(){
 
         //algorithms
         Route::post('enrich','Test\Enrich47@show_result');
+        Route::post('bdi2','Test\bdi2@show_result');
 
 
 
@@ -192,6 +193,4 @@ Route::group(['middleware' => 'auth:api'], function(){
 
 Route::group(['middleware' => 'auth:api'], function() {
 
-//different tests!
-    Route::post('enrich47-result', 'Test\TestController@result_test');
 });

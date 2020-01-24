@@ -143,18 +143,28 @@ class TestController extends Controller
             return response()->json(['error' => $error], 401);
         }
         if ($test->slug=='enrich-47') {
-        $client = new Client(['base_uri' => 'https://shavernoapp.ir']);
-        $response = $client->request('POST', '/api/enrich',['headers' => [
-            'Authorization' => 'Bearer '.Auth::user()->api_token,
-            'Accept'     => 'application/json'
-        ]]);
-//        $body = $response->getBody();
-        return $response;
-        }
+            $client = new Client(['base_uri' => 'https://shavernoapp.ir']);
+            $response = $client->request('POST', '/api/enrich',['headers' => [
+                'Authorization' => 'Bearer '.Auth::user()->api_token,
+                'Accept'     => 'application/json'
+            ]]);
+    //        $body = $response->getBody();
+            return $response;
+            }
+            if ($test->slug=='BDI-2') {
+                $client = new Client(['base_uri' => 'https://shavernoapp.ir']);
+                $response = $client->request('POST', '/api/bdi2',['headers' => [
+                    'Authorization' => 'Bearer '.Auth::user()->api_token,
+                    'Accept'     => 'application/json'
+                ]]);
+        //        $body = $response->getBody();
+                return $response;
+                }
+
         $text='
 <img src="http://shavernoapp.ir/images/shsh.png" width="200px" style="border: 2px red dashed">
 <p style="border-top: 2px green dot-dash">تست شما ثبت شد و پاسخ آن برایتان ارسال می گردد. به زودی قابلیت تصحیح تست به صورت لحظه ای در اپلیکیشن شاورنو اضافه خواهد شد</p>
-<a href="https://google.com">کلیک کنید</a>
+<a href="https://shaverno.com">کلیک کنید</a>
 ';
         return response()->json(['success' => $text], 200);
 
