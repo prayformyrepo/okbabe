@@ -177,6 +177,10 @@ Route::group(['middleware' => 'auth:api'], function(){
         Route::post('save-test','API\TestController@save_test');
         Route::post('result-test','API\TestController@result_test');
 
+        //algorithms
+        Route::post('enrich','Test\Enrich47@show_result');
+
+
 
     });
 });
