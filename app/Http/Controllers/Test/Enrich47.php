@@ -212,6 +212,7 @@ class Enrich47 extends Controller
         $farzandan=ceil($farzandan/5);
         $aghvam=ceil($aghvam/5);
         $mazhabi=ceil($mazhabi/5);
+        $ans.=$shakhsiati . ' ' .$zanashooii . ' ' .$hale_taaroz . ' ' .$modiriat_mali . ' ' .$faaliat_oghat_feraghat . ' ' .$jensi . ' ' .$farzandan . ' ' .$aghvam . ' ' . $mazhabi ;
         $ans.='<h1>پاسخ تخصصی</h1>';
         switch ($shakhsiati){
             case 1:
