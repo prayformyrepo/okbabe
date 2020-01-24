@@ -372,7 +372,7 @@ class CallController extends Controller
         $user = Auth::user();
         if ($user->is_adviser == 1) {
             $adviser_id = Adviser::where('user_id', $user->id)->value('id');
-            $calls = Call::where('adviser_id', $adviser_id)->orderBy('id','DESC')->get();
+            $calls = Call::where('adviser_id', $adviser_id)->orderBy('created_at','DESC')->get();
             $c = array();
             foreach ($calls as $call) {
                 $cc = $call;
@@ -386,7 +386,7 @@ class CallController extends Controller
 
             return response()->json(['success' => $calls], $this->successStatus);
         } else {
-            $calls = Call::where('user_id', $user->id)->orderBy('id','DESC')->get();
+            $calls = Call::where('user_id', $user->id)->orderBy('created_at','DESC')->get();
             $c = array();
             foreach ($calls as $call) {
                 $cc = $call;
