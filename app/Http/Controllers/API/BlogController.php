@@ -22,7 +22,12 @@ class BlogController extends Controller
 
         if (isset($request->post_id)){
             $posts=Post::find($request->post_id);
+            $liked=LikePost::where('user_id',Auth::user()->id)->where('post_id',$request->post_id)->count();
+
+            $liked==0?$posts['is_liked']=0:$posts['is_liked']=1;
+
             $posts['categories']=$posts->categories()->get();
+
         }
         else if (isset($request->category)){
             if ($request->category=='0') { //nino

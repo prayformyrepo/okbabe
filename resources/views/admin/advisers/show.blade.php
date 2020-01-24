@@ -193,7 +193,7 @@
                                                 <label class="col-sm-2  col-form-label" for="example-textarea">زمینه
                                                     کاری مشاور</label>
                                                 <div class="col-sm-10">
-                                                            <textarea class="form-control" rows="5" id="field"
+                                                            <textarea readonly class="form-control" rows="5" id="field"
                                                                       name="field">
 
                                                                 {{$adviser->field}}

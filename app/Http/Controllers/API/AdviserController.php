@@ -617,4 +617,14 @@ class AdviserController extends Controller
         return response()->json(['success' => $adviser_times], $this->successStatus);
     }
 
+    public function adviser_comments(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'adviser_id' => 'required',
+//
+        ]);
+
+
+    }
+
 }
