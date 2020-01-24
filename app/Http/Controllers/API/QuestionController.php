@@ -102,7 +102,7 @@ class QuestionController extends Controller
 
         } else if (isset($request->self) && $request->self == 1) {
             if ($user->is_adviser == 1) {
-                $adviser=Adviser::where('user_id',$user->id)->first()->get();
+                $adviser=Adviser::where('user_id',$user->id)->first();
                $q_answers=Question_answer::where('adviser_id',$adviser->id)->get();
                 $qcount=Question_answer::where('adviser_id',$adviser->id)->count();
                 $questions_array = array();
