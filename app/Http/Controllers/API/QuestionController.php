@@ -107,7 +107,11 @@ class QuestionController extends Controller
                 $qcount=Question_answer::where('adviser_id',$adviser->id)->count();
                 $questions_array = array();
                 foreach ($q_answers as $q_answer){
+                    $save['id']=$q_answer->question_id;
                    $save['question']=Question::find($q_answer->question_id);
+                   $save['question']['adviser_name']=User::find(Auth::user()->id)->name;
+                   $save['question']['adviser_avatar']=User::find(Auth::user()->id)->avatar;
+
                     if ($save['question']->is_private==0){
                         $save['question']['user_name']=User::find($save['question']->user_id)->name==null?User::find($save['question']->user_id)->username:User::find($save['question']->user_id)->name;
                         $save['question']['avatar']=User::find($save['question']->user_id)->avatar;
