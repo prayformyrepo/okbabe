@@ -194,3 +194,5 @@ Route::group(['middleware' => 'auth:api'], function(){
 Route::group(['middleware' => 'auth:api'], function() {
 
 });
+
+Route::get('post/{post_id}', 'API\BlogController@show_post');

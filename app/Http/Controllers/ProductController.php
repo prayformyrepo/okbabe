@@ -32,23 +32,46 @@ class ProductController extends Controller
         $validatedData = [
             'name' => 'required|unique:products',
             'slug' => 'required|unique:products',
-            'product_type_id' => 'required|different:0',
+            'product_type_id' => 'required|not_in:0',
+            'image' => 'required|mimes:jpeg,jpg,png|max:3000',
         ];
         $messages = [
             'name.required' => 'وارد کردن نام محصول الزامی است',
             'slug.required' => 'وارد کردن اسلاگ محصول الزامی است',
             'slug.unique' => ' اسلاگ محصول تکراری است',
             'name.unique' => ' نام محصول تکراری است',
+            'product_type_id.not_in' => ' نوع کتاب را انتخاب کنید',
+            'image.required' => 'حداقل یک تصویر برای محصول الزامی است',
+
         ];
 
+        $this->validate($request, $validatedData, $messages);
 
+        $product=new Product();
+        $product->name=$request->name;
+        $product->slug=$request->slug;
+        $product->description=isset($request->description)?$request->description:null;
+        $product->short_description=isset($request->short_description)?$request->short_description:null;
+        $product->price=isset($request->price)?$request->price:null;
+        $product->pages=isset($request->pages)?$request->pages:null;
+        $product->language=isset($request->language)?$request->language:null;
+        $product->size=isset($request->size)?$request->size:null;
+        $product->announcer=isset($request->announcer)?$request->announcer:null;
+        $product->translator=isset($request->translator)?$request->translator:null;
+        $product->published_date=isset($request->published_date)?$request->published_date:null;
+        $product->publisher=isset($request->publisher)?$request->publisher:null;
+        $product->featured=isset($request->featured)?$request->featured:0;
+        $product->status=isset($request->status)?$request->status:1;
+        $product->product_type_id=$request->product_type_id;
+        $product->save();
+
+        $product_id=$product->id;
 
 
        $images= $request->file('image');
-       dd($images);
-//       foreach ($images as $image){
-//
-//       }
+       foreach ($images as $image){
+
+       }
     }
     public function edit(Product $product)
     {

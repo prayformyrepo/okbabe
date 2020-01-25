@@ -257,6 +257,8 @@
 
 
 @include('includes.panel.footerLinks')
+<script src="/js/swal.js"></script>
+
 <script>
     CKEDITOR.replace('description');
     $('#addphoto').click(function () {
@@ -301,15 +303,19 @@
         var featured = $('#featured').val();
         var status = $('#status').val();
         var product_type_id = $('#product_type_id').val();
-        var images = [];
-        $("input[name='image[]']").each(function() {
-            images.push($(this).val());
-        });
+        var image = $("input[name='image[]']").files[0];
+
+        // var data = new FormData();
+        // jQuery.each(jQuery("input[name='image[]']").files, function(i, file) {
+        //     data.append('file-'+i, file);
+        // });
+
+        console.log(image);
 
 
         var url = "{{route('admin.product.store')}}";
         $.ajax({
-            data: {'name': name, 'slug': slug, 'description': description,  'short_description' : short_description,  'price': price,  'pages': pages,},
+            data: {'name': name, 'slug': slug, 'description': description,  'short_description' : short_description,  'price': price,  'pages' : pages, 'language' : language, 'size': size, 'author': author, 'announcer': announcer, 'translator': translator, 'published_date': published_date, 'publisher': publisher, 'featured': featured, 'status': status, 'product_type_id': product_type_id, image:image  },
             url: url,
             type: "POST",
             success: function (data) {
@@ -317,23 +323,28 @@
                     position: 'center',
                     icon: 'success',
                     title: 'موفقیت آمیز',
-                    html: 'پیام شما با موفقیت ثبت شد',
+                    html: 'محصول با موفقیت ثبت شد',
                     showConfirmButton: false,
                     timer: 2500
                 })
 
-                $('#name').val('')
-                $('#slug').val('')
-                $('#description').val('')
             },
             error: function (err) {
                 console.log(err);
+                var ename='';
+                var eslug='';
+                var etype='';
+                var eimage='';
 
+                err.responseJSON.errors.name?ename=err.responseJSON.errors.name[0]:ename='';
+                err.responseJSON.errors.slug?eslug=err.responseJSON.errors.slug[0]:eslug='';
+                err.responseJSON.errors.product_type_id?etype=err.responseJSON.errors.product_type_id[0]:etype='';
+                err.responseJSON.errors.image?eimage=err.responseJSON.errors.image[0]:eimage='';
                 Swal.fire({
                     position: 'center',
                     icon: 'error',
                     title: 'خطا',
-                    html: err.responseJSON.errors.name[0] + '<br>' + err.responseJSON.errors.slug[0],
+                    html: ename + '<br>' + eslug + '<br>' + etype + '<br>' + eimage ,
                     showConfirmButton: false,
                     timer: 2500
                 })
@@ -348,6 +359,17 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+    $(document)
+        .ajaxStart(function () {
+            Swal.fire({
+                position: 'center',
+                // icon: 'error',
+                title: '<i class="fa fa-spinner fa-spin fa-4x" style="color: dodgerblue;"></i>',
+                html: 'لطفا صبر کنید' ,
+                showConfirmButton: false,
+                // timer: 2500
+            })
+        })
 </script>
 
 

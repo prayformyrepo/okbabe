@@ -22,6 +22,7 @@ class BlogController extends Controller
 
         if (isset($request->post_id)){
             $posts=Post::find($request->post_id);
+            $posts['link']='http://shavernoapp.ir/api/post/'.$posts->id;
             $liked=LikePost::where('user_id',Auth::user()->id)->where('post_id',$request->post_id)->count();
 
             $liked==0?$posts['is_liked']=0:$posts['is_liked']=1;
@@ -189,5 +190,11 @@ class BlogController extends Controller
             $success = 'liked';
         }
         return response()->json(['success' => $success], $this->successStatus);
+    }
+
+    public function show_post($post_id)
+    {
+        $post=Post::find($post_id);
+        return view('show_post',compact('post'));
     }
 }

@@ -100,6 +100,8 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'as' => 'admin.'], f
 Route::get('/add-adviser', 'Advisers\AdviserController@create')->name('add-adviser');
 Route::post('/add-adviser', 'Advisers\AdviserController@store')->name('store-adviser');
 
+//show blog post
+
 
 //index Page
 Route::get('/home', 'HomeController@index')->name('home');
