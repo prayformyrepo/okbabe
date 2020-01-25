@@ -123,8 +123,14 @@ class UserController extends Controller
         $user->api_token = $token;
         $user->save();
 
-        $user = User::select('id', 'api_token', 'code')->find($user->id);
-        $success['user'] = $user;
+        $user = User::select('id', 'name', 'username', 'email', 'mobile', 'gender', 'call_page', 'call_file', 'call_adviser_name', 'call_adviser_avatar', 'wallet', 'is_adviser', 'is_online', 'avatar','api_token')->find($this->user()->id)->toArray();
+        $cart['cart_count'] = $this->user()->carts->count();
+        $cart['cart_price'] = $this->user()->carts->sum('total_price');
+        $combined = array_merge($user, $cart);
+
+//        $user = User::select('id', 'api_token', 'code')->find($user->id);
+
+        $success['user'] = $combined;
 
 
         return response()->json(['success' => $success], $this->successStatus);
