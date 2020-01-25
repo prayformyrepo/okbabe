@@ -85,10 +85,10 @@ class UserController extends Controller
 
 
                 oauth_access_token::where('user_id', $user->id)->delete();
-                $user['user'] = User::select('id', 'name', 'username', 'email', 'mobile', 'gender', 'call_page', 'call_file', 'call_adviser_name', 'call_adviser_avatar', 'wallet', 'is_adviser', 'is_online', 'avatar','api_token')->find($this->user()->id)->toArray();
+                $userer['user'] = User::select('id', 'name', 'username', 'email', 'mobile', 'gender', 'call_page', 'call_file', 'call_adviser_name', 'call_adviser_avatar', 'wallet', 'is_adviser', 'is_online', 'avatar','api_token')->find($user->id)->toArray();
                 $cart['cart_count'] = $this->user()->carts->count();
                 $cart['cart_price'] = $this->user()->carts->sum('total_price');
-                $combined = array_merge($user, $cart);
+                $combined = array_merge($userer, $cart);
 
                 $success = $combined;
                 $success['password'] = true;
