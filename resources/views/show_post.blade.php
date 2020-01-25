@@ -9,10 +9,10 @@
     <style>
         @font-face {
             font-family: 'iranSans';
-            src:url('/iranSans/eot/IRANSansWeb(FaNum).eot');
-            src:url('/iranSans/eot/IRANSansWeb(FaNum).eot?#iefix') format('embedded-opentype'),
-            url('/iranSans/woff/IRANSansWeb(FaNum).woff') format('woff'),
-            url('/iranSans/ttf/IRANSansWeb(FaNum).ttf') format('truetype');
+            src:url('/iranSans/eot/IRANSansWeb.eot');
+            src:url('/iranSans/eot/IRANSansWeb.eot?#iefix') format('embedded-opentype'),
+            url('/iranSans/woff/IRANSansWeb.woff') format('woff'),
+            url('/iranSans/ttf/IRANSansWeb.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
