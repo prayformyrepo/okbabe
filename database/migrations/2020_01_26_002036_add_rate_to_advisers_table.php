@@ -14,7 +14,7 @@ class AddRateToAdvisersTable extends Migration
     public function up()
     {
         Schema::table('advisers', function (Blueprint $table) {
-            $table->double('rate')->after('status')->nullable();
+            $table->double('rate')->after('status')->default(0);
         });
     }
 
