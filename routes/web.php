@@ -20,7 +20,6 @@ Route::get('/', function () {
 Route::get('/pay/callback', 'API\WalletController@verify');
 Route::get('/pay/verify-product', 'API\OrderController@verifyPay');
 
-
 //User Panel
 /*Route::group(['middleware' => 'guest'], function () {
     Route::get('/auth', 'Users\AuthController@showAuthForm')->name('user.showAuth');
@@ -28,20 +27,18 @@ Route::get('/pay/verify-product', 'API\OrderController@verifyPay');
 });*/
 
 //Admin Login
-Route::get('admin/login',['as'=>'admin.login','uses'=>'Admins\LoginController@showLoginForm']);
-Route::post('admin/login',['as'=>'admin.auth','uses'=>'Admins\LoginController@login']);
-Route::get('admin/logout',['as'=>'admin.logout','uses'=>'Admins\LoginController@logout']);
+Route::get('admin/login', ['as' => 'admin.login', 'uses' => 'Admins\LoginController@showLoginForm']);
+Route::post('admin/login', ['as' => 'admin.auth', 'uses' => 'Admins\LoginController@login']);
+Route::get('admin/logout', ['as' => 'admin.logout', 'uses' => 'Admins\LoginController@logout']);
 
 
 //Admin Panel
-
-Route::group(['middleware' => 'admin','prefix'=>'admin','as'=>'admin.'], function () {
+Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'as' => 'admin.'], function () {
     //Dashboard
-    Route::get('/',['as'=>'panel','uses'=>'Admins\AdminController@panel']);
-
+    Route::get('/', ['as' => 'panel', 'uses' => 'Admins\AdminController@panel']);
 
     // Test Manage
-    Route::group(['as'=>'test.'],function () {
+    Route::group(['as' => 'test.'], function () {
         Route::get('/select-test', 'TestController@index')->name('show-select-test-page');
 
         Route::get('/add-test', 'TestController@create')->name('show-add-test-page');
@@ -58,57 +55,51 @@ Route::group(['middleware' => 'admin','prefix'=>'admin','as'=>'admin.'], functio
         Route::get('/select-test', 'TestController@index')->name('show-select-test-page');
 
     });
-        // Product Manage
-        Route::get('product',['uses'=>'ProductController@index','as'=>'product.index']);
-        Route::get('product/create',['uses'=>'ProductController@create','as'=>'product.create']);
-        Route::get('product/edit/{product}',['uses'=>'ProductController@edit','as'=>'product.edit']);
-         Route::patch('product/update/{product}',['uses'=>'ProductController@update','as'=>'product.update']);
+    // Product Manage
+    Route::get('product', ['uses' => 'ProductController@index', 'as' => 'product.index']);
+    Route::get('product/create', ['uses' => 'ProductController@create', 'as' => 'product.create']);
+    Route::post('product/create', ['uses' => 'ProductController@store', 'as' => 'product.store']);
 
-        Route::delete('product/destroy/{product}',['uses'=>'ProductController@delete','as'=>'product.destroy']);
+    Route::get('product/edit/{product}', ['uses' => 'ProductController@edit', 'as' => 'product.edit']);
+    Route::patch('product/update/{product}', ['uses' => 'ProductController@update', 'as' => 'product.update']);
 
-        Route::patch('product/image/update',['uses'=>'ProductController@ProductImage','as'=>'product.image-update']);
+    Route::delete('product/destroy/{product}', ['uses' => 'ProductController@delete', 'as' => 'product.destroy']);
 
-        Route::delete('product/image/delete',['uses'=>'ProductController@deleteProductImage','as'=>'product.image-delete']);
+    Route::patch('product/image/update', ['uses' => 'ProductController@ProductImage', 'as' => 'product.image-update']);
 
-    Route::get('tickets',['uses'=>'Admins\TicketController@index','as'=>'ticket.index']);
+    Route::delete('product/image/delete', ['uses' => 'ProductController@deleteProductImage', 'as' => 'product.image-delete']);
+
+
+    //tickets manage
+    Route::get('tickets', ['uses' => 'Admins\TicketController@index', 'as' => 'ticket.index']);
     Route::delete('/tickets/{ticket_id}', 'Admins\TicketController@destroy')->name('ticket.destroy');
     Route::get('/tickets/{ticket_id}', 'Admins\TicketController@show_ticket')->name('ticket.show');
     Route::post('/tickets/{ticket_id}', 'Admins\TicketController@answer_ticket')->name('ticket.answer');
 
-    Route::get('advisers',['uses'=>'Admins\AdviserController@index','as'=>'adviser.index']);
+
+
+    //adviser categories manage
+    Route::group(['as' => 'advisers.'], function () {
+        Route::resource('/advisers/categories', 'Admins\AdviserCategoryController');
+    });
+
+    //accept advisers manage
+    Route::get('advisers', ['uses' => 'Admins\AdviserController@index', 'as' => 'adviser.index']);
     Route::delete('/advisers/{adviser_id}', 'Admins\AdviserController@destroy')->name('adviser.destroy');
     Route::get('/advisers/{adviser_id}', 'Admins\AdviserController@show')->name('adviser.show');
-
     Route::post('/advisers/accept-adviser', 'Admins\AdviserController@accept_adviser')->name('adviser.accept');
     Route::post('/advisers/decline-adviser', 'Admins\AdviserController@decline_adviser')->name('adviser.decline');
 
+
+
+
 });
+
 
 //add adviser
 Route::get('/add-adviser', 'Advisers\AdviserController@create')->name('add-adviser');
 Route::post('/add-adviser', 'Advisers\AdviserController@store')->name('store-adviser');
 
-
-
-Route::any('captcha-test', function() {
-    if (request()->getMethod() == 'POST') {
-        $rules = ['captcha' => 'required|captcha'];
-        $validator = validator()->make(request()->all(), $rules);
-        if ($validator->fails()) {
-            echo '<p style="color: #ff0000;">Incorrect!</p>';
-        } else {
-            echo '<p style="color: #00ff30;">Matched :)</p>';
-        }
-    }
-
-    $form = '<form method="post" action="captcha-test">';
-    $form .= '<input type="hidden" name="_token" value="' . csrf_token() . '">';
-    $form .= '<p>' . captcha_img() . '</p>';
-    $form .= '<p><input type="text" name="captcha"></p>';
-    $form .= '<p><button type="submit" name="check">Check</button></p>';
-    $form .= '</form>';
-    return $form;
-});
 
 //index Page
 Route::get('/home', 'HomeController@index')->name('home');
@@ -193,8 +184,6 @@ Route::get('ttime', function () {
 Route::get('now', function () {
     echo \Carbon\Carbon::now()->format('dmyHi');
 });
-
-
 
 
 Route::get('/get_captcha/{config?}', function (\Mews\Captcha\Captcha $captcha) {

@@ -6,8 +6,17 @@
     <script src="/ckeditor/ckeditor.js"></script>
     <script src="/js/swal.js"></script>
 
-    <title> شاورنو - مشاوران </title>
+    <title> شاورنو - دسته بندی مشاوران </title>
 
+    <style>
+        .add-cat>span{
+            font-style: normal;
+            color: #f2f2f2;
+            font-size: 20px;
+            float: right;
+
+        }
+    </style>
 </head>
 
 <body>
@@ -32,18 +41,14 @@
                     <div class="col-lg-12">
 
                         <div class="card-box">
-                            {{--<div class="dropdown float-right">--}}
-                            {{--<a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown"--}}
-                            {{--aria-expanded="false">--}}
-                            {{--<i class="mdi mdi-dots-vertical"></i>--}}
-                            {{--</a>--}}
-                            {{--<div class="dropdown-menu dropdown-menu-right">--}}
-                            {{--<!-- item-->--}}
-                            {{--<a href="{{route('admin.test.add-test')}}" class="dropdown-item">افزودن تست</a>--}}
+                            <div class="dropdown float-right">
+                                <a href="{{route('admin.advisers.categories.create')}}" class="dropdown-toggle arrow-none card-drop" style="display: block">
 
-                            {{--</div>--}}
-                            {{--</div>--}}
-                            <h4 class="header-title">لیست مشاوران</h4>
+                                    <i class="mdi mdi-plus-circle add-cat" style="font-size:30px;"><span>افزودن دسته بندی</span></i>
+
+                                </a>
+                            </div>
+                            <h4 class="header-title">لیست دسته بندی مشاوران</h4>
                             {{--<p class="text-muted font-14 mb-3">--}}
                             {{--Your awesome text goes here.Your awesome text goes here.--}}
                             {{--</p>--}}
@@ -54,42 +59,28 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>نام</th>
-                                        <th>نام کاربری</th>
-                                        <th>شماره موبایل</th>
-                                        <th>وضعیت</th>
-                                        <th>مشاهده جزئیات</th>
+                                        <th>دسته بندی پدر</th>
+                                        <th>ویرایش</th>
                                         <th>حذف</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($advisers as $adviser)
-
-
+                                    @foreach($categories as $category)
                                         <tr>
-                                            <th scope="row">{{$adviser->id}}</th>
-                                            <td>{{$adviser->name}}</td>
-                                            <td>{{$adviser->username}}</td>
-                                            <td>
-                                                {{$adviser->mobile}}
-                                                @if($adviser->mobile_verified_at==null) <i class="fa fa-times-circle fa-2x" style="color: darkred"> </i> @endif
-                                            </td>
-                                            <td>
-                                                @if(\App\Adviser::withoutGlobalScope(\App\Scopes\AdviserScope::class)->where('user_id',$adviser->id)->first()->verified==0)
-                                                    <span class="alert alert-danger" style="font-size: 0.7rem;">تایید نشده</span>
-                                                @else
-                                                    <span class="alert alert-success" style="font-size: 0.7rem;">تایید شده</span>
-                                                @endif
-                                            </td>
+                                            <th scope="row">{{$category->id}}</th>
+                                            <td>{{$category->name}}</td>
+                                            <td>{{$category->parent_category_id!=null?\App\Adviser_category::find($category->parent_category_id)->name:'ندارد'}}</td>
 
                                             <td>
-                                                <a href="{{route('admin.adviser.show',[$adviser->id])}}" class="btn btn-primary">
-                                                    <i class="fa fa-info-circle"> مشاهده جزئیات </i>
+                                                <a href="{{route('admin.advisers.categories.edit',[$category->id])}}"
+                                                   class="btn btn-primary">
+                                                    <i class="fa fa-info-circle"> ویرایش </i>
                                                 </a>
                                             </td>
 
                                             <td>
                                                 <form onsubmit="return confirm(this);"
-                                                      action="{{route('admin.adviser.destroy',['adviser_id'=>$adviser->id])}}"
+                                                      action="{{route('admin.advisers.categories.destroy',['category'=>$category->id])}}"
                                                       method="post">
                                                     {{method_field('delete')}}
                                                     {{csrf_field()}}

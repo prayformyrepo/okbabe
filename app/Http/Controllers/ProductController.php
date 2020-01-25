@@ -21,10 +21,16 @@ class ProductController extends Controller
 
     public function create()
     {
+        $productTypes = Product_type::all();
 
+        return view('admin.product.add-product',compact('productTypes'));
         
     }
 
+    public function store(Request $request)
+    {
+
+    }
     public function edit(Product $product)
     {
         $productTypes = Product_type::all();
