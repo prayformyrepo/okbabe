@@ -83,11 +83,11 @@ class UserController extends Controller
                 $user->api_token = null;
                 $user->save();
 
-
+                $u=User::find($user->id);
                 oauth_access_token::where('user_id', $user->id)->delete();
                 $userer['user'] = User::select('id', 'name', 'username', 'email', 'mobile', 'gender', 'call_page', 'call_file', 'call_adviser_name', 'call_adviser_avatar', 'wallet', 'is_adviser', 'is_online', 'avatar','api_token')->find($user->id)->toArray();
-                $cart['cart_count'] = $this->user()->carts->count();
-                $cart['cart_price'] = $this->user()->carts->sum('total_price');
+                $cart['cart_count'] = $u->carts->count();
+                $cart['cart_price'] = $u->carts->sum('total_price');
                 $combined = array_merge($userer, $cart);
 
                 $success = $combined;
