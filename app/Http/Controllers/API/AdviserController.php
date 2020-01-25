@@ -90,7 +90,70 @@ class AdviserController extends Controller
 
             array_push($a, $adviser);
             return response()->json(['success' => $a], $this->successStatus);
-        } else {
+        }
+
+        else if (isset($request->adviser_id)) {
+            $user_id=Adviser::find($request->adviser_id)->user_id;
+            $a = array();
+            if (User::find($user_id)->is_adviser == 0) return response()->json(['error' => 'user is not adviser'], $this->successStatus);
+            $advisers_id = Adviser::where('user_id', $user_id)->value('id');
+            $advisers = Adviser::find($advisers_id);
+            $adviser['adviser'] = $advisers;
+            $adviser['adviser']['RN_field'] = str_replace('<br>', ' - ', str_replace("\n", '', $advisers->field));
+            $adviser['adviser']['RN_about'] = str_replace('<br>', '', $advisers->about);
+            $adviser['adviser']['name'] = User::find($user_id)->name;
+            $adviser['adviser']['avatar'] = User::find($user_id)->avatar;
+            $adviser['adviser']['lat'] = Adviser::where('user_id', $user_id)->value('lat');
+            $adviser['adviser']['long'] = Adviser::where('user_id', $user_id)->value('long');
+            $adviser['adviser']['video_cover'] = Adviser::where('user_id', $user_id)->value('video_cover');
+            $adviser['adviser']['video'] = Adviser::where('user_id', $user_id)->value('video');
+            $adviser['adviser']['is_busy'] = Adviser::where('user_id', $user_id)->value('is_busy');
+            $adv_id = Adviser::where('user_id', $user_id)->value('id');
+            $rates = Adviser_rate::where('adviser_id', $adv_id)->get();
+            $rate_count = Adviser_rate::where('adviser_id', $adv_id)->count();
+            $all = 0;
+            foreach ($rates as $rate) {
+                $all = $all + $rate->rate;
+            }
+            if ($rate_count != 0)
+                $adviser['adviser']['rate'] = $all / $rate_count;
+            else
+                $adviser['adviser']['rate'] = 0;
+//            $adviser['adviser']['categories']=$advisers->categories()->get();
+//            $adviser['adviser']['times']=$advisers->times()->get();
+            $times = $advisers->times()->orderBy('date', 'ASC')->get();
+            $count = $advisers->times()->count();
+            $tt = array();
+//            $adviser['adviser']['ttt']=array();
+            $testi = array();
+            for ($i = 0; $i < $count; $i++) {
+
+                $tt['id'] = $times[$i]['id'];
+                $tt['date'] = $times[$i]['date'];
+                $tt['time_from'] = $times[$i]['time_from'];
+                $tt['time_to'] = $times[$i]['time_to'];
+                if ($i != 0) {
+                    if ($times[$i]['date'] === $times[$i - 1]['date']) {
+                        $tt['date'] = null;
+                    }
+                }
+                array_push($testi, $tt);
+
+            }
+            $adviser['adviser']['times'] = $testi;
+
+
+            $adviser['adviser']['qa_count'] = Question_answer::where('adviser_id', $advisers->id)->count();
+            $adviser['adviser']['comment_count'] = Adviser_rate::where('adviser_id', $advisers->id)->where('comment', '!=', null)->count();
+            $adviser['adviser']['call_count'] = Call::where('adviser_id', $advisers->id)->where('duration', '!=', null)->count();
+            $save_count = Saved_adviser::where('user_id', Auth::user()->id)->where('adviser_id', $advisers_id)->count();
+            $adviser['adviser']['is_saved'] = $save_count == 0 ? 0 : 1;
+
+            array_push($a, $adviser);
+            return response()->json(['success' => $a], $this->successStatus);
+        }
+
+        else {
             $advisers = Adviser::orderBy('id', 'DESC')->paginate(10);
         }
         $a = array();

@@ -83,7 +83,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-2  col-form-label" for="example-textarea">توضیحات کوتاه</label>
                                 <div class="col-sm-10">
- <textarea class="form-control" rows="5" id="description" name="short_description">{{old('short_description')}}
+ <textarea class="form-control" rows="5" id="short_description" name="short_description">{{old('short_description')}}
  </textarea>
                                 </div>
                             </div>
@@ -91,19 +91,19 @@
                             <div class="form-group row">
                                 <label class="col-sm-2  col-form-label" for="simpleinput">قیمت به تومان</label>
                                 <div class="col-sm-2">
-                                    <input type="number" id="questions_count" name="price" class="form-control"
+                                    <input type="number" id="price" name="price" class="form-control"
                                            placeholder="قیمت" value="{{old('price')}}">
                                 </div>
 
                                 <label class="col-sm-2  col-form-label" for="simpleinput">تعداد صفحات</label>
                                 <div class="col-sm-2">
-                                    <input type="number" id="answers_per_question" name="pages" class="form-control"
+                                    <input type="number" id="pages" name="pages" class="form-control"
                                            placeholder="تعداد صفحات" value="{{old('pages')}}">
                                 </div>
 
                                 <label class="col-sm-1  col-form-label" for="simpleinput">زبان کتاب</label>
                                 <div class="col-sm-3">
-                                    <input type="text" id="answers_per_question" name="language" class="form-control"
+                                    <input type="text" id="language" name="language" class="form-control"
                                            placeholder="زبان محصول" value="{{old('language')}}">
                                 </div>
                             </div>
@@ -112,19 +112,19 @@
                             <div class="form-group row">
                                 <label class="col-sm-2  col-form-label" for="simpleinput">حجم فایل ها</label>
                                 <div class="col-sm-2">
-                                    <input type="text" id="answers_per_question" name="size" class="form-control"
+                                    <input type="text" id="size" name="size" class="form-control"
                                            placeholder="زبان محصول" value="{{old('size')}}">
                                 </div>
 
                                 <label class="col-sm-2  col-form-label" for="simpleinput">نویسنده</label>
                                 <div class="col-sm-2">
-                                    <input type="text" id="answers_per_question" name="author" class="form-control"
+                                    <input type="text" id="author" name="author" class="form-control"
                                            placeholder="نویسنده" value="{{old('author')}}">
                                 </div>
 
                                 <label class="col-sm-1  col-form-label" for="simpleinput">گوینده</label>
                                 <div class="col-sm-3">
-                                    <input type="text" id="answers_per_question" name="announcer" class="form-control"
+                                    <input type="text" id="announcer" name="announcer" class="form-control"
                                            placeholder="گوینده" value="{{old('announcer')}}">
                                 </div>
                             </div>
@@ -133,19 +133,19 @@
                             <div class="form-group row">
                                 <label class="col-sm-2  col-form-label" for="simpleinput">مترجم</label>
                                 <div class="col-sm-2">
-                                    <input type="text" id="answers_per_question" name="translator" class="form-control"
+                                    <input type="text" id="translator" name="translator" class="form-control"
                                            placeholder="مترجم" value="{{old('translator')}}">
                                 </div>
 
                                 <label class="col-sm-2  col-form-label" for="simpleinput">سال انتشار</label>
                                 <div class="col-sm-2">
-                                    <input type="text" id="answers_per_question" name="published_date"
+                                    <input type="text" id="published_date" name="published_date"
                                            class="form-control" placeholder="سال انتشار"
                                            value="{{old('published_date')}}">
                                 </div>
                                 <label class="col-sm-1  col-form-label" for="simpleinput">ناشر</label>
                                 <div class="col-sm-3">
-                                    <input type="text" id="answers_per_question" name="publisher" class="form-control"
+                                    <input type="text" id="publisher" name="publisher" class="form-control"
                                            placeholder="ناشر" value="{{old('publisher')}}">
                                 </div>
 
@@ -157,9 +157,9 @@
 
 
                                 <div class="checkbox checkbox-primary" style="padding-right: 20px;">
-                                    <input id="checkbox2" name="featured" type="checkbox" value="1">
+                                    <input id="featured" name="featured" type="checkbox">
 
-                                    <label for="checkbox2">
+                                    <label for="featured">
 
                                     </label>
                                 </div>
@@ -169,7 +169,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-2  col-form-label" for="simpleinput">وضعیت محصول</label>
                                 <div class="col-sm-4">
-                                    <select class="form-control" name="status">
+                                    <select class="form-control" name="status" id="status">
                                         <option value="1">فعال</option>
                                         <option value="0">غیرفعال</option>
                                     </select>
@@ -177,7 +177,7 @@
 
                                 <label class="col-sm-1  col-form-label" for="simpleinput">نوع کتاب</label>
                                 <div class="col-sm-5">
-                                    <select class="form-control" name="product_type_id">
+                                    <select class="form-control" name="product_type_id" id="product_type_id">
                                         <option value="0">نوع کتاب را انتخاب کنید</option>
 
                                         @foreach($productTypes as $productType)
@@ -295,21 +295,21 @@
         var size = $('#size').val();
         var author = $('#author').val();
         var announcer = $('#announcer').val();
-
-
+        var translator = $('#translator').val();
+        var published_date = $('#published_date').val();
+        var publisher = $('#publisher').val();
+        var featured = $('#featured').val();
+        var status = $('#status').val();
+        var product_type_id = $('#product_type_id').val();
         var images = [];
         $("input[name='image[]']").each(function() {
             images.push($(this).val());
         });
 
 
-
-        var description = $('#description').val();
-        var parent_category_id = $('#parent_category').val()===0?null:$('#parent_category').val();
-
-        var url = "{{route('admin.advisers.categories.store')}}";
+        var url = "{{route('admin.product.store')}}";
         $.ajax({
-            data: {'name': name, 'slug': slug, 'description': description, 'parent_category_id': parent_category_id},
+            data: {'name': name, 'slug': slug, 'description': description,  'short_description' : short_description,  'price': price,  'pages': pages,},
             url: url,
             type: "POST",
             success: function (data) {
