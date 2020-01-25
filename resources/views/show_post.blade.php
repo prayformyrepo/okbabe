@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{$post->title}}</title>
 </head>
-<body>
+<body style="text-align: right;">
 {!! $post->content !!}
 </body>
 </html>
