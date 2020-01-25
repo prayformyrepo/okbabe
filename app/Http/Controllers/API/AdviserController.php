@@ -154,7 +154,7 @@ class AdviserController extends Controller
         }
 
         else {
-            $advisers = Adviser::orderBy('id', 'DESC')->paginate(10);
+            $advisers = Adviser::orderBy('rate', 'DESC')->paginate(10);
         }
         $a = array();
         foreach ($advisers as $advise) {
@@ -174,6 +174,19 @@ class AdviserController extends Controller
             $adviser['adviser']['call_count'] = Call::where('adviser_id', $advise->id)->where('duration', '!=', null)->count();
             $save_count = Saved_adviser::where('user_id', Auth::user()->id)->where('adviser_id', $advise->id)->count();
             $adviser['adviser']['is_saved'] = $save_count == 0 ? 0 : 1;
+
+            $all = 0;
+
+            $rates = Adviser_rate::where('adviser_id', $advise->id)->get();
+            $rate_count = Adviser_rate::where('adviser_id', $advise->id)->count();
+
+            foreach ($rates as $rate) {
+                $all = $all + $rate->rate;
+            }
+            if ($rate_count != 0)
+                $adviser['adviser']['rate'] = $all / $rate_count;
+            else
+                $adviser['adviser']['rate'] = 0;
 
             array_push($a, $adviser);
         }
@@ -380,6 +393,17 @@ class AdviserController extends Controller
             $rate->is_private = $request->is_private;
             if (isset($request->comment)) $rate->comment = $request->comment;
             $rate->save();
+            $rates = Adviser_rate::where('adviser_id', $request->adviser_id)->get();
+            $rate_count = Adviser_rate::where('adviser_id', $request->adviser_id)->count();
+            $all = 0;
+            foreach ($rates as $rate) {
+                $all = $all + $rate->rate;
+            }
+            if ($rate_count != 0)
+                $ad=Adviser::find($request->adviser_id);
+            $ad->rate = $all / $rate_count;
+            $ad->save();
+
             return response()->json(['success' => $rate], $this->successStatus);
 
         }
