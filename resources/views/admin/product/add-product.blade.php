@@ -4,9 +4,9 @@
 <head>
     @include('includes.panel.headLinks')
     <script src="/ckeditor/ckeditor.js"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}"/>
 
     <title> شاورنو - افزودن محصول </title>
-    <meta name="csrf-token" content="{{ csrf_token() }}"/>
 
 </head>
 
@@ -53,8 +53,8 @@
                     <!-- general tab content -->
                     <div id="general" class="tab-pan active show">
 
-                        {{--<form class="form-horizontal" role="form" method="post"--}}
-                              {{--action="{{route('admin.product.store')}}" enctype="multipart/form-data">--}}
+                        <form class="form-horizontal" role="form" method="post"
+                              action="{{route('admin.product.store')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
                                 <label class="col-sm-2  col-form-label" for="simpleinput">عنوان محصول</label>
@@ -199,7 +199,8 @@
                                                     <tbody id="imagefield">
                                                     <tr>
                                                         <td>
-                                                            <input class="form-control" type="file" name="image[]">
+                                                            <input class="form-control" type="file" id="image"
+                                                                   name="image">
                                                         </td>
                                                         <td>
                                                         </td>
@@ -213,10 +214,10 @@
                                         </div>
 
                                     </div>
-                                    <div class="col-md-2">
-                                        <button class="btn btn-success center" type="button" id="addphoto">افزودن فیلد عکس
-                                        </button>
-                                    </div>
+                                    {{--<div class="col-md-2">--}}
+                                    {{--<button class="btn btn-success center" type="button" id="addphoto">افزودن فیلد عکس--}}
+                                    {{--</button>--}}
+                                    {{--</div>--}}
 
                                 </div>
 
@@ -230,10 +231,9 @@
                                 </div>
                             </div>
 
-                        {{--</form>--}}
+                        </form>
 
                     </div>
-
 
 
                 </div> <!-- content -->
@@ -257,68 +257,40 @@
 
 
 @include('includes.panel.footerLinks')
+
+{{--<script>--}}
+{{--CKEDITOR.replace('description');--}}
+{{--$('#addphoto').click(function () {--}}
+{{--$('#imagefield').append(' <tr>\n' +--}}
+{{--'                            <td>\n' +--}}
+{{--' <input class="form-control" type="file" name="image[]">\n' +--}}
+{{--'                            </td>\n' +--}}
+{{--'                            <td>\n' +--}}
+{{--'<button type="button" class="btn btn-danger deleterow">حذف</button>\n' +--}}
+{{--'                            </td>\n' +--}}
+{{--'\n' +--}}
+{{--'                        </tr>');--}}
+{{--$('.deleterow').click(function () {--}}
+{{--$(this).parents('tr').remove();--}}
+{{--});--}}
+
+{{--});--}}
+{{--</script>--}}
 <script src="/js/swal.js"></script>
 
 <script>
-    CKEDITOR.replace('description');
-    $('#addphoto').click(function () {
-        $('#imagefield').append(' <tr>\n' +
-            '                            <td>\n' +
-            ' <input class="form-control" type="file" name="image[]">\n' +
-            '                            </td>\n' +
-            '                            <td>\n' +
-            '<button type="button" class="btn btn-danger deleterow">حذف</button>\n' +
-            '                            </td>\n' +
-            '\n' +
-            '                        </tr>');
-        $('.deleterow').click(function () {
-            $(this).parents('tr').remove();
-        });
-
-    });
-</script>
-
-<script>
-
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-    $(".save_form").on("click", function () {
-
-        var name = $('#name').val();
-        var slug = $('#slug').val();
-        var description = $('#description').val();
-        var short_description = $('#short_description').val();
-        var price = $('#price').val();
-        var pages = $('#pages').val();
-        var language = $('#language').val();
-        var size = $('#size').val();
-        var author = $('#author').val();
-        var announcer = $('#announcer').val();
-        var translator = $('#translator').val();
-        var published_date = $('#published_date').val();
-        var publisher = $('#publisher').val();
-        var featured = $('#featured').val();
-        var status = $('#status').val();
-        var product_type_id = $('#product_type_id').val();
-        var image = $("input[name='image[]']").files[0];
-
-        // var data = new FormData();
-        // jQuery.each(jQuery("input[name='image[]']").files, function(i, file) {
-        //     data.append('file-'+i, file);
-        // });
-
-        console.log(image);
 
 
-        var url = "{{route('admin.product.store')}}";
+    $('form').submit(function (event) {
+        event.preventDefault();
+        var formData = new FormData($(this)[0]);
         $.ajax({
-            data: {'name': name, 'slug': slug, 'description': description,  'short_description' : short_description,  'price': price,  'pages' : pages, 'language' : language, 'size': size, 'author': author, 'announcer': announcer, 'translator': translator, 'published_date': published_date, 'publisher': publisher, 'featured': featured, 'status': status, 'product_type_id': product_type_id, image:image  },
-            url: url,
-            type: "POST",
-            success: function (data) {
+            url: '{{route('admin.product.store')}}',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (result) {
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
@@ -327,24 +299,23 @@
                     showConfirmButton: false,
                     timer: 2500
                 })
-
             },
             error: function (err) {
                 console.log(err);
-                var ename='';
-                var eslug='';
-                var etype='';
-                var eimage='';
+                var ename = '';
+                var eslug = '';
+                var etype = '';
+                var eimage = '';
 
-                err.responseJSON.errors.name?ename=err.responseJSON.errors.name[0]:ename='';
-                err.responseJSON.errors.slug?eslug=err.responseJSON.errors.slug[0]:eslug='';
-                err.responseJSON.errors.product_type_id?etype=err.responseJSON.errors.product_type_id[0]:etype='';
-                err.responseJSON.errors.image?eimage=err.responseJSON.errors.image[0]:eimage='';
+                err.responseJSON.errors.name ? ename = err.responseJSON.errors.name[0] : ename = '';
+                err.responseJSON.errors.slug ? eslug = err.responseJSON.errors.slug[0] : eslug = '';
+                err.responseJSON.errors.product_type_id ? etype = err.responseJSON.errors.product_type_id[0] : etype = '';
+                err.responseJSON.errors.image ? eimage = err.responseJSON.errors.image[0] : eimage = '';
                 Swal.fire({
                     position: 'center',
                     icon: 'error',
                     title: 'خطا',
-                    html: ename + '<br>' + eslug + '<br>' + etype + '<br>' + eimage ,
+                    html: ename + '<br>' + eslug + '<br>' + etype + '<br>' + eimage,
                     showConfirmButton: false,
                     timer: 2500
                 })
@@ -354,24 +325,98 @@
     });
 
 
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
+    // $.ajaxSetup({
+    //     headers: {
+    //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    //     }
+    // });
+    {{--$(".save_form").on("click", function () {--}}
+
+    {{--var name = $('#name').val();--}}
+    {{--var slug = $('#slug').val();--}}
+    {{--var description = $('#description').val();--}}
+    {{--var short_description = $('#short_description').val();--}}
+    {{--var price = $('#price').val();--}}
+    {{--var pages = $('#pages').val();--}}
+    {{--var language = $('#language').val();--}}
+    {{--var size = $('#size').val();--}}
+    {{--var author = $('#author').val();--}}
+    {{--var announcer = $('#announcer').val();--}}
+    {{--var translator = $('#translator').val();--}}
+    {{--var published_date = $('#published_date').val();--}}
+    {{--var publisher = $('#publisher').val();--}}
+    {{--var featured = $('#featured').val();--}}
+    {{--var status = $('#status').val();--}}
+    {{--var product_type_id = $('#product_type_id').val();--}}
+    {{--var image = $('#image').files[0];--}}
+
+    {{--// var data = new FormData();--}}
+    {{--// jQuery.each(jQuery("input[name='image[]']").files, function(i, file) {--}}
+    {{--//     data.append('file-'+i, file);--}}
+    {{--// });--}}
+
+    {{--console.log(image);--}}
+
+
+    {{--var url = "{{route('admin.product.store')}}";--}}
+    {{--$.ajax({--}}
+
+    {{--data: {'name': name, 'slug': slug, 'description': description,  'short_description' : short_description,  'price': price,  'pages' : pages, 'language' : language, 'size': size, 'author': author, 'announcer': announcer, 'translator': translator, 'published_date': published_date, 'publisher': publisher, 'featured': featured, 'status': status, 'product_type_id': product_type_id, image:image  },--}}
+    {{--url: url,--}}
+    {{--type: "POST",--}}
+    {{--success: function (data) {--}}
+    {{--Swal.fire({--}}
+    {{--position: 'center',--}}
+    {{--icon: 'success',--}}
+    {{--title: 'موفقیت آمیز',--}}
+    {{--html: 'محصول با موفقیت ثبت شد',--}}
+    {{--showConfirmButton: false,--}}
+    {{--timer: 2500--}}
+    {{--})--}}
+
+    {{--},--}}
+    {{--error: function (err) {--}}
+    {{--console.log(err);--}}
+    {{--var ename='';--}}
+    {{--var eslug='';--}}
+    {{--var etype='';--}}
+    {{--var eimage='';--}}
+
+    {{--err.responseJSON.errors.name?ename=err.responseJSON.errors.name[0]:ename='';--}}
+    {{--err.responseJSON.errors.slug?eslug=err.responseJSON.errors.slug[0]:eslug='';--}}
+    {{--err.responseJSON.errors.product_type_id?etype=err.responseJSON.errors.product_type_id[0]:etype='';--}}
+    {{--err.responseJSON.errors.image?eimage=err.responseJSON.errors.image[0]:eimage='';--}}
+    {{--Swal.fire({--}}
+    {{--position: 'center',--}}
+    {{--icon: 'error',--}}
+    {{--title: 'خطا',--}}
+    {{--html: ename + '<br>' + eslug + '<br>' + etype + '<br>' + eimage ,--}}
+    {{--showConfirmButton: false,--}}
+    {{--timer: 2500--}}
+    {{--})--}}
+    {{--}--}}
+    {{--});--}}
+
+    {{--});--}}
+
+
+    {{--$.ajaxSetup({--}}
+    {{--headers: {--}}
+    {{--'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')--}}
+    {{--}--}}
+    {{--});--}}
     $(document)
         .ajaxStart(function () {
             Swal.fire({
                 position: 'center',
                 // icon: 'error',
                 title: '<i class="fa fa-spinner fa-spin fa-4x" style="color: dodgerblue;"></i>',
-                html: 'لطفا صبر کنید' ,
+                html: 'لطفا صبر کنید',
                 showConfirmButton: false,
                 // timer: 2500
             })
         })
 </script>
-
 
 
 </body>

@@ -114,7 +114,7 @@ class OrderController extends Controller
                     ]);
 
                     foreach ($order->productOrders as $product) {
-                        $carts = Cart::where([['product_id', $product->id], ['user_id', $this->user()->id]])->first();
+                        $carts = Cart::where('product_id', $product->product_id)->where('user_id', $this->user()->id)->first();
                         $carts->delete();
                     }
                     $success['message'] = 'محصول مورد نظر با موفقیت خریداری شده و آماده دانلود میباشد.';

@@ -372,7 +372,7 @@ class Enrich47 extends Controller
 
 
 
-        return response()->json(['success' => $ans], 200);
+//        return response()->json(['success' => $ans], 200);
 
     }
 }

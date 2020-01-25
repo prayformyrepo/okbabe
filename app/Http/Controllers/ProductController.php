@@ -68,10 +68,17 @@ class ProductController extends Controller
         $product_id=$product->id;
 
 
-       $images= $request->file('image');
-       foreach ($images as $image){
 
-       }
+        $file = $request->file('image');
+        $filename = $product->id . '_' . time() . '.' . $file->getClientOriginalExtension();
+        $file->move(public_path('files/products/' . $product->id . '/work_certificate/'), $filename);
+
+        $work_certificate_file = File::create([
+            'file_path' => '/files/advisers/' . $user->id . '/work_certificate/' . $filename,
+            'orginal_name' => $file->getClientOriginalName(),
+            'file_type' => $file->getClientMimeType(),
+            'slug' => $user->id . '_' . time()
+        ]);
     }
     public function edit(Product $product)
     {
