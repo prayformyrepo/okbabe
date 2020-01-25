@@ -174,19 +174,7 @@ class AdviserController extends Controller
             $adviser['adviser']['call_count'] = Call::where('adviser_id', $advise->id)->where('duration', '!=', null)->count();
             $save_count = Saved_adviser::where('user_id', Auth::user()->id)->where('adviser_id', $advise->id)->count();
             $adviser['adviser']['is_saved'] = $save_count == 0 ? 0 : 1;
-
-            $all = 0;
-
-            $rates = Adviser_rate::where('adviser_id', $advise->id)->get();
-            $rate_count = Adviser_rate::where('adviser_id', $advise->id)->count();
-
-            foreach ($rates as $rate) {
-                $all = $all + $rate->rate;
-            }
-            if ($rate_count != 0)
-                $adviser['adviser']['rate'] = $all / $rate_count;
-            else
-                $adviser['adviser']['rate'] = 0;
+                $adviser['adviser']['rate'] = $advise->rate;
 
             array_push($a, $adviser);
         }
