@@ -6,6 +6,7 @@
     <script src="/ckeditor/ckeditor.js"></script>
 
     <title> شاورنو - افزودن محصول </title>
+    <meta name="csrf-token" content="{{ csrf_token() }}"/>
 
 </head>
 
@@ -52,10 +53,9 @@
                     <!-- general tab content -->
                     <div id="general" class="tab-pan active show">
 
-                        <form class="form-horizontal" role="form" method="post"
-                              action="{{route('admin.product.store')}}">
+                        {{--<form class="form-horizontal" role="form" method="post"--}}
+                              {{--action="{{route('admin.product.store')}}" enctype="multipart/form-data">--}}
                             @csrf
-                            @method('patch')
                             <div class="form-group row">
                                 <label class="col-sm-2  col-form-label" for="simpleinput">عنوان محصول</label>
                                 <div class="col-sm-10">
@@ -178,7 +178,7 @@
                                 <label class="col-sm-1  col-form-label" for="simpleinput">نوع کتاب</label>
                                 <div class="col-sm-5">
                                     <select class="form-control" name="product_type_id">
-                                        <option>نوع کتاب را انتخاب کنید</option>
+                                        <option value="0">نوع کتاب را انتخاب کنید</option>
 
                                         @foreach($productTypes as $productType)
                                             <option value="{{$productType->id}}">{{$productType->name}}</option>
@@ -187,53 +187,54 @@
                                 </div>
                             </div>
 
+                            <div id="image" class="tab-pan">
+
+                                <div class="whole-tab">
+                                    <div class="col-md-12 col-lg-10">
+                                        <div class="col-md-10">
+                                            <div class="form-group required">
+
+
+                                                <table class="table">
+                                                    <tbody id="imagefield">
+                                                    <tr>
+                                                        <td>
+                                                            <input class="form-control" type="file" name="image[]">
+                                                        </td>
+                                                        <td>
+                                                        </td>
+
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button class="btn btn-success center" type="button" id="addphoto">افزودن فیلد عکس
+                                        </button>
+                                    </div>
+
+                                </div>
+
+                            </div> <!-- container-fluid -->
 
                             <div class="form-group mb-0 justify-content-end row">
                                 <div class="col-sm-12">
-                                    <button type="submit" class="btn btn-info waves-effect waves-light"
+                                    <button type="submit" class=" save_form btn btn-info waves-effect waves-light"
                                             style="float: left"> افزودن محصول
                                     </button>
                                 </div>
                             </div>
 
-                        </form>
+                        {{--</form>--}}
 
                     </div>
 
-                    <div id="image" class="tab-pan">
 
-                        <div class="whole-tab">
-                            <div class="col-md-12 col-lg-10">
-                                <div class="col-md-10">
-                                    <div class="form-group required">
-
-
-                                        <table class="table">
-                                            <tbody id="imagefield">
-                                            <tr>
-                                                <td>
-                                                    <input class="form-control" type="file" name="image[]">
-                                                </td>
-                                                <td>
-                                                </td>
-
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-
-
-                                </div>
-
-                            </div>
-                            <div class="col-md-2">
-                                <button class="btn btn-success center" type="button" id="addphoto">افزودن فیلد عکس
-                                </button>
-                            </div>
-
-                        </div>
-
-                    </div> <!-- container-fluid -->
 
                 </div> <!-- content -->
 
@@ -258,7 +259,97 @@
 @include('includes.panel.footerLinks')
 <script>
     CKEDITOR.replace('description');
+    $('#addphoto').click(function () {
+        $('#imagefield').append(' <tr>\n' +
+            '                            <td>\n' +
+            ' <input class="form-control" type="file" name="image[]">\n' +
+            '                            </td>\n' +
+            '                            <td>\n' +
+            '<button type="button" class="btn btn-danger deleterow">حذف</button>\n' +
+            '                            </td>\n' +
+            '\n' +
+            '                        </tr>');
+        $('.deleterow').click(function () {
+            $(this).parents('tr').remove();
+        });
+
+    });
 </script>
+
+<script>
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $(".save_form").on("click", function () {
+
+        var name = $('#name').val();
+        var slug = $('#slug').val();
+        var description = $('#description').val();
+        var short_description = $('#short_description').val();
+        var price = $('#price').val();
+        var pages = $('#pages').val();
+        var language = $('#language').val();
+        var size = $('#size').val();
+        var author = $('#author').val();
+        var announcer = $('#announcer').val();
+
+
+        var images = [];
+        $("input[name='image[]']").each(function() {
+            images.push($(this).val());
+        });
+
+
+
+        var description = $('#description').val();
+        var parent_category_id = $('#parent_category').val()===0?null:$('#parent_category').val();
+
+        var url = "{{route('admin.advisers.categories.store')}}";
+        $.ajax({
+            data: {'name': name, 'slug': slug, 'description': description, 'parent_category_id': parent_category_id},
+            url: url,
+            type: "POST",
+            success: function (data) {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'موفقیت آمیز',
+                    html: 'پیام شما با موفقیت ثبت شد',
+                    showConfirmButton: false,
+                    timer: 2500
+                })
+
+                $('#name').val('')
+                $('#slug').val('')
+                $('#description').val('')
+            },
+            error: function (err) {
+                console.log(err);
+
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: 'خطا',
+                    html: err.responseJSON.errors.name[0] + '<br>' + err.responseJSON.errors.slug[0],
+                    showConfirmButton: false,
+                    timer: 2500
+                })
+            }
+        });
+
+    });
+
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+</script>
+
 
 
 </body>

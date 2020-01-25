@@ -96,6 +96,7 @@ class AdviserController extends Controller
         $a = array();
         foreach ($advisers as $advise) {
             $adviser['adviser'] = $advise;
+            $adviser['adviser']['adviser_id'] = $advise->id;
             $adviser['adviser']['RN_field'] = str_replace('<br>', '', $advise->field);
             $adviser['adviser']['RN_about'] = str_replace('<br>', '', $advise->about);
             $adviser['adviser']['name'] = User::find($advise->user_id)->name;

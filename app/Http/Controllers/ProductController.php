@@ -29,7 +29,26 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
+        $validatedData = [
+            'name' => 'required|unique:products',
+            'slug' => 'required|unique:products',
+            'product_type_id' => 'required|different:0',
+        ];
+        $messages = [
+            'name.required' => 'وارد کردن نام محصول الزامی است',
+            'slug.required' => 'وارد کردن اسلاگ محصول الزامی است',
+            'slug.unique' => ' اسلاگ محصول تکراری است',
+            'name.unique' => ' نام محصول تکراری است',
+        ];
 
+
+
+
+       $images= $request->file('image');
+       dd($images);
+//       foreach ($images as $image){
+//
+//       }
     }
     public function edit(Product $product)
     {
