@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{$post->title}}</title>
     <style>
-        p{
-            text-align: right!important;
+        *{
+            direction: rtl;
         }
     </style>
 </head>
