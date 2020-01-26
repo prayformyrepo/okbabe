@@ -178,7 +178,7 @@ class ProductController extends Controller
             $success=CartResource::collection($carts);
             $success['cart_count'] = $this->user()->carts->count();
             $success['cart_price'] = $this->user()->carts->sum('total_price') ;
-            return response()->json(['success' => ]);
+            return response()->json(['success' => $success ]);
         } else {
             return response()->json(['error' => 'هیج محصولی در سبد خرید شما موجود نمیباشد.']);
         }
