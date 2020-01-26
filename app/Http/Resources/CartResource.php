@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Auth;
 
 class CartResource extends JsonResource
 {
@@ -15,11 +16,14 @@ class CartResource extends JsonResource
     public function toArray($request)
     {
 /*        return parent::toArray($request);*/
-        return [
+        return [[
         'id'=>$this->id,
         'product'=>new ProductResource($this->product),
         'price'=>$this->total_price
-
+            ],[
+                'cart_count' => Auth::user()->carts->count(),
+                'cart_price' => Auth::user()->carts->sum('total_price')
+        ]
         ];
     }
 }
