@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
+use App\File;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\CartResource;
 use App\Http\Resources\ProductCommentResource;
@@ -71,10 +72,10 @@ class ProductController extends Controller
 
         $file = $request->file('image');
         $filename = $product->id . '_' . time() . '.' . $file->getClientOriginalExtension();
-        $file->move(public_path('files/products/' . $product->id . '/work_certificate/'), $filename);
+        $file->move(public_path('files/products/' . $product->id ), $filename);
 
-        $work_certificate_file = File::create([
-            'file_path' => '/files/advisers/' . $user->id . '/work_certificate/' . $filename,
+        $file = File::create([
+            'file_path' => '/files/products/' . $product->id . $filename,
             'orginal_name' => $file->getClientOriginalName(),
             'file_type' => $file->getClientMimeType(),
             'slug' => $user->id . '_' . time()

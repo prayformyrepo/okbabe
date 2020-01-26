@@ -437,8 +437,21 @@ class OrderController extends Controller
     public function showOrders()
     {
         $orders = $this->user()->orders()->get();
-        $orders->load('productOrders');
-        return response()->json($orders);
+        $or=array();
+        foreach ($orders as $order){
+            $o=$order;
+            $product_orders=ProductOrder::where('order_id',$order->id)->get();
+            $pr=array();
+            foreach ($product_orders as $product_order){
+                $p=Product::find($product_order->product_id);
+                array_push($pr,$p);
+            }
+            $o['products']=$pr;
+            array_push($or,$o);
+        }
+//        $orders->load('productOrders');
+
+        return response()->json(['success' => $or], 200);
     }
 
     /*    public function do_pay(Request $request)
