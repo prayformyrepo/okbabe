@@ -444,6 +444,7 @@ class OrderController extends Controller
             $pr=array();
             foreach ($product_orders as $product_order){
                 $p=Product::find($product_order->product_id);
+                $p['images']=$p->images();
                 array_push($pr,$p);
             }
             $o['products']=$pr;
