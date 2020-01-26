@@ -162,8 +162,8 @@ class ProductController extends Controller
 
         if ($cart != null) {
             $cart->delete();
-            $success['cart_count'] = $this->user()->carts->count();
-            $success['cart_price'] = $this->user()->carts->sum('total_price');
+            $success['cart_count'] = $this->user()->carts->count() - 1;
+            $success['cart_price'] = $this->user()->carts->sum('total_price') - Product::find($cart->product_id)->price;
             return response()->json(['success' => $success]);
         }
         return response()->json(['error' => 'محصول مورد نظر در سبد خرید موجود نمیباشد!']);
