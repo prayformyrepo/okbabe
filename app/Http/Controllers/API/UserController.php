@@ -446,32 +446,15 @@ class UserController extends Controller
 
     public function remove_pass(){
 
-      $digits = 4;
-      $code = rand(pow(10, $digits - 1), pow(10, $digits) - 1);
-
       $user=Auth::user();
       $user=User::find($user->id);
-      // $user->password=null;
-      $user->code=$code;
+      $user->password=null;
       $user->mobile_verified_at=null;
       $user->save();
 
 
 
-      //sms
-      try {
-          $receptor = $user->mobile;
-          $template = "shaverno";
-          $type = "sms";
-          $token = $code;
-          $token2 = "";
-          $token3 = "";
-          $result = Kavenegar::VerifyLookup($receptor, $token, $token2, $token3, $template, $type);
-      } catch (ApiException $e) {
-          echo $e->errorMessage();
-      } catch (HttpException $e) {
-          echo $e->errorMessage();
-      }
+
       
 
       $user = User::select('id', 'name', 'username', 'email', 'mobile','code', 'gender', 'call_page', 'call_file', 'call_adviser_name', 'call_adviser_avatar', 'wallet', 'is_adviser', 'is_online', 'avatar','api_token')->find(Auth::user()->id)->toArray();
