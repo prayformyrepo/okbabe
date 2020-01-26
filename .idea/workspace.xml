@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/ProductController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/ProductController.php" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/OrderController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/OrderController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,21 +17,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/ProductController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
+            <state relative-caret-position="591">
               <caret line="175" column="33" lean-forward="true" selection-start-line="175" selection-start-column="33" selection-end-line="175" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrderController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="OrderController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/OrderController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="429" column="30" lean-forward="false" selection-start-line="429" selection-start-column="20" selection-end-line="429" selection-end-column="30" />
+            <state relative-caret-position="417">
+              <caret line="118" column="20" lean-forward="false" selection-start-line="118" selection-start-column="20" selection-end-line="118" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderPayment.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/OrderPayment.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -60,7 +70,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>add_note</find>
       <find>call_his</find>
       <find>ناشن</find>
       <find>$qcount</find>
@@ -90,6 +99,7 @@
       <find>user_info</find>
       <find>state</find>
       <find>showOrders</find>
+      <find>Order::</find>
     </findStrings>
     <replaceStrings>
       <replace>paginate</replace>
@@ -176,11 +186,11 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Test/Enrich47.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/product/add-product.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/OrderController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" />
         <option value="$PROJECT_DIR$/app/Http/Resources/CartResource.php" />
         <option value="$PROJECT_DIR$/app/Http/Resources/AllCartResource.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/ProductController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/OrderController.php" />
       </list>
     </option>
   </component>
@@ -555,7 +565,7 @@
       <workItem from="1579765330729" duration="17412000" />
       <workItem from="1579849671463" duration="17182000" />
       <workItem from="1579898074699" duration="1388000" />
-      <workItem from="1579943179749" duration="28053000" />
+      <workItem from="1579943179749" duration="28373000" />
     </task>
     <task id="LOCAL-00094" summary="edit fetch messages">
       <created>1575015968174</created>
@@ -930,7 +940,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="498351000" />
+    <option name="totallyTimeSpent" value="498671000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -1000,14 +1010,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7">
@@ -1718,18 +1720,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/OrderController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/ProductController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="429" column="30" lean-forward="false" selection-start-line="429" selection-start-column="20" selection-end-line="429" selection-end-column="30" />
+        <state relative-caret-position="591">
+          <caret line="175" column="33" lean-forward="true" selection-start-line="175" selection-start-column="33" selection-end-line="175" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/ProductController.php">
+    <entry file="file://$PROJECT_DIR$/app/OrderPayment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="175" column="33" lean-forward="true" selection-start-line="175" selection-start-column="33" selection-end-line="175" selection-end-column="33" />
+        <state relative-caret-position="90">
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/OrderController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="118" column="20" lean-forward="false" selection-start-line="118" selection-start-column="20" selection-end-line="118" selection-end-column="20" />
           <folding />
         </state>
       </provider>

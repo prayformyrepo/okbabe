@@ -113,6 +113,11 @@ class OrderController extends Controller
                         'refid' => null
                     ]);
 
+                    $order = Order::find($request->order_id);
+                    $order->state=1;
+                    $order->save();
+
+
                     foreach ($order->productOrders as $product) {
                         $carts = Cart::where('product_id', $product->product_id)->where('user_id', $this->user()->id)->first();
                         $carts->delete();
