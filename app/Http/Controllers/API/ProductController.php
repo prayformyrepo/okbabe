@@ -59,7 +59,7 @@ class ProductController extends Controller
             return response()->json(['success' => $products]);
 
         } else {
-            $products = Product::where('status', 1)->paginate(5);
+            $products = Product::where('status', 1)->paginate(500);
             ProductResource::wrap('success');
             $products = ProductResource::collection($products);
             $pr['product']=$products;
