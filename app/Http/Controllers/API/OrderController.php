@@ -357,7 +357,7 @@ class OrderController extends Controller
 //                    $success['url'] = url('/').'/api/product/file/'.$previous->link;
 //                }
 //                return response()->json(['success' => $success]);
-                $file_id=ProductFile::where('product_id', $request->product_id)->first()->file_id;
+                $file_id=ProductFile::where('product_id', $request->p_id)->first()->file_id;
                 $success='http://shavernoapp.ir/'.File::find($file_id)->file_path;
 
                 return response()->json(['success' => $success]);
