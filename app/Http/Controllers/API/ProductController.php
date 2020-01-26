@@ -145,8 +145,8 @@ class ProductController extends Controller
             } else {
                 return response()->json(['error' => 'محصولی با این مشخصات یافت نشد.'], 401);
             }
-            $success['count'] = $this->user()->carts->count();
-            $success['price'] = $this->user()->carts->sum('total_price');
+            $success['cart_count'] = $this->user()->carts->count();
+            $success['cart_price'] = $this->user()->carts->sum('total_price');
 
 
             return response()->json(['success' => $success]);
@@ -162,7 +162,9 @@ class ProductController extends Controller
 
         if ($cart != null) {
             $cart->delete();
-            return response()->json(['success']);
+            $success['cart_count'] = $this->user()->carts->count();
+            $success['cart_price'] = $this->user()->carts->sum('total_price');
+            return response()->json(['success' => $success]);
         }
         return response()->json(['error' => 'محصول مورد نظر در سبد خرید موجود نمیباشد!']);
 

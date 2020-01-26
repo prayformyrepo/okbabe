@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/ProductController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/ProductController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -88,16 +88,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/TestController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="163" column="15" lean-forward="true" selection-start-line="163" selection-start-column="15" selection-end-line="163" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AdviserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Advisers/AdviserController.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -118,11 +108,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="230" column="29" lean-forward="false" selection-start-line="230" selection-start-column="20" selection-end-line="230" selection-end-column="29" />
+            <state relative-caret-position="241">
+              <caret line="83" column="30" lean-forward="true" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/ProductController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="337">
+              <caret line="147" column="27" lean-forward="false" selection-start-line="147" selection-start-column="27" selection-end-line="147" selection-end-column="27" />
+              <caret line="148" column="27" lean-forward="false" selection-start-line="148" selection-start-column="27" selection-end-line="148" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="301">
+              <caret line="53" column="25" lean-forward="false" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -170,7 +181,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>در</find>
       <find>$shakhsiati</find>
       <find>$answer_number</find>
       <find>add_note</find>
@@ -200,6 +210,7 @@
       <find>product_type_id</find>
       <find>@csrf</find>
       <find>state</find>
+      <find>user_info</find>
     </findStrings>
     <replaceStrings>
       <replace>paginate</replace>
@@ -251,7 +262,6 @@
         <option value="$PROJECT_DIR$/database/migrations/2020_01_23_133450_add_relations_to_posts_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_01_23_133706_add_relations_to_post_categories_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/v.html" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/ProductController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_01_24_122722_add_note_to_calls_table.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/QuestionController.php" />
@@ -291,6 +301,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/OrderController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/ProductController.php" />
       </list>
     </option>
   </component>
@@ -673,7 +684,7 @@
       <workItem from="1579765330729" duration="17412000" />
       <workItem from="1579849671463" duration="17182000" />
       <workItem from="1579898074699" duration="1388000" />
-      <workItem from="1579943179749" duration="26348000" />
+      <workItem from="1579943179749" duration="26721000" />
     </task>
     <task id="LOCAL-00094" summary="edit fetch messages">
       <created>1575015968174</created>
@@ -1048,7 +1059,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="496646000" />
+    <option name="totallyTimeSpent" value="497019000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -1118,26 +1129,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Test/bdi2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="35" column="59" lean-forward="false" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="83" column="14" lean-forward="true" selection-start-line="83" selection-start-column="14" selection-end-line="83" selection-end-column="14" />
-          <folding>
-            <marker date="1579943350795" expanded="true" signature="30:73" ph="..." />
-            <marker date="1579943350795" expanded="true" signature="2002:2014" ph="..." />
-            <marker date="1579943350795" expanded="true" signature="2042:2047" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/product/product.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
@@ -1870,10 +1861,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="53" column="25" lean-forward="false" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="230" column="29" lean-forward="false" selection-start-line="230" selection-start-column="20" selection-end-line="230" selection-end-column="29" />
+        <state relative-caret-position="241">
+          <caret line="83" column="30" lean-forward="true" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/ProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="147" column="27" lean-forward="false" selection-start-line="147" selection-start-column="27" selection-end-line="147" selection-end-column="27" />
+          <caret line="148" column="27" lean-forward="false" selection-start-line="148" selection-start-column="27" selection-end-line="148" selection-end-column="27" />
           <folding />
         </state>
       </provider>
