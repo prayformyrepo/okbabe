@@ -151,7 +151,7 @@ class TestController extends Controller
     //        $body = $response->getBody();
             return $response;
             }
-            if ($test->slug=='BDI-2') {
+            else if ($test->slug=='BDI-2') {
                 $client = new Client(['base_uri' => 'https://shavernoapp.ir']);
                 $response = $client->request('POST', '/api/bdi2',['headers' => [
                     'Authorization' => 'Bearer '.Auth::user()->api_token,
