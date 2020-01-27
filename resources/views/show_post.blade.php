@@ -40,6 +40,16 @@
         $("a").parent().css({"display": "none"});
     });
 
+    $('*').each(function(){
+        var backImg;
+
+        if ($(this).is('img')) {
+            var src=$(this).attr('src');
+            if(src.charAt(0)==='/'){
+                $(this).attr("src","http://shaverno.com".src);
+            }
+        }
+    });
 
 </script>
 </html>
