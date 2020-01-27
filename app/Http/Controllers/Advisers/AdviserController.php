@@ -148,9 +148,8 @@ class AdviserController extends Controller
         $adviser->user_id = $user->id;
         $adviser->field = $request->field;
         $adviser->about = $request->about;
-        $adviser->call_price = $request->call_price;
-        $remain=$request->call_price-250-160;
-        $adviser->nominal_call_price = $request->call_price - 250 - 160 - ($remain*0.3);
+        $remain=$request->call_price-250;
+        $adviser->call_price = $request->call_price - 250 - ($remain*0.3);
         $adviser->nominal_call_price =$request->call_price;
         $adviser->visit_price = $request->visit_price;
         $adviser->work_certificate_file_id = $work_certificate_file->id;

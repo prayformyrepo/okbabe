@@ -256,8 +256,9 @@ class CallController extends Controller
                 $nominal_call_price = $nominal_call_price * $callinfo['duration'];
 
                 $call_price = Adviser::find($call->adviser_id)->call_price;
-                $call_price = $call_price * $callinfo['duration'];
+//                $call_price = $call_price * $callinfo['duration'];
 
+                $call_price=(($nominal_call_price-250)*$callinfo['duration'] - 160 )*0.7;
 
                 $user = User::find(Auth::user()->id);
                 $user->wallet = $user->wallet - $nominal_call_price;
