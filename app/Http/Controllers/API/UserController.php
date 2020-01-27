@@ -36,7 +36,7 @@ class UserController extends Controller
             $user_token->save();
             return response()->json(['success' => $success], $this->successStatus);
         } else {
-            return response()->json(['error' => 'Unauthorized'], 401);
+            return response()->json(['error' => 'کلمه عبور صحیح نیست'], 401);
         }
     }
 

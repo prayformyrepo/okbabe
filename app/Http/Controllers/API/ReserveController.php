@@ -132,7 +132,7 @@ class ReserveController extends Controller
         }
 
         $count=reserve_call::where('id',$request->reserve_id)->count();
-        if ($count==0) return response()->json(['error' => 'not found'], '404');
+        if ($count==0) return response()->json(['error' => 'یافت نشد,'], '404');
 
         $note=reserve_call::find($request->reserve_id)->text;
 
@@ -151,7 +151,7 @@ class ReserveController extends Controller
         }
 
         $count=reserve_call::where('id',$request->reserve_id)->count();
-        if ($count==0) return response()->json(['error' => 'not found'], '404');
+        if ($count==0) return response()->json(['error' => 'یافت نشد'], '404');
 
         $note=reserve_call::find($request->reserve_id);
 
