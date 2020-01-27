@@ -204,7 +204,7 @@
                                             <div class="col-sm-10">
                                                 <input type="number" id="call_price" name="call_price"
                                                        class="form-control" placeholder="هزینه تماس مشاور"
-                                                       value="{{$adviser->call_price}}">
+                                                       value="{{$adviser->nominal_call_price}}">
                                             </div>
                                         </div>
 
