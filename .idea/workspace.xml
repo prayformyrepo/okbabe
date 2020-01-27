@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/resources/views/show_post.blade.php" afterPath="$PROJECT_DIR$/resources/views/show_post.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -140,11 +141,11 @@
       <file leaf-file-name="show_post.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/show_post.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="54" column="7" lean-forward="true" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
+            <state relative-caret-position="387">
+              <caret line="47" column="39" lean-forward="false" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
               <folding>
-                <marker date="1580126655830" expanded="true" signature="279:291" ph="..." />
-                <marker date="1580126655830" expanded="true" signature="984:1000" ph="..." />
+                <marker date="1580126701439" expanded="true" signature="279:291" ph="..." />
+                <marker date="1580126701439" expanded="true" signature="984:1000" ph="..." />
               </folding>
             </state>
           </provider>
@@ -630,7 +631,7 @@
       <workItem from="1579765330729" duration="17412000" />
       <workItem from="1579849671463" duration="17182000" />
       <workItem from="1579898074699" duration="1388000" />
-      <workItem from="1579943179749" duration="34394000" />
+      <workItem from="1579943179749" duration="34436000" />
     </task>
     <task id="LOCAL-00094" summary="edit fetch messages">
       <created>1575015968174</created>
@@ -1005,7 +1006,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="504692000" />
+    <option name="totallyTimeSpent" value="504734000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -1805,11 +1806,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/show_post.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="54" column="7" lean-forward="true" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
+        <state relative-caret-position="387">
+          <caret line="47" column="39" lean-forward="false" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
           <folding>
-            <marker date="1580126655830" expanded="true" signature="279:291" ph="..." />
-            <marker date="1580126655830" expanded="true" signature="984:1000" ph="..." />
+            <marker date="1580126701439" expanded="true" signature="279:291" ph="..." />
+            <marker date="1580126701439" expanded="true" signature="984:1000" ph="..." />
           </folding>
         </state>
       </provider>
