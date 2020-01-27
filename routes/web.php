@@ -86,6 +86,7 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'as' => 'admin.'], f
     //accept advisers manage
     Route::get('advisers', ['uses' => 'Admins\AdviserController@index', 'as' => 'adviser.index']);
     Route::delete('/advisers/{adviser_id}', 'Admins\AdviserController@destroy')->name('adviser.destroy');
+    Route::put('/advisers/{adviser_id}', 'Admins\AdviserController@update')->name('adviser.update');
     Route::get('/advisers/{adviser_id}', 'Admins\AdviserController@show')->name('adviser.show');
     Route::post('/advisers/accept-adviser', 'Admins\AdviserController@accept_adviser')->name('adviser.accept');
     Route::post('/advisers/decline-adviser', 'Admins\AdviserController@decline_adviser')->name('adviser.decline');

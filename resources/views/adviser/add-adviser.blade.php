@@ -4,7 +4,7 @@
 <head>
     @include('includes.panel.headLinks')
     <script src="/ckeditor/ckeditor.js"></script>
-    <link href="/css/select2.min.css" rel="stylesheet" />
+    <link href="/css/select2.min.css" rel="stylesheet"/>
 
     <title> شاورنو - ثبت نام مشاور </title>
 
@@ -33,22 +33,23 @@
                     <div class="row" style="width: 100%">
                         <div class="col-sm-5 col-3"></div>
                         <div class="col-sm-2 col-6">
-                            <img src="http://shavernoapp.ir/images/shsh.png" style="width: 100%;margin: 10px auto;" alt="">
+                            <img src="http://shavernoapp.ir/images/shsh.png" style="width: 100%;margin: 10px auto;"
+                                 alt="">
                         </div>
                         <div class="col-sm-5 col-3"></div>
                     </div>
                     <h2 class="text-center" style="width: 100%;margin-bottom: 20px">فرم درخواست همکاری</h2>
 
-                    @if ($errors->any())
-                        <div class="alert alert-danger" style="width: 100%">
-                            <ul>
-                                @foreach($errors->all() as $err)
-                                    <li>{{$err}}</li>
+                    {{--@if ($errors->any())--}}
+                        {{--<div class="alert alert-danger" style="width: 100%">--}}
+                            {{--<ul>--}}
+                                {{--@foreach($errors->all() as $err)--}}
+                                    {{--<li>{{$err}}</li>--}}
 
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
+                                {{--@endforeach--}}
+                            {{--</ul>--}}
+                        {{--</div>--}}
+                    {{--@endif--}}
 
                     <div class="col-12">
                         <div class="card-box">
@@ -94,7 +95,7 @@
                                                 <label class="col-sm-2  col-form-label" for="simpleinput">شماره موبایل
                                                     مشاور</label>
                                                 <div class="col-sm-10">
-                                                    <input type="number" id="mobile" name="mobile" class="form-control"
+                                                    <input style="direction: ltr!important;" type="text" id="mobile" name="mobile" class="form-control"
                                                            placeholder="شماره موبایل مشاور" value="{{old('mobile')}}">
                                                 </div>
                                             </div>
@@ -123,7 +124,8 @@
                                             </div>
 
                                             <div class="form-group row">
-                                                <label class="col-sm-2  col-form-label" for="simpleinput"> تصویر کارت ملی
+                                                <label class="col-sm-2  col-form-label" for="simpleinput"> تصویر کارت
+                                                    ملی
                                                     مشاور</label>
                                                 <div class="col-sm-10">
                                                     <input type="file" class="form-control" name="melli" id="melli">
@@ -132,16 +134,19 @@
                                             </div>
 
                                             <div class="form-group row">
-                                                <label class="col-sm-2  col-form-label" for="simpleinput"> تصویر شناسنامه
+                                                <label class="col-sm-2  col-form-label" for="simpleinput"> تصویر
+                                                    شناسنامه
                                                     مشاور</label>
                                                 <div class="col-sm-10">
-                                                    <input type="file" class="form-control" name="shenasname" id="shenasname">
+                                                    <input type="file" class="form-control" name="shenasname"
+                                                           id="shenasname">
 
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
-                                                <label class="col-sm-2  col-form-label" for="simpleinput"> نصویر مدرک تحصیلی
+                                                <label class="col-sm-2  col-form-label" for="simpleinput"> نصویر مدرک
+                                                    تحصیلی
                                                     مشاور</label>
                                                 <div class="col-sm-10">
                                                     <input type="file" class="form-control" name="edu" id="edu">
@@ -205,6 +210,33 @@
                                                 </div>
                                             </div>
 
+                                            <div class="form-group row">
+                                                <label class="col-sm-2  col-form-label" for="simpleinput">شماره کارت</label>
+                                                <div class="col-sm-10">
+                                                    <input style="direction: ltr!important;" type="text" id="card_number" name="card_number"
+                                                           class="form-control" placeholder="شماره کارت"
+                                                           value="{{old('card_number')}}">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-2  col-form-label" for="simpleinput">شماره شبا</label>
+                                                <div class="col-sm-10">
+                                                    <input style="direction: ltr!important;" type="text" id="sheba_number" name="sheba_number"
+                                                           class="form-control" placeholder="شماره شبا"
+                                                           value="{{old('sheba_number')}}">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-2  col-form-label" for="simpleinput">شماره حساب</label>
+                                                <div class="col-sm-10">
+                                                    <input style="direction: ltr!important;" type="text" id="bank_account_number" name="bank_account_number"
+                                                           class="form-control" placeholder="شماره حساب"
+                                                           value="{{old('bank_account_number')}}">
+                                                </div>
+                                            </div>
+
 
                                             <div class="form-group row">
                                                 <label class="col-sm-2  col-form-label" for="simpleinput">دسته بندی
@@ -224,8 +256,10 @@
                                             <div class="form-group row">
                                                 <div class="offset-sm-4 col-sm-8">
                                                     <div class="checkbox">
-                                                        <input name="accept" id="accept" type="checkbox" data-parsley-multiple="accept">
-                                                        <label for="accept"> صحت اطلاعات وارد شده را تایید می کنم</label>
+                                                        <input name="accept" id="accept" type="checkbox"
+                                                               data-parsley-multiple="accept">
+                                                        <label for="accept"> صحت اطلاعات وارد شده را تایید می
+                                                            کنم</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -233,12 +267,14 @@
                                             <div class="form-group row">
                                                 <div class="offset-sm-4 col-sm-8">
                                                     <div class="checkbox">
-                                                        <input name="rights" id="rights" type="checkbox" data-parsley-multiple="rights">
-                                                        <label for="rights"><a href="https://shaverno.com/copyright" target="_blank">قوانین و ضوابط شاورنو </a> را می پذیرم</label>
+                                                        <input name="rights" id="rights" type="checkbox"
+                                                               data-parsley-multiple="rights">
+                                                        <label for="rights"><a href="https://shaverno.com/copyright"
+                                                                               target="_blank">قوانین و ضوابط
+                                                                شاورنو </a> را می پذیرم</label>
                                                     </div>
                                                 </div>
                                             </div>
-
 
 
                                             <div class="form-group mb-0 justify-content-end row">
@@ -289,39 +325,55 @@
 <script src="/js/select2.min.js"></script>
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('.js-example-basic-multiple').select2();
     });
 
-
-    $('#reset').on('click', function () {
-        var captcha = $('#captcha_img');
-        var config = captcha.data('refresh-config');
-        $.ajax({
-            method: 'GET',
-            url: '/get_captcha/' + config,
-        }).done(function (response) {
-            captcha.prop('src', response);
-        });
-    });
 </script>
 
 @if(isset($pm))
     <script src="/js/swal.js"></script>
 
+    <script>
+        $(document).ready(function () {
+
+            Swal.fire(
+                'تایید',
+                '{{$pm}}',
+                'success'
+            )
+        });
+
+    </script>
+@endif
+
+@if ($errors->any())
+    <script src="/js/swal.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'خطا',
+                html:        "            @foreach ($errors->all() as $error)\n" +
+                "                {{ $error }}<br>" +
+                "            @endforeach\n" ,
+                showConfirmButton: true
+            });
+        });
+    </script>
+
+@endif
+
+<script src="/js/input_mask.js"></script>
 <script>
-    $(document).ready(function() {
-
-        Swal.fire(
-            'تایید',
-            '{{$pm}}',
-            'success'
-        )
-    });
-
+    $("#card_number").inputmask({"mask": "9999999999999999","placeholder": "________________"});
+    $("#sheba_number").inputmask({"mask": "IR999999999999999999999999","placeholder": "IR________________________"});
+    $("#bank_account_number").inputmask({"mask": "999999999999999999999","placeholder": ""});
+    $("#mobile").inputmask({"mask": "09999999999","placeholder": "___________"});
 </script>
-    @endif
-
 </body>
 
 </html>

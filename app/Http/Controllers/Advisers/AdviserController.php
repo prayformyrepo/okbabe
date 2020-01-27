@@ -23,8 +23,8 @@ class AdviserController extends Controller
     {
         $validatedData = [
             'name' => 'required',
-            'username' => 'required|unique:users',
-            'mobile' => 'required|unique:users',
+            'username' => 'required|unique:users|is_not_persian',
+            'mobile' => 'required|unique:users|iran_mobile',
             'gender' => 'required',
             'about' => 'required',
             'field' => 'required',
@@ -38,12 +38,16 @@ class AdviserController extends Controller
             'shenasname' => 'required|mimes:jpeg,jpg,png,zip,pdf|max:5120',
             'edu' => 'required|mimes:jpeg,jpg,png,zip,pdf|max:5120',
             'faaliat' => 'required|mimes:jpeg,jpg,png,zip,pdf|max:5120',
+            'card_number' => 'required|card_number',
+            'sheba_number' => 'required|sheba',
+            'bank_account_number' => 'required',
         ];
         $messages = [
             'accept.required' => 'پذیرش صحت اطلاعات وارد شده الزامی است',
             'rights.required' => 'پذیرش قوانین و ضوابط شاورنو الزامی است',
             'name.required' => 'وارد کردن نام الزامی است',
             'username.required' => 'وارد کردن نام کاربری الزامی است',
+            'username.is_not_persian' => 'نام کاربری فارسی مجاز نیست',
             'mobile.required' => 'وارد کردن موبایل الزامی است',
             'gender.required' => 'وارد کردن جنسیت الزامی است',
             'about.required' => 'وارد کردن درباره مشاور الزامی است',
@@ -55,7 +59,13 @@ class AdviserController extends Controller
             'shenasname.required' => 'آپلود تصویر شناسنامه الزامی است',
             'edu.required' => 'آپلود تصویر مدرک تحصیلی الزامی است',
             'faaliat.required' => 'آپلود تصویر مجوز فعالیت الزامی است',
+            'card_number.required' => 'شماره کارت الزامی است',
+            'card_number.card_number' => 'شماره کارت صحیح نیست',
+            'sheba_number.sheba' => 'شماره شبا صحیح نیست',
+            'sheba_number.required' => 'شماره شبا الزامی است',
+            'bank_account_number.required' => 'شماره حساب الزامی است',
         ];
+
 
         $this->validate($request, $validatedData, $messages);
 
@@ -152,6 +162,9 @@ class AdviserController extends Controller
         $adviser->call_price = $request->call_price - 250 - ($remain*0.3);
         $adviser->nominal_call_price =$request->call_price;
         $adviser->visit_price = $request->visit_price;
+        $adviser->card_number = $request->card_number;
+        $adviser->sheba_number = $request->sheba_number;
+        $adviser->bank_account_number = $request->bank_account_number;
         $adviser->work_certificate_file_id = $work_certificate_file->id;
         $adviser->education_certificate_file_id = $education_certificate_file->id;
         $adviser->birth_certificate_file_id = $birth_certificate_file->id;

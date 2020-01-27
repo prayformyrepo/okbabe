@@ -78,7 +78,7 @@ class ProductController extends Controller
             'file_path' => '/files/products/' . $product->id . $filename,
             'orginal_name' => $file->getClientOriginalName(),
             'file_type' => $file->getClientMimeType(),
-            'slug' => $user->id . '_' . time()
+            'slug' => $file->id . '_' . time()
         ]);
     }
     public function edit(Product $product)

@@ -204,7 +204,7 @@
                     position: 'center',
                     icon: 'success',
                     title: 'موفقیت آمیز',
-                    html: 'پیام شما با موفقیت ثبت شد',
+                    html: 'دسته بندی شما با موفقیت ثبت شد',
                     showConfirmButton: false,
                     timer: 2500
                 })

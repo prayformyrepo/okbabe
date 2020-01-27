@@ -119,20 +119,20 @@ class CallController extends Controller
                 $adviser_user_id = Adviser::find($adviser_id)->user_id;
                 $mobile = User::find($adviser_user_id)->mobile;
 
-                //sms
-//                try {
-//                    $receptor = $mobile;
-//                    $template = "callAlarm";
-//                    $type = "sms";
-//                    $token = Auth::user()->username;
-//                    $token2 = "";
-//                    $token3 = "";
-//                    $result = Kavenegar::VerifyLookup($receptor, $token, $token2, $token3, $template, $type);
-//                } catch (ApiException $e) {
-//                    echo $e->errorMessage();
-//                } catch (HttpException $e) {
-//                    echo $e->errorMessage();
-//                }
+//                sms
+                try {
+                    $receptor = $mobile;
+                    $template = "callAlarm";
+                    $type = "sms";
+                    $token = Auth::user()->username;
+                    $token2 = "";
+                    $token3 = "";
+                    $result = Kavenegar::VerifyLookup($receptor, $token, $token2, $token3, $template, $type);
+                } catch (ApiException $e) {
+                    echo $e->errorMessage();
+                } catch (HttpException $e) {
+                    echo $e->errorMessage();
+                }
 
                 $u_id=Auth::user()->id;
                 $u=User::find($u_id);
