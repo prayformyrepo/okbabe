@@ -22,6 +22,10 @@
         p,h1,h2,h3,h4,h5,h6,span,strong,div{
             font-family: 'iranSans';
         }
+
+        a{
+            display: none!important;
+        }
     </style>
 </head>
 <body style="text-align: right;">
