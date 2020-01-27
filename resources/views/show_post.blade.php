@@ -45,6 +45,7 @@
 
         if ($(this).is('img')) {
             var src=$(this).attr('src');
+            console.log(src.charAt(0));
             if(src.charAt(0)==='/'){
                 $(this).attr("src","http://shaverno.com".src);
             }
