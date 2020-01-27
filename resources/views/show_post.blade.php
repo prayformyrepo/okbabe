@@ -45,11 +45,9 @@
 
         if ($(this).is('img')) {
             var src=$(this).attr('src');
-            console.log(src.charAt(0));
             if(src.charAt(0)==='/'){
-                console.log('okok');
 
-                $(this).attr("src","http://shaverno.com".src);
+                $(this).attr("src","http://shaverno.com"+src);
             }
         }
     });
