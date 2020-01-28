@@ -34,8 +34,8 @@
                     <div class="row" style="width: 100%">
                         <div class="col-sm-5 col-3"></div>
                         <div class="col-sm-2 col-6">
-                            {{--<img src="http://shavernoapp.ir/images/shsh.png" style="width: 100%;margin: 10px auto;"--}}
-                                 {{--alt="">--}}
+                            <img src="http://shavernoapp.ir/images/shsh.png" style="width: 100%;margin: 10px auto;"
+                                 alt="">
                         </div>
                         <div class="col-sm-5 col-3"></div>
                     </div>
