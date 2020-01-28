@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Kavenegar;
 
 class AdviserController extends Controller
 {
@@ -21,10 +22,20 @@ class AdviserController extends Controller
 
     public function store(Request $request)
     {
+        $mobile = $request->mobile;
+        if ($mobile[0] == 0) $mobile = substr($mobile, 1);
+        $user_code = User::where('mobile', $mobile)->value('code');
+        if ($request->code != $user_code || $request->code == null || !isset($request->code)) {
+            $categories = Adviser_category::all();
+            $pm = 'کد تایید صحیح نیست';
+            return response()->json(['error_code' => $pm], 400);
+
+        }
+
         $validatedData = [
             'name' => 'required',
-            'username' => 'required|unique:users|is_not_persian',
-            'mobile' => 'required|unique:users|iran_mobile',
+            'username' => 'required|is_not_persian',
+            'mobile' => 'required|iran_mobile',
             'gender' => 'required',
             'about' => 'required',
             'field' => 'required',
@@ -41,6 +52,7 @@ class AdviserController extends Controller
             'card_number' => 'required|card_number',
             'sheba_number' => 'required|sheba',
             'bank_account_number' => 'required',
+            'code' => 'required',
         ];
         $messages = [
             'accept.required' => 'پذیرش صحت اطلاعات وارد شده الزامی است',
@@ -64,22 +76,32 @@ class AdviserController extends Controller
             'sheba_number.sheba' => 'شماره شبا صحیح نیست',
             'sheba_number.required' => 'شماره شبا الزامی است',
             'bank_account_number.required' => 'شماره حساب الزامی است',
+
         ];
 
 
         $this->validate($request, $validatedData, $messages);
 
 
-        $mobile = $request->mobile;
-        if ($mobile[0] == 0) $mobile = substr($mobile, 1);
+        $has_username=User::where('username',$request->username)->value('id');
+        $user_user_id=User::where('mobile',$mobile)->value('id');
+        if ($has_username!=null && $has_username!=$user_user_id){
+            $pm = 'نام کاربری تکراری است';
+            return response()->json(['error_code' => $pm], 400);
+        }
+        $user = User::updateOrCreate(
+            [
+                'mobile' => $mobile,
+            ],
+            [
+                'username' => $request->username,
 
-        $user = new User();
-        $user->name = $request->name;
-        $user->username = $request->username;
-        $user->mobile = $mobile;
-        $user->gender = $request->gender;
-        $user->is_adviser = 1;
-        $user->save();
+                'name' => $request->name,
+                'gender' => $request->gender,
+                'is_adviser' => 1
+            ]);
+
+
         if ($request->file('avatar')) {
             $file = $request->file('avatar');
             $filename = $user->id . '_' . time() . '.' . $file->getClientOriginalExtension();
@@ -158,9 +180,9 @@ class AdviserController extends Controller
         $adviser->user_id = $user->id;
         $adviser->field = $request->field;
         $adviser->about = $request->about;
-        $remain=$request->call_price-250;
-        $adviser->call_price = $request->call_price - 250 - ($remain*0.3);
-        $adviser->nominal_call_price =$request->call_price;
+        $remain = $request->call_price - 250;
+        $adviser->call_price = $request->call_price - 250 - ($remain * 0.3);
+        $adviser->nominal_call_price = $request->call_price;
         $adviser->visit_price = $request->visit_price;
         $adviser->card_number = $request->card_number;
         $adviser->sheba_number = $request->sheba_number;
@@ -171,8 +193,8 @@ class AdviserController extends Controller
         $adviser->national_card_file_id = $national_card_file->id;
         $adviser->save();
 
-
-        $categories = $request->categories;
+        $categories = explode(',', $request->categories);
+//        $categories = $request->categories;
         foreach ($categories as $category) {
             $cat = new Adviser_to_category();
             $cat->adviser_id = $adviser->id;
@@ -181,11 +203,61 @@ class AdviserController extends Controller
         }
 
 
-        $adviser_id = $adviser->id;
+//        $adviser_id = $adviser->id;
 
 
-        $categories = Adviser_category::all();
-        $pm = 'درخواست شما با موفقیت ارسال شد';
-        return view('adviser.add-adviser', compact('categories', 'pm'));
+//        $categories = Adviser_category::all();
+//        $pm = 'درخواست شما با موفقیت ارسال شد';
+//        return view('adviser.add-adviser', compact('categories', 'pm'));
+    }
+
+    public function verify_number(Request $request)
+    {
+
+
+        $validatedData = [
+
+            'mobile' => 'required|iran_mobile',
+
+        ];
+        $messages = [
+
+            'mobile.required' => 'وارد کردن موبایل الزامی است',
+
+        ];
+
+
+        $this->validate($request, $validatedData, $messages);
+
+        $mobile = $request->mobile;
+        if ($mobile[0] == 0) $mobile = substr($mobile, 1);
+
+        $digits = 4;
+        $code = rand(pow(10, $digits - 1), pow(10, $digits) - 1);
+
+        $user = User::updateOrCreate(
+            [
+                'mobile' => $mobile,
+            ],
+            [
+                'code' => $code
+            ]);
+
+
+//        //sms
+        try {
+            $receptor = $request->mobile;
+            $template = "shaverno";
+            $type = "sms";
+            $token = $code;
+            $token2 = "";
+            $token3 = "";
+            $result = Kavenegar::VerifyLookup($receptor, $token, $token2, $token3, $template, $type);
+        } catch (ApiException $e) {
+            echo $e->errorMessage();
+        } catch (HttpException $e) {
+            echo $e->errorMessage();
+        }
+
     }
 }

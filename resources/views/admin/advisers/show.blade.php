@@ -48,7 +48,7 @@
                                 </div>
                             </div>
                             <form action="{{route('admin.adviser.update',[$user->id])}}" method="post"
-                                  class="main_form">
+                                  class="main_form" enctype="multipart/form-data">
                                 @csrf
                                 {{ method_field('PUT') }}
                                 <div class="row">
@@ -105,6 +105,8 @@
                                             <div class="col-sm-10">
                                                 <img src="{{Request::root().$user->avatar}}" height="100px"
                                                      alt="تصویر مشاور">
+                                                <input type="file" class="form-control" name="avatar" id="avatar">
+
                                             </div>
                                         </div>
 
@@ -121,6 +123,8 @@
                                                     <p>ندارد</p>
 
                                                 @endif
+                                                    <input type="file" class="form-control" name="melli" id="melli">
+
 
                                             </div>
                                         </div>
@@ -138,6 +142,9 @@
                                                     <p>ندارد</p>
                                                 @endif
 
+                                                    <input type="file" class="form-control" name="shenasname" id="shenasname">
+
+
                                             </div>
                                         </div>
 
@@ -153,6 +160,8 @@
                                                 @else
                                                     <p>ندارد</p>
                                                 @endif
+                                                    <input type="file" class="form-control" name="edu" id="edu">
+
 
                                             </div>
                                         </div>
@@ -167,6 +176,8 @@
                                                 @else
                                                     <p>ندارد</p>
                                                 @endif
+
+                                                    <input type="file" class="form-control" name="faaliat" id="faaliat">
 
                                             </div>
                                         </div>
