@@ -242,7 +242,7 @@ class mainController extends Controller
     {
         $client = new Client(['base_uri' => 'https://shaverno.com']);
 
-        $posts = Post::paginate(10);
+        $posts = Post::paginate(50);
         foreach ($posts as $post) {
 // Send a request to https://foo.com/api/test
             $response = $client->request('GET', '/site/api/v1/blog/posts/' . $post->id);
