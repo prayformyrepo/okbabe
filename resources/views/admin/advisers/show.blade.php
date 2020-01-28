@@ -188,11 +188,7 @@
                                                 مشاور</label>
                                             <div class="col-sm-10">
                                                             <textarea class="form-control" rows="5" id="about"
-                                                                      name="about">
-
-                                                                {{$adviser->about}}
-
-                                                            </textarea>
+                                                                      name="about">{{$adviser->about}}</textarea>
                                             </div>
                                         </div>
 
@@ -201,11 +197,7 @@
                                                 کاری مشاور</label>
                                             <div class="col-sm-10">
                                                             <textarea class="form-control" rows="5" id="field"
-                                                                      name="field">
-
-                                                                {{$adviser->field}}
-
-                                                            </textarea>
+                                                                      name="field">{{$adviser->field}}</textarea>
                                             </div>
                                         </div>
 
