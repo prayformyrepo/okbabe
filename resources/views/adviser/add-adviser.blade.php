@@ -332,10 +332,10 @@
 
 
 @include('includes.panel.footerLinks')
-<script>
-    CKEDITOR.replace('about');
-    CKEDITOR.replace('field');
-</script>
+{{--<script>--}}
+    {{--CKEDITOR.replace('about');--}}
+    {{--CKEDITOR.replace('field');--}}
+{{--</script>--}}
 <script src="/js/select2.min.js"></script>
 
 <script>
