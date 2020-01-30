@@ -154,7 +154,7 @@ class AdviserController extends Controller
         }
 
         else {
-            $advisers = Adviser::orderBy('rate', 'DESC')->paginate(10);
+            $advisers = Adviser::orderBy('rate', 'DESC')->paginate(10000);
         }
         $a = array();
         foreach ($advisers as $advise) {
