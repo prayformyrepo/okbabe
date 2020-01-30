@@ -31,7 +31,7 @@ class AdviserController extends Controller
     public function show_advisers(Request $request)
     {
         if (isset($request->show_online) && $request->show_online = true) {
-            $advisers = Adviser::where('is_online', 1)->orderBy('id', 'DESC')->paginate(10);
+            $advisers = Adviser::where('is_online', 1)->orderBy('id', 'DESC')->paginate(1000);
         } else if (isset($request->user_id)) {
             $a = array();
             if (User::find($request->user_id)->is_adviser == 0) return response()->json(['error' => 'user is not adviser'], $this->successStatus);
