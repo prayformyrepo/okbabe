@@ -92,8 +92,8 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'as' => 'admin.'], f
     Route::post('/advisers/decline-adviser', 'Admins\AdviserController@decline_adviser')->name('adviser.decline');
 
     //sms setting
-    Route::get('/sms', 'Admins\Smscontroller@index')->name('sms.index');
-    Route::post('/sms', 'Admins\Smscontroller@change')->name('sms.change');
+    Route::get('/sms', 'Admins\SmsController@index')->name('sms.index');
+    Route::post('/sms', 'Admins\SmsController@change')->name('sms.change');
 
 
 
