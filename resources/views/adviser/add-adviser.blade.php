@@ -456,9 +456,9 @@
         formData.append('username', $('#username').val());
         formData.append('mobile', $('#mobile').val());
         formData.append('gender', $('#gender').val());
-        formData.append('about', CKEDITOR.instances.about.getData());
+        formData.append('about', $('#about').val());
         formData.append('code', $('#code').val());
-        formData.append('field', CKEDITOR.instances.field.getData());
+        formData.append('field', $('#field').val());
         formData.append('call_price', $('#call_price').val());
         formData.append('visit_price', $('#visit_price').val());
         formData.append('rights', $('#rights').val());
