@@ -7,6 +7,7 @@ use App\Adviser_category;
 use App\Adviser_to_category;
 use App\File;
 use App\Http\Controllers\Controller;
+use App\Sms;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,11 +26,12 @@ class AdviserController extends Controller
         $mobile = $request->mobile;
         if ($mobile[0] == 0) $mobile = substr($mobile, 1);
         $user_code = User::where('mobile', $mobile)->value('code');
-        if ($request->code != $user_code || $request->code == null || !isset($request->code)) {
-            $categories = Adviser_category::all();
-            $pm = 'کد تایید صحیح نیست';
-            return response()->json(['error_code' => $pm], 400);
-
+        if (Sms::find(1)->active == 1) {
+            if ($request->code != $user_code || $request->code == null || !isset($request->code)) {
+                $categories = Adviser_category::all();
+                $pm = 'کد تایید صحیح نیست';
+                return response()->json(['error_code' => $pm], 400);
+            }
         }
 
         $validatedData = [
@@ -83,9 +85,9 @@ class AdviserController extends Controller
         $this->validate($request, $validatedData, $messages);
 
 
-        $has_username=User::where('username',$request->username)->value('id');
-        $user_user_id=User::where('mobile',$mobile)->value('id');
-        if ($has_username!=null && $has_username!=$user_user_id){
+        $has_username = User::where('username', $request->username)->value('id');
+        $user_user_id = User::where('mobile', $mobile)->value('id');
+        if ($has_username != null && $has_username != $user_user_id) {
             $pm = 'نام کاربری تکراری است';
             return response()->json(['error_code' => $pm], 400);
         }

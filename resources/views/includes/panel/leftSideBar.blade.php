@@ -73,6 +73,13 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="{{route('admin.sms.index')}}">
+                        <i class="mdi mdi-message"></i>
+                        <span>  تنظیمات پیامک </span>
+                    </a>
+                </li>
+
 
                 <li>
                     <a href="javascript: void(0);">
