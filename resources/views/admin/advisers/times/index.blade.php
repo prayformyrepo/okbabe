@@ -6,7 +6,7 @@
     <script src="/ckeditor/ckeditor.js"></script>
     <script src="/js/swal.js"></script>
 
-    <title> شاورنو - مشاوران </title>
+    <title> شاورنو - تایم های مشاور </title>
 
 </head>
 
@@ -57,7 +57,6 @@
                                         <th>نام کاربری</th>
                                         <th>شماره موبایل</th>
                                         <th>وضعیت</th>
-                                        {{--<th>ویرایش زمان بندی</th>--}}
                                         <th>مشاهده جزئیات</th>
                                         <th>حذف</th>
                                     </tr>
@@ -74,7 +73,7 @@
                                                 {{$adviser->mobile}}
                                                 @if($adviser->mobile_verified_at==null) <i class="fa fa-times-circle fa-2x" style="color: darkred"> </i> @endif
                                             </td>
-                                            <td >
+                                            <td>
                                                 @if(\App\Adviser::withoutGlobalScope(\App\Scopes\AdviserScope::class)->where('user_id',$adviser->id)->first()->verified==0)
                                                     <span class="alert alert-danger" style="font-size: 0.7rem;">تایید نشده</span>
                                                 @else
@@ -82,15 +81,9 @@
                                                 @endif
                                             </td>
 
-                                            {{--<td>--}}
-                                                {{--<a href="{{route('admin.adviser.time.show',[$adviser->id])}}" class="btn btn-warning">--}}
-                                                    {{--<i class="fa fa-edit"> </i>--}}
-                                                {{--</a>--}}
-                                            {{--</td>--}}
-
                                             <td>
-                                                <a href="{{route('admin.adviser.show',[$adviser->id])}}" class="btn btn-sm btn-primary">
-                                                    <i class="fa fa-info-circle"> </i>
+                                                <a href="{{route('admin.adviser.show',[$adviser->id])}}" class="btn btn-primary">
+                                                    <i class="fa fa-info-circle"> مشاهده جزئیات </i>
                                                 </a>
                                             </td>
 
@@ -101,7 +94,7 @@
                                                     {{method_field('delete')}}
                                                     {{csrf_field()}}
                                                     <button type="submit" class="btn btn-danger btn-small"><i
-                                                                class="fa fa-trash"> </i></button>
+                                                                class="fa fa-trash"> حذف مشاور </i></button>
                                                 </form>
 
 

@@ -83,6 +83,8 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'as' => 'admin.'], f
         Route::resource('/advisers/categories', 'Admins\AdviserCategoryController');
     });
 
+
+
     //accept advisers manage
     Route::get('advisers', ['uses' => 'Admins\AdviserController@index', 'as' => 'adviser.index']);
     Route::delete('/advisers/{adviser_id}', 'Admins\AdviserController@destroy')->name('adviser.destroy');
@@ -90,6 +92,11 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'as' => 'admin.'], f
     Route::get('/advisers/{adviser_id}', 'Admins\AdviserController@show')->name('adviser.show');
     Route::post('/advisers/accept-adviser', 'Admins\AdviserController@accept_adviser')->name('adviser.accept');
     Route::post('/advisers/decline-adviser', 'Admins\AdviserController@decline_adviser')->name('adviser.decline');
+
+
+    //adviser times manage
+    Route::get('advisers/times/{adviser_id}', ['uses' => 'Admins\AdviserTimeController@show', 'as' => 'adviser.time.show']);
+
 
     //sms setting
     Route::get('/sms', 'Admins\SmsController@index')->name('sms.index');

@@ -26,12 +26,8 @@ class AdviserController extends Controller
     {
         //delete user
         User::find($id)->delete();
-        $adviser_id = Adviser::withoutGlobalScope(\App\Scopes\AdviserScope::class)->where('user_id', $id)->first()->id;
 
-        //delete adviser
-        Adviser::withoutGlobalScope(\App\Scopes\AdviserScope::class)->where('user_id', $id)->first()->delete();
-
-        return back();
+        return redirect('/admin/advisers');
     }
 
     public function show($id)
