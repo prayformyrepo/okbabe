@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a47ebeb2-211c-4965-8e03-cccb4a417dac" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/backup/sh.sql" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admins/AdviserTimeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admins/AdviserTimeController.php" />
-      <change beforePath="$PROJECT_DIR$/public/temp.zip" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/advisers/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/advisers/index.blade.php" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -151,8 +145,8 @@
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="284" column="2450" lean-forward="false" selection-start-line="284" selection-start-column="2450" selection-end-line="284" selection-end-column="2450" />
+            <state relative-caret-position="781">
+              <caret line="284" column="5" lean-forward="true" selection-start-line="284" selection-start-column="5" selection-end-line="284" selection-end-column="5" />
               <folding>
                 <element signature="e#44#60#0#PHP" expanded="true" />
               </folding>
@@ -647,7 +641,7 @@
       <workItem from="1579943179749" duration="60701000" />
       <workItem from="1580370075324" duration="1599000" />
       <workItem from="1580500068022" duration="866000" />
-      <workItem from="1580501466298" duration="1987000" />
+      <workItem from="1580501466298" duration="2143000" />
     </task>
     <task id="LOCAL-00094" summary="edit fetch messages">
       <created>1575015968174</created>
@@ -1022,7 +1016,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="535451000" />
+    <option name="totallyTimeSpent" value="535607000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -1636,8 +1630,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="284" column="2450" lean-forward="false" selection-start-line="284" selection-start-column="2450" selection-end-line="284" selection-end-column="2450" />
+        <state relative-caret-position="781">
+          <caret line="284" column="5" lean-forward="true" selection-start-line="284" selection-start-column="5" selection-end-line="284" selection-end-column="5" />
           <folding>
             <element signature="e#44#60#0#PHP" expanded="true" />
           </folding>
