@@ -57,7 +57,7 @@
                                         <th>نام کاربری</th>
                                         <th>شماره موبایل</th>
                                         <th>وضعیت</th>
-                                        {{--<th>ویرایش زمان بندی</th>--}}
+                                        <th>ویرایش زمان بندی</th>
                                         <th>مشاهده جزئیات</th>
                                         <th>حذف</th>
                                     </tr>
@@ -82,11 +82,11 @@
                                                 @endif
                                             </td>
 
-                                            {{--<td>--}}
-                                                {{--<a href="{{route('admin.adviser.time.show',[$adviser->id])}}" class="btn btn-warning">--}}
-                                                    {{--<i class="fa fa-edit"> </i>--}}
-                                                {{--</a>--}}
-                                            {{--</td>--}}
+                                            <td>
+                                                <a href="{{route('admin.adviser.time.show',[$adviser->id])}}" class="btn btn-warning">
+                                                    <i class="fa fa-edit"> </i>
+                                                </a>
+                                            </td>
 
                                             <td>
                                                 <a href="{{route('admin.adviser.show',[$adviser->id])}}" class="btn btn-sm btn-primary">

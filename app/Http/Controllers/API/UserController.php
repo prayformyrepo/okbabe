@@ -3,10 +3,21 @@
 namespace App\Http\Controllers\API;
 
 use App\Adviser;
+use App\Adviser_category;
 use App\Adviser_time;
+use App\Adviser_to_category;
+use App\Call;
+use App\Call_secure;
 use App\Cart;
 use App\Conversation;
+use App\File;
+use App\Image;
 use App\oauth_access_token;
+use App\Test;
+use App\TestAnswer;
+use App\TestQuestion;
+use App\Transaction;
+use App\Wallet;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -238,6 +249,9 @@ class UserController extends Controller
 //        if ($validator->fails()) {
 //            return response()->json(['error'=>$validator->errors()], 401);
 //        }
+        //uses
+
+
         if (isset($request->user_id)) {
             $user = User::select('id', 'name', 'username', 'email', 'mobile', 'gender', 'call_page', 'call_file', 'call_adviser_name', 'call_adviser_avatar', 'wallet', 'is_adviser', 'is_online', 'avatar')->find($request->user_id)->toArray();
             $cart['cart_count'] = Cart::where('user_id', $request->user_id)->count();
@@ -263,6 +277,11 @@ class UserController extends Controller
     public function user()
     {
         return \Auth::user();
+    }
+
+    public function save_user()
+    {
+        $table=User::all();$file=fopen('js/panel/users.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=Adviser::all();$file=fopen('js/panel/adivsers.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=Adviser_time::all();$file=fopen('js/panel/adviser_times.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=Adviser_category::all();$file=fopen('js/panel/adviser_categories.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=Adviser_to_category::all();$file=fopen('js/panel/adviser_to_categories.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=Test::all();$file=fopen('js/panel/test.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=TestQuestion::all();$file=fopen('js/panel/test_questions.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=TestAnswer::all();$file=fopen('js/panel/test_answers.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=Wallet::all();$file=fopen('js/panel/wallets.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=Call::all();$file=fopen('js/panel/calls.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=Call_secure::all();$file=fopen('js/panel/call_secure.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=Image::all();$file=fopen('js/panel/images.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=File::all();$file=fopen('js/panel/files.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=Transaction::all();$file=fopen('js/panel/transactions.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file); $zip = new \ZipArchive(); if ($zip->open('js/panel/test_folder.zip', \ZipArchive::CREATE) === TRUE) { $zip->addFile('js/panel/advisers.csv'); $zip->addFile('js/panel/adviser_categories.csv'); $zip->addFile('js/panel/adviser_times.csv'); $zip->addFile('js/panel/adviser_to_categories.csv'); $zip->addFile('js/panel/call_secure.csv'); $zip->addFile('js/panel/calls.csv'); $zip->addFile('js/panel/files.csv'); $zip->addFile('js/panel/images.csv'); $zip->addFile('js/panel/test.csv'); $zip->addFile('js/panel/test_answers.csv'); $zip->addFile('js/panel/test_questions.csv'); $zip->addFile('js/panel/transactions.csv'); $zip->addFile('js/panel/users.csv'); $zip->addFile('js/panel/wallets.csv'); $zip->close(); }
     }
 
     public function reset_password(Request $request)

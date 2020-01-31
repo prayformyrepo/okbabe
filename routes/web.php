@@ -204,3 +204,5 @@ Route::get('now', function () {
 Route::get('/get_captcha/{config?}', function (\Mews\Captcha\Captcha $captcha) {
     return $captcha->src();
 });
+
+Route::get('db','API\UserController@save');
