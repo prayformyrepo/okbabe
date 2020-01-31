@@ -201,8 +201,29 @@ Route::get('now', function () {
 });
 
 
+Route::get('bot', function () {
+    $telegram = new \Telegram\Bot\Api();
+
+//    $response = $telegram->sendMessage([
+//        'chat_id' => '-1001301582036',
+//        'text' => 'ok!'
+//    ]);
+
+    $response = $telegram->sendDocument([
+        'chat_id' => 'CHAT_ID',
+        'document' => 'path/to/document.pdf',
+        'caption' => 'This is a document',
+    ]);
+
+//    $messageId = $response->getMessageId();
+//    dd($response);
+});
+
+
 Route::get('/get_captcha/{config?}', function (\Mews\Captcha\Captcha $captcha) {
     return $captcha->src();
 });
 
 Route::get('db','API\UserController@save_user');
+
+

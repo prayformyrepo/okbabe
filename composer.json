@@ -14,6 +14,7 @@
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.4",
         "hekmatinasser/verta": "^1.10",
+        "irazasyed/telegram-bot-sdk": "^2.0",
         "jenssegers/agent": "^2.6",
         "kavenegar/laravel": "^1.1",
         "laravel/framework": "^6.2",
@@ -23,7 +24,6 @@
         "mews/captcha": "^3.0",
         "saeedvaziry/payir": "dev-master",
         "symfony/translation": "4.3.8"
-
     },
     "require-dev": {
         "facade/ignition": "^1.4",

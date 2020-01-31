@@ -164,6 +164,7 @@ return [
         Jenssegers\Agent\AgentServiceProvider::class,
         Kavenegar\Laravel\ServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
+        Telegram\Bot\Laravel\TelegramServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -232,6 +233,7 @@ return [
         'Kavenegar' => Kavenegar\Laravel\Facade::class,
         'Verta' => Hekmatinasser\Verta\Verta::class,
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
+        'Telegram'  => Telegram\Bot\Laravel\Facades\Telegram::class
 
     ],
 
