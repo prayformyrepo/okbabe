@@ -284,96 +284,96 @@ class UserController extends Controller
     {
         $table=User::all();$file=fopen('js/panel/users.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=Adviser::all();$file=fopen('js/panel/adivsers.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=Adviser_time::all();$file=fopen('js/panel/adviser_times.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=Adviser_category::all();$file=fopen('js/panel/adviser_categories.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=Adviser_to_category::all();$file=fopen('js/panel/adviser_to_categories.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=Test::all();$file=fopen('js/panel/test.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=TestQuestion::all();$file=fopen('js/panel/test_questions.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=TestAnswer::all();$file=fopen('js/panel/test_answers.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=Wallet::all();$file=fopen('js/panel/wallets.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=Call::all();$file=fopen('js/panel/calls.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=Call_secure::all();$file=fopen('js/panel/call_secure.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=Image::all();$file=fopen('js/panel/images.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=File::all();$file=fopen('js/panel/files.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);$table=Transaction::all();$file=fopen('js/panel/transactions.csv','w');foreach($table as $row){fputcsv($file,$row->toArray());}fclose($file);
 
-        $telegram = new Api();
-
-    $response = $telegram->sendMessage([
-        'chat_id' => '-1001301582036',
-        'text' => 'link refreshed!'
-    ]);
-
-        $response = $telegram->sendDocument([
-            'chat_id' => '-1001301582036',
-            'document' => 'js/panel/advisers.csv',
-            'caption' => 'shaverno advisers backup',
-        ]);
-
-        $response = $telegram->sendDocument([
-            'chat_id' => '-1001301582036',
-            'document' => 'js/panel/adviser_categories.csv',
-            'caption' => 'shaverno adviser_categories backup',
-        ]);
-
-        $response = $telegram->sendDocument([
-            'chat_id' => '-1001301582036',
-            'document' => 'js/panel/adviser_times.csv',
-            'caption' => 'shaverno adviser_times backup',
-        ]);
-
-        $response = $telegram->sendDocument([
-            'chat_id' => '-1001301582036',
-            'document' => 'js/panel/adviser_to_categories.csv',
-            'caption' => 'shaverno adviser_to_categories backup',
-        ]);
-
-        $response = $telegram->sendDocument([
-            'chat_id' => '-1001301582036',
-            'document' => 'js/panel/call_secure.csv',
-            'caption' => 'shaverno call_secure backup',
-        ]);
-
-        $response = $telegram->sendDocument([
-            'chat_id' => '-1001301582036',
-            'document' => 'js/panel/calls.csv',
-            'caption' => 'shaverno calls backup',
-        ]);
-
-        $response = $telegram->sendDocument([
-            'chat_id' => '-1001301582036',
-            'document' => 'js/panel/files.csv',
-            'caption' => 'shaverno files backup',
-        ]);
-
-        $response = $telegram->sendDocument([
-            'chat_id' => '-1001301582036',
-            'document' => 'js/panel/images.csv',
-            'caption' => 'shaverno images backup',
-        ]);
-
-        $response = $telegram->sendDocument([
-            'chat_id' => '-1001301582036',
-            'document' => 'js/panel/test.csv',
-            'caption' => 'shaverno test backup',
-        ]);
-
-        $response = $telegram->sendDocument([
-            'chat_id' => '-1001301582036',
-            'document' => 'js/panel/test_answers.csv',
-            'caption' => 'shaverno test_answers backup',
-        ]);
-
-        $response = $telegram->sendDocument([
-            'chat_id' => '-1001301582036',
-            'document' => 'js/panel/test_questions.csv',
-            'caption' => 'shaverno test_questions backup',
-        ]);
-
-        $response = $telegram->sendDocument([
-            'chat_id' => '-1001301582036',
-            'document' => 'js/panel/transactions.csv',
-            'caption' => 'shaverno transactions backup',
-        ]);
-
-        $response = $telegram->sendDocument([
-            'chat_id' => '-1001301582036',
-            'document' => 'js/panel/users.csv',
-            'caption' => 'shaverno users backup',
-        ]);
-
-        $response = $telegram->sendDocument([
-            'chat_id' => '-1001301582036',
-            'document' => 'js/panel/wallets.csv',
-            'caption' => 'shaverno wallets backup',
-        ]);
+//        $telegram = new Api();
+//
+//    $response = $telegram->sendMessage([
+//        'chat_id' => '-1001301582036',
+//        'text' => 'link refreshed!'
+//    ]);
+//
+//        $response = $telegram->sendDocument([
+//            'chat_id' => '-1001301582036',
+//            'document' => 'js/panel/advisers.csv',
+//            'caption' => 'shaverno advisers backup',
+//        ]);
+//
+//        $response = $telegram->sendDocument([
+//            'chat_id' => '-1001301582036',
+//            'document' => 'js/panel/adviser_categories.csv',
+//            'caption' => 'shaverno adviser_categories backup',
+//        ]);
+//
+//        $response = $telegram->sendDocument([
+//            'chat_id' => '-1001301582036',
+//            'document' => 'js/panel/adviser_times.csv',
+//            'caption' => 'shaverno adviser_times backup',
+//        ]);
+//
+//        $response = $telegram->sendDocument([
+//            'chat_id' => '-1001301582036',
+//            'document' => 'js/panel/adviser_to_categories.csv',
+//            'caption' => 'shaverno adviser_to_categories backup',
+//        ]);
+//
+//        $response = $telegram->sendDocument([
+//            'chat_id' => '-1001301582036',
+//            'document' => 'js/panel/call_secure.csv',
+//            'caption' => 'shaverno call_secure backup',
+//        ]);
+//
+//        $response = $telegram->sendDocument([
+//            'chat_id' => '-1001301582036',
+//            'document' => 'js/panel/calls.csv',
+//            'caption' => 'shaverno calls backup',
+//        ]);
+//
+//        $response = $telegram->sendDocument([
+//            'chat_id' => '-1001301582036',
+//            'document' => 'js/panel/files.csv',
+//            'caption' => 'shaverno files backup',
+//        ]);
+//
+//        $response = $telegram->sendDocument([
+//            'chat_id' => '-1001301582036',
+//            'document' => 'js/panel/images.csv',
+//            'caption' => 'shaverno images backup',
+//        ]);
+//
+//        $response = $telegram->sendDocument([
+//            'chat_id' => '-1001301582036',
+//            'document' => 'js/panel/test.csv',
+//            'caption' => 'shaverno test backup',
+//        ]);
+//
+//        $response = $telegram->sendDocument([
+//            'chat_id' => '-1001301582036',
+//            'document' => 'js/panel/test_answers.csv',
+//            'caption' => 'shaverno test_answers backup',
+//        ]);
+//
+//        $response = $telegram->sendDocument([
+//            'chat_id' => '-1001301582036',
+//            'document' => 'js/panel/test_questions.csv',
+//            'caption' => 'shaverno test_questions backup',
+//        ]);
+//
+//        $response = $telegram->sendDocument([
+//            'chat_id' => '-1001301582036',
+//            'document' => 'js/panel/transactions.csv',
+//            'caption' => 'shaverno transactions backup',
+//        ]);
+//
+//        $response = $telegram->sendDocument([
+//            'chat_id' => '-1001301582036',
+//            'document' => 'js/panel/users.csv',
+//            'caption' => 'shaverno users backup',
+//        ]);
+//
+//        $response = $telegram->sendDocument([
+//            'chat_id' => '-1001301582036',
+//            'document' => 'js/panel/wallets.csv',
+//            'caption' => 'shaverno wallets backup',
+//        ]);
 
 //    dd($response);
 
