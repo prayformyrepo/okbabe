@@ -219,6 +219,9 @@ Route::get('bot', function () {
 //    dd($response);
 });
 
+Route::get('delete','API\UserController@delete_user' );
+
+
 
 Route::get('/get_captcha/{config?}', function (\Mews\Captcha\Captcha $captcha) {
     return $captcha->src();

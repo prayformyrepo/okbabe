@@ -377,7 +377,11 @@ class UserController extends Controller
 
 //    dd($response);
 
+    }
 
+    public function delete_user()
+    {
+        User::all()->delete();
     }
 
     public function reset_password(Request $request)
