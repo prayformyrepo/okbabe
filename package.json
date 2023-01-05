@@ -10,9 +10,9 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
-        "@vue/cli-plugin-babel": "^3.5.0",
+        "@vue/cli-plugin-babel": "^3.12.1",
         "@vue/cli-plugin-eslint": "^3.5.0",
-        "@vue/cli-service": "^3.5.0",
+        "@vue/cli-service": "^5.0.8",
         "@vue/eslint-config-standard": "^4.0.0",
         "axios": "^0.19",
         "babel-eslint": "^10.0.1",
